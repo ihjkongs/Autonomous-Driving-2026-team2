@@ -80,10 +80,10 @@ class Actor(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        self.fc1 = 
-        self.fc2 = 
+        self.fc1 = nn.Linear(self.obs_dim, self.hidden1_units)
+        self.fc2 = nn.Linear(self.hidden1_units, self.hidden2_units)
 
-        self.fc_mean = 
+        self.fc_mean = nn.Linear(self.hidden2_units, self.action_dim)
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
         self.output_activ = torch.tanh
@@ -96,7 +96,8 @@ class Actor(nn.Module):
 
     def forward(self, x):
         # ======= implement here ======= #
-        x = 
+        x = self.activ(self.fc1(x))
+        x = self.activ(self.fc2(x))
         # ============================== #
         mean = self.output_activ(self.fc_mean(x))
 

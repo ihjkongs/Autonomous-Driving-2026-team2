@@ -43,9 +43,9 @@ class Agent(AgentBase):
         action_dists = self.actor(states_tensor)
 
         # ============================ implement here ============================ #
-        MSE_Loss = 
-        action_mean = 
-        actor_loss = 
+        MSE_Loss = torch.nn.MSELoss()
+        action_mean = action_dists.mean
+        actor_loss = MSE_Loss(action_mean, actions_tensor)
         # ======================================================================== #
         
         # update
