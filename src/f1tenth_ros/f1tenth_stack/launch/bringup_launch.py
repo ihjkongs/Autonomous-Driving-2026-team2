@@ -4,6 +4,8 @@ from launch.substitutions import Command
 from launch.substitutions import LaunchConfiguration
 from launch.actions import DeclareLaunchArgument
 from launch.actions import IncludeLaunchDescription
+from launch.conditions import IfCondition
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 import os
@@ -47,29 +49,35 @@ def generate_launch_description():
         default_value=mux_config,
         description='Descriptions for ackermann mux configs')
     
-    '''
-        TODO: uncomment this and add "agent_la" in LaunchDescription if you want to test your autonomous driving agent.
-    '''
-    # agent_la = DeclareLaunchArgument(
-    #     'agent_config',
-    #     default_value=agent_config,
-    #     description='Descriptions for reinforcement learning agent configs')
-    
-    '''
-        TODO: replace ld
-    '''
-    ld = LaunchDescription([vesc_la, sensors_la, mux_la])
-    #ld = LaunchDescription([vesc_la, sensors_la, mux_la, agent_la])
+    agent_la = DeclareLaunchArgument(
+        'agent_config', default_value=agent_config,
+        description='Policy model and observation configuration')
+    enable_agent_la = DeclareLaunchArgument(
+        'enable_agent', default_value='true',
+        description='Start the LiDAR policy node')
+    dry_run_la = DeclareLaunchArgument(
+        'dry_run', default_value='true',
+        description='Publish predictions only, without sending drive commands')
+    project_root_la = DeclareLaunchArgument(
+        'project_root',
+        default_value=os.path.expanduser('~/Autonomous-Driving-2026-team2'),
+        description='Repository root containing src/f1tenth')
+    agent_python_la = DeclareLaunchArgument(
+        'agent_python', default_value=sys.executable,
+        description='Python interpreter with ROS 2 and PyTorch available')
+    ld = LaunchDescription([
+        vesc_la, sensors_la, mux_la, agent_la, enable_agent_la,
+        dry_run_la, project_root_la, agent_python_la])
 
-    '''
-        TODO: uncomment this if you want to test your autonomous driving agent.
-    '''
-    # agent_node = Node(
-    #     package='f1tenth_stack',
-    #     executable='agent_node',
-    #     name='agent_node',
-    #     parameters=[LaunchConfiguration('agent_config')]
-    # )
+    agent_node = Node(
+        package='f1tenth_stack', executable='agent_node', name='agent_node',
+        prefix=LaunchConfiguration('agent_python'),
+        condition=IfCondition(LaunchConfiguration('enable_agent')),
+        output='screen',
+        parameters=[LaunchConfiguration('agent_config'), {
+            'project_root': LaunchConfiguration('project_root'),
+            'dry_run': ParameterValue(LaunchConfiguration('dry_run'), value_type=bool),
+        }])
     key_to_ackermann_node = Node(
         package='f1tenth_stack',
         executable='keyboard_to_ackermann_drive',
@@ -127,9 +135,6 @@ def generate_launch_description():
     ld.add_action(urg_node)
     ld.add_action(ackermann_mux_node)
     ld.add_action(static_tf_node)
-    '''
-        TODO: uncomment this if you want to test your autonomous driving agent.
-    '''
-    #ld.add_action(agent_node)
+    ld.add_action(agent_node)
 
     return ld

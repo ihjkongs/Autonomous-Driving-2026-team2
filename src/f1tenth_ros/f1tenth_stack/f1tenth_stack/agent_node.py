@@ -42,6 +42,7 @@ class AgentNode(Node):
         run = sim_path / 'results' / self.params['name'] / str(self.params['algo_idx'])
         with (run / 'backup/f1tenth.yaml').open() as stream:
             self.task = yaml.safe_load(stream)
+        self.obs_dim = self.task['obs_dim']
         if self.task['obs_dim'] != OBS_DIM or self.task['action_dim'] != 2:
             raise ValueError('This runner requires a 1080-input, 2-output policy')
         with (run / 'sim2real/agent_obs_scale.pkl').open('rb') as stream:
@@ -94,9 +95,7 @@ class AgentNode(Node):
                        (scan.header.stamp.sec * 10**9 + scan.header.stamp.nanosec)) / 1e9
                 if age > self.params['scan_timeout'] or age < -0.05:
                     raise ValueError('Stale scan or inconsistent ROS clock')
-            obs = scan_to_observation(
-                scan.ranges, scan.angle_min, scan.angle_increment,
-                scan.range_min, scan.range_max, self.params['laser_yaw_offset'])
+            obs = self.getObs(scan)
             norm = normalize_observation(obs, self.mean, self.var)
             started = time.monotonic()
             with torch.no_grad():
@@ -128,6 +127,13 @@ class AgentNode(Node):
             if time.monotonic() - self.last_error_log >= 1.0:
                 self.last_error_log = time.monotonic()
                 self.get_logger().error('Scan rejected: %s' % exc)
+
+    def getObs(self, scan):
+        # Training getObs is a single raw scan in metres (no scan history).
+        # Use LaserScan angles to match that simulator's 1080-ray angular grid.
+        return scan_to_observation(
+            scan.ranges, scan.angle_min, scan.angle_increment,
+            scan.range_min, scan.range_max, self.params['laser_yaw_offset'])
 
 
 def main(args=None):
