@@ -26,10 +26,6 @@ def _launch_agent(context):
         'project_root': LaunchConfiguration('project_root').perform(context),
         'dry_run': dry_run == 'true',
     })
-    for key in ('speed_limit', 'max_acceleration', 'max_deceleration'):
-        override = LaunchConfiguration(key).perform(context).strip()
-        if override:
-            parameters[key] = float(override)
     return [Node(
         package='f1tenth_stack', executable='agent_node', name='agent_node',
         prefix=LaunchConfiguration('agent_python'),
@@ -87,16 +83,9 @@ def generate_launch_description():
     agent_python_la = DeclareLaunchArgument(
         'agent_python', default_value=sys.executable,
         description='Python interpreter with ROS 2 and PyTorch available')
-    speed_limit_la = DeclareLaunchArgument(
-        'speed_limit', default_value='', description='Override speed cap in m/s')
-    acceleration_la = DeclareLaunchArgument(
-        'max_acceleration', default_value='', description='Override command acceleration in m/s^2')
-    deceleration_la = DeclareLaunchArgument(
-        'max_deceleration', default_value='', description='Override normal command deceleration in m/s^2')
     ld = LaunchDescription([
         vesc_la, sensors_la, mux_la, agent_la, enable_agent_la,
-        dry_run_la, project_root_la, agent_python_la,
-        speed_limit_la, acceleration_la, deceleration_la])
+        dry_run_la, project_root_la, agent_python_la])
 
     agent_node = OpaqueFunction(
         function=_launch_agent,

@@ -17,7 +17,6 @@ from ackermann_msgs.msg import AckermannDriveStamped
 from f1tenth_stack.policy_input import (
     OBS_DIM, scan_to_observation, normalize_observation, decode_action,
 )
-from f1tenth_stack.speed_limiter import SpeedLimiter
 
 
 class AgentNode(Node):
@@ -27,25 +26,15 @@ class AgentNode(Node):
             'project_root': str(Path.home() / 'Autonomous-Driving-2026-team2'),
             'name': 'imitation', 'algo_idx': 2, 'scan_topic': '/scan',
             'drive_topic': '/drive', 'prediction_topic': '/agent/prediction',
-            'command_preview_topic': '/agent/command_preview',
             'dry_run': True, 'device': 'auto', 'laser_yaw_offset': 0.0,
             'speed_limit': 1.0, 'scan_timeout': 0.2,
-            'max_acceleration': 2.0, 'max_deceleration': 3.0,
         }
         for key, value in defaults.items():
             self.declare_parameter(key, value)
         self.params = {key: self.get_parameter(key).value for key in defaults}
         self.dry_run = self.params['dry_run']
-        if not all(np.isfinite(self.params[k]) and self.params[k] > 0
-                   for k in ('speed_limit', 'scan_timeout')):
-            raise ValueError('speed_limit and scan_timeout must be finite and positive')
-        topics = [self.params[k] for k in (
-            'drive_topic', 'prediction_topic', 'command_preview_topic')]
-        if len({t.strip('/') for t in topics}) != 3:
-            raise ValueError('Drive and diagnostic topics must be distinct')
-        self.speed_limiter = SpeedLimiter(
-            self.params['max_acceleration'], self.params['max_deceleration'],
-            max_dt=min(0.1, self.params['scan_timeout']))
+        if self.params['speed_limit'] <= 0 or self.params['scan_timeout'] <= 0:
+            raise ValueError('speed_limit and scan_timeout must be positive')
         sim_path = Path(self.params['project_root']).expanduser().resolve() / 'src/f1tenth'
         if not sim_path.is_dir():
             raise ValueError('Set project_root to the repository containing src/f1tenth')
@@ -72,8 +61,6 @@ class AgentNode(Node):
         # No publisher to the vehicle command topic exists in dry-run mode.
         self.pred_pub = self.create_publisher(
             AckermannDriveStamped, self.params['prediction_topic'], 1)
-        self.preview_pub = self.create_publisher(
-            AckermannDriveStamped, self.params['command_preview_topic'], 1)
         self.drive_pub = None
         if not self.dry_run:
             self.drive_pub = self.create_publisher(
@@ -86,20 +73,14 @@ class AgentNode(Node):
             LaserScan, self.params['scan_topic'], self.scan_callback, qos_profile_sensor_data)
         self.create_timer(0.05, self.watchdog)
         self.get_logger().info(
-            'Model loaded on %s; dry_run=%s; waiting for %s. Predictions: %s; '
-            'speed_limit=%.2f m/s, acceleration=%.2f, deceleration=%.2f m/s^2' % (
+            'Model loaded on %s; dry_run=%s; waiting for %s. Predictions: %s' % (
                 self.device, self.dry_run, self.params['scan_topic'],
-                self.params['prediction_topic'], self.params['speed_limit'],
-                self.params['max_acceleration'], self.params['max_deceleration']))
+                self.params['prediction_topic']))
 
     def stop(self):
-        # Stops bypass ordinary deceleration limiting, including in dry-run.
-        self.speed_limiter.reset()
-        self.last_valid_scan = None
-        msg = AckermannDriveStamped()
-        msg.header.stamp = self.get_clock().now().to_msg()
-        self.preview_pub.publish(msg)
         if self.drive_pub is not None:
+            msg = AckermannDriveStamped()
+            msg.header.stamp = self.get_clock().now().to_msg()
             self.drive_pub.publish(msg)
 
     def watchdog(self):
@@ -124,33 +105,22 @@ class AgentNode(Node):
                 action, self.task['max_steer'], self.task['min_speed'], self.task['max_speed'])
             if time.monotonic() - started > self.params['scan_timeout']:
                 raise ValueError('Policy inference exceeded scan_timeout')
-            now = time.monotonic()
-            if (self.last_valid_scan is not None and
-                    now - self.last_valid_scan > self.params['scan_timeout']):
-                self.stop()
-            target_speed = min(speed, self.params['speed_limit'])
-            command_speed = self.speed_limiter.update(target_speed, now)
-            self.last_valid_scan = now
+            self.last_valid_scan = time.monotonic()
             self.scan_count += 1
             msg = AckermannDriveStamped()
             msg.header = scan.header
             msg.drive.steering_angle = steer
             msg.drive.speed = speed
             self.pred_pub.publish(msg)
-            command = AckermannDriveStamped()
-            command.header = scan.header
-            command.drive.steering_angle = steer
-            command.drive.speed = command_speed
-            self.preview_pub.publish(command)
             if self.drive_pub is not None:
-                self.drive_pub.publish(command)
+                msg.drive.speed = min(speed, self.params['speed_limit'])
+                self.drive_pub.publish(msg)
             if time.monotonic() - self.last_log >= 1.0:
                 self.last_log = time.monotonic()
                 self.get_logger().info(
-                    'scan=%d rays=%d frame=%s steer=%.3f rad speed=%.3f m/s '
-                    'target_speed=%.3f command_speed=%.3f m/s dry_run=%s' % (
+                    'scan=%d rays=%d frame=%s steer=%.3f rad speed=%.3f m/s dry_run=%s' % (
                         self.scan_count, len(scan.ranges), scan.header.frame_id,
-                        steer, speed, target_speed, command_speed, self.dry_run))
+                        steer, speed, self.dry_run))
         except Exception as exc:
             self.last_valid_scan = None
             self.stop()

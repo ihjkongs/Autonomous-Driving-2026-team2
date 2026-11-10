@@ -8,5 +8,5 @@ agent_node:
     dry_run: true
     device: auto
     laser_yaw_offset: 0.0
-    speed_limit: 1.0
+    speed_limit: 4.0
     scan_timeout: 0.2
