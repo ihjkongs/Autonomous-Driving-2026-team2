@@ -1,0 +1,10 @@
+# Shared, conservative Pure Pursuit expert for all 23 tracks.
+# Coordinates and speed limits remain in SI units (m, s, rad).
+reference: centerline
+tlad: 1.0
+lookahead_time: 0.0
+max_lookahead: 1.0
+vgain: 0.5
+speed_cap: 2.5
+min_speed: 1.0
+lateral_acceleration: 1.5

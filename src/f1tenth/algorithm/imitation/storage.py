@@ -24,11 +24,10 @@ class RolloutBuffer:
         
     @torch.no_grad()
     def getBatches(self):
-        indices = np.random.permutation(self.total_steps)[:self.batch_size]
+        indices = np.random.permutation(len(self.states))[:self.batch_size]
 
         # convert to tensor
         states_tensor = torch.tensor(self.states[indices], device=self.device, dtype=torch.float32)
         actions_tensor = torch.tensor(self.actions[indices], device=self.device, dtype=torch.float32)
 
         return states_tensor, actions_tensor
-    

@@ -6,10 +6,11 @@ import argparse
 import os
 import time
 import random
+import json
+from pathlib import Path
 import numpy as np
 import torch
 import wandb
-import pickle
 from ruamel.yaml import YAML
 from easydict import EasyDict
 
@@ -18,28 +19,21 @@ import gymnasium as gym
 from utils.env import F1Wrapper
 from utils.logger import Logger
 from utils.video import create_video
-from utils.rule_based import PurePursuitPlanner
 from utils.color import cprint
 
 from algorithm import algo_dict
 
-os.environ['CUDA_LAUNCH_BLOCKING'] = '1'        # for debug
+# CUDA kernels run asynchronously during normal training.
 EPS = 1e-8
 
-MAPS = ['Sochi', 'Spa', 'Nuerburgring', 'Monza', 'Melbourne', 'Austin', 
-        'Silverstone', 'Sakhir', 'IMS', 'Budapest', 'Montreal', 'Sepang', 
-        'Oschersleben', 'YasMarina', 'MoscowRaceway', 'Zandvoort', 'Catalunya', 
-        'BrandsHatch', 'Shanghai', 'Hockenheim', 'SaoPaulo', 'Spielberg', 'MexicoCity']
+from utils.expert_config import MAPS, load_expert_config
+from utils.expert_data import load_verified, collect_verified
+from utils.policy_evaluation import evaluate_policy, selection_key
 
 EVAL_MAPS = ['Sochi', 'IMS', 'Catalunya', 'Zandvoort', 'Silverstone', 'SaoPaulo',       # easy
              'YasMarina', 'MoscowRaceway', 'Shanghai', 'MexicoCity', 'Montreal']        # hard
 
-PARAM = {
-    "mass": 3.463388126201571,
-    "lf": 0.15597534362552312,
-    "tlad": 0.82461887897713965,
-    "vgain": 0.5,
-}
+PARAM = load_expert_config()
 
 def getParser():
     parser = argparse.ArgumentParser(description='F1tenth.')
@@ -58,8 +52,11 @@ def getParser():
     parser.add_argument('--log_freq', type=int, default=int(1e4), help='# of time steps for logging.')
     parser.add_argument('--save_freq', type=int, default=int(5e5), help='# of time steps for save.')
     # train
-    parser.add_argument('--epochs', type=int, default=50, help='# of epochs for update.')
-    parser.add_argument('--threshold', type=int, default=200, help='minimum steps of expert rollout.')
+    parser.add_argument('--epochs', type=int, default=5000, help='Number of minibatch gradient updates, not full dataset passes.')
+    parser.add_argument('--eval_interval', type=int, default=1000, help='Updates between fixed-suite policy evaluations.')
+    parser.add_argument('--eval_workers', type=int, default=6)
+    parser.add_argument('--expert_data', default='expert_data_verified.pkl', help='Verified expert dataset path.')
+    parser.add_argument('--expert_max_steps', type=int, default=20000, help='Per-lap collection timeout.')
     parser.add_argument('--total_steps', type=int, default=int(1e5), help='total interaction steps.')
     # for eval
     parser.add_argument('--eval_num', type=int, default=5, help='# of evaluation epochs.')
@@ -86,7 +83,7 @@ def eval(args, env, agent, name, eval_num=1):
             done = terminate or truncate
             _frames.append(env.render())
 
-        if truncate or info['checkpoint_done']:
+        if bool(np.asarray(info['checkpoint_done']).all()) and not env.collision:
             print('[Success]   \t{:^15}\t{:>5s}'.format(env._env.map, f'{env._env.lap_times[0]:.2f}'))
         else:
             print('[Fail]      \t{:^15}\t{:>5s}'.format(env._env.map, f'{env._env.lap_times[0]:.2f}'))
@@ -104,144 +101,104 @@ def eval(args, env, agent, name, eval_num=1):
     return step_mean, score_mean
 
 def train(args):
-    # backup
-    copyfile('configs/task/f1tenth.yaml', f'{args.backup_dir}/f1tenth.yaml')
-    copyfile('configs/task/dynamic.yaml', f'{args.backup_dir}/dynamic.yaml')
-    copyfile(f'configs/algorithm/imitation.yaml', f'{args.backup_dir}/imitation.yaml')
-
-    # for random seed
-    np.random.seed(args.seed)
-    random.seed(args.seed)    
-    torch.manual_seed(args.seed)
-    torch.cuda.manual_seed(args.seed)
+    # Keep each experiment isolated, including normalization statistics.
+    if (Path(args.save_dir) / 'checkpoint/model.pt').exists():
+        raise FileExistsError('Choose a new --algo_idx; an existing model will not be overwritten.')
+    if args.epochs <= 0 or args.eval_interval <= 0 or args.eval_workers <= 0:
+        raise ValueError('Training and evaluation limits must be positive.')
+    for source in ['configs/task/f1tenth.yaml', 'configs/task/dynamic.yaml',
+                   'configs/expert.yaml', 'configs/algorithm/imitation.yaml']:
+        copyfile(source, str(Path(args.backup_dir) / Path(source).name))
+    for source in ['main_il.py', 'algorithm/imitation/agent.py',
+                   'algorithm/common/models.py', 'utils/policy_evaluation.py']:
+        target = Path(args.backup_dir) / 'sources' / source
+        target.parent.mkdir(parents=True, exist_ok=True)
+        copyfile(source, str(target))
+    random.seed(args.seed); np.random.seed(args.seed); torch.manual_seed(args.seed)
+    if torch.cuda.is_available(): torch.cuda.manual_seed_all(args.seed)
+    torch.set_num_threads(1)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-
-    # define train environment
-    train_env = F1Wrapper(args=args, maps=MAPS)
-
-    # define eval environment
-    render_mode = None
-    if args.live_video:
-        render_mode = "human_fast"
-    if args.save_video:
-        render_mode = "rgb_array"
-    eval_env = F1Wrapper(args=args, maps=EVAL_MAPS, render_mode=render_mode)
-
-    # set args value for env
-    args.action_bound_min = train_env.action_space.low
-    args.action_bound_max = train_env.action_space.high
-
-    # define agent
-    args.train_frequency = args.batch_size      # for code compatibility
+    args.action_bound_min, args.action_bound_max = -np.ones(2), np.ones(2)
+    args.train_frequency = args.batch_size
     agent = algo_dict['imitation'](args)
-    agent.load(args.model_num)
-
-    # wandb
+    Path(agent.checkpoint_dir).mkdir(parents=True, exist_ok=True)
+    Path(agent.sim2real_dir).mkdir(parents=True, exist_ok=True)
+    agent.actor.initialize()
+    loggers = {key: Logger(args.log_dir, key) for key in
+               ('actor_loss', 'score', 'ep_len', 'completion_rate', 'lap_time')}
     if args.wandb:
-        wandb.init(project='[F1tenth] Baselines', config=args)
-        if args.comment is not None:
-            wandb.run.name = f"{args.name}/{args.comment}"
-        else:
-            wandb.run.name = f"{args.name}/seed_{args.algo_idx}"
-
-    # for log
-    log_list = deepcopy(agent.log_list)
-    rollout_logger = {arg: Logger(args.log_dir, arg) for arg in log_list['rollout']}
-    train_logger = {arg: Logger(args.log_dir, arg) for arg in log_list['train']}
-
-    # ======= collect trajectories ======= #
-    expert_data_path = 'expert_data.pkl'
-    if os.path.isfile(expert_data_path):
-        cprint(f'\n[Rollout] load.', bold=True, underline=True)
-        with open(expert_data_path, 'rb') as f:
-            expert_data = pickle.load(f)
-            observations = expert_data['observations']
-            actions = expert_data['actions']
+        wandb.init(project='[F1tenth] Baselines', config=dict(args),
+                   name=f'{args.name}/{args.algo_idx}')
+    if Path(args.expert_data).is_file():
+        data = load_verified(args.expert_data, args, MAPS)
     else:
-        cprint(f'\n[Rollout] start.', bold=True, underline=True)
-        total_step = 0
-        observations, actions = [], []
-        while total_step < args.total_steps:
-
-            observation, info = train_env.reset()
-            track = train_env._env.unwrapped.track
-            planner = PurePursuitPlanner(track=track, wb=0.17145 + 0.15875)
-            ep_observations, ep_actions = [], []
-            ep_step, ep_reward = 0, 0
-
-            terminate = False
-            while ep_step < args.max_episode_steps and not terminate:
-                speed, steer = planner.plan(info['obs_dict'], PARAM)
-                action = np.clip([steer/(train_env.max_steer+EPS), speed/train_env.max_speed], -np.ones(2), np.ones(2))
-                ep_observations.append(observation)
-                ep_actions.append(action)
-
-                observation, reward, terminate, truncate, info = train_env.step(action)
-                ep_step += 1
-                ep_reward += reward
-
-            if ep_step > args.threshold:
-                observations.append(ep_observations)
-                actions.append(ep_actions)
-                total_step += ep_step
-                print(f'[Total step] {total_step}: {ep_step}/{ep_reward:.2f}')
-
-        observations = np.concatenate(observations, axis=0)
-        actions = np.concatenate(actions, axis=0)
-        with open('expert_data.pkl', 'wb') as f:
-            pickle.dump({'observations':observations, 'actions':actions}, f)
-    agent.step(observations, actions)
-    train_env.close()
-    # ==================================== #
-
-    # ======= train ======= #
-    best_score = -np.inf
-    cprint(f'\n[Train] start.', bold=True, underline=True)
-    for epoch in range(1, args.epochs+1):
-        total_step = epoch*args.batch_size
-        train_results = agent.train()
-
-        # logging
-        for key, value in train_results.items():
-            if key in log_list['train']:
-                train_logger[key].write(epoch, value)
-
-        log_data = {
-                'rollout/step': total_step,
-                'train/best': 0         # if best model updated, becomes True
-            }
-        
-        # evaluation
-        eval_len, eval_score = eval(args, eval_env, agent, name=epoch, eval_num=args.eval_num)
-        rollout_logger['score'].write(eval_len, eval_score)
-        rollout_logger['ep_len'].write(eval_len, eval_len)
-
-        # save best model
-        if eval_score > best_score:
-            cprint(f'[{args.name}] save best model.', bold=True, color="green")
-            agent.save(log=False)
-            best_score = eval_score
-            log_data['train/best'] = 1
-
-        # logger
-        for arg, logger in rollout_logger.items():
-            if arg == 'step': continue
-            log_data[f'rollout/{arg}'] = logger.get_avg()
-        for arg, logger in train_logger.items():
-            log_data[f'train/{arg}'] = logger.get_avg()
-        print(log_data)
-        if args.wandb:
-            wandb.log(log_data)
-
-        # save
-        agent.save(model_num=int(total_step))
-        for logger in rollout_logger.values():
-            logger.save()
-        for logger in train_logger.values():
-            logger.save()
-
-    eval_env.close()
+        data = collect_verified(args, MAPS, args.expert_data, args.total_steps, args.expert_max_steps)
+    metadata = data['metadata']
+    (Path(args.backup_dir) / 'dataset_metadata.json').write_text(json.dumps(metadata, indent=2)+'\n')
+    agent.step(data['observations'], data['actions'])
+    count = len(data['actions'])
+    del data
+    eval_args = deepcopy(args); eval_args.max_episode_steps = args.expert_max_steps
+    best_key, best_update, best_summary = None, None, None
+    losses = []
+    start = time.monotonic()
+    with (Path(args.save_dir) / 'training_metrics.jsonl').open('w') as stream:
+        for update in range(1, args.epochs+1):
+            metrics = agent.train(); losses.append(metrics['actor_loss'])
+            loggers['actor_loss'].write(update, metrics['actor_loss'])
+            if update % 100 == 0:
+                row = dict(update=update, mean_loss_last_100=float(np.mean(losses[-100:])),
+                           elapsed_s=time.monotonic()-start)
+                stream.write(json.dumps(row)+'\n');stream.flush()
+                print('[Train]', json.dumps(row), flush=True)
+                if args.wandb:
+                    wandb.log({'train/actor_loss': row['mean_loss_last_100']}, step=update)
+            if update % args.eval_interval != 0 and update != args.epochs:
+                continue
+            # Candidate uses its own weights; all candidates see identical starts.
+            candidate = Path(args.save_dir) / 'candidate_actor.pt'
+            torch.save(agent.actor, str(candidate))
+            agent.obs_rms.save(args.save_dir)
+            summary, records = evaluate_policy(eval_args, candidate,
+                Path(args.save_dir) / 'agent_obs_scale.pkl', MAPS, [17, 19],
+                ['cl_grid_static', 'cl_random_static'],
+                Path(args.save_dir) / 'selection' / str(update), workers=args.eval_workers)
+            if summary['counts']['error']:
+                raise RuntimeError('Policy evaluation infrastructure failed; inspect episode errors.')
+            rank = selection_key(summary)
+            if best_key is None or rank > best_key:
+                best_key, best_update, best_summary = rank, update, summary
+                agent.save(log=False)
+            agent.save(model_num=update, log=False)
+            row = dict(update=update, evaluation=summary, selected_update=best_update,
+                       selected_rank=list(best_key))
+            stream.write(json.dumps(row)+'\n');stream.flush()
+            print('[Selection]', json.dumps(row), flush=True)
+            loggers['score'].write(update, summary['completion_rate'])
+            loggers['completion_rate'].write(update, summary['completion_rate'])
+            loggers['ep_len'].write(update, float(np.mean([r['steps'] for r in records])))
+            loggers['lap_time'].write(update, summary['mean_lap_s'])
+            for logger in loggers.values():
+                logger.save()
+            if args.wandb:
+                wandb.log({'eval/completion_rate': summary['completion_rate'],
+                           'eval/mean_lap_s': summary['mean_lap_s']}, step=update)
+    candidate.unlink(missing_ok=True)
+    result = dict(updates=args.epochs, examples=count,
+                  equivalent_dataset_passes=args.epochs*args.batch_size/count,
+                  first_100_mean_loss=float(np.mean(losses[:100])),
+                  last_100_mean_loss=float(np.mean(losses[-100:])),
+                  best_update=best_update, selection=best_summary,
+                  selection_rule='Completion rate, then lower completed-lap time, then progress.',
+                  selection_seeds=[17, 19], selection_modes=['cl_grid_static', 'cl_random_static'],
+                  input='Single LiDAR scan only (1080 ranges).',
+                  device=str(args.device), elapsed_s=time.monotonic()-start,
+                  dataset_signature=metadata['signature'])
+    (Path(args.save_dir)/'training_summary.json').write_text(json.dumps(result,indent=2)+'\n')
+    print('[Training finished]',json.dumps(result),flush=True)
+    if args.wandb:
+        wandb.finish()
 
 
 def test(args):

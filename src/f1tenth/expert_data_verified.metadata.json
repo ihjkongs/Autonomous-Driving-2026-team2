@@ -1,0 +1,389 @@
+{
+  "signature": "c7c7b80de4f5515b01a5f941b9416c1e9e2c16580b4f95719a65670828c19512",
+  "parameters": {
+    "reference": "centerline",
+    "tlad": 1.2,
+    "lookahead_time": 0.0,
+    "max_lookahead": 1.2,
+    "vgain": 0.5,
+    "speed_cap": 4.0,
+    "min_speed": 1.0,
+    "lateral_acceleration": 3.5
+  },
+  "maps": [
+    "Sochi",
+    "Spa",
+    "Nuerburgring",
+    "Monza",
+    "Melbourne",
+    "Austin",
+    "Silverstone",
+    "Sakhir",
+    "IMS",
+    "Budapest",
+    "Montreal",
+    "Sepang",
+    "Oschersleben",
+    "YasMarina",
+    "MoscowRaceway",
+    "Zandvoort",
+    "Catalunya",
+    "BrandsHatch",
+    "Shanghai",
+    "Hockenheim",
+    "SaoPaulo",
+    "Spielberg",
+    "MexicoCity"
+  ],
+  "seed": 73,
+  "episodes": [
+    {
+      "map": "Sochi",
+      "cycle": 0,
+      "start": 0,
+      "stop": 4814,
+      "outcome": "complete",
+      "steps": 4814,
+      "initial_pose": [
+        -7.841769218444824,
+        -12.315300941467285,
+        4.145452801381246
+      ],
+      "elapsed_s": 120.37500000001025,
+      "progress_fraction": 0.9993622265391966
+    },
+    {
+      "map": "Spa",
+      "cycle": 0,
+      "start": 4814,
+      "stop": 10498,
+      "outcome": "complete",
+      "steps": 5684,
+      "initial_pose": [
+        1.7353262901306152,
+        -2.745918035507202,
+        2.135890483856201
+      ],
+      "elapsed_s": 142.12500000001518,
+      "progress_fraction": 0.9995375032478014
+    },
+    {
+      "map": "Nuerburgring",
+      "cycle": 0,
+      "start": 10498,
+      "stop": 15111,
+      "outcome": "complete",
+      "steps": 4613,
+      "initial_pose": [
+        -54.631595611572266,
+        -79.60626220703125,
+        3.9054649511920374
+      ],
+      "elapsed_s": 115.3500000000091,
+      "progress_fraction": 0.9993888531468618
+    },
+    {
+      "map": "Monza",
+      "cycle": 0,
+      "start": 15111,
+      "stop": 19661,
+      "outcome": "complete",
+      "steps": 4550,
+      "initial_pose": [
+        94.35903930664062,
+        125.52011108398438,
+        4.867804948483602
+      ],
+      "elapsed_s": 113.77500000000875,
+      "progress_fraction": 0.9994517856965777
+    },
+    {
+      "map": "Melbourne",
+      "cycle": 0,
+      "start": 19661,
+      "stop": 24536,
+      "outcome": "complete",
+      "steps": 4875,
+      "initial_pose": [
+        13.840536117553711,
+        70.3211669921875,
+        4.532590095196859
+      ],
+      "elapsed_s": 121.90000000001059,
+      "progress_fraction": 0.9995028951243472
+    },
+    {
+      "map": "Austin",
+      "cycle": 0,
+      "start": 24536,
+      "stop": 28949,
+      "outcome": "complete",
+      "steps": 4413,
+      "initial_pose": [
+        37.37505340576172,
+        -11.317337989807129,
+        1.219512701034546
+      ],
+      "elapsed_s": 110.35000000000797,
+      "progress_fraction": 0.9993050436691894
+    },
+    {
+      "map": "Silverstone",
+      "cycle": 0,
+      "start": 28949,
+      "stop": 33646,
+      "outcome": "complete",
+      "steps": 4697,
+      "initial_pose": [
+        59.91843795776367,
+        28.894760131835938,
+        0.8980984687805176
+      ],
+      "elapsed_s": 117.45000000000958,
+      "progress_fraction": 0.9994845963196998
+    },
+    {
+      "map": "Sakhir",
+      "cycle": 0,
+      "start": 33646,
+      "stop": 38222,
+      "outcome": "complete",
+      "steps": 4576,
+      "initial_pose": [
+        1.6140941381454468,
+        35.56338882446289,
+        1.524763584136963
+      ],
+      "elapsed_s": 114.4250000000089,
+      "progress_fraction": 0.9993083388884659
+    },
+    {
+      "map": "IMS",
+      "cycle": 0,
+      "start": 38222,
+      "stop": 41160,
+      "outcome": "complete",
+      "steps": 2938,
+      "initial_pose": [
+        -0.8962540626525879,
+        43.588294982910156,
+        4.7396456638919275
+      ],
+      "elapsed_s": 73.47499999999958,
+      "progress_fraction": 0.9990920257297072
+    },
+    {
+      "map": "Budapest",
+      "cycle": 0,
+      "start": 41160,
+      "stop": 45307,
+      "outcome": "complete",
+      "steps": 4147,
+      "initial_pose": [
+        27.79296875,
+        -0.508791983127594,
+        2.3855512142181396
+      ],
+      "elapsed_s": 103.70000000000645,
+      "progress_fraction": 0.9994034254947413
+    },
+    {
+      "map": "Montreal",
+      "cycle": 0,
+      "start": 45307,
+      "stop": 48331,
+      "outcome": "complete",
+      "steps": 3024,
+      "initial_pose": [
+        0.9270747303962708,
+        -21.99872398376465,
+        3.0082855224609375
+      ],
+      "elapsed_s": 75.62500000000007,
+      "progress_fraction": 0.9990613769635016
+    },
+    {
+      "map": "Sepang",
+      "cycle": 0,
+      "start": 48331,
+      "stop": 53369,
+      "outcome": "complete",
+      "steps": 5038,
+      "initial_pose": [
+        -43.8767204284668,
+        -25.32231903076172,
+        2.4266669750213623
+      ],
+      "elapsed_s": 125.97500000001152,
+      "progress_fraction": 0.9994221518741961
+    },
+    {
+      "map": "Oschersleben",
+      "cycle": 0,
+      "start": 53369,
+      "stop": 56141,
+      "outcome": "complete",
+      "steps": 2772,
+      "initial_pose": [
+        10.706368446350098,
+        10.35137939453125,
+        6.1511083284961146
+      ],
+      "elapsed_s": 69.32499999999864,
+      "progress_fraction": 0.9990428755389589
+    },
+    {
+      "map": "YasMarina",
+      "cycle": 0,
+      "start": 56141,
+      "stop": 60384,
+      "outcome": "complete",
+      "steps": 4243,
+      "initial_pose": [
+        13.761863708496094,
+        38.878265380859375,
+        1.2660614252090454
+      ],
+      "elapsed_s": 106.100000000007,
+      "progress_fraction": 0.9992530206645273
+    },
+    {
+      "map": "MoscowRaceway",
+      "cycle": 0,
+      "start": 60384,
+      "stop": 63822,
+      "outcome": "complete",
+      "steps": 3438,
+      "initial_pose": [
+        -81.59801483154297,
+        35.418060302734375,
+        4.574293796216146
+      ],
+      "elapsed_s": 85.97500000000242,
+      "progress_fraction": 0.9992625038737798
+    },
+    {
+      "map": "Zandvoort",
+      "cycle": 0,
+      "start": 63822,
+      "stop": 67831,
+      "outcome": "complete",
+      "steps": 4009,
+      "initial_pose": [
+        34.03916931152344,
+        -3.7130258083343506,
+        6.139230791722433
+      ],
+      "elapsed_s": 100.25000000000567,
+      "progress_fraction": 0.9992090712182444
+    },
+    {
+      "map": "Catalunya",
+      "cycle": 0,
+      "start": 67831,
+      "stop": 72123,
+      "outcome": "complete",
+      "steps": 4292,
+      "initial_pose": [
+        -66.9068374633789,
+        -37.72492218017578,
+        1.0034263134002686
+      ],
+      "elapsed_s": 107.32500000000728,
+      "progress_fraction": 0.9993066123383585
+    },
+    {
+      "map": "BrandsHatch",
+      "cycle": 0,
+      "start": 72123,
+      "stop": 75755,
+      "outcome": "complete",
+      "steps": 3632,
+      "initial_pose": [
+        8.722439765930176,
+        -64.33866882324219,
+        1.4694006443023682
+      ],
+      "elapsed_s": 90.82500000000353,
+      "progress_fraction": 0.9993204625728178
+    },
+    {
+      "map": "Shanghai",
+      "cycle": 0,
+      "start": 75755,
+      "stop": 80898,
+      "outcome": "complete",
+      "steps": 5143,
+      "initial_pose": [
+        -21.258731842041016,
+        68.48918151855469,
+        3.8139660994159144
+      ],
+      "elapsed_s": 128.6000000000121,
+      "progress_fraction": 0.9993909755496109
+    },
+    {
+      "map": "Hockenheim",
+      "cycle": 0,
+      "start": 80898,
+      "stop": 84638,
+      "outcome": "complete",
+      "steps": 3740,
+      "initial_pose": [
+        43.81243896484375,
+        32.103694915771484,
+        5.976827804242269
+      ],
+      "elapsed_s": 93.52500000000414,
+      "progress_fraction": 0.9993392459705148
+    },
+    {
+      "map": "SaoPaulo",
+      "cycle": 0,
+      "start": 84638,
+      "stop": 88207,
+      "outcome": "complete",
+      "steps": 3569,
+      "initial_pose": [
+        14.224519729614258,
+        11.340962409973145,
+        3.9426215330706995
+      ],
+      "elapsed_s": 89.25000000000317,
+      "progress_fraction": 0.9992042775209826
+    },
+    {
+      "map": "Spielberg",
+      "cycle": 0,
+      "start": 88207,
+      "stop": 91713,
+      "outcome": "complete",
+      "steps": 3506,
+      "initial_pose": [
+        -41.178672790527344,
+        0.5964566469192505,
+        2.1859912872314453
+      ],
+      "elapsed_s": 87.67500000000281,
+      "progress_fraction": 0.9991017889895766
+    },
+    {
+      "map": "MexicoCity",
+      "cycle": 0,
+      "start": 91713,
+      "stop": 95463,
+      "outcome": "complete",
+      "steps": 3750,
+      "initial_pose": [
+        36.210845947265625,
+        -41.427024841308594,
+        3.040675163269043
+      ],
+      "elapsed_s": 93.7750000000042,
+      "progress_fraction": 0.9993495526025412
+    }
+  ],
+  "reset_mode": "cl_random_static",
+  "collection_max_steps": 20000,
+  "acceptance": "Whole lap, no collision, checkpoint and >=90% forward progress"
+}

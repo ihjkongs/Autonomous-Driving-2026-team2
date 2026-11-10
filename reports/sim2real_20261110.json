@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-10",
+  "timezone": "Asia/Seoul",
+  "final_configuration": {
+    "speed_to_erpm_gain": 2500.0,
+    "speed_to_erpm_offset": -325.0,
+    "speed_limit_mps": 4.0,
+    "command_max_acceleration_mps2": 2.0,
+    "command_max_deceleration_mps2": 3.0,
+    "default_dry_run": true,
+    "model": "src/f1tenth/results/imitation/2/sim2real/actor.pt",
+    "model_and_normalizer_changed": false,
+    "speed_pid_kp_reported_by_user": 0.004,
+    "speed_pid_note": "Stored on VESC, not configured by this repository."
+  },
+  "validation": {
+    "automated_tests_passed": 48,
+    "production_policy_and_launch_match_revision": "84da800",
+    "final_vehicle_trial": "Pending user execution; do not assume successful completion."
+  },
+  "recordings": [
+    {
+      "name": "drive_smooth_check_20261110_193811",
+      "gain": 2500,
+      "limiter": true,
+      "received_fault_onsets": 0,
+      "recording_duration_s": 35.053,
+      "note": "No faults in this segment; starts during motion; does not prove collision-free repeated laps."
+    },
+    {
+      "name": "drive_gain3200_check_20261110_194959",
+      "gain": 3200,
+      "limiter": true,
+      "user_reports_collision": true,
+      "note": "VESC telemetry ended before bag end; fault-free received samples cannot exclude later faults."
+    },
+    {
+      "name": "drive_gain2800_check_20261110_195619",
+      "gain": 2800,
+      "limiter": true,
+      "user_reports_collision": true,
+      "received_fault_onsets": 0,
+      "note": "Close front returns with positive commands; limiter delayed some requested deceleration."
+    },
+    {
+      "name": "drive_no_limiter_gain2800_20261110_201244",
+      "gain": 2800,
+      "limiter": false,
+      "user_reports_collision": true,
+      "received_fault_onsets": 1,
+      "note": "878 model/command pairs identical; close-front positive commands persisted; VESC telemetry ended before bag end."
+    }
+  ],
+  "known_limitations": [
+    "No validated obstacle-triggered automatic stop; policy minimum target speed is 1 m/s.",
+    "Normal deceleration limiting may delay slowing before a corner or obstacle.",
+    "Invalid-scan stops currently clear when valid scans resume; no latched rearm.",
+    "No VESC-state freshness watchdog in the policy node.",
+    "Ground speed and physical steering angle require independent calibration.",
+    "Small positive servo-command saturation was observed.",
+    "Raw datasets, videos and rosbag files remain local and are not included in this commit."
+  ],
+  "local_analysis_parent": "/home/jiwon/projects",
+  "next_checks": [
+    "Calibrate physical steering angle and independent ground speed.",
+    "Review collision-stop/rearm and stale-controller telemetry behavior before higher-speed testing."
+  ]
+}

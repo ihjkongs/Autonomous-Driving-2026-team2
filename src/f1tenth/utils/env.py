@@ -18,6 +18,9 @@ from gymnasium import spaces
 
 EPS = 1e-8
 
+def normalize_speed(value, minimum, maximum):
+    return 2.0 * (value - minimum) / (maximum - minimum) - 1.0
+
 def unnormalize_speed(value, minimum, maximum):
     temp_a = (maximum - minimum)/2.0
     temp_b = (maximum + minimum)/2.0

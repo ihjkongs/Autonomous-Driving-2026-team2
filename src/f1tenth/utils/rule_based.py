@@ -20,133 +20,64 @@ def nearest_point_on_trajectory(point, trajectory):
     trajectory: Nx2 matrix of (x,y) trajectory waypoints
         - these must be unique. If they are not unique, a divide by 0 error will destroy the world
     """
-    diffs = trajectory[1:, :] - trajectory[:-1, :]
-    l2s = diffs[:, 0] ** 2 + diffs[:, 1] ** 2
-    # this is equivalent to the elementwise dot product
-    # dots = np.sum((point - trajectory[:-1,:]) * diffs[:,:], axis=1)
-    dots = np.empty((trajectory.shape[0] - 1,))
-    for i in range(dots.shape[0]):
-        dots[i] = np.dot((point - trajectory[i, :]), diffs[i, :])
-    t = dots / l2s
-    t[t < 0.0] = 0.0
-    t[t > 1.0] = 1.0
-    # t = np.clip(dots / l2s, 0.0, 1.0)
-    projections = trajectory[:-1, :] + (t * diffs.T).T
-    # dists = np.linalg.norm(point - projections, axis=1)
-    dists = np.empty((projections.shape[0],))
-    for i in range(dists.shape[0]):
-        temp = point - projections[i]
-        dists[i] = np.sqrt(np.sum(temp * temp))
-    min_dist_segment = np.argmin(dists)
-    return (
-        projections[min_dist_segment],
-        dists[min_dist_segment],
-        t[min_dist_segment],
-        min_dist_segment,
-    )
+    best_distance_squared = np.inf
+    best_i, best_t = 0, 0.0
+    best_x, best_y = 0.0, 0.0
+    for i in range(trajectory.shape[0] - 1):
+        dx = trajectory[i + 1, 0] - trajectory[i, 0]
+        dy = trajectory[i + 1, 1] - trajectory[i, 1]
+        length_squared = dx * dx + dy * dy
+        if length_squared <= 1e-16:
+            continue
+        t = ((point[0] - trajectory[i, 0]) * dx + (point[1] - trajectory[i, 1]) * dy) / length_squared
+        t = min(1.0, max(0.0, t))
+        x, y = trajectory[i, 0] + t * dx, trajectory[i, 1] + t * dy
+        distance_squared = (point[0] - x)**2 + (point[1] - y)**2
+        if distance_squared < best_distance_squared:
+            best_distance_squared = distance_squared
+            best_i, best_t, best_x, best_y = i, t, x, y
+    return np.array([best_x, best_y]), np.sqrt(best_distance_squared), best_t, best_i
+
 
 
 @njit(fastmath=False, cache=True)
 def first_point_on_trajectory_intersecting_circle(
     point, radius, trajectory, t=0.0, wrap=False
 ):
+    """First forward circle intersection, computed in local float64 coordinates.
+
+    Subtract the circle center BEFORE taking dot products. Expanding squared
+    world coordinates in float32 loses the small (metre-scale) differences.
+    The closed path supplied by the planner includes its first point at the end.
     """
-    starts at beginning of trajectory, and find the first point one radius away from the given point along the trajectory.
-
-    Assumes that the first segment passes within a single radius of the point
-
-    http://codereview.stackexchange.com/questions/86421/line-segment-to-circle-collision-algorithm
-    """
-    start_i = int(t)
-    start_t = t % 1.0
-    first_t = None
-    first_i = None
-    first_p = None
-    trajectory = np.ascontiguousarray(trajectory)
-    for i in range(start_i, trajectory.shape[0] - 1):
-        start = trajectory[i, :]
-        end = trajectory[i + 1, :] + 1e-6
-        V = np.ascontiguousarray(end - start).astype(
-            np.float32
-        )  # NOTE: specify type or numba complains
-
-        a = np.dot(V, V)
-        b = np.float32(2.0) * np.dot(
-            V, start - point
-        )  # NOTE: specify type or numba complains
-        c = (
-            np.dot(start, start)
-            + np.dot(point, point)
-            - np.float32(2.0) * np.dot(start, point)
-            - radius * radius
-        )
-        discriminant = b * b - 4 * a * c
-
+    n = trajectory.shape[0] - 1
+    start_i = min(int(t), n - 1)
+    start_t = t - start_i
+    count = n + 1 if wrap else n - start_i
+    for offset in range(count):
+        i = (start_i + offset) % n
+        sx = float(trajectory[i, 0]) - float(point[0])
+        sy = float(trajectory[i, 1]) - float(point[1])
+        vx = float(trajectory[i + 1, 0]) - float(trajectory[i, 0])
+        vy = float(trajectory[i + 1, 1]) - float(trajectory[i, 1])
+        a = vx * vx + vy * vy
+        if a < 1e-16:
+            continue
+        b = 2.0 * (vx * sx + vy * sy)
+        c = sx * sx + sy * sy - radius * radius
+        discriminant = b * b - 4.0 * a * c
         if discriminant < 0:
             continue
-        #   print "NO INTERSECTION"
-        # else:
-        # if discriminant >= 0.0:
-        discriminant = np.sqrt(discriminant)
-        t1 = (-b - discriminant) / (2.0 * a)
-        t2 = (-b + discriminant) / (2.0 * a)
-        if i == start_i:
-            if t1 >= 0.0 and t1 <= 1.0 and t1 >= start_t:
-                first_t = t1
-                first_i = i
-                first_p = start + t1 * V
-                break
-            if t2 >= 0.0 and t2 <= 1.0 and t2 >= start_t:
-                first_t = t2
-                first_i = i
-                first_p = start + t2 * V
-                break
-        elif t1 >= 0.0 and t1 <= 1.0:
-            first_t = t1
-            first_i = i
-            first_p = start + t1 * V
-            break
-        elif t2 >= 0.0 and t2 <= 1.0:
-            first_t = t2
-            first_i = i
-            first_p = start + t2 * V
-            break
-    # wrap around to the beginning of the trajectory if no intersection is found1
-    if wrap and first_p is None:
-        for i in range(-1, start_i):
-            start = trajectory[i % trajectory.shape[0], :]
-            end = trajectory[(i + 1) % trajectory.shape[0], :] + 1e-6
-            V = (end - start).astype(np.float32)
-
-            a = np.dot(V, V)
-            b = np.float32(2.0) * np.dot(
-                V, start - point
-            )  # NOTE: specify type or numba complains
-            c = (
-                np.dot(start, start)
-                + np.dot(point, point)
-                - np.float32(2.0) * np.dot(start, point)
-                - radius * radius
-            )
-            discriminant = b * b - 4 * a * c
-
-            if discriminant < 0:
-                continue
-            discriminant = np.sqrt(discriminant)
-            t1 = (-b - discriminant) / (2.0 * a)
-            t2 = (-b + discriminant) / (2.0 * a)
-            if t1 >= 0.0 and t1 <= 1.0:
-                first_t = t1
-                first_i = i
-                first_p = start + t1 * V
-                break
-            elif t2 >= 0.0 and t2 <= 1.0:
-                first_t = t2
-                first_i = i
-                first_p = start + t2 * V
-                break
-
-    return first_p, first_i, first_t
+        root = np.sqrt(discriminant)
+        for u in ((-b - root) / (2.0 * a), (-b + root) / (2.0 * a)):
+            lower = start_t if offset == 0 else 0.0
+            upper = start_t if offset == n else 1.0
+            if lower <= u <= upper:
+                p = np.empty(2, dtype=np.float64)
+                p[0] = float(trajectory[i, 0]) + u * vx
+                p[1] = float(trajectory[i, 1]) + u * vy
+                return p, i, u
+    return None, None, None
 
 @njit(fastmath=False, cache=True)
 def get_actuation(pose_theta, lookahead_point, position, lookahead_distance, wheelbase):
@@ -169,16 +100,25 @@ class PurePursuitPlanner:
     Example Planner
     """
 
-    def __init__(self, track, wb):
+    def __init__(self, track, wb, reference='raceline'):
         self.wheelbase = wb
+        if reference not in ('raceline', 'centerline'):
+            raise ValueError('reference must be raceline or centerline')
+        line = getattr(track, reference)
         self.waypoints = np.stack(
-            [track.raceline.xs, track.raceline.ys, track.raceline.vxs]
+            [line.xs, line.ys, line.vxs]
         ).T
+        # Explicitly include the closing segment, without zero-length segments.
+        keep = np.r_[True, np.linalg.norm(np.diff(self.waypoints[:, :2], axis=0), axis=1) > 1e-8]
+        self.waypoints = self.waypoints[keep]
+        if np.linalg.norm(self.waypoints[-1, :2] - self.waypoints[0, :2]) > 1e-8:
+            self.waypoints = np.vstack([self.waypoints, self.waypoints[0]])
         self.max_reacquire = 20.0
 
         self.drawn_waypoints = []
         self.lookahead_point = None
         self.current_index = None
+        self._nearest_index = None
 
     def load_waypoints(self, conf):
         """
@@ -223,7 +163,16 @@ class PurePursuitPlanner:
         """
         wpts = waypoints[:, :2]
         lookahead_distance = np.float32(lookahead_distance)
-        nearest_point, nearest_dist, t, i = nearest_point_on_trajectory(position, wpts)
+        if self._nearest_index is None:
+            nearest_point, nearest_dist, t, i = nearest_point_on_trajectory(position, wpts)
+        else:
+            # Adjacent legs of a hairpin can be closer than the leg being
+            # followed. Preserve route order instead of jumping backwards.
+            n = len(wpts) - 1
+            indices = (self._nearest_index + np.arange(min(22, n + 1))) % n
+            nearest_point, nearest_dist, t, local_i = nearest_point_on_trajectory(position, wpts[indices])
+            i = (self._nearest_index + local_i) % n
+        self._nearest_index = i
         if nearest_dist < lookahead_distance:
             t1 = np.float32(i + t)
             lookahead_point, i2, t2 = first_point_on_trajectory_intersecting_circle(
@@ -233,13 +182,29 @@ class PurePursuitPlanner:
                 return None, None
             current_waypoint = np.empty((3,), dtype=np.float32)
             # x, y
-            current_waypoint[0:2] = wpts[i2, :]
+            current_waypoint[0:2] = lookahead_point
             # speed
             current_waypoint[2] = waypoints[i, -1]
             return current_waypoint, i
         elif nearest_dist < self.max_reacquire:
             # NOTE: specify type or numba complains
-            return wpts[i, :], i
+            # Reacquisition still needs an (x, y, speed) waypoint.
+            # Move forward along the path instead of aiming sideways at the
+            # closest vertex when starting away from the reference line.
+            j = i
+            distance = 0.0
+            start = nearest_point
+            while distance < lookahead_distance:
+                end = wpts[j + 1]
+                segment = np.linalg.norm(end - start)
+                if distance + segment >= lookahead_distance:
+                    fraction = (lookahead_distance - distance) / max(segment, 1e-8)
+                    target = start + fraction * (end - start)
+                    return np.array([target[0], target[1], waypoints[i, -1]]), i
+                distance += segment
+                j = (j + 1) % (len(wpts) - 1)
+                start = wpts[j]
+            return None, None
         else:
             return None, None
 
@@ -255,13 +220,16 @@ class PurePursuitPlanner:
         """
         pose_x, pose_y, pose_theta = obs_dict['poses_x'][0], obs_dict['poses_y'][0], obs_dict['poses_theta'][0]
         lookahead_distance, vgain = work['tlad'], work['vgain']
+        velocity = abs(float(obs_dict['linear_vels_x'][0]))
+        lookahead_distance += work.get('lookahead_time', 0.0) * velocity
+        lookahead_distance = min(lookahead_distance, work.get('max_lookahead', lookahead_distance))
         position = np.array([pose_x, pose_y])
         lookahead_point, i = self._get_current_waypoint(
             self.waypoints, lookahead_distance, position, pose_theta
         )
 
         if lookahead_point is None:
-            return 4.0, 0.0
+            raise RuntimeError('Expert lost the reference path; refusing to label straight-ahead driving as expert data.')
 
         # for rendering
         self.lookahead_point = lookahead_point
@@ -272,9 +240,15 @@ class PurePursuitPlanner:
             pose_theta,
             self.lookahead_point,
             position,
-            lookahead_distance,
+            float(np.linalg.norm(self.lookahead_point[:2] - position)),
             self.wheelbase,
         )
         speed = vgain * speed
+
+        if 'speed_cap' in work:
+            curvature = abs(np.tan(steering_angle) / self.wheelbase)
+            curve_speed = np.sqrt(work.get('lateral_acceleration', 1.5) / max(curvature, 1e-6))
+            speed = min(speed, work['speed_cap'], curve_speed)
+            speed = max(work.get('min_speed', 1.0), speed)
 
         return speed, steering_angle

@@ -59,6 +59,47 @@ docker container run hello-world -->
 
 
 ## Quickstart
+### Prepared local simulation environment (Python 3.8)
+
+On this computer, activate the prepared environment and enter the simulation directory:
+
+```bash
+source ~/venv/torch210/bin/activate
+cd /home/jiwon/projects/Autonomous-Driving-2026-team2/src/f1tenth
+```
+
+The environment uses PyTorch 2.1.0+cu118 and the local simulator installed in editable
+mode. CUDA computation on the RTX 3050, simulator reset and stepping, and RGB
+rendering have been verified. The virtual environment also provides `ffmpeg` using
+the executable bundled with `imageio-ffmpeg`.
+
+To reinstall the simulation dependencies into a Python 3.8 environment that already
+has PyTorch 2.1 installed, run from `src/f1tenth`:
+
+```bash
+python -m pip install -r requirements-sim-py38.txt
+python -m pip check
+```
+
+This file preserves Gymnasium 0.29.1 and MoviePy 1.0.3, which match the existing
+wrapper and video APIs. ROS 2 and Jetson deployment require separate setup.
+BC can run independently of the unfinished PPO/SAC exercises. The shared RL network
+placeholders raise `NotImplementedError` when used; the RL agents still need their
+exercise implementations. `AgentBase` is unchanged. BC collection converts expert
+speed into the wrapper's `[-1, 1]` range using both speed limits, and uses the configured
+wheelbase. Evaluation distinguishes completed laps from timeouts. The BC buffer
+samples the actual dataset length, including when cached data has a different size
+from `--total_steps`.
+
+To start BC training from this directory:
+
+```bash
+python main_il.py --name imitation --algo_idx 1 --device gpu
+```
+
+A short integration run verified expert collection, two GPU training updates,
+evaluation, and checkpoint/model saving. This verifies execution, not driving quality.
+
 We recommend installing the simulation inside a virtualenv. You can install the environment by running:
 
 ```bash
@@ -123,7 +164,67 @@ MAPS = ['Sochi', 'Spa', 'Nuerburgring', 'Monza', 'Melbourne', 'Austin',
 
 ## Training
 ### Imitation Learning
-You can collect expert data from PID controller.
+The expert is Pure Pursuit. Its shared configuration is `configs/expert.yaml`.
+See [전문가 랩타임 최적화 보고서](expert_optimization_report.md) for the current results,
+and [전문가 수정 및 검증 보고서](expert_repair_report.md) for the initial diagnosis,
+23-track completion results, and video locations.
+
+Validate the expert without training (use the prepared environment above):
+
+```bash
+SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python validate_expert.py \
+  --seeds 1 124 7 42 2026 2027 31415 --workers 6 \
+  --step-mode native --max-steps 20000
+```
+
+`native` uses the same physics, speed conversion, steering bounds and collision
+checks as the training wrapper; progress is measured on the dense centerline
+polyline instead of repeatedly minimizing distance to its spline. Use
+`--step-mode wrapper` to run through the training wrapper directly.
+
+Collect complete, collision-free laps for all 23 tracks, without training:
+
+```bash
+python collect_expert.py --output expert_data_verified.pkl --seed 73
+```
+
+Collection finishes a full round of all tracks, so `--total-steps` is a minimum,
+not an exact sample count. Existing output files are never overwritten.
+Each sample is associated with a track and lap through the metadata's episode
+index ranges. The loader rejects old data or data collected with a different
+controller, vehicle configuration, or physics integrator. The original
+`expert_data.pkl` is retained and is no longer loaded automatically.
+
+After reviewing the expert results, train a new run with:
+
+```bash
+python main_il.py --name imitation --algo_idx 3 --expert_data expert_data_verified.pkl
+```
+
+Training defaults to 5,000 minibatch updates (not 5,000 full dataset passes),
+with fixed-start evaluations every 1,000 updates. Selection uses 92 episodes
+(23 tracks, grid/random starts, seeds 17/19),
+completion rate first and completed-lap time second. The policy receives only
+one LiDAR scan; track pose is used by the evaluator to score progress.
+Use a fresh `--algo_idx` for each run; existing selected models are protected.
+
+```bash
+python main_il.py --name imitation --algo_idx 3 --epochs 5000 \
+  --eval_interval 1000 --eval_workers 6 --device gpu
+
+# Separate evaluation: grid/random starts with five separate seeds.
+SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python evaluate_policy.py \
+  --run results/imitation/2 --output results/imitation/2/evaluation_again \
+  --seeds 11 53 2718 2028 65537 --workers 6 --video-seed 53
+```
+
+See [라이다 신경망 학습 결과](imitation_training_report.md) for experiment 2.
+
+The neural network must be evaluated separately after training. Expert completion
+does not itself establish learned-policy completion. These evaluations use tracks
+present in the training dataset and do not measure unseen-track generalization.
+
+Original course command:
 ```bash
 python3 main_il.py --name imitation --algo_idx 1 --wandb  # --save_video or --live_video
 ```
