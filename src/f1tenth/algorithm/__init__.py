@@ -1,9 +1,15 @@
+from functools import partial
+from importlib import import_module
+
 from algorithm.imitation import Agent as Imitation
-from algorithm.ppo import Agent as PPO
-from algorithm.sac import Agent as SAC
+
+
+def _create_agent(module_name, args):
+    # Load unfinished RL exercises only when that algorithm is selected.
+    return import_module(module_name).Agent(args)
 
 algo_dict = {
     'imitation':Imitation,
-    'ppo':PPO,
-    'sac': SAC,
+    'ppo': partial(_create_agent, 'algorithm.ppo'),
+    'sac': partial(_create_agent, 'algorithm.sac'),
     }

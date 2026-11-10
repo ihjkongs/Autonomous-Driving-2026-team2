@@ -12,3 +12,19 @@ wandb
 __pyc*
 __pycache__
 .vscode
+
+# Selected Jetson model: keep other training outputs ignored.
+!/results/
+/results/*
+!/results/imitation/
+/results/imitation/*
+!/results/imitation/2/
+/results/imitation/2/*
+!/results/imitation/2/sim2real/
+/results/imitation/2/sim2real/*
+!/results/imitation/2/sim2real/actor.pt
+!/results/imitation/2/sim2real/agent_obs_scale.pkl
+!/results/imitation/2/sim2real/agent_reward_scale.pkl
+!/results/imitation/2/backup/
+/results/imitation/2/backup/*
+!/results/imitation/2/backup/f1tenth.yaml

@@ -122,17 +122,18 @@ class SquashedActor(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        self.fc1 = 
-        self.fc2 = 
+        raise NotImplementedError('Implement SquashedActor for the SAC exercise.')
+        self.fc1 = ...
+        self.fc2 = ...
         
-        self.mean_layer = 
-        self.log_std_layer = 
+        self.mean_layer = ...
+        self.log_std_layer = ...
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
         
     def forward(self, x):
         # ======= implement here ======= #
-        x = 
+        raise NotImplementedError('Implement SquashedActor.forward for the SAC exercise.')
         # ============================== #
         mean = self.mean_layer(x)
         
@@ -159,15 +160,16 @@ class Critic(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        self.fc1 = 
-        self.fc2 = 
-        self.fc3 = 
+        raise NotImplementedError('Implement Critic for the PPO exercise.')
+        self.fc1 = ...
+        self.fc2 = ...
+        self.fc3 = ...
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
 
     def forward(self, x):
         # ======= implement here ======= #
-        x = 
+        raise NotImplementedError('Implement Critic.forward for the PPO exercise.')
         # ============================== #
         assert x.dim == 2
         return x
@@ -186,15 +188,16 @@ class QCritic(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        self.fc1 = 
-        self.fc2 = 
-        self.fc3 = 
+        raise NotImplementedError('Implement QCritic for the SAC exercise.')
+        self.fc1 = ...
+        self.fc2 = ...
+        self.fc3 = ...
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
 
     def forward(self, state, action):
         # ======= implement here ======= #
-        x = 
+        raise NotImplementedError('Implement QCritic.forward for the SAC exercise.')
         # ============================== #
         assert x.dim == 2
         return x
