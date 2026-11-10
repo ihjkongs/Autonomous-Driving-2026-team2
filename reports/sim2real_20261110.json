@@ -16,7 +16,7 @@
   "validation": {
     "automated_tests_passed": 48,
     "production_policy_and_launch_match_revision": "84da800",
-    "final_vehicle_trial": "Pending user execution; do not assume successful completion."
+    "final_vehicle_trial": "User observed approximately six laps. Final rosbag verified: 116.27 s total, 98.32 s command interval, 4993 fault-free VESC samples. Automated lap counting unavailable."
   },
   "recordings": [
     {
@@ -49,6 +49,14 @@
       "user_reports_collision": true,
       "received_fault_onsets": 1,
       "note": "878 model/command pairs identical; close-front positive commands persisted; VESC telemetry ended before bag end."
+    },
+    {
+      "name": "drive_final2500_20261110_202552",
+      "gain": 2500,
+      "limiter": true,
+      "user_observed_approximate_laps": 6,
+      "received_fault_onsets": 0,
+      "note": "116.27-second bag; no automated lap counter; servo clipping remains."
     }
   ],
   "known_limitations": [
@@ -64,5 +72,63 @@
   "next_checks": [
     "Calibrate physical steering angle and independent ground speed.",
     "Review collision-stop/rearm and stale-controller telemetry behavior before higher-speed testing."
-  ]
+  ],
+  "final_trial_analysis": {
+    "recording": "drive_final2500_20261110_202552",
+    "manifest_verified": true,
+    "recording_duration_s": 116.266642525,
+    "command_duration_s": 98.32237007500001,
+    "total_messages": 45266,
+    "user_observation": {
+      "approximately_completed_laps": 6,
+      "source": "User visual observation; no automated lap counter or ground-truth pose in bag."
+    },
+    "configuration": {
+      "speed_to_erpm_gain_verified": 2500.0,
+      "speed_to_erpm_offset_verified": -325.0,
+      "speed_cap_mps_from_startup_log": 4.0,
+      "command_acceleration_mps2_from_startup_log": 2.0,
+      "command_deceleration_mps2_from_startup_log": 3.0,
+      "dry_run_from_startup_log": false
+    },
+    "vesc_state_samples": 4993,
+    "fault_codes": {
+      "0": 4993
+    },
+    "scan_samples": 4627,
+    "scan_rejection_log_count": 0,
+    "max_command_gap_s": 0.04878476799999021,
+    "mean_command_frequency_hz": 39.980728668373686,
+    "last_state_t_s": 116.186216494,
+    "last_motor_command_t_s": 116.206131504,
+    "post_start_zero_speed_commands": 0,
+    "teleop_messages": 0,
+    "preview_drive_identical_pairs": 3932,
+    "model_preview_identical_steering_pairs": 3931,
+    "motor_current_range_A": [
+      -7.77,
+      16.19
+    ],
+    "input_voltage_range_V": [
+      14.2,
+      14.6
+    ],
+    "max_command_ERPM": 9675.0,
+    "max_reported_ERPM": 9296.0,
+    "tracking_MAE_ERPM": 922.7210468449289,
+    "servo_upper_limit_clipping_log_count": 42,
+    "front_sector_median_min_m": 0.5230000019073486,
+    "front_sector_min_return_m": 0.3600000143051147,
+    "recording_sha256": "0859f03cd100e68c6fb71b42e50ed4eaf96aeabc1d6505b518c01b138215efd9",
+    "limitations": [
+      "About six laps is user-reported, not independently counted from this bag.",
+      "A fault-free recording does not establish collision-free operation on other tracks or at other speeds.",
+      "Wheel-derived odometry is not an independent measurement of true ground speed.",
+      "Servo saturation remains; no independent wheel-angle calibration in this session.",
+      "Temperature fields are not populated by this ROS driver.",
+      "Existing close-obstacle, automatic rearm and stale-VESC telemetry limitations remain.",
+      "ROS shutdown command delivery and physical stopping distance are not validated by this bag."
+    ]
+  },
+  "final_analysis_figure": "reports/figures/final2500_20261110.png"
 }
