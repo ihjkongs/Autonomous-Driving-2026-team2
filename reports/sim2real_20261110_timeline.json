@@ -1,0 +1,694 @@
+{
+  "timezone": "Asia/Seoul",
+  "time_basis": "SQLite messages.timestamp (recorder receipt time); Git author and committer timestamps are separate evidence. Folder suffix is not treated as first message time.",
+  "bags": [
+    {
+      "folder": "drive_stop_check_20261110_182416",
+      "first_message_kst": "2026-11-10T18:24:27.714+09:00",
+      "last_message_kst": "2026-11-10T18:25:29.427+09:00",
+      "duration_s": 61.71230495,
+      "message_count": 17123,
+      "sha256_db3": "486832fd24dbff762e08ad57e5c442b2d61bad924a8c573b9593d7c668eea8c5",
+      "metadata_yaml_present": false,
+      "topic_intervals": {
+        "/rosout": {
+          "count": 61,
+          "first_kst": "2026-11-10T18:24:27.714+09:00",
+          "last_kst": "2026-11-10T18:25:28.440+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 1742,
+          "first_kst": "2026-11-10T18:24:45.897+09:00",
+          "last_kst": "2026-11-10T18:25:29.366+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 1742,
+          "first_kst": "2026-11-10T18:24:45.897+09:00",
+          "last_kst": "2026-11-10T18:25:29.368+09:00"
+        },
+        "/sensors/core": {
+          "count": 2341,
+          "first_kst": "2026-11-10T18:24:27.758+09:00",
+          "last_kst": "2026-11-10T18:25:29.424+09:00"
+        },
+        "/diagnostics": {
+          "count": 6091,
+          "first_kst": "2026-11-10T18:24:28.088+09:00",
+          "last_kst": "2026-11-10T18:25:29.390+09:00"
+        },
+        "/odom": {
+          "count": 1662,
+          "first_kst": "2026-11-10T18:24:45.911+09:00",
+          "last_kst": "2026-11-10T18:25:29.373+09:00"
+        },
+        "/drive": {
+          "count": 1743,
+          "first_kst": "2026-11-10T18:24:45.895+09:00",
+          "last_kst": "2026-11-10T18:25:29.427+09:00"
+        },
+        "/agent/prediction": {
+          "count": 1741,
+          "first_kst": "2026-11-10T18:24:45.904+09:00",
+          "last_kst": "2026-11-10T18:25:29.366+09:00"
+        }
+      },
+      "fault_intervals": [
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:24:46.599+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:24:49.633+09:00",
+          "duration_s": 3.0346258760000033,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:24:51.200+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:24:54.134+09:00",
+          "duration_s": 2.9342675220000025,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:24:55.195+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:24:58.220+09:00",
+          "duration_s": 3.024781421,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:24:59.058+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:02.058+09:00",
+          "duration_s": 3.0002461599999997,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:03.013+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:06.000+09:00",
+          "duration_s": 2.986998380000003,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:07.159+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:10.220+09:00",
+          "duration_s": 3.0604350349999976,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:10.330+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:13.394+09:00",
+          "duration_s": 3.064695450000002,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:14.019+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:17.036+09:00",
+          "duration_s": 3.017458130999998,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:18.355+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:21.360+09:00",
+          "duration_s": 3.004728465999996,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:22.579+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:25.592+09:00",
+          "duration_s": 3.013326384999999,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T18:25:27.374+09:00",
+          "end_or_last_sample_kst": "2026-11-10T18:25:29.424+09:00",
+          "duration_s": 2.050801116999999,
+          "complete_interval": false
+        }
+      ],
+      "motor_current_range_A": [
+        -68.06,
+        34.19
+      ],
+      "input_voltage_range_V": [
+        12.2,
+        16.1
+      ],
+      "reported_ERPM_max": 25352.0,
+      "motor_command_ERPM_max": 9675.0,
+      "post_start_zero_command_count": 0,
+      "servo_clipping_log_count": 11,
+      "scan_rejection_log_count": 0,
+      "first_scan_rejection_kst": null
+    },
+    {
+      "folder": "drive_check_20261110_191704",
+      "first_message_kst": "2026-11-10T19:17:25.502+09:00",
+      "last_message_kst": "2026-11-10T19:18:25.803+09:00",
+      "duration_s": 60.300422152,
+      "message_count": 17250,
+      "sha256_db3": "c9ce061b2a672cb972bdd1c99f93109003b6f06dbc90313f6d404f9996779238",
+      "metadata_yaml_present": true,
+      "topic_intervals": {
+        "/rosout": {
+          "count": 54,
+          "first_kst": "2026-11-10T19:17:25.502+09:00",
+          "last_kst": "2026-11-10T19:18:25.522+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 1713,
+          "first_kst": "2026-11-10T19:17:43.072+09:00",
+          "last_kst": "2026-11-10T19:18:25.799+09:00"
+        },
+        "/sensors/core": {
+          "count": 2613,
+          "first_kst": "2026-11-10T19:17:25.526+09:00",
+          "last_kst": "2026-11-10T19:18:25.789+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 1713,
+          "first_kst": "2026-11-10T19:17:43.072+09:00",
+          "last_kst": "2026-11-10T19:18:25.799+09:00"
+        },
+        "/diagnostics": {
+          "count": 5825,
+          "first_kst": "2026-11-10T19:17:26.699+09:00",
+          "last_kst": "2026-11-10T19:18:25.803+09:00"
+        },
+        "/drive": {
+          "count": 1713,
+          "first_kst": "2026-11-10T19:17:43.070+09:00",
+          "last_kst": "2026-11-10T19:18:25.798+09:00"
+        },
+        "/odom": {
+          "count": 1907,
+          "first_kst": "2026-11-10T19:17:43.091+09:00",
+          "last_kst": "2026-11-10T19:18:25.789+09:00"
+        },
+        "/agent/prediction": {
+          "count": 1712,
+          "first_kst": "2026-11-10T19:17:43.081+09:00",
+          "last_kst": "2026-11-10T19:18:25.798+09:00"
+        }
+      },
+      "fault_intervals": [
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T19:17:45.862+09:00",
+          "end_or_last_sample_kst": "2026-11-10T19:17:48.886+09:00",
+          "duration_s": 3.023971692,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T19:17:54.970+09:00",
+          "end_or_last_sample_kst": "2026-11-10T19:17:57.983+09:00",
+          "duration_s": 3.0130157299999993,
+          "complete_interval": true
+        },
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T19:18:11.762+09:00",
+          "end_or_last_sample_kst": "2026-11-10T19:18:14.785+09:00",
+          "duration_s": 3.023208497000006,
+          "complete_interval": true
+        }
+      ],
+      "motor_current_range_A": [
+        -18.23,
+        32.39
+      ],
+      "input_voltage_range_V": [
+        14.5,
+        14.8
+      ],
+      "reported_ERPM_max": 9082.0,
+      "motor_command_ERPM_max": 9675.0,
+      "post_start_zero_command_count": 0,
+      "servo_clipping_log_count": 4,
+      "scan_rejection_log_count": 0,
+      "first_scan_rejection_kst": null
+    },
+    {
+      "folder": "drive_smooth_check_20261110_193811",
+      "first_message_kst": "2026-11-10T19:38:12.813+09:00",
+      "last_message_kst": "2026-11-10T19:38:47.867+09:00",
+      "duration_s": 35.053191683,
+      "message_count": 13160,
+      "sha256_db3": "eedaec787c1f3b967db4293ecfe54ee7286714da51b7fe8d975e436d16f2e339",
+      "metadata_yaml_present": true,
+      "topic_intervals": {
+        "/sensors/core": {
+          "count": 1416,
+          "first_kst": "2026-11-10T19:38:12.813+09:00",
+          "last_kst": "2026-11-10T19:38:47.770+09:00"
+        },
+        "/rosout": {
+          "count": 49,
+          "first_kst": "2026-11-10T19:38:12.897+09:00",
+          "last_kst": "2026-11-10T19:38:47.639+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 1374,
+          "first_kst": "2026-11-10T19:38:13.543+09:00",
+          "last_kst": "2026-11-10T19:38:47.806+09:00"
+        },
+        "/agent/command_preview": {
+          "count": 1393,
+          "first_kst": "2026-11-10T19:38:12.925+09:00",
+          "last_kst": "2026-11-10T19:38:47.804+09:00"
+        },
+        "/agent/prediction": {
+          "count": 1392,
+          "first_kst": "2026-11-10T19:38:12.945+09:00",
+          "last_kst": "2026-11-10T19:38:47.805+09:00"
+        },
+        "/drive": {
+          "count": 1393,
+          "first_kst": "2026-11-10T19:38:12.946+09:00",
+          "last_kst": "2026-11-10T19:38:47.867+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 1362,
+          "first_kst": "2026-11-10T19:38:13.707+09:00",
+          "last_kst": "2026-11-10T19:38:47.805+09:00"
+        },
+        "/odom": {
+          "count": 1381,
+          "first_kst": "2026-11-10T19:38:13.562+09:00",
+          "last_kst": "2026-11-10T19:38:47.770+09:00"
+        },
+        "/diagnostics": {
+          "count": 3400,
+          "first_kst": "2026-11-10T19:38:13.662+09:00",
+          "last_kst": "2026-11-10T19:38:47.821+09:00"
+        }
+      },
+      "fault_intervals": [],
+      "motor_current_range_A": [
+        -7.29,
+        12.94
+      ],
+      "input_voltage_range_V": [
+        14.4,
+        14.7
+      ],
+      "reported_ERPM_max": 9205.0,
+      "motor_command_ERPM_max": 9675.0,
+      "post_start_zero_command_count": 0,
+      "servo_clipping_log_count": 4,
+      "scan_rejection_log_count": 0,
+      "first_scan_rejection_kst": null
+    },
+    {
+      "folder": "drive_gain3200_check_20261110_194959",
+      "first_message_kst": "2026-11-10T19:50:01.358+09:00",
+      "last_message_kst": "2026-11-10T19:50:24.778+09:00",
+      "duration_s": 23.420276949,
+      "message_count": 7255,
+      "sha256_db3": "557c802518260778bbde861700c3355777defad1eea29fe2024c45d855739217",
+      "metadata_yaml_present": true,
+      "topic_intervals": {
+        "/sensors/core": {
+          "count": 534,
+          "first_kst": "2026-11-10T19:50:01.358+09:00",
+          "last_kst": "2026-11-10T19:50:15.941+09:00"
+        },
+        "/rosout": {
+          "count": 38,
+          "first_kst": "2026-11-10T19:50:05.591+09:00",
+          "last_kst": "2026-11-10T19:50:23.967+09:00"
+        },
+        "/odom": {
+          "count": 418,
+          "first_kst": "2026-11-10T19:50:05.600+09:00",
+          "last_kst": "2026-11-10T19:50:15.941+09:00"
+        },
+        "/drive": {
+          "count": 810,
+          "first_kst": "2026-11-10T19:50:05.592+09:00",
+          "last_kst": "2026-11-10T19:50:24.778+09:00"
+        },
+        "/diagnostics": {
+          "count": 2324,
+          "first_kst": "2026-11-10T19:50:01.358+09:00",
+          "last_kst": "2026-11-10T19:50:24.741+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 809,
+          "first_kst": "2026-11-10T19:50:05.595+09:00",
+          "last_kst": "2026-11-10T19:50:24.742+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 809,
+          "first_kst": "2026-11-10T19:50:05.593+09:00",
+          "last_kst": "2026-11-10T19:50:24.741+09:00"
+        },
+        "/agent/prediction": {
+          "count": 703,
+          "first_kst": "2026-11-10T19:50:05.602+09:00",
+          "last_kst": "2026-11-10T19:50:24.740+09:00"
+        },
+        "/agent/command_preview": {
+          "count": 810,
+          "first_kst": "2026-11-10T19:50:05.593+09:00",
+          "last_kst": "2026-11-10T19:50:24.777+09:00"
+        }
+      },
+      "fault_intervals": [],
+      "motor_current_range_A": [
+        -5.95,
+        21.5
+      ],
+      "input_voltage_range_V": [
+        14.4,
+        14.6
+      ],
+      "reported_ERPM_max": 11498.0,
+      "motor_command_ERPM_max": 12475.0,
+      "post_start_zero_command_count": 161,
+      "servo_clipping_log_count": 11,
+      "scan_rejection_log_count": 7,
+      "first_scan_rejection_kst": "2026-11-10T19:50:17.129+09:00"
+    },
+    {
+      "folder": "drive_gain2800_check_20261110_195619",
+      "first_message_kst": "2026-11-10T19:57:36.718+09:00",
+      "last_message_kst": "2026-11-10T19:58:26.463+09:00",
+      "duration_s": 49.744221037,
+      "message_count": 17022,
+      "sha256_db3": "fa4470c90929ca56555b5d81dc0b249f33c73c4758f1870e868ebbc42a39217a",
+      "metadata_yaml_present": true,
+      "topic_intervals": {
+        "/rosout": {
+          "count": 42,
+          "first_kst": "2026-11-10T19:57:36.718+09:00",
+          "last_kst": "2026-11-10T19:58:25.683+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 1295,
+          "first_kst": "2026-11-10T19:57:54.132+09:00",
+          "last_kst": "2026-11-10T19:58:26.400+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 1295,
+          "first_kst": "2026-11-10T19:57:54.133+09:00",
+          "last_kst": "2026-11-10T19:58:26.400+09:00"
+        },
+        "/sensors/core": {
+          "count": 2154,
+          "first_kst": "2026-11-10T19:57:36.764+09:00",
+          "last_kst": "2026-11-10T19:58:26.436+09:00"
+        },
+        "/diagnostics": {
+          "count": 4919,
+          "first_kst": "2026-11-10T19:57:37.011+09:00",
+          "last_kst": "2026-11-10T19:58:26.417+09:00"
+        },
+        "/drive": {
+          "count": 1296,
+          "first_kst": "2026-11-10T19:57:54.132+09:00",
+          "last_kst": "2026-11-10T19:58:26.462+09:00"
+        },
+        "/odom": {
+          "count": 1461,
+          "first_kst": "2026-11-10T19:57:54.145+09:00",
+          "last_kst": "2026-11-10T19:58:26.410+09:00"
+        },
+        "/scan": {
+          "count": 1970,
+          "first_kst": "2026-11-10T19:57:37.121+09:00",
+          "last_kst": "2026-11-10T19:58:26.421+09:00"
+        },
+        "/agent/prediction": {
+          "count": 1294,
+          "first_kst": "2026-11-10T19:57:54.144+09:00",
+          "last_kst": "2026-11-10T19:58:26.398+09:00"
+        },
+        "/agent/command_preview": {
+          "count": 1296,
+          "first_kst": "2026-11-10T19:57:54.132+09:00",
+          "last_kst": "2026-11-10T19:58:26.463+09:00"
+        }
+      },
+      "fault_intervals": [],
+      "motor_current_range_A": [
+        -8.76,
+        23.66
+      ],
+      "input_voltage_range_V": [
+        14.4,
+        14.7
+      ],
+      "reported_ERPM_max": 10313.0,
+      "motor_command_ERPM_max": 10875.0,
+      "post_start_zero_command_count": 0,
+      "first_front_sector_median_below_0_3m_kst": "2026-11-10T19:58:23.241+09:00",
+      "servo_clipping_log_count": 3,
+      "scan_rejection_log_count": 0,
+      "first_scan_rejection_kst": null
+    },
+    {
+      "folder": "drive_no_limiter_gain2800_20261110_201244",
+      "first_message_kst": "2026-11-10T20:12:50.814+09:00",
+      "last_message_kst": "2026-11-10T20:13:30.840+09:00",
+      "duration_s": 40.025827585,
+      "message_count": 11253,
+      "sha256_db3": "a479b0f87ba7e29594268c4f65e3b87cb2dfa896a1676f83c24f690baa22313d",
+      "metadata_yaml_present": true,
+      "topic_intervals": {
+        "/rosout": {
+          "count": 37,
+          "first_kst": "2026-11-10T20:12:50.814+09:00",
+          "last_kst": "2026-11-10T20:13:30.152+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 879,
+          "first_kst": "2026-11-10T20:13:08.881+09:00",
+          "last_kst": "2026-11-10T20:13:30.769+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 879,
+          "first_kst": "2026-11-10T20:13:08.881+09:00",
+          "last_kst": "2026-11-10T20:13:30.769+09:00"
+        },
+        "/sensors/core": {
+          "count": 1450,
+          "first_kst": "2026-11-10T20:12:50.831+09:00",
+          "last_kst": "2026-11-10T20:13:24.786+09:00"
+        },
+        "/diagnostics": {
+          "count": 3963,
+          "first_kst": "2026-11-10T20:12:50.979+09:00",
+          "last_kst": "2026-11-10T20:13:30.791+09:00"
+        },
+        "/scan": {
+          "count": 1585,
+          "first_kst": "2026-11-10T20:12:51.089+09:00",
+          "last_kst": "2026-11-10T20:13:30.789+09:00"
+        },
+        "/drive": {
+          "count": 880,
+          "first_kst": "2026-11-10T20:13:08.881+09:00",
+          "last_kst": "2026-11-10T20:13:30.840+09:00"
+        },
+        "/odom": {
+          "count": 702,
+          "first_kst": "2026-11-10T20:13:08.929+09:00",
+          "last_kst": "2026-11-10T20:13:24.787+09:00"
+        },
+        "/agent/prediction": {
+          "count": 878,
+          "first_kst": "2026-11-10T20:13:08.891+09:00",
+          "last_kst": "2026-11-10T20:13:30.769+09:00"
+        }
+      },
+      "fault_intervals": [
+        {
+          "fault_code": 4,
+          "first_sample_kst": "2026-11-10T20:13:13.570+09:00",
+          "end_or_last_sample_kst": "2026-11-10T20:13:16.625+09:00",
+          "duration_s": 3.0547624629999994,
+          "complete_interval": true
+        }
+      ],
+      "motor_current_range_A": [
+        -28.1,
+        33.48
+      ],
+      "input_voltage_range_V": [
+        13.4,
+        14.6
+      ],
+      "reported_ERPM_max": 9898.0,
+      "motor_command_ERPM_max": 10875.0,
+      "post_start_zero_command_count": 0,
+      "first_front_sector_median_below_0_3m_kst": "2026-11-10T20:13:24.709+09:00",
+      "servo_clipping_log_count": 8,
+      "scan_rejection_log_count": 0,
+      "first_scan_rejection_kst": null
+    },
+    {
+      "folder": "drive_final2500_20261110_202552",
+      "first_message_kst": "2026-11-10T20:26:38.276+09:00",
+      "last_message_kst": "2026-11-10T20:28:34.542+09:00",
+      "duration_s": 116.266642525,
+      "message_count": 45266,
+      "sha256_db3": "0859f03cd100e68c6fb71b42e50ed4eaf96aeabc1d6505b518c01b138215efd9",
+      "metadata_yaml_present": true,
+      "topic_intervals": {
+        "/rosout": {
+          "count": 147,
+          "first_kst": "2026-11-10T20:26:38.276+09:00",
+          "last_kst": "2026-11-10T20:28:34.434+09:00"
+        },
+        "/commands/motor/speed": {
+          "count": 3932,
+          "first_kst": "2026-11-10T20:26:56.162+09:00",
+          "last_kst": "2026-11-10T20:28:34.482+09:00"
+        },
+        "/sensors/core": {
+          "count": 4993,
+          "first_kst": "2026-11-10T20:26:38.326+09:00",
+          "last_kst": "2026-11-10T20:28:34.462+09:00"
+        },
+        "/ackermann_cmd": {
+          "count": 3932,
+          "first_kst": "2026-11-10T20:26:56.161+09:00",
+          "last_kst": "2026-11-10T20:28:34.484+09:00"
+        },
+        "/diagnostics": {
+          "count": 11536,
+          "first_kst": "2026-11-10T20:26:38.521+09:00",
+          "last_kst": "2026-11-10T20:28:34.477+09:00"
+        },
+        "/odom": {
+          "count": 4303,
+          "first_kst": "2026-11-10T20:26:56.278+09:00",
+          "last_kst": "2026-11-10T20:28:34.462+09:00"
+        },
+        "/scan": {
+          "count": 4627,
+          "first_kst": "2026-11-10T20:26:38.632+09:00",
+          "last_kst": "2026-11-10T20:28:34.471+09:00"
+        },
+        "/drive": {
+          "count": 3933,
+          "first_kst": "2026-11-10T20:26:56.160+09:00",
+          "last_kst": "2026-11-10T20:28:34.542+09:00"
+        },
+        "/agent/prediction": {
+          "count": 3931,
+          "first_kst": "2026-11-10T20:26:56.168+09:00",
+          "last_kst": "2026-11-10T20:28:34.480+09:00"
+        },
+        "/agent/command_preview": {
+          "count": 3932,
+          "first_kst": "2026-11-10T20:26:56.160+09:00",
+          "last_kst": "2026-11-10T20:28:34.481+09:00"
+        }
+      },
+      "fault_intervals": [],
+      "motor_current_range_A": [
+        -7.77,
+        16.19
+      ],
+      "input_voltage_range_V": [
+        14.2,
+        14.6
+      ],
+      "reported_ERPM_max": 9296.0,
+      "motor_command_ERPM_max": 9675.0,
+      "post_start_zero_command_count": 0,
+      "first_front_sector_median_below_0_3m_kst": null,
+      "servo_clipping_log_count": 42,
+      "scan_rejection_log_count": 0,
+      "first_scan_rejection_kst": null
+    }
+  ],
+  "commits": [
+    {
+      "sha": "5751d8032bf49f5605c327d8da0ffa2786f1ed8d",
+      "author_time": "2026-11-10T13:31:44+09:00",
+      "committer_time": "2026-11-10T13:31:44+09:00",
+      "subject": "Add trained imitation model and loading support"
+    },
+    {
+      "sha": "e7e18933f1b13f33bc925a1acb914fb165272234",
+      "author_time": "2026-11-10T13:43:24+09:00",
+      "committer_time": "2026-11-10T13:43:24+09:00",
+      "subject": "Implement LiDAR policy node with dry-run predictions"
+    },
+    {
+      "sha": "606674ba73ac1c34ccb41b39015ee13077a32409",
+      "author_time": "2026-11-10T13:50:19+09:00",
+      "committer_time": "2026-11-10T13:50:19+09:00",
+      "subject": "Complete lecture 8 sim2real policy integration"
+    },
+    {
+      "sha": "c000eda58f367822e620b6b12d6501245a777dec",
+      "author_time": "2026-11-10T14:36:30+09:00",
+      "committer_time": "2026-11-10T14:36:30+09:00",
+      "subject": "Add lecture notes"
+    },
+    {
+      "sha": "aa898904120f6cabb299ae0f733877fb03dccad2",
+      "author_time": "2026-11-10T17:57:27+09:00",
+      "committer_time": "2026-11-10T17:57:27+09:00",
+      "subject": "Update vehicle calibration and keyboard controls"
+    },
+    {
+      "sha": "3e38d01647fa189463d6ccace60fb3865981d6b2",
+      "author_time": "2026-11-10T17:58:36+09:00",
+      "committer_time": "2026-11-10T17:58:36+09:00",
+      "subject": "Fix VESC speed gain parameter type"
+    },
+    {
+      "sha": "6dc21634800e4f8a3d499e11e428f37a09d71636",
+      "author_time": "2026-11-10T18:03:07+09:00",
+      "committer_time": "2026-11-10T18:03:07+09:00",
+      "subject": "Fix dry-run launch parameter override"
+    },
+    {
+      "sha": "84da800d5fe1379fcc08d962499660e53f03a108",
+      "author_time": "2026-11-10T19:29:42+09:00",
+      "committer_time": "2026-11-10T19:29:42+09:00",
+      "subject": "Limit policy speed command acceleration and deceleration"
+    },
+    {
+      "sha": "c3f13e2ec7921a41c777cb6cd85a69b841d6ac6c",
+      "author_time": "2026-11-10T19:46:33+09:00",
+      "committer_time": "2026-11-10T19:46:33+09:00",
+      "subject": "Set speed to ERPM gain to 3200 for testing"
+    },
+    {
+      "sha": "a8833291b91a3b536520088be4002b5013214de4",
+      "author_time": "2026-11-10T19:55:35+09:00",
+      "committer_time": "2026-11-10T19:55:35+09:00",
+      "subject": "Set speed to ERPM gain to 2800 for testing"
+    },
+    {
+      "sha": "271db1d16e9e5819999e96ba90a50d1c1b889a04",
+      "author_time": "2026-11-10T20:11:11+09:00",
+      "committer_time": "2026-11-10T20:11:11+09:00",
+      "subject": "Restore pre-limiter driving code and keep gain 2800"
+    },
+    {
+      "sha": "417db515b5109fb38d017e74a6d645a469a9bdbb",
+      "author_time": "2026-11-10T20:23:20+09:00",
+      "committer_time": "2026-11-10T20:23:20+09:00",
+      "subject": "Restore gain 2500 with speed limiting and save training and sim2real work"
+    },
+    {
+      "sha": "27edfd698186d89f9d1e699eb1c7d496c12b587b",
+      "author_time": "2026-11-10T20:32:42+09:00",
+      "committer_time": "2026-11-10T20:32:42+09:00",
+      "subject": "Record final gain 2500 trial with user-observed six laps"
+    }
+  ]
+}
