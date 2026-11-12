@@ -195,7 +195,8 @@ class F110Env(gym.Env):
                 "v_max": args.v_max,
                 "width": args.width,
                 "length": args.length,
-                "lidar_pos_offset": args.lidar_pos_offset
+                "lidar_pos_offset": args.lidar_pos_offset,
+                "longitudinal_response": args.get('longitudinal_response'),
             },
             "num_agents": args.num_agents,
             "timestep": args.timestep,

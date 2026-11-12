@@ -34,6 +34,7 @@ from .collision_models import collision_multiple, get_vertices
 from .integrator import EulerIntegrator, IntegratorType
 from .laser_models import ScanSimulator2D, check_ttc_jit, ray_cast
 from .track import Track
+from .longitudinal import LongitudinalResponse
 
 import math
 
@@ -98,6 +99,11 @@ class RaceCar(object):
         self.seed = seed
         self.is_ego = is_ego
         self.time_step = time_step
+        response = params.get('longitudinal_response')
+        self.response_config = response
+        self.response_rng = np.random.default_rng(seed + 957)
+        self.response_parameters = dict(response) if response else None
+        self.longitudinal_response = LongitudinalResponse(response, time_step) if response else None
         self.num_beams = num_beams
         self.fov = fov
         self.integrator = integrator
@@ -123,7 +129,7 @@ class RaceCar(object):
         self.in_collision = False
 
         # collision threshold for iTTC to environment
-        self.ttc_thresh = 0.005
+        self.ttc_thresh = max(0.005, self.time_step)
 
         # initialize scan sim
         if RaceCar.scan_simulator is None:
@@ -133,41 +139,24 @@ class RaceCar(object):
             scan_ang_incr = RaceCar.scan_simulator.get_increment()
 
             # angles of each scan beam, distance from lidar to edge of car at each beam, and precomputed cosines of each angle
-            RaceCar.cosines = np.zeros((num_beams,))
-            RaceCar.scan_angles = np.zeros((num_beams,))
-            RaceCar.side_distances = np.zeros((num_beams,))
+            RaceCar.scan_angles = -fov / 2.0 + np.arange(num_beams) * scan_ang_incr
+            RaceCar.cosines = np.cos(RaceCar.scan_angles)
 
-            dist_sides = params["width"] / 2.0
-            dist_fr = (params["lf"] + params["lr"]) / 2.0 - self.lidar_pos_offset
-            dist_re = (params["lf"] + params["lr"]) / 2.0 + self.lidar_pos_offset
+        self._update_body_distances()
 
-            for i in range(num_beams):
-                angle = -fov / 2.0 + i * scan_ang_incr
-                RaceCar.scan_angles[i] = angle
-                RaceCar.cosines[i] = np.cos(angle)
-
-                if angle > 0:
-                    if angle < np.pi / 2:
-                        # between 0 and pi/2
-                        to_side = dist_sides / np.sin(angle)
-                        to_fr = dist_fr / np.cos(angle)
-                        RaceCar.side_distances[i] = min(to_side, to_fr)
-                    else:
-                        # between pi/2 and pi
-                        to_side = dist_sides / np.cos(angle - np.pi / 2.0)
-                        to_fr = dist_re / np.sin(angle - np.pi / 2.0)
-                        RaceCar.side_distances[i] = min(to_side, to_fr)
-                else:
-                    if angle > -np.pi / 2:
-                        # between 0 and -pi/2
-                        to_side = dist_sides / np.sin(-angle)
-                        to_fr = dist_fr / np.cos(-angle)
-                        RaceCar.side_distances[i] = min(to_side, to_fr)
-                    else:
-                        # between -pi/2 and -pi
-                        to_side = dist_sides / np.cos(-angle - np.pi / 2)
-                        to_fr = dist_re / np.sin(-angle - np.pi / 2)
-                        RaceCar.side_distances[i] = min(to_side, to_fr)
+    def _update_body_distances(self):
+        # Body length is not wheelbase; geometry belongs to each car instance.
+        front = self.params['length']/2.0 - self.lidar_pos_offset
+        rear = self.params['length']/2.0 + self.lidar_pos_offset
+        if min(front, rear, self.params['width']) <= 0:
+            raise ValueError('LiDAR must be inside the positive-size collision body')
+        cosine = np.cos(self.scan_angles)
+        sine = np.abs(np.sin(self.scan_angles))
+        along = np.divide(np.where(cosine >= 0, front, rear), np.abs(cosine),
+                          out=np.full_like(cosine, np.inf), where=np.abs(cosine) > 1e-12)
+        across = np.divide(self.params['width']/2.0, sine,
+                           out=np.full_like(sine, np.inf), where=sine > 1e-12)
+        self.side_distances = np.minimum(along, across)
 
     def update_params(self, params):
         """
@@ -181,6 +170,8 @@ class RaceCar(object):
             None
         """
         self.params = params
+        self.lidar_pos_offset = params['lidar_pos_offset']
+        self._update_body_distances()
 
     def set_map(self, map: str | Track):
         """
@@ -213,6 +204,17 @@ class RaceCar(object):
 
         self.steer_buffer = np.empty((0,))
         # reset scan random generator
+        if self.longitudinal_response is not None:
+            sampled = dict(self.response_config)
+            for key, bounds in sampled.pop('ranges', {}).items():
+                if key not in ('acceleration', 'deceleration', 'time_constant', 'delay'):
+                    raise ValueError('Unsupported response randomization: ' + key)
+                low, high = map(float, bounds)
+                if not np.isfinite([low, high]).all() or low > high:
+                    raise ValueError('Invalid response randomization bounds')
+                sampled[key] = float(self.response_rng.uniform(low, high))
+            self.response_parameters = sampled
+            self.longitudinal_response = LongitudinalResponse(sampled, self.time_step)
         # self.scan_rng = np.random.default_rng(seed=self.seed)
         self.scan_rng = None
 
@@ -308,6 +310,10 @@ class RaceCar(object):
         accl, sv = self.action_type.act(
             action=(vel, steer), state=self.state, params=self.params
         )
+        if self.longitudinal_response is not None:
+            if self.action_type.type[1] != 'speed':
+                raise ValueError('Longitudinal response requires speed control')
+            accl = self.longitudinal_response.update(float(vel), float(self.state[3]))
         self.accel = accl
         self.steer_angle_vel = sv
 

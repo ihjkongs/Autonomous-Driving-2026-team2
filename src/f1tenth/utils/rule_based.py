@@ -5,6 +5,7 @@
 from typing import Tuple
 import numpy as np
 from numba import njit
+from utils.speed_profile import speed_profile, preview_speed
 
 @njit(fastmath=False, cache=True)
 def nearest_point_on_trajectory(point, trajectory):
@@ -119,6 +120,8 @@ class PurePursuitPlanner:
         self.lookahead_point = None
         self.current_index = None
         self._nearest_index = None
+        self._speed_profile = None
+        self._speed_profile_parameters = None
 
     def load_waypoints(self, conf):
         """
@@ -250,5 +253,14 @@ class PurePursuitPlanner:
             curve_speed = np.sqrt(work.get('lateral_acceleration', 1.5) / max(curvature, 1e-6))
             speed = min(speed, work['speed_cap'], curve_speed)
             speed = max(work.get('min_speed', 1.0), speed)
+
+        if work.get('anticipatory_braking', False):
+            if self._speed_profile_parameters != dict(work):
+                self._speed_profile = speed_profile(self.waypoints[:-1, :2],
+                                                    self.waypoints[:-1, 2], work)
+                self._speed_profile_parameters = dict(work)
+            arc, planned, _ = self._speed_profile
+            speed = min(speed, preview_speed(arc, planned, self._nearest_index,
+                        velocity * work.get('reaction_time', 0.0)))
 
         return speed, steering_angle

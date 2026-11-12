@@ -1,0 +1,40 @@
+{
+  "old": "expert_data_6mps_randomized_20261112.pkl",
+  "new": "expert_data_6mps_randomized_strict_20261112.pkl",
+  "arrays": {
+    "observations": {
+      "identical": true,
+      "old_shape": [
+        164733,
+        4320
+      ],
+      "new_shape": [
+        164733,
+        4320
+      ],
+      "old_sha256": "a87745b3db9f5f467350264b5cf7ee4dc4e7cbf8d6ccdc124286d18fe880a989",
+      "new_sha256": "a87745b3db9f5f467350264b5cf7ee4dc4e7cbf8d6ccdc124286d18fe880a989"
+    },
+    "actions": {
+      "identical": true,
+      "old_shape": [
+        164733,
+        2
+      ],
+      "new_shape": [
+        164733,
+        2
+      ],
+      "old_sha256": "7a2e21daa0e4a03e7c146de024bbcd9082c39bf56e120b00147f6bf9f1d069ef",
+      "new_sha256": "7a2e21daa0e4a03e7c146de024bbcd9082c39bf56e120b00147f6bf9f1d069ef"
+    }
+  },
+  "identical_training_examples": true,
+  "old_signature": "722e8f1c966be6dcecefa35fe77762accd44a30b8cdb2daf39331917a2e58d5e",
+  "new_signature": "9e9ddf5fa21c009a498bcbd945e24fe31d1d91912d6fdd23f9ffbecf30420bd8",
+  "new_signature_matches_current_sources": true,
+  "revalidated_laps": 46,
+  "all_revalidated_laps_complete": true,
+  "legacy_training_metadata_preserved": true,
+  "explanation": "Training arrays may be identical even though the physics-validation signature changes. Old model training provenance is retained; current validity comes from new expert/policy evaluations."
+}

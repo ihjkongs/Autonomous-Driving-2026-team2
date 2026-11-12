@@ -26,6 +26,9 @@ def _launch_agent(context):
         'project_root': LaunchConfiguration('project_root').perform(context),
         'dry_run': dry_run == 'true',
     })
+    policy_file = LaunchConfiguration('policy_file').perform(context).strip()
+    if policy_file:
+        parameters['policy_file'] = policy_file
     for key in ('speed_limit', 'max_acceleration', 'max_deceleration'):
         override = LaunchConfiguration(key).perform(context).strip()
         if override:
@@ -89,6 +92,8 @@ def generate_launch_description():
         description='Python interpreter with ROS 2 and PyTorch available')
     speed_limit_la = DeclareLaunchArgument(
         'speed_limit', default_value='', description='Override speed cap in m/s')
+    policy_file_la = DeclareLaunchArgument(
+        'policy_file', default_value='', description='Optional one-file TorchScript LiDAR policy')
     acceleration_la = DeclareLaunchArgument(
         'max_acceleration', default_value='', description='Override command acceleration in m/s^2')
     deceleration_la = DeclareLaunchArgument(
@@ -96,7 +101,7 @@ def generate_launch_description():
     ld = LaunchDescription([
         vesc_la, sensors_la, mux_la, agent_la, enable_agent_la,
         dry_run_la, project_root_la, agent_python_la,
-        speed_limit_la, acceleration_la, deceleration_la])
+        speed_limit_la, acceleration_la, deceleration_la, policy_file_la])
 
     agent_node = OpaqueFunction(
         function=_launch_agent,

@@ -104,7 +104,8 @@ if __name__ == "__main__":
     args.update(task_args)
     args.update(dynamic_args)
 
-    args.save_dir = f"results/{args.name}/{args.algo_idx}/sim2real"
+    from utils.run_paths import experiment_path
+    args.save_dir = str(experiment_path('results', args.name, args.algo_idx) / 'sim2real')
     os.makedirs(f'{args.save_dir}/video', exist_ok=True)
     # ==== processing args ==== #
     # device

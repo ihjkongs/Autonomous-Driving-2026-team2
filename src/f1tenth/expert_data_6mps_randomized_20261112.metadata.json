@@ -1,0 +1,1108 @@
+{
+  "signature": "722e8f1c966be6dcecefa35fe77762accd44a30b8cdb2daf39331917a2e58d5e",
+  "parameters": {
+    "reference": "centerline",
+    "tlad": 0.8,
+    "lookahead_time": 0.15,
+    "max_lookahead": 1.7,
+    "vgain": 1.0,
+    "speed_cap": 6.0,
+    "min_speed": 1.0,
+    "lateral_acceleration": 3.0,
+    "anticipatory_braking": true,
+    "braking_deceleration": 2.0,
+    "planning_acceleration": 1.5,
+    "reaction_time": 0.35,
+    "curvature_window": 0.75
+  },
+  "maps": [
+    "Sochi",
+    "Spa",
+    "Nuerburgring",
+    "Monza",
+    "Melbourne",
+    "Austin",
+    "Silverstone",
+    "Sakhir",
+    "IMS",
+    "Budapest",
+    "Montreal",
+    "Sepang",
+    "Oschersleben",
+    "YasMarina",
+    "MoscowRaceway",
+    "Zandvoort",
+    "Catalunya",
+    "BrandsHatch",
+    "Shanghai",
+    "Hockenheim",
+    "SaoPaulo",
+    "Spielberg",
+    "MexicoCity"
+  ],
+  "seed": 73,
+  "episodes": [
+    {
+      "map": "Sochi",
+      "cycle": 0,
+      "start": 0,
+      "stop": 4307,
+      "outcome": "complete",
+      "steps": 4307,
+      "initial_pose": [
+        -7.841769218444824,
+        -12.315300941467285,
+        4.145452801381246
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.736864747798621,
+        "deceleration": 2.037780646832909,
+        "time_constant": 0.3532047822640178,
+        "delay": 0.13625406916761662,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 107.70000000000736,
+      "progress_fraction": 0.999339605586012
+    },
+    {
+      "map": "Spa",
+      "cycle": 0,
+      "start": 4307,
+      "stop": 8938,
+      "outcome": "complete",
+      "steps": 4631,
+      "initial_pose": [
+        1.7353262901306152,
+        -2.745918035507202,
+        2.135890483856201
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.490814011945138,
+        "deceleration": 3.041948931593525,
+        "time_constant": 0.2238969096066382,
+        "delay": 0.05621388629906929,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 115.8000000000092,
+      "progress_fraction": 0.9995240927597216
+    },
+    {
+      "map": "Nuerburgring",
+      "cycle": 0,
+      "start": 8938,
+      "stop": 12873,
+      "outcome": "complete",
+      "steps": 3935,
+      "initial_pose": [
+        -54.631595611572266,
+        -79.60626220703125,
+        3.9054649511920374
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.511688817117773,
+        "deceleration": 2.2149214833647797,
+        "time_constant": 0.28372994567398485,
+        "delay": 0.16094472693466622,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 98.40000000000525,
+      "progress_fraction": 0.9993639500575613
+    },
+    {
+      "map": "Monza",
+      "cycle": 0,
+      "start": 12873,
+      "stop": 16458,
+      "outcome": "complete",
+      "steps": 3585,
+      "initial_pose": [
+        94.35903930664062,
+        125.52011108398438,
+        4.867804948483602
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7913322842382395,
+        "deceleration": 2.276214797236953,
+        "time_constant": 0.34250494964093947,
+        "delay": 0.11524998688898266,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 89.65000000000326,
+      "progress_fraction": 0.9993351973429803
+    },
+    {
+      "map": "Melbourne",
+      "cycle": 0,
+      "start": 16458,
+      "stop": 20586,
+      "outcome": "complete",
+      "steps": 4128,
+      "initial_pose": [
+        13.840536117553711,
+        70.3211669921875,
+        4.532590095196859
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8623596381889524,
+        "deceleration": 3.187798015939631,
+        "time_constant": 0.30361117956665096,
+        "delay": 0.07364898789486517,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 103.22500000000635,
+      "progress_fraction": 0.9995294644945235
+    },
+    {
+      "map": "Austin",
+      "cycle": 0,
+      "start": 20586,
+      "stop": 24646,
+      "outcome": "complete",
+      "steps": 4060,
+      "initial_pose": [
+        37.37505340576172,
+        -11.317337989807129,
+        1.219512701034546
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.0005517612467147,
+        "deceleration": 2.6391653590165194,
+        "time_constant": 0.20682703251648563,
+        "delay": 0.17476972674641483,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 101.52500000000596,
+      "progress_fraction": 0.9995096628465133
+    },
+    {
+      "map": "Silverstone",
+      "cycle": 0,
+      "start": 24646,
+      "stop": 28633,
+      "outcome": "complete",
+      "steps": 3987,
+      "initial_pose": [
+        59.91843795776367,
+        28.894760131835938,
+        0.8980984687805176
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7982835790636686,
+        "deceleration": 2.6137262103568877,
+        "time_constant": 0.35833099602819685,
+        "delay": 0.09803056426757271,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 99.70000000000555,
+      "progress_fraction": 0.9993345260213116
+    },
+    {
+      "map": "Sakhir",
+      "cycle": 0,
+      "start": 28633,
+      "stop": 32591,
+      "outcome": "complete",
+      "steps": 3958,
+      "initial_pose": [
+        1.6140941381454468,
+        35.56338882446289,
+        1.524763584136963
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.9270806647235545,
+        "deceleration": 3.087025470494708,
+        "time_constant": 0.38766302701656774,
+        "delay": 0.07821117312425319,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 98.97500000000538,
+      "progress_fraction": 0.9995193279276888
+    },
+    {
+      "map": "IMS",
+      "cycle": 0,
+      "start": 32591,
+      "stop": 34653,
+      "outcome": "complete",
+      "steps": 2062,
+      "initial_pose": [
+        -0.8962540626525879,
+        43.588294982910156,
+        4.7396456638919275
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2713446388220198,
+        "deceleration": 2.8052930839033494,
+        "time_constant": 0.3506195737580787,
+        "delay": 0.19295605022434376,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 51.57499999999814,
+      "progress_fraction": 0.9989428047430319
+    },
+    {
+      "map": "Budapest",
+      "cycle": 0,
+      "start": 34653,
+      "stop": 38242,
+      "outcome": "complete",
+      "steps": 3589,
+      "initial_pose": [
+        27.79296875,
+        -0.508791983127594,
+        2.3855512142181396
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2830707003973707,
+        "deceleration": 2.338619689091395,
+        "time_constant": 0.26241689644499355,
+        "delay": 0.1440989838458712,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 89.75000000000328,
+      "progress_fraction": 0.9993714387220013
+    },
+    {
+      "map": "Montreal",
+      "cycle": 0,
+      "start": 38242,
+      "stop": 40947,
+      "outcome": "complete",
+      "steps": 2705,
+      "initial_pose": [
+        0.9270747303962708,
+        -21.99872398376465,
+        3.0082855224609375
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7339295185262964,
+        "deceleration": 2.8496761414635423,
+        "time_constant": 0.2182810274923182,
+        "delay": 0.15140302177349368,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 67.64999999999826,
+      "progress_fraction": 0.9990819587042273
+    },
+    {
+      "map": "Sepang",
+      "cycle": 0,
+      "start": 40947,
+      "stop": 45268,
+      "outcome": "complete",
+      "steps": 4321,
+      "initial_pose": [
+        -43.8767204284668,
+        -25.32231903076172,
+        2.4266669750213623
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.437331263686226,
+        "deceleration": 2.5663363140678133,
+        "time_constant": 0.1864840711530587,
+        "delay": 0.18752033685173553,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 108.05000000000744,
+      "progress_fraction": 0.9995063011333247
+    },
+    {
+      "map": "Oschersleben",
+      "cycle": 0,
+      "start": 45268,
+      "stop": 47900,
+      "outcome": "complete",
+      "steps": 2632,
+      "initial_pose": [
+        10.706368446350098,
+        10.35137939453125,
+        6.1511083284961146
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.902990792756483,
+        "deceleration": 2.0703456873796333,
+        "time_constant": 0.15179508519205723,
+        "delay": 0.09324285793440173,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 65.82499999999784,
+      "progress_fraction": 0.9990336714836593
+    },
+    {
+      "map": "YasMarina",
+      "cycle": 0,
+      "start": 47900,
+      "stop": 51919,
+      "outcome": "complete",
+      "steps": 4019,
+      "initial_pose": [
+        13.761863708496094,
+        38.878265380859375,
+        1.2660614252090454
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.17888628138424,
+        "deceleration": 2.299884611969953,
+        "time_constant": 0.3577126181898505,
+        "delay": 0.1171747011641269,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 100.50000000000573,
+      "progress_fraction": 0.9994589723226825
+    },
+    {
+      "map": "MoscowRaceway",
+      "cycle": 0,
+      "start": 51919,
+      "stop": 55277,
+      "outcome": "complete",
+      "steps": 3358,
+      "initial_pose": [
+        -81.59801483154297,
+        35.418060302734375,
+        4.574293796216146
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.3384577620109597,
+        "deceleration": 3.060521571050571,
+        "time_constant": 0.2261609088746985,
+        "delay": 0.17755534987890514,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 83.97500000000197,
+      "progress_fraction": 0.9992547192372389
+    },
+    {
+      "map": "Zandvoort",
+      "cycle": 0,
+      "start": 55277,
+      "stop": 58689,
+      "outcome": "complete",
+      "steps": 3412,
+      "initial_pose": [
+        34.03916931152344,
+        -3.7130258083343506,
+        6.139230791722433
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2080847672723025,
+        "deceleration": 3.3508974321268896,
+        "time_constant": 0.31146944488787,
+        "delay": 0.06407601924617974,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 85.32500000000228,
+      "progress_fraction": 0.9995487271188219
+    },
+    {
+      "map": "Catalunya",
+      "cycle": 0,
+      "start": 58689,
+      "stop": 62409,
+      "outcome": "complete",
+      "steps": 3720,
+      "initial_pose": [
+        -66.9068374633789,
+        -37.72492218017578,
+        1.0034263134002686
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.0313474489260557,
+        "deceleration": 2.964534697772842,
+        "time_constant": 0.24822707890509035,
+        "delay": 0.17472412526987574,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 93.02500000000403,
+      "progress_fraction": 0.9995847251125951
+    },
+    {
+      "map": "BrandsHatch",
+      "cycle": 0,
+      "start": 62409,
+      "stop": 65359,
+      "outcome": "complete",
+      "steps": 2950,
+      "initial_pose": [
+        8.722439765930176,
+        -64.33866882324219,
+        1.4694006443023682
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7198724674075048,
+        "deceleration": 3.4955463823235022,
+        "time_constant": 0.35024724018569964,
+        "delay": 0.16249681347129985,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 73.77499999999965,
+      "progress_fraction": 0.9993164834325533
+    },
+    {
+      "map": "Shanghai",
+      "cycle": 0,
+      "start": 65359,
+      "stop": 69738,
+      "outcome": "complete",
+      "steps": 4379,
+      "initial_pose": [
+        -21.258731842041016,
+        68.48918151855469,
+        3.8139660994159144
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.5633345537814596,
+        "deceleration": 3.2549662537716095,
+        "time_constant": 0.183220632034607,
+        "delay": 0.11882428935761609,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 109.50000000000777,
+      "progress_fraction": 0.9993782814603618
+    },
+    {
+      "map": "Hockenheim",
+      "cycle": 0,
+      "start": 69738,
+      "stop": 73002,
+      "outcome": "complete",
+      "steps": 3264,
+      "initial_pose": [
+        43.81243896484375,
+        32.103694915771484,
+        5.976827804242269
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.9466925764581788,
+        "deceleration": 2.6753375353392554,
+        "time_constant": 0.3464164474875784,
+        "delay": 0.1047221907264379,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 81.62500000000144,
+      "progress_fraction": 0.9991238628675961
+    },
+    {
+      "map": "SaoPaulo",
+      "cycle": 0,
+      "start": 73002,
+      "stop": 76120,
+      "outcome": "complete",
+      "steps": 3118,
+      "initial_pose": [
+        14.224519729614258,
+        11.340962409973145,
+        3.9426215330706995
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.28664898437435,
+        "deceleration": 2.658010819726472,
+        "time_constant": 0.37331110826934205,
+        "delay": 0.17057192874249372,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 77.9750000000006,
+      "progress_fraction": 0.9992172297626487
+    },
+    {
+      "map": "Spielberg",
+      "cycle": 0,
+      "start": 76120,
+      "stop": 79020,
+      "outcome": "complete",
+      "steps": 2900,
+      "initial_pose": [
+        -41.178672790527344,
+        0.5964566469192505,
+        2.1859912872314453
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7099414699943138,
+        "deceleration": 2.380735361240691,
+        "time_constant": 0.37950595672963305,
+        "delay": 0.17917845357459694,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 72.52499999999937,
+      "progress_fraction": 0.9992573760797706
+    },
+    {
+      "map": "MexicoCity",
+      "cycle": 0,
+      "start": 79020,
+      "stop": 82457,
+      "outcome": "complete",
+      "steps": 3437,
+      "initial_pose": [
+        36.210845947265625,
+        -41.427024841308594,
+        3.040675163269043
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.789992919998005,
+        "deceleration": 2.382147419999895,
+        "time_constant": 0.3940528150934962,
+        "delay": 0.06108073481825301,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 85.95000000000242,
+      "progress_fraction": 0.9993843825656872
+    },
+    {
+      "map": "Sochi",
+      "cycle": 1,
+      "start": 82457,
+      "stop": 86757,
+      "outcome": "complete",
+      "steps": 4300,
+      "initial_pose": [
+        -29.94451904296875,
+        -30.85269546508789,
+        0.20013366639614105
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.9562433771298369,
+        "deceleration": 3.176362360540703,
+        "time_constant": 0.25233961416766304,
+        "delay": 0.14242465713901556,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 107.52500000000732,
+      "progress_fraction": 0.9994084567064617
+    },
+    {
+      "map": "Spa",
+      "cycle": 1,
+      "start": 86757,
+      "stop": 91362,
+      "outcome": "complete",
+      "steps": 4605,
+      "initial_pose": [
+        37.04328536987305,
+        -77.67383575439453,
+        2.739891290664673
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.210570740090106,
+        "deceleration": 2.09026181927417,
+        "time_constant": 0.2297456123620432,
+        "delay": 0.09106961875196684,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 115.15000000000906,
+      "progress_fraction": 0.9995911290520777
+    },
+    {
+      "map": "Nuerburgring",
+      "cycle": 1,
+      "start": 91362,
+      "stop": 95259,
+      "outcome": "complete",
+      "steps": 3897,
+      "initial_pose": [
+        3.349611520767212,
+        25.355329513549805,
+        0.2276187390089035
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.887807328633659,
+        "deceleration": 3.001864445871224,
+        "time_constant": 0.3585431018479201,
+        "delay": 0.13765326816515594,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 97.45000000000503,
+      "progress_fraction": 0.9995837915257862
+    },
+    {
+      "map": "Monza",
+      "cycle": 1,
+      "start": 95259,
+      "stop": 98853,
+      "outcome": "complete",
+      "steps": 3594,
+      "initial_pose": [
+        29.44796371459961,
+        46.59076690673828,
+        4.149091545735494
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8923351005666462,
+        "deceleration": 2.6197579190210467,
+        "time_constant": 0.2746636495096582,
+        "delay": 0.17986678769479847,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 89.87500000000331,
+      "progress_fraction": 0.9994679605876906
+    },
+    {
+      "map": "Melbourne",
+      "cycle": 1,
+      "start": 98853,
+      "stop": 102983,
+      "outcome": "complete",
+      "steps": 4130,
+      "initial_pose": [
+        48.47737121582031,
+        -30.317636489868164,
+        2.0952653884887695
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.1608734366002205,
+        "deceleration": 2.2739196350553037,
+        "time_constant": 0.27853969175568327,
+        "delay": 0.19395954462205944,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 103.27500000000636,
+      "progress_fraction": 0.9994075517967466
+    },
+    {
+      "map": "Austin",
+      "cycle": 1,
+      "start": 102983,
+      "stop": 107028,
+      "outcome": "complete",
+      "steps": 4045,
+      "initial_pose": [
+        83.86283111572266,
+        20.22038459777832,
+        0.5651494264602661
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.312920793875135,
+        "deceleration": 3.373947125748416,
+        "time_constant": 0.17031348444074798,
+        "delay": 0.15079407467172107,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 101.15000000000587,
+      "progress_fraction": 0.9993094714111129
+    },
+    {
+      "map": "Silverstone",
+      "cycle": 1,
+      "start": 107028,
+      "stop": 110997,
+      "outcome": "complete",
+      "steps": 3969,
+      "initial_pose": [
+        53.532047271728516,
+        36.989994049072266,
+        5.588939849530355
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.1822926369182203,
+        "deceleration": 3.3772452519785143,
+        "time_constant": 0.3846235121947913,
+        "delay": 0.07059575058178388,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 99.25000000000544,
+      "progress_fraction": 0.9993983205737069
+    },
+    {
+      "map": "Sakhir",
+      "cycle": 1,
+      "start": 110997,
+      "stop": 114929,
+      "outcome": "complete",
+      "steps": 3932,
+      "initial_pose": [
+        23.638347625732422,
+        43.19540023803711,
+        2.3514742851257324
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.9073446678715047,
+        "deceleration": 2.272120049479159,
+        "time_constant": 0.33049813938714667,
+        "delay": 0.1422907039165348,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 98.32500000000523,
+      "progress_fraction": 0.9994683067104033
+    },
+    {
+      "map": "IMS",
+      "cycle": 1,
+      "start": 114929,
+      "stop": 116982,
+      "outcome": "complete",
+      "steps": 2053,
+      "initial_pose": [
+        52.22178268432617,
+        7.418133735656738,
+        1.5935338735580444
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.699761755618062,
+        "deceleration": 2.4701290799751447,
+        "time_constant": 0.24199431519110007,
+        "delay": 0.08809951876547492,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 51.349999999998154,
+      "progress_fraction": 0.9990955073610467
+    },
+    {
+      "map": "Budapest",
+      "cycle": 1,
+      "start": 116982,
+      "stop": 120597,
+      "outcome": "complete",
+      "steps": 3615,
+      "initial_pose": [
+        -14.17774772644043,
+        26.920541763305664,
+        5.593820933495657
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.629318571649635,
+        "deceleration": 3.0297577839137753,
+        "time_constant": 0.33946448757964387,
+        "delay": 0.17583499907490052,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 90.40000000000343,
+      "progress_fraction": 0.9993547474206491
+    },
+    {
+      "map": "Montreal",
+      "cycle": 1,
+      "start": 120597,
+      "stop": 123286,
+      "outcome": "complete",
+      "steps": 2689,
+      "initial_pose": [
+        -21.26995086669922,
+        -1.2291381359100342,
+        2.2805492877960205
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.0132978135610706,
+        "deceleration": 2.049921057161915,
+        "time_constant": 0.3326600210792977,
+        "delay": 0.19368155956461786,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 67.24999999999817,
+      "progress_fraction": 0.9991859659796237
+    },
+    {
+      "map": "Sepang",
+      "cycle": 1,
+      "start": 123286,
+      "stop": 127617,
+      "outcome": "complete",
+      "steps": 4331,
+      "initial_pose": [
+        -27.518781661987305,
+        35.75069808959961,
+        0.3691225051879883
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.204155382468931,
+        "deceleration": 2.7217030252224457,
+        "time_constant": 0.2228121073932869,
+        "delay": 0.11337977342734329,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 108.3000000000075,
+      "progress_fraction": 0.9996494559518867
+    },
+    {
+      "map": "Oschersleben",
+      "cycle": 1,
+      "start": 127617,
+      "stop": 130236,
+      "outcome": "complete",
+      "steps": 2619,
+      "initial_pose": [
+        -35.082061767578125,
+        8.436590194702148,
+        1.6140550374984741
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7209626693788667,
+        "deceleration": 2.6502926728301546,
+        "time_constant": 0.17999949324159814,
+        "delay": 0.168268426748944,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 65.49999999999777,
+      "progress_fraction": 0.9989369378828721
+    },
+    {
+      "map": "YasMarina",
+      "cycle": 1,
+      "start": 130236,
+      "stop": 134249,
+      "outcome": "complete",
+      "steps": 4013,
+      "initial_pose": [
+        40.44554901123047,
+        -47.89381408691406,
+        1.5539348125457764
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2876487143824398,
+        "deceleration": 2.18312670690697,
+        "time_constant": 0.16303736881850436,
+        "delay": 0.08578490757247137,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 100.35000000000569,
+      "progress_fraction": 0.9992220345235062
+    },
+    {
+      "map": "MoscowRaceway",
+      "cycle": 1,
+      "start": 134249,
+      "stop": 137597,
+      "outcome": "complete",
+      "steps": 3348,
+      "initial_pose": [
+        -48.81181716918945,
+        26.658653259277344,
+        2.354778289794922
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.9316156488859826,
+        "deceleration": 2.450062643014426,
+        "time_constant": 0.3673084707141742,
+        "delay": 0.18694839478537867,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 83.72500000000191,
+      "progress_fraction": 0.9990361395113737
+    },
+    {
+      "map": "Zandvoort",
+      "cycle": 1,
+      "start": 137597,
+      "stop": 141012,
+      "outcome": "complete",
+      "steps": 3415,
+      "initial_pose": [
+        10.834121704101562,
+        -30.152515411376953,
+        4.900395456944601
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2166460144039104,
+        "deceleration": 2.616807406811194,
+        "time_constant": 0.1892962189320746,
+        "delay": 0.15399230162241329,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 85.4000000000023,
+      "progress_fraction": 0.9995568882586583
+    },
+    {
+      "map": "Catalunya",
+      "cycle": 1,
+      "start": 141012,
+      "stop": 144700,
+      "outcome": "complete",
+      "steps": 3688,
+      "initial_pose": [
+        -19.88433074951172,
+        19.66572380065918,
+        2.753645181655884
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.7224262279812668,
+        "deceleration": 2.5206711586729376,
+        "time_constant": 0.2334983068909421,
+        "delay": 0.05774090808329443,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 92.22500000000385,
+      "progress_fraction": 0.999373420038793
+    },
+    {
+      "map": "BrandsHatch",
+      "cycle": 1,
+      "start": 144700,
+      "stop": 147666,
+      "outcome": "complete",
+      "steps": 2966,
+      "initial_pose": [
+        13.6361665725708,
+        5.137509822845459,
+        0.19406090676784515
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2193966569370285,
+        "deceleration": 2.103943434478764,
+        "time_constant": 0.16178816417506153,
+        "delay": 0.07238455462787655,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 74.17499999999974,
+      "progress_fraction": 0.999311944240892
+    },
+    {
+      "map": "Shanghai",
+      "cycle": 1,
+      "start": 147666,
+      "stop": 152072,
+      "outcome": "complete",
+      "steps": 4406,
+      "initial_pose": [
+        -52.06892013549805,
+        17.68134117126465,
+        2.2756450176239014
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.5917681850933008,
+        "deceleration": 3.2039252742827062,
+        "time_constant": 0.39988030189649115,
+        "delay": 0.09751757211709111,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 110.17500000000793,
+      "progress_fraction": 0.9996366988629006
+    },
+    {
+      "map": "Hockenheim",
+      "cycle": 1,
+      "start": 152072,
+      "stop": 155313,
+      "outcome": "complete",
+      "steps": 3241,
+      "initial_pose": [
+        15.55079174041748,
+        5.555881500244141,
+        2.260019063949585
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.823721354760388,
+        "deceleration": 2.140611796985508,
+        "time_constant": 0.392477633001704,
+        "delay": 0.186484548928183,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 81.0500000000013,
+      "progress_fraction": 0.9991238239384657
+    },
+    {
+      "map": "SaoPaulo",
+      "cycle": 1,
+      "start": 155313,
+      "stop": 158432,
+      "outcome": "complete",
+      "steps": 3119,
+      "initial_pose": [
+        0.009258425794541836,
+        22.712425231933594,
+        1.6427946090698242
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.047605719954545,
+        "deceleration": 2.1074242461535424,
+        "time_constant": 0.3215812020403469,
+        "delay": 0.05869676356510996,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 78.00000000000061,
+      "progress_fraction": 0.9993335068206549
+    },
+    {
+      "map": "Spielberg",
+      "cycle": 1,
+      "start": 158432,
+      "stop": 161325,
+      "outcome": "complete",
+      "steps": 2893,
+      "initial_pose": [
+        -18.05796241760254,
+        -4.8579840660095215,
+        3.4044981638537806
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.2320537895280124,
+        "deceleration": 2.622432810591894,
+        "time_constant": 0.1614843734398009,
+        "delay": 0.13982255092259338,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 72.34999999999933,
+      "progress_fraction": 0.9991759521963026
+    },
+    {
+      "map": "MexicoCity",
+      "cycle": 1,
+      "start": 161325,
+      "stop": 164733,
+      "outcome": "complete",
+      "steps": 3408,
+      "initial_pose": [
+        23.516817092895508,
+        -31.177783966064453,
+        2.588536024093628
+      ],
+      "longitudinal_response": {
+        "acceleration": 2.248120131832832,
+        "deceleration": 2.032559918920364,
+        "time_constant": 0.3545749362844858,
+        "delay": 0.1944888237562581,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 85.22500000000225,
+      "progress_fraction": 0.99934416516036
+    }
+  ],
+  "reset_mode": "cl_random_static",
+  "collection_max_steps": 20000,
+  "step_mode": "native",
+  "acceptance": "Whole lap, no collision, checkpoint and >=90% forward progress"
+}

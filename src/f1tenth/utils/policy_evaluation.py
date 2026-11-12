@@ -18,11 +18,21 @@ from utils.rule_based import nearest_point_on_trajectory
 _ACTOR = None
 _MEAN = None
 _SCALE = None
+_PHYSICAL_CONTRACT = None
 
 
 def initialize_policy(actor_path, scale_path):
-    global _ACTOR, _MEAN, _SCALE
+    global _ACTOR, _MEAN, _SCALE, _PHYSICAL_CONTRACT
     torch.set_num_threads(1)
+    _PHYSICAL_CONTRACT = None
+    if str(actor_path).endswith('.ts'):
+        extra = {'metadata.json': ''}
+        _ACTOR = torch.jit.load(str(actor_path), map_location='cpu', _extra_files=extra).eval()
+        _PHYSICAL_CONTRACT = json.loads(extra['metadata.json'])
+        if _PHYSICAL_CONTRACT['format'] != 'f1tenth-physical-lidar-v1':
+            raise ValueError('Unsupported standalone policy format')
+        _MEAN, _SCALE = 0., 1.
+        return
     _ACTOR = torch.load(actor_path, map_location='cpu').eval()
     with open(scale_path, 'rb') as stream:
         _MEAN, variance, _ = pickle.load(stream)
@@ -33,20 +43,32 @@ def policy_action(scan):
     # No position, track identity, waypoints, velocity or expert command enters.
     state = np.asarray((np.asarray(scan) - _MEAN) / _SCALE, dtype=np.float32)
     with torch.inference_mode():
+        if _PHYSICAL_CONTRACT is not None:
+            physical = _ACTOR(torch.from_numpy(state).unsqueeze(0)).numpy().reshape(-1)
+            contract = _PHYSICAL_CONTRACT
+            normalized = np.array([physical[0]/contract['max_steer'],
+                2.*(physical[1]-contract['min_speed'])/(contract['max_speed']-contract['min_speed'])-1.])
+            return np.clip(normalized, -1., 1.)
         return np.clip(_ACTOR(torch.from_numpy(state)).loc.numpy(), -1., 1.)
 
 
 def episode(job):
     args, name, mode, seed, video_path = job
     config = deepcopy(args)
+    required_laps = int(config.get('evaluation_laps', 1))
+    if required_laps < 1:
+        raise ValueError('evaluation_laps must be positive')
     config.seed, config.reset_config = seed, {'type': mode}
     random.seed(seed); np.random.seed(seed)
-    result = dict(map=name, reset=mode, seed=seed, outcome='error', steps=0)
+    result = dict(map=name, reset=mode, seed=seed, outcome='error', steps=0,
+                  required_laps=required_laps)
     env, writer, frames = None, None, 0
     try:
         env = F1Wrapper(config, [name], render_mode='rgb_array' if video_path else None)
         observation, info = env.reset(options={'map': name})
         result['initial_pose'] = env.unwrapped.sim.agent_poses[0].tolist()
+        result['longitudinal_response'] = env.unwrapped.sim.agents[0].response_parameters
+        max_actual_speed, fast_steps = 0., 0
         center = np.column_stack([env.unwrapped.track.centerline.xs,
                                   env.unwrapped.track.centerline.ys]).astype(np.float64)
         center = np.vstack([center, center[0]])
@@ -64,7 +86,10 @@ def episode(job):
             physical = np.array([action[0]*config.max_steer,
                                  unnormalize_speed(action[1], config.min_speed, config.max_speed)])
             raw, _, terminated, truncated, info = env.unwrapped.step(physical)
-            observation = raw['scans'][0]
+            observation = env.getObs(raw)
+            actual_speed = float(env.unwrapped.sim.agents[0].state[3])
+            max_actual_speed = max(max_actual_speed, actual_speed)
+            fast_steps += int(actual_speed >= 5.5)
             if not np.isfinite(observation).all() or not np.isfinite(env.unwrapped.sim.agents[0].state).all():
                 raise ValueError('Non-finite scan or physics state')
             current = progress_at(raw)
@@ -82,16 +107,23 @@ def episode(job):
                         '-r',str(1/(8*config.timestep)),'-i','pipe:0','-an','-c:v','libx264',
                         '-preset','fast','-crf','23','-pix_fmt','yuv420p','-movflags','+faststart',str(path)],stdin=subprocess.PIPE)
                 writer.stdin.write(frame.tobytes());frames += 1
-            if terminated or truncated:
-                collision = bool(env.unwrapped.collisions[0])
+            collision = bool(env.unwrapped.collisions[0])
+            # Keep state and scan history across finish crossings for repeated laps.
+            # The simulator's normal checkpoint termination is for one lap only.
+            reached_laps = required_laps > 1 and progress >= required_laps*length-.5
+            if collision or truncated or reached_laps or (terminated and required_laps == 1):
                 checkpoint = bool(np.asarray(info['checkpoint_done']).all())
                 result['outcome'] = ('collision' if collision else 'complete'
-                    if checkpoint and progress >= .9*length else 'early_checkpoint' if checkpoint else 'timeout')
+                    if reached_laps or (required_laps == 1 and checkpoint and progress >= .9*length)
+                    else 'early_checkpoint' if checkpoint and required_laps == 1 else 'timeout')
                 break
         else:
             result['outcome'] = 'timeout'
         result.update(elapsed_s=float(env.unwrapped.current_time), forward_progress_m=progress,
-                      track_length_m=length, progress_fraction=progress/length)
+                      track_length_m=length, progress_fraction=progress/(required_laps*length),
+                      completed_laps=max(0, int((progress+.5)/length)),
+                      max_actual_speed_mps=max_actual_speed,
+                      fraction_at_or_above_5_5mps=fast_steps/max(1, result['steps']))
     except Exception:
         result['error'] = traceback.format_exc()
     finally:
@@ -108,7 +140,8 @@ def summarize(records):
     completed = [r for r in records if r['outcome']=='complete']
     return dict(episodes=len(records), completed=len(completed),
                 completion_rate=len(completed)/max(1,len(records)),
-                mean_lap_s=float(np.mean([r['elapsed_s'] for r in completed])) if completed else None,
+                mean_episode_s=float(np.mean([r['elapsed_s'] for r in completed])) if completed else None,
+                mean_lap_s=float(np.mean([r['elapsed_s']/r.get('required_laps', 1) for r in completed])) if completed else None,
                 mean_progress=float(np.mean([min(1.,max(0.,r.get('progress_fraction',0.))) for r in records])),
                 counts={outcome:sum(r['outcome']==outcome for r in records)
                         for outcome in ['complete','collision','timeout','early_checkpoint','error']})

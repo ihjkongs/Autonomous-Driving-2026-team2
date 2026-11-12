@@ -1,0 +1,29 @@
+{
+  "artifact": "results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/driving_policy.ts",
+  "runtime_imported_without_training_package": true,
+  "tests": [
+    {
+      "device": "cpu",
+      "scans": 100,
+      "maximum_steering_error_rad": 2.1457672083613488e-08,
+      "maximum_speed_error_mps": 3.8743019104003906e-07,
+      "mean_inference_ms": 0.2974251897103386,
+      "p95_inference_ms": 0.370556701636815
+    },
+    {
+      "device": "cuda:0",
+      "scans": 100,
+      "maximum_steering_error_rad": 0.00011856019496919723,
+      "maximum_speed_error_mps": 0.0015284568071365356,
+      "mean_inference_ms": 0.360677200005739,
+      "p95_inference_ms": 0.4291465518690529
+    }
+  ],
+  "tolerances": {
+    "steering_rad": 0.0005,
+    "speed_mps": 0.005
+  },
+  "warmup_calls": 3,
+  "cuda_uses_default_backend_precision": true,
+  "measured_machine": "training laptop; not Jetson"
+}

@@ -265,19 +265,15 @@ def check_ttc_jit(scan, vel, scan_angles, cosines, side_distances, ttc_thresh):
         in_collision (bool): whether vehicle is in collision with environment
         collision_angle (float): at which angle the collision happened
     """
-    in_collision = False
-    if vel != 0.0:
-        num_beams = scan.shape[0]
-        for i in range(num_beams):
-            proj_vel = vel * cosines[i]
-            ttc = (scan[i] - side_distances[i]) / proj_vel
-            if (ttc < ttc_thresh) and (ttc >= 0.0):
-                in_collision = True
-                break
-    else:
-        in_collision = False
-
-    return in_collision
+    for i in range(scan.shape[0]):
+        gap = scan[i] - side_distances[i]
+        # A negative TTC used to discard an obstacle already inside the body.
+        if gap <= 0.0:
+            return True
+        proj_vel = vel * cosines[i]
+        if proj_vel > 0.0 and gap / proj_vel < ttc_thresh:
+            return True
+    return False
 
 
 @njit(cache=True)

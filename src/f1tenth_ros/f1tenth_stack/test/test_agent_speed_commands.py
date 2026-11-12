@@ -162,3 +162,70 @@ def test_dry_run_produces_preview_but_no_vehicle_publisher(runner):
     assert node.preview_pub.messages[-1].drive.speed == pytest.approx(.05)
     node.stop()
     assert node.preview_pub.messages[-1].drive.speed == 0
+
+
+def test_standalone_policy_needs_no_training_directory_and_preserves_physical_units(runner, monkeypatch):
+    AgentNode, clock, _, scan = runner
+    module = sys.modules[AgentNode.__module__]
+    base = AgentNode.__bases__[0]
+    original = base.get_parameter
+    def parameter(self, key):
+        if key == 'policy_file':
+            return NS(value='/model/driving_policy.ts')
+        if key == 'project_root':
+            return NS(value='/nonexistent-training-directory')
+        return original(self, key)
+    monkeypatch.setattr(base, 'get_parameter', parameter)
+    class Runtime:
+        metadata = dict(obs_dim=4320)
+        def __init__(self, *args):
+            self.resets = 0
+        def predict(self, observation, now):
+            assert observation.shape == (1080,)
+            return .25, 5.
+        def reset(self):
+            self.resets += 1
+    monkeypatch.setattr(module, 'StandalonePolicy', Runtime)
+    node = AgentNode()
+    node.scan_callback(scan)
+    clock[0] = .025
+    node.scan_callback(scan)
+    assert node.pred_pub.messages[-1].drive.speed == 5.
+    assert node.pred_pub.messages[-1].drive.steering_angle == .25
+    assert node.drive_pub.messages[-1].drive.speed == pytest.approx(.05)
+    assert node.drive_pub.messages[-1].drive.steering_angle == .25
+    clock[0] += .3
+    node.watchdog()
+    assert node.policy_runtime.resets == 1
+    assert node.drive_pub.messages[-1].drive.speed == 0.
+
+
+def test_number_resolves_renamed_model_directory(runner):
+    AgentNode, _, _, _ = runner
+    # The fixture supplies a numeric directory, as on the existing Jetson.
+    node = AgentNode()
+    parent = Path(node.params['project_root'])/'src/f1tenth/results/imitation'
+    (parent/'2').rename(parent/'2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110')
+    renamed = AgentNode()
+    assert renamed.obs_dim == 1080
+
+
+def test_number_automatically_selects_standalone_export(runner, monkeypatch):
+    AgentNode, _, _, _ = runner
+    module = sys.modules[AgentNode.__module__]
+    node = AgentNode()
+    parent = Path(node.params['project_root'])/'src/f1tenth/results/imitation'
+    (parent/'2').rename(parent/'5_bc_cnn_6mps_dagger_avgpool4_270pts')
+    policy = parent/'5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/driving_policy.ts'
+    policy.touch()
+    base = AgentNode.__bases__[0]
+    original = base.get_parameter
+    monkeypatch.setattr(base, 'get_parameter', lambda self, key:
+                        NS(value=5) if key == 'algo_idx' else original(self, key))
+    class Runtime:
+        metadata = dict(obs_dim=4320)
+        def __init__(self, path, *args):
+            assert Path(path) == policy
+    monkeypatch.setattr(module, 'StandalonePolicy', Runtime)
+    selected = AgentNode()
+    assert selected.obs_dim == 4320 and selected.policy_runtime is not None

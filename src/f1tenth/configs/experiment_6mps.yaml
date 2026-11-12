@@ -1,0 +1,29 @@
+description: Simulation-only 6 m/s expert; response parameters are assumptions, not physical calibration.
+assumptions:
+  ground_speed_calibrated: false
+  electrical_faults_simulated: false
+  note: ERPM response cannot identify tire slip, ground speed or battery charge limits.
+task:
+  max_speed: 6.0
+  lidar_frames: 4
+  obs_dim: 4320
+dynamics:
+  longitudinal_response:
+    acceleration: 2.0
+    deceleration: 3.0
+    time_constant: 0.25
+    delay: 0.10
+    command_acceleration: 2.0
+    command_deceleration: 3.0
+expert:
+  speed_cap: 6.0
+  vgain: 1.0
+  tlad: 0.8
+  lookahead_time: 0.15
+  max_lookahead: 1.7
+  lateral_acceleration: 3.0
+  anticipatory_braking: true
+  braking_deceleration: 2.0
+  planning_acceleration: 1.5
+  reaction_time: 0.35
+  curvature_window: 0.75

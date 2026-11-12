@@ -1,0 +1,374 @@
+{
+  "ground_speed_calibrated": false,
+  "observations": [
+    {
+      "recording": "drive_check_20261110_191704",
+      "samples": 2613,
+      "source_sha256": "de8cb3cc3b7f0002e621f2f1b669793ef8dee92fe022219999972705599b7fd3",
+      "state_interval_s": [
+        0.023775767,
+        60.286596219
+      ],
+      "command_interval_s": [
+        17.569505096,
+        60.296383285
+      ],
+      "telemetry_end_before_commands_s": 0.009787065999994127,
+      "motor_current_range_A": [
+        -18.23,
+        32.39
+      ],
+      "battery_current_range_A": [
+        -13.0,
+        4.09
+      ],
+      "regen_Ah_increase": 0.0005999999999999998,
+      "regen_Wh_increase": 0.008399999999999998,
+      "negative_battery_samples": 192,
+      "faults": [
+        {
+          "t_s": 20.359523617,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -18.23,
+          "preceding_250ms_battery_min_A": -13.0,
+          "preceding_250ms_command_erpm_span": 5259.881913661957,
+          "preceding_250ms_prediction_speed_span": 2.1039527654647827
+        },
+        {
+          "t_s": 29.467568039,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -16.77,
+          "preceding_250ms_battery_min_A": -12.08,
+          "preceding_250ms_command_erpm_span": 6505.09238243103,
+          "preceding_250ms_prediction_speed_span": 2.602036952972412
+        },
+        {
+          "t_s": 46.259412166,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -11.19,
+          "preceding_250ms_battery_min_A": -7.54,
+          "preceding_250ms_command_erpm_span": 7310.8044266700745,
+          "preceding_250ms_prediction_speed_span": 2.9243217706680293
+        }
+      ],
+      "example_regeneration": {
+        "t": 29.444747682,
+        "erpm": 6630.0,
+        "current_motor": -16.77,
+        "current_input": -12.08,
+        "voltage_input": 14.8,
+        "preceding_target_erpm": 3612.4980330467215
+      }
+    },
+    {
+      "recording": "drive_final2500_20261110_202552",
+      "samples": 4993,
+      "source_sha256": "d580163f41c6992dce513a93d0db740060214acf39ad78528e7de6df234eb189",
+      "state_interval_s": [
+        0.050597113,
+        116.186216494
+      ],
+      "command_interval_s": [
+        17.885973519,
+        116.206131504
+      ],
+      "telemetry_end_before_commands_s": 0.019915009999991184,
+      "motor_current_range_A": [
+        -7.77,
+        16.19
+      ],
+      "battery_current_range_A": [
+        -0.37,
+        1.46
+      ],
+      "regen_Ah_increase": 0.0010999999999999994,
+      "regen_Wh_increase": 0.015,
+      "negative_battery_samples": 641,
+      "faults": [],
+      "example_regeneration": {
+        "t": 43.620949137,
+        "erpm": 8023.0,
+        "current_motor": -5.99,
+        "current_input": -0.37,
+        "voltage_input": 14.5,
+        "preceding_target_erpm": 6878.540205955505
+      }
+    },
+    {
+      "recording": "drive_gain2800_check_20261110_195619",
+      "samples": 2154,
+      "source_sha256": "f82ab77415f882129349d5b232c6fff394f0bd8982081de695b70a24466009a1",
+      "state_interval_s": [
+        0.045511567,
+        49.718023586
+      ],
+      "command_interval_s": [
+        17.414824034,
+        49.68160731
+      ],
+      "telemetry_end_before_commands_s": -0.03641627600000419,
+      "motor_current_range_A": [
+        -8.76,
+        23.66
+      ],
+      "battery_current_range_A": [
+        -0.44,
+        2.57
+      ],
+      "regen_Ah_increase": 0.0004000000000000002,
+      "regen_Wh_increase": 0.006000000000000005,
+      "negative_battery_samples": 235,
+      "faults": [],
+      "example_regeneration": {
+        "t": 21.622893421,
+        "erpm": 8494.0,
+        "current_motor": -7.15,
+        "current_input": -0.44,
+        "voltage_input": 14.6,
+        "preceding_target_erpm": 7228.985977172852
+      }
+    },
+    {
+      "recording": "drive_gain3200_check_20261110_194959",
+      "samples": 534,
+      "source_sha256": "a53d416f37f66d2291f2af1476b90cbd5ba3067217be59808fa0a81a82546777",
+      "state_interval_s": [
+        0.0,
+        14.582913141
+      ],
+      "command_interval_s": [
+        4.237142752,
+        23.383914549
+      ],
+      "telemetry_end_before_commands_s": 8.801001408,
+      "motor_current_range_A": [
+        -5.95,
+        21.5
+      ],
+      "battery_current_range_A": [
+        -0.49,
+        3.0
+      ],
+      "regen_Ah_increase": 9.99999999999994e-05,
+      "regen_Wh_increase": 0.000899999999999998,
+      "negative_battery_samples": 32,
+      "faults": [],
+      "example_regeneration": {
+        "t": 10.864261393,
+        "erpm": 10404.0,
+        "current_motor": -5.95,
+        "current_input": -0.49,
+        "voltage_input": 14.6,
+        "preceding_target_erpm": 9348.113250732422
+      }
+    },
+    {
+      "recording": "drive_no_limiter_gain2800_20261110_201244",
+      "samples": 1450,
+      "source_sha256": "19a126a55c59bb10faef44986e94016efa885610fbb58fa01f9e956b9cc29e7c",
+      "state_interval_s": [
+        0.017288904,
+        33.971533744
+      ],
+      "command_interval_s": [
+        18.067320634,
+        39.955272635
+      ],
+      "telemetry_end_before_commands_s": 5.983738891000002,
+      "motor_current_range_A": [
+        -28.1,
+        33.48
+      ],
+      "battery_current_range_A": [
+        -22.14,
+        4.98
+      ],
+      "regen_Ah_increase": 0.0005000000000000004,
+      "regen_Wh_increase": 0.007900000000000004,
+      "negative_battery_samples": 121,
+      "faults": [
+        {
+          "t_s": 22.755742871,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -28.1,
+          "preceding_250ms_battery_min_A": -22.14,
+          "preceding_250ms_command_erpm_span": 8390.106916427612,
+          "preceding_250ms_prediction_speed_span": 2.9964667558670044
+        }
+      ],
+      "example_regeneration": {
+        "t": 22.714309559,
+        "erpm": 8272.0,
+        "current_motor": -28.1,
+        "current_input": -22.14,
+        "voltage_input": 13.4,
+        "preceding_target_erpm": 4464.292860031128
+      }
+    },
+    {
+      "recording": "drive_smooth_check_20261110_193811",
+      "samples": 1416,
+      "source_sha256": "5ca8f559d6ce0ed4801884c92a3e6c4791cb5fbfd74b590d8122a2a2da6bd19a",
+      "state_interval_s": [
+        0.0,
+        34.956498789
+      ],
+      "command_interval_s": [
+        0.729244088,
+        34.992246572
+      ],
+      "telemetry_end_before_commands_s": 0.035747782999997924,
+      "motor_current_range_A": [
+        -7.29,
+        12.94
+      ],
+      "battery_current_range_A": [
+        -0.36,
+        1.42
+      ],
+      "regen_Ah_increase": 0.0004000000000000002,
+      "regen_Wh_increase": 0.006099999999999994,
+      "negative_battery_samples": 247,
+      "faults": [],
+      "example_regeneration": {
+        "t": 27.172878178,
+        "erpm": 8011.0,
+        "current_motor": -5.79,
+        "current_input": -0.36,
+        "voltage_input": 14.6,
+        "preceding_target_erpm": 6706.184434890747
+      }
+    },
+    {
+      "recording": "drive_stop_check_20261110_182416",
+      "samples": 2341,
+      "source_sha256": "18b4ed30f56928d5e4daf2766c006962fdf182a55e62417e029d42a551622622",
+      "state_interval_s": [
+        0.043020624,
+        61.709959613
+      ],
+      "command_interval_s": [
+        18.183002634,
+        61.6530522
+      ],
+      "telemetry_end_before_commands_s": -0.05690741300000468,
+      "motor_current_range_A": [
+        -68.06,
+        34.19
+      ],
+      "battery_current_range_A": [
+        -54.85,
+        5.88
+      ],
+      "regen_Ah_increase": 0.015400000000000004,
+      "regen_Wh_increase": 0.21539999999999998,
+      "negative_battery_samples": 40,
+      "faults": [
+        {
+          "t_s": 18.884047509,
+          "code": 4,
+          "preceding_250ms_motor_min_A": 0.0,
+          "preceding_250ms_battery_min_A": 0.0,
+          "preceding_250ms_command_erpm_span": 612.5512719154358,
+          "preceding_250ms_prediction_speed_span": 0.24502050876617432
+        },
+        {
+          "t_s": 23.485171008,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -10.61,
+          "preceding_250ms_battery_min_A": -3.4,
+          "preceding_250ms_command_erpm_span": 7498.571276664734,
+          "preceding_250ms_prediction_speed_span": 2.9994285106658936
+        },
+        {
+          "t_s": 27.480386541,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -6.66,
+          "preceding_250ms_battery_min_A": -5.98,
+          "preceding_250ms_command_erpm_span": 753.2459497451782,
+          "preceding_250ms_prediction_speed_span": 0.3012983798980713
+        },
+        {
+          "t_s": 31.343170669,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -2.52,
+          "preceding_250ms_battery_min_A": -2.52,
+          "preceding_250ms_command_erpm_span": 364.68565464019775,
+          "preceding_250ms_prediction_speed_span": 0.1458742618560791
+        },
+        {
+          "t_s": 35.298125848,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -64.31,
+          "preceding_250ms_battery_min_A": -50.81,
+          "preceding_250ms_command_erpm_span": 2194.938063621521,
+          "preceding_250ms_prediction_speed_span": 0.8779752254486088
+        },
+        {
+          "t_s": 39.44462711,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -16.41,
+          "preceding_250ms_battery_min_A": -13.13,
+          "preceding_250ms_command_erpm_span": 478.93643379211426,
+          "preceding_250ms_prediction_speed_span": 0.1915745735168457
+        },
+        {
+          "t_s": 42.615284752,
+          "code": 4,
+          "preceding_250ms_motor_min_A": 0.0,
+          "preceding_250ms_battery_min_A": 0.0,
+          "preceding_250ms_command_erpm_span": 2810.0785613059998,
+          "preceding_250ms_prediction_speed_span": 1.1240314245224
+        },
+        {
+          "t_s": 46.304235823,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -27.1,
+          "preceding_250ms_battery_min_A": -21.67,
+          "preceding_250ms_command_erpm_span": 1971.1023569107056,
+          "preceding_250ms_prediction_speed_span": 0.7884409427642818
+        },
+        {
+          "t_s": 50.640693851,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -7.09,
+          "preceding_250ms_battery_min_A": -7.98,
+          "preceding_250ms_command_erpm_span": 2831.8172693252563,
+          "preceding_250ms_prediction_speed_span": 1.132726907730103
+        },
+        {
+          "t_s": 54.864562385,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -68.02,
+          "preceding_250ms_battery_min_A": -54.85,
+          "preceding_250ms_command_erpm_span": 564.5465850830078,
+          "preceding_250ms_prediction_speed_span": 0.22581863403320312
+        },
+        {
+          "t_s": 59.659158496,
+          "code": 4,
+          "preceding_250ms_motor_min_A": -66.5,
+          "preceding_250ms_battery_min_A": -52.88,
+          "preceding_250ms_command_erpm_span": 913.429856300354,
+          "preceding_250ms_prediction_speed_span": 0.3653719425201416
+        }
+      ],
+      "example_regeneration": {
+        "t": 54.801664603,
+        "erpm": 23737.0,
+        "current_motor": -68.02,
+        "current_input": -54.85,
+        "voltage_input": 13.4,
+        "preceding_target_erpm": 9175.980973243712
+      }
+    }
+  ],
+  "interpretation": [
+    "Negative battery current plus increasing charged energy supports regeneration at the VESC DC input.",
+    "Motor/input currents are packet averages and do not reconstruct instantaneous overcurrent peaks.",
+    "Command and state packet receipt times are asynchronous, not exact controller execution times.",
+    "ERPM response is observable; true ground speed, slip and physical deceleration are not identified.",
+    "Fault-free received samples do not establish fault-free operation after telemetry stops.",
+    "These non-controlled laps do not uniquely identify delay, PID gains or motor/battery limits."
+  ]
+}

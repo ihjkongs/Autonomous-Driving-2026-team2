@@ -1,4 +1,4 @@
-# 라이다 모방학습 결과 — imitation/2
+# 라이다 모방학습 결과 — 실험 2 (2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110)
 
 2026-11-07, 새 전문가 데이터로 신경망 학습과 별도 주행 평가를 실행했다.
 현재 저장된 모델은 학습된 신경망이며, 기존 Pure Pursuit 전문가와 구분한다.
@@ -28,7 +28,7 @@
 전문가의 개입이나 주행 보정도 사용하지 않았다. 위치와 중앙선은 평가기의
 주행 거리 및 완주 판정에만 사용했다.
 
-![학습 곡선과 모델 선택 평가](results/imitation/2/training_curves.png)
+![학습 곡선과 모델 선택 평가](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/training_curves.png)
 
 ## 학습과 모델 선택
 
@@ -79,29 +79,29 @@
 
 | 트랙 | 완주 | 성공 평균(초) | 충돌 | 시간초과 | 신경망 주행 영상 |
 |---|---|---|---|---|---|
-| Sochi | 10/10 | 120.62 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Sochi.mp4) |
-| Spa | 10/10 | 142.05 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Spa.mp4) |
-| Nuerburgring | 10/10 | 115.03 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Nuerburgring.mp4) |
-| Monza | 10/10 | 113.80 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Monza.mp4) |
-| Melbourne | 10/10 | 122.45 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Melbourne.mp4) |
-| Austin | 10/10 | 110.78 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Austin.mp4) |
-| Silverstone | 10/10 | 117.66 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Silverstone.mp4) |
-| Sakhir | 10/10 | 114.50 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Sakhir.mp4) |
-| IMS | 10/10 | 73.52 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/IMS.mp4) |
-| Budapest | 10/10 | 103.98 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Budapest.mp4) |
-| Montreal | 10/10 | 75.91 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Montreal.mp4) |
-| Sepang | 10/10 | 126.18 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Sepang.mp4) |
-| Oschersleben | 10/10 | 69.46 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Oschersleben.mp4) |
-| YasMarina | 10/10 | 106.38 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/YasMarina.mp4) |
-| MoscowRaceway | 10/10 | 86.31 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/MoscowRaceway.mp4) |
-| Zandvoort | 10/10 | 100.21 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Zandvoort.mp4) |
-| Catalunya | 10/10 | 107.63 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Catalunya.mp4) |
-| BrandsHatch | 10/10 | 90.93 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/BrandsHatch.mp4) |
-| Shanghai | 10/10 | 129.60 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Shanghai.mp4) |
-| Hockenheim | 10/10 | 93.59 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Hockenheim.mp4) |
-| SaoPaulo | 10/10 | 89.27 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/SaoPaulo.mp4) |
-| Spielberg | 10/10 | 88.07 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/Spielberg.mp4) |
-| MexicoCity | 10/10 | 94.12 | 0 | 0 | [영상: complete](results/imitation/2/evaluation_final/video/MexicoCity.mp4) |
+| Sochi | 10/10 | 120.62 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Sochi.mp4) |
+| Spa | 10/10 | 142.05 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Spa.mp4) |
+| Nuerburgring | 10/10 | 115.03 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Nuerburgring.mp4) |
+| Monza | 10/10 | 113.80 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Monza.mp4) |
+| Melbourne | 10/10 | 122.45 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Melbourne.mp4) |
+| Austin | 10/10 | 110.78 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Austin.mp4) |
+| Silverstone | 10/10 | 117.66 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Silverstone.mp4) |
+| Sakhir | 10/10 | 114.50 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Sakhir.mp4) |
+| IMS | 10/10 | 73.52 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/IMS.mp4) |
+| Budapest | 10/10 | 103.98 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Budapest.mp4) |
+| Montreal | 10/10 | 75.91 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Montreal.mp4) |
+| Sepang | 10/10 | 126.18 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Sepang.mp4) |
+| Oschersleben | 10/10 | 69.46 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Oschersleben.mp4) |
+| YasMarina | 10/10 | 106.38 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/YasMarina.mp4) |
+| MoscowRaceway | 10/10 | 86.31 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/MoscowRaceway.mp4) |
+| Zandvoort | 10/10 | 100.21 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Zandvoort.mp4) |
+| Catalunya | 10/10 | 107.63 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Catalunya.mp4) |
+| BrandsHatch | 10/10 | 90.93 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/BrandsHatch.mp4) |
+| Shanghai | 10/10 | 129.60 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Shanghai.mp4) |
+| Hockenheim | 10/10 | 93.59 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Hockenheim.mp4) |
+| SaoPaulo | 10/10 | 89.27 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/SaoPaulo.mp4) |
+| Spielberg | 10/10 | 88.07 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/Spielberg.mp4) |
+| MexicoCity | 10/10 | 94.12 | 0 | 0 | [영상: complete](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video/MexicoCity.mp4) |
 
 영상은 시드 53의 출발선 주행이다. `complete`는 완주, `collision`은 충돌로
 끝난 영상이다. 영상이 존재한다고 모두 완주 영상인 것은 아니다.
@@ -114,20 +114,20 @@
 
 ## 저장 위치
 
-- 선택된 신경망: `results/imitation/2/sim2real/actor.pt`.
+- 선택된 신경망: `results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/sim2real/actor.pt`.
 - 관측 정규화 통계: 같은 폴더의 `agent_obs_scale.pkl`.
-- 선택된 모델과 옵티마이저: `results/imitation/2/checkpoint/model.pt`.
+- 선택된 모델과 옵티마이저: `results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/checkpoint/model.pt`.
 - 각 1,000회 시점 모델: `checkpoint/model_1000.pt`부터 `model_5000.pt`까지.
 - 실행 설정·학습 당시 코드·데이터 메타데이터: `backup/`.
-- [학습 집계](results/imitation/2/training_summary.json),
-  [평가 집계](results/imitation/2/evaluation_final/summary.json),
-  [트랙별 CSV](results/imitation/2/evaluation_final/by_track.csv),
-  [회차별 원본](results/imitation/2/evaluation_final/episodes.jsonl).
-- [신경망 영상 폴더](results/imitation/2/evaluation_final/video).
-- [모델·정규화·영상 검증](results/imitation/2/artifact_verification.json).
+- [학습 집계](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/training_summary.json),
+  [평가 집계](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/summary.json),
+  [트랙별 CSV](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/by_track.csv),
+  [회차별 원본](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/episodes.jsonl).
+- [신경망 영상 폴더](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_final/video).
+- [모델·정규화·영상 검증](results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/artifact_verification.json).
 
-기존 `results/imitation/1` 모델과 전문가 데이터는 보관했다.
-`AgentBase`는 수정하지 않았다. 새 실험은 `--algo_idx 3`처럼 다른 번호를 사용한다.
+기존 `results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame` 모델과 전문가 데이터는 보관했다.
+`AgentBase`는 수정하지 않았다. 새 실험은 `--algo_idx 6 --run-label bc_mlp_4mps_new`처럼 사용하지 않은 번호와 설명을 사용한다.
 
 ## 다시 평가하기
 
@@ -135,7 +135,7 @@
 source ~/venv/torch210/bin/activate
 cd /home/jiwon/projects/Autonomous-Driving-2026-team2/src/f1tenth
 SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python evaluate_policy.py \
-  --run results/imitation/2 --output results/imitation/2/evaluation_again \
+  --run results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110 --output results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/evaluation_again \
   --seeds 11 53 2718 2028 65537 --workers 6 --video-seed 53
 ```
 

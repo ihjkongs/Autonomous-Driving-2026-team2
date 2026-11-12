@@ -20,3 +20,10 @@ def test_no_completions_uses_progress_not_survival_time():
     far=summarize([dict(outcome='timeout',elapsed_s=500.,progress_fraction=.1)])
     assert selection_key(near)>selection_key(far)
     assert near['mean_lap_s'] is None
+
+
+def test_continuous_laps_report_lap_time_separately_from_episode_time():
+    result = summarize([dict(outcome='complete', elapsed_s=270.,
+                             required_laps=3, progress_fraction=1.)])
+    assert result['mean_episode_s'] == 270.
+    assert result['mean_lap_s'] == 90.

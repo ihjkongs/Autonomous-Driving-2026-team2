@@ -1,0 +1,146 @@
+{
+  "recorded_at": "2026-11-12T13:15:08.117140+09:00",
+  "mapping": {
+    "results/imitation/1": "results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame",
+    "results/imitation/2": "results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110",
+    "results/imitation/3": "results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames",
+    "results/imitation/4": "results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames",
+    "results/recovery/cnn_dagger_20261112": "results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts"
+  },
+  "preserved_sim2real_sha256": {
+    "results/imitation/1": {
+      "sim2real/agent_reward_scale.pkl": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+      "sim2real/actor.pt": "c82af4e6318c83efeb0349c9391235c8af82cc711c96e2543f7f85452773903e",
+      "sim2real/actor_before_refinement.pt": "e07b365cf0545ffa2a5d6ddd3ca813ae5a273025ba8e80b4ff74328cb4231485",
+      "sim2real/agent_obs_scale.pkl": "47129dd72c9269a81dc179276adb4fffbcda663b4b57d78523018573e2d69541"
+    },
+    "results/imitation/2": {
+      "sim2real/agent_reward_scale.pkl": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+      "sim2real/actor.pt": "170c875081da4384f8a3df31895bd9a36e8e0aa21e83437520df4832837e5700",
+      "sim2real/agent_obs_scale.pkl": "a8a3a676bddcd8ce0e760e9a3614937c81600bf3d8ceee602d684c0a65bff3ca"
+    },
+    "results/imitation/3": {
+      "sim2real/agent_reward_scale.pkl": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+      "sim2real/actor.pt": "502e4eea3ae18230198d2b0c5384c4bb5d35ec8a4f1313e58e4c9d157423ff1d",
+      "sim2real/agent_obs_scale.pkl": "5d86f463a68e50deb2f07592b9bc56511dc950cfb526a7dd06062ca002bf631c"
+    },
+    "results/imitation/4": {
+      "sim2real/agent_reward_scale.pkl": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+      "sim2real/actor.pt": "bb4dc4a6b5309a413e77e67fa8102fa5e0eb3cec3eb2f67a06a5706fada2be21",
+      "sim2real/agent_obs_scale.pkl": "5d86f463a68e50deb2f07592b9bc56511dc950cfb526a7dd06062ca002bf631c"
+    },
+    "results/recovery/cnn_dagger_20261112": {
+      "sim2real/actor.pt": "65d06b639b377048b4617a7ddca60877b23534b17fd2aeac44cfe52b82f92bfb",
+      "sim2real/agent_obs_scale.pkl": "b2d5571a6e894b2d8a50f2b3cfb30842ddf3563e5920e33e09e7630529f9ab4e",
+      "sim2real/driving_policy.ts": "7e3d2eef75cc1a651cc7baa0f8e0c330f75e3e83517409cfced0733482ca7417"
+    }
+  },
+  "weights_changed": false,
+  "default_experiment": 2,
+  "jetson_modified": false,
+  "historical_backups_logs_and_checkpoint_pickles_rewritten": false,
+  "note": "Historical records can contain original paths. Use this mapping for current locations; weights and evaluation outcomes are unchanged.",
+  "verification": {
+    "simulation_and_training_tests_passed": 34,
+    "ros_related_tests_passed": 38,
+    "actual_model_loading_smoke_test": [
+      2,
+      5
+    ],
+    "deployment_file_hashes_unchanged": true
+  },
+  "number_resolution": "Resolve numeric or descriptive numbered directory; reject multiple directories with the same number.",
+  "standalone_selection": "ROS selects sim2real/driving_policy.ts automatically when present in the numbered run; default remains experiment 2.",
+  "subsequent_renames": [
+    {
+      "recorded_at": "2026-11-12T13:36:20.573819+09:00",
+      "source": "results/imitation/2_bc_mlp_4mps_verified",
+      "destination": "results/imitation/2_bc_mlp_4mps_verified_realtest_20261110",
+      "reason": "Explicitly identify the model used for the 2026-11-10 physical driving tests.",
+      "evidence": "reports/2026-11-10_sim2real_worklog.md",
+      "weights_changed": false
+    },
+    {
+      "recorded_at": "2026-11-12T14:21:39.120122+09:00",
+      "source": "results/imitation/5_bc_cnn_6mps_dagger",
+      "destination": "results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts",
+      "reason": "Expose per-frame spatial average pooling: 1080 rays -> 270 points, groups of four adjacent rays. Temporal frames are kept separate.",
+      "weights_changed": false
+    },
+    {
+      "recorded_at": "2026-11-12T14:41:28.976166+09:00",
+      "source": "results/imitation/1_bc_mlp_4mps_initial",
+      "destination": "results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame",
+      "reason": "Expose unreduced 1080 rays per frame and temporal frame count; saved input layer verified.",
+      "weights_changed": false
+    },
+    {
+      "recorded_at": "2026-11-12T14:41:28.976186+09:00",
+      "source": "results/imitation/2_bc_mlp_4mps_verified_realtest_20261110",
+      "destination": "results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110",
+      "reason": "Expose unreduced 1080 rays per frame and temporal frame count; saved input layer verified.",
+      "weights_changed": false
+    },
+    {
+      "recorded_at": "2026-11-12T14:41:28.976190+09:00",
+      "source": "results/imitation/3_bc_mlp_6mps_temporal",
+      "destination": "results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames",
+      "reason": "Expose unreduced 1080 rays per frame and temporal frame count; saved input layer verified.",
+      "weights_changed": false
+    },
+    {
+      "recorded_at": "2026-11-12T14:41:28.976193+09:00",
+      "source": "results/imitation/4_bc_mlp_6mps_temporal_refined",
+      "destination": "results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames",
+      "reason": "Expose unreduced 1080 rays per frame and temporal frame count; saved input layer verified.",
+      "weights_changed": false
+    }
+  ],
+  "physical_test_usage": {
+    "experiment": 2,
+    "date": "2026-11-10",
+    "scope": "Used during physical driving tests; not a universal safety certification."
+  },
+  "experiment_5_input_preprocessing": {
+    "raw_rays_per_frame": 1080,
+    "temporal_frames": 4,
+    "spatial_pooling": "mean of 4 adjacent rays",
+    "pooled_points_per_frame": 270,
+    "pooling_embedded_in_model": true,
+    "averages_temporal_frames": false
+  },
+  "experiments_1_to_4_input_preprocessing": {
+    "1": {
+      "raw_rays_per_frame": 1080,
+      "model_points_per_frame": 1080,
+      "temporal_frames": 1,
+      "spatial_pooling": false,
+      "total_input_values": 1080
+    },
+    "2": {
+      "raw_rays_per_frame": 1080,
+      "model_points_per_frame": 1080,
+      "temporal_frames": 1,
+      "spatial_pooling": false,
+      "total_input_values": 1080
+    },
+    "3": {
+      "raw_rays_per_frame": 1080,
+      "model_points_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_pooling": false,
+      "total_input_values": 4320
+    },
+    "4": {
+      "raw_rays_per_frame": 1080,
+      "model_points_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_pooling": false,
+      "total_input_values": 4320
+    }
+  },
+  "git_tracking_exceptions": {
+    "experiment_2": "Legacy deployment artifacts and task configuration",
+    "experiment_5": "sim2real/driving_policy.ts only"
+  }
+}

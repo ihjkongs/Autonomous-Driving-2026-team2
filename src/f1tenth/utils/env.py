@@ -46,6 +46,10 @@ class F1Wrapper(gym.Wrapper):
 
         # for spaces
         self.obs_dim = args.obs_dim
+        self.lidar_frames = int(args.get('lidar_frames', 1))
+        if self.obs_dim != 1080 * self.lidar_frames:
+            raise ValueError('obs_dim must equal 1080 * lidar_frames')
+        self.scan_history = deque(maxlen=self.lidar_frames)
         self.action_dim = args.action_dim
         self.observation_space = spaces.Box(-np.inf*np.ones(self.obs_dim), np.inf*np.ones(self.obs_dim), dtype=np.float32)
         self.action_space = spaces.Box(-np.ones(self.action_dim), np.ones(self.action_dim), dtype=np.float32)
@@ -164,7 +168,13 @@ class F1Wrapper(gym.Wrapper):
             ==> Changed to include only scans
         '''
         scan = np.array(obs_dict['scans']).reshape(-1)      # raw lidar value
-        observation = scan
+        if reset:
+            self.scan_history.clear()
+            for _ in range(self.lidar_frames):
+                self.scan_history.append(scan.copy())
+        else:
+            self.scan_history.append(scan.copy())
+        observation = np.concatenate(list(self.scan_history))
 
         return observation
     # ======================================================================== #

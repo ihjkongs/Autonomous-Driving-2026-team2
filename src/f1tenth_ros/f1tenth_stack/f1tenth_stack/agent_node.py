@@ -18,6 +18,16 @@ from f1tenth_stack.policy_input import (
     OBS_DIM, scan_to_observation, normalize_observation, decode_action,
 )
 from f1tenth_stack.speed_limiter import SpeedLimiter
+from f1tenth_stack.standalone_policy import StandalonePolicy
+
+
+def experiment_run(sim_path, name, index):
+    parent, number = sim_path / 'results' / name, str(index)
+    candidates = ([parent / number] if (parent / number).is_dir() else [])
+    candidates += sorted(p for p in parent.glob(number + '_*') if p.is_dir())
+    if len(candidates) != 1:
+        raise ValueError('Expected one model directory for experiment %s; found %s' % (number, candidates))
+    return candidates[0]
 
 
 class AgentNode(Node):
@@ -31,6 +41,7 @@ class AgentNode(Node):
             'dry_run': True, 'device': 'auto', 'laser_yaw_offset': 0.0,
             'speed_limit': 1.0, 'scan_timeout': 0.2,
             'max_acceleration': 2.0, 'max_deceleration': 3.0,
+            'policy_file': '',
         }
         for key, value in defaults.items():
             self.declare_parameter(key, value)
@@ -47,28 +58,40 @@ class AgentNode(Node):
             self.params['max_acceleration'], self.params['max_deceleration'],
             max_dt=min(0.1, self.params['scan_timeout']))
         sim_path = Path(self.params['project_root']).expanduser().resolve() / 'src/f1tenth'
-        if not sim_path.is_dir():
+        if not self.params['policy_file'] and not sim_path.is_dir():
             raise ValueError('Set project_root to the repository containing src/f1tenth')
         sys.path.insert(0, str(sim_path))
-        run = sim_path / 'results' / self.params['name'] / str(self.params['algo_idx'])
-        with (run / 'backup/f1tenth.yaml').open() as stream:
-            self.task = yaml.safe_load(stream)
-        self.obs_dim = self.task['obs_dim']
-        if self.task['obs_dim'] != OBS_DIM or self.task['action_dim'] != 2:
-            raise ValueError('This runner requires a 1080-input, 2-output policy')
-        with (run / 'sim2real/agent_obs_scale.pkl').open('rb') as stream:
-            self.mean, self.var, count = pickle.load(stream)
-        normalize_observation(np.zeros(OBS_DIM), self.mean, self.var)
-        if not np.isfinite(count) or count <= 0:
-            raise ValueError('Normalization statistics have no valid samples')
+        run = None
+        if not self.params['policy_file']:
+            run = experiment_run(sim_path, self.params['name'], self.params['algo_idx'])
+            standalone = run / 'sim2real/driving_policy.ts'
+            if standalone.is_file():
+                self.params['policy_file'] = str(standalone)
         device = self.params['device']
         if device == 'auto':
             device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
         self.device = torch.device(device)
-        self.actor = torch.load(str(run / 'sim2real/actor.pt'), map_location='cpu')
-        self.actor.to(self.device).eval()
-        with torch.no_grad():
-            self.actor(torch.zeros((1, OBS_DIM), device=self.device)).loc
+        self.policy_runtime = None
+        if self.params['policy_file']:
+            self.policy_runtime = StandalonePolicy(self.params['policy_file'], self.device,
+                                                   self.params['scan_timeout'])
+            self.task = self.policy_runtime.metadata
+            self.obs_dim = self.task['obs_dim']
+        else:
+            with (run / 'backup/f1tenth.yaml').open() as stream:
+                self.task = yaml.safe_load(stream)
+            self.obs_dim = self.task['obs_dim']
+            if self.task['obs_dim'] != OBS_DIM or self.task['action_dim'] != 2:
+                raise ValueError('Legacy runner requires 1080 inputs; use policy_file for standalone models')
+            with (run / 'sim2real/agent_obs_scale.pkl').open('rb') as stream:
+                self.mean, self.var, count = pickle.load(stream)
+            normalize_observation(np.zeros(OBS_DIM), self.mean, self.var)
+            if not np.isfinite(count) or count <= 0:
+                raise ValueError('Normalization statistics have no valid samples')
+            self.actor = torch.load(str(run / 'sim2real/actor.pt'), map_location='cpu')
+            self.actor.to(self.device).eval()
+            with torch.no_grad():
+                self.actor(torch.zeros((1, OBS_DIM), device=self.device)).loc
         # No publisher to the vehicle command topic exists in dry-run mode.
         self.pred_pub = self.create_publisher(
             AckermannDriveStamped, self.params['prediction_topic'], 1)
@@ -95,6 +118,8 @@ class AgentNode(Node):
     def stop(self):
         # Stops bypass ordinary deceleration limiting, including in dry-run.
         self.speed_limiter.reset()
+        if self.policy_runtime is not None:
+            self.policy_runtime.reset()
         self.last_valid_scan = None
         msg = AckermannDriveStamped()
         msg.header.stamp = self.get_clock().now().to_msg()
@@ -115,19 +140,22 @@ class AgentNode(Node):
                 if age > self.params['scan_timeout'] or age < -0.05:
                     raise ValueError('Stale scan or inconsistent ROS clock')
             obs = self.getObs(scan)
-            norm = normalize_observation(obs, self.mean, self.var)
             started = time.monotonic()
-            with torch.no_grad():
-                x = torch.as_tensor(norm, device=self.device).unsqueeze(0)
-                action = self.actor(x).loc.cpu().numpy().reshape(-1)
-            steer, speed = decode_action(
-                action, self.task['max_steer'], self.task['min_speed'], self.task['max_speed'])
+            if (self.last_valid_scan is not None and
+                    started-self.last_valid_scan > self.params['scan_timeout']):
+                self.stop()
+            if self.policy_runtime is not None:
+                steer, speed = self.policy_runtime.predict(obs, started)
+            else:
+                norm = normalize_observation(obs, self.mean, self.var)
+                with torch.no_grad():
+                    x = torch.as_tensor(norm, device=self.device).unsqueeze(0)
+                    action = self.actor(x).loc.cpu().numpy().reshape(-1)
+                steer, speed = decode_action(
+                    action, self.task['max_steer'], self.task['min_speed'], self.task['max_speed'])
             if time.monotonic() - started > self.params['scan_timeout']:
                 raise ValueError('Policy inference exceeded scan_timeout')
             now = time.monotonic()
-            if (self.last_valid_scan is not None and
-                    now - self.last_valid_scan > self.params['scan_timeout']):
-                self.stop()
             target_speed = min(speed, self.params['speed_limit'])
             command_speed = self.speed_limiter.update(target_speed, now)
             self.last_valid_scan = now
@@ -159,8 +187,7 @@ class AgentNode(Node):
                 self.get_logger().error('Scan rejected: %s' % exc)
 
     def getObs(self, scan):
-        # Training getObs is a single raw scan in metres (no scan history).
-        # Use LaserScan angles to match that simulator's 1080-ray angular grid.
+        # Resample one scan; standalone runtime manages the model's history.
         return scan_to_observation(
             scan.ranges, scan.angle_min, scan.angle_increment,
             scan.range_min, scan.range_max, self.params['laser_yaw_offset'])

@@ -18,6 +18,7 @@ import numpy as np
 from ruamel.yaml import YAML
 
 from utils.expert_config import MAPS, load_expert_config
+from utils.experiment import apply_experiment
 
 PARAM = load_expert_config()
 from utils.env import F1Wrapper, normalize_speed, unnormalize_speed
@@ -50,6 +51,7 @@ def evaluate(args, map_name, mode, seed):
         raw = info['obs_dict']
         # Keep the native reset pose; do not reset again using rounded observations.
         result['initial_pose'] = env.unwrapped.sim.agent_poses[0].tolist()
+        result['longitudinal_response'] = env.unwrapped.sim.agents[0].response_parameters
         result['initial_expert_distance_m'] = float(nearest_point_on_trajectory(
             np.array([raw['poses_x'][0], raw['poses_y'][0]]), planner.waypoints[:, :2]
         )[1])
@@ -67,6 +69,7 @@ def evaluate(args, map_name, mode, seed):
         progress = 0.0
         saturated = 0
         max_yaw_rate, max_slip = 0.0, 0.0
+        max_actual_speed, max_requested_speed, fast_steps = 0.0, 0.0, 0
         result['first_commands'] = []
         result['at_collection_horizon'] = None
         for step in range(1, config.max_episode_steps + 1):
@@ -85,7 +88,7 @@ def evaluate(args, map_name, mode, seed):
                                      unnormalize_speed(action[1], config.min_speed, config.max_speed)])
                 raw, _, terminated, truncated, info = env.unwrapped.step(physical)
                 info['obs_dict'] = raw
-                observation = raw['scans'][0]
+                observation = env.getObs(raw)
             else:
                 observation, _, terminated, truncated, info = env.step(action)
             collision = bool(env.unwrapped.collisions[0])
@@ -94,10 +97,13 @@ def evaluate(args, map_name, mode, seed):
                 raise ValueError('Non-finite vehicle physics state')
             max_yaw_rate = max(max_yaw_rate, abs(float(state[5])))
             max_slip = max(max_slip, abs(float(state[6])))
+            max_actual_speed = max(max_actual_speed, float(state[3]))
+            max_requested_speed = max(max_requested_speed, float(speed))
+            fast_steps += int(state[3] >= 5.5)
             if step % 8 == 1 or terminated or truncated:
                 raw = info['obs_dict']
                 trajectory.append([step, float(raw['poses_x'][0]), float(raw['poses_y'][0]),
-                                   float(raw['poses_theta'][0]), float(speed), float(steer)])
+                                   float(raw['poses_theta'][0]), float(speed), float(steer), float(state[3])])
                 if record_video:
                     import imageio_ffmpeg
                     frame = np.ascontiguousarray(env.render())
@@ -155,6 +161,8 @@ def evaluate(args, map_name, mode, seed):
             steering_saturation_fraction=saturated / max(result['steps'], 1),
             legacy_collector_accepts_prefix=min(result['steps'], config.collection_horizon) > 200,
             max_yaw_rate_radps=max_yaw_rate, max_slip_angle_rad=max_slip,
+            max_actual_speed_mps=max_actual_speed, max_requested_speed_mps=max_requested_speed,
+            fraction_at_or_above_5_5mps=fast_steps / max(result['steps'], 1),
         )
     except Exception:
         result['error'] = traceback.format_exc()
@@ -198,6 +206,7 @@ def main():
     parser.add_argument('--reference', choices=['centerline', 'raceline'])
     parser.add_argument('--lookahead', type=float)
     parser.add_argument('--speed-cap', type=float)
+    parser.add_argument('--experiment', type=Path)
     parser.add_argument('--step-mode', choices=['wrapper', 'native'], default='wrapper')
     parser.add_argument('--video-maps', nargs='*', choices=MAPS, default=[])
     parser.add_argument('--video-seed', type=int, default=124)
@@ -220,6 +229,7 @@ def main():
     args.output_dir = str(output.resolve())
     args.video_maps, args.video_seed, args.video_reset = cli.video_maps, cli.video_seed, cli.video_reset
     args.expert_parameters = dict(PARAM)
+    apply_experiment(args, cli.experiment)
     if cli.reference:
         args.expert_parameters['reference'] = cli.reference
     if cli.lookahead is not None:
@@ -231,6 +241,11 @@ def main():
                ROOT / 'installation/f1tenth_gym/envs/integrator.py',
                ROOT / 'installation/f1tenth_gym/envs/dynamic_models.py',
                ROOT / 'utils/expert_data.py', ROOT / 'collect_expert.py', Path(__file__).resolve()]
+    sources += [ROOT / name for name in ['utils/speed_profile.py', 'utils/experiment.py',
+                'installation/f1tenth_gym/envs/longitudinal.py',
+                'installation/f1tenth_gym/envs/base_classes.py',
+                'installation/f1tenth_gym/envs/laser_models.py',
+                'installation/f1tenth_gym/envs/f110_env.py']]
     for source in sources:
         target = output / 'sources' / source.relative_to(ROOT)
         target.parent.mkdir(parents=True, exist_ok=True)

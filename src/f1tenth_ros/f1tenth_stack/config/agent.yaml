@@ -1,7 +1,7 @@
 agent_node:
   ros__parameters:
     name: imitation
-    algo_idx: 2
+    algo_idx: 2  # resolves 2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110 (legacy folder "2" also supported)
     scan_topic: /scan
     drive_topic: /drive
     prediction_topic: /agent/prediction

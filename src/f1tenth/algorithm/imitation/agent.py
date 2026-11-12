@@ -21,6 +21,7 @@ class Agent(AgentBase):
         self.lr = args.lr
         self.batch_size = args.batch_size
         self.max_grad_norm = args.max_grad_norm
+        self.steering_loss_weight = args.get('steering_loss_weight', 1.0)
 
         # for model
         self.actor = Actor(args).to(self.device)
@@ -45,7 +46,8 @@ class Agent(AgentBase):
         # ============================ implement here ============================ #
         MSE_Loss = torch.nn.MSELoss()
         action_mean = action_dists.mean
-        actor_loss = MSE_Loss(action_mean, actions_tensor)
+        squared_error = (action_mean - actions_tensor).square()
+        actor_loss = (self.steering_loss_weight*squared_error[:, 0] + squared_error[:, 1]).mean()/2.
         # ======================================================================== #
         
         # update

@@ -28,7 +28,10 @@ EPS = 1e-8
 
 from utils.expert_config import MAPS, load_expert_config
 from utils.expert_data import load_verified, collect_verified
+from utils.run_paths import experiment_path
 from utils.policy_evaluation import evaluate_policy, selection_key
+from utils.experiment import apply_experiment
+from utils.training_resume import restore_training
 
 EVAL_MAPS = ['Sochi', 'IMS', 'Catalunya', 'Zandvoort', 'Silverstone', 'SaoPaulo',       # easy
              'YasMarina', 'MoscowRaceway', 'Shanghai', 'MexicoCity', 'Montreal']        # hard
@@ -42,6 +45,7 @@ def getParser():
     # algorithm
     parser.add_argument('--name', type=str, default=None, help='algo name.')
     parser.add_argument('--algo_idx', type=int, default=1, help='algo index.')
+    parser.add_argument('--run-label', default=None, help='Descriptive suffix for a new experiment directory')
     parser.add_argument('--model_num', type=int, default=None, help='for checkpoint num.')
     # common
     parser.add_argument('--wandb',  action='store_true', help='use wandb?')
@@ -56,6 +60,9 @@ def getParser():
     parser.add_argument('--eval_interval', type=int, default=1000, help='Updates between fixed-suite policy evaluations.')
     parser.add_argument('--eval_workers', type=int, default=6)
     parser.add_argument('--expert_data', default='expert_data_verified.pkl', help='Verified expert dataset path.')
+    parser.add_argument('--experiment', type=Path)
+    parser.add_argument('--resume-from', type=Path, help='Continue selected weights into a NEW run; identical dataset required.')
+    parser.add_argument('--steering-loss-weight', type=float, default=1.0)
     parser.add_argument('--expert_max_steps', type=int, default=20000, help='Per-lap collection timeout.')
     parser.add_argument('--total_steps', type=int, default=int(1e5), help='total interaction steps.')
     # for eval
@@ -102,18 +109,40 @@ def eval(args, env, agent, name, eval_num=1):
 
 def train(args):
     # Keep each experiment isolated, including normalization statistics.
-    if (Path(args.save_dir) / 'checkpoint/model.pt').exists():
+    if any((Path(args.save_dir) / p).exists() for p in ('checkpoint/model.pt', 'sim2real/actor.pt', 'manifest.json')):
         raise FileExistsError('Choose a new --algo_idx; an existing model will not be overwritten.')
     if args.epochs <= 0 or args.eval_interval <= 0 or args.eval_workers <= 0:
         raise ValueError('Training and evaluation limits must be positive.')
+    if not np.isfinite(args.steering_loss_weight) or args.steering_loss_weight <= 0:
+        raise ValueError('steering_loss_weight must be positive')
     for source in ['configs/task/f1tenth.yaml', 'configs/task/dynamic.yaml',
                    'configs/expert.yaml', 'configs/algorithm/imitation.yaml']:
         copyfile(source, str(Path(args.backup_dir) / Path(source).name))
     for source in ['main_il.py', 'algorithm/imitation/agent.py',
-                   'algorithm/common/models.py', 'utils/policy_evaluation.py']:
+                   'algorithm/common/models.py', 'utils/policy_evaluation.py',
+                   'utils/env.py', 'utils/rule_based.py', 'utils/expert_data.py',
+                   'utils/speed_profile.py', 'utils/experiment.py',
+                   'utils/training_resume.py',
+                   'installation/f1tenth_gym/envs/longitudinal.py',
+                   'installation/f1tenth_gym/envs/base_classes.py',
+                   'installation/f1tenth_gym/envs/laser_models.py',
+                   'installation/f1tenth_gym/envs/f110_env.py']:
         target = Path(args.backup_dir) / 'sources' / source
         target.parent.mkdir(parents=True, exist_ok=True)
         copyfile(source, str(target))
+    (Path(args.backup_dir) / 'effective_experiment.json').write_text(
+        json.dumps(dict(task={key: args[key] for key in ('max_speed', 'min_speed', 'obs_dim')},
+                        lidar_frames=args.get('lidar_frames', 1),
+                        longitudinal_response=args.get('longitudinal_response'),
+                        expert_parameters=args.get('expert_parameters', PARAM),
+                        experiment=args.get('experiment_config')), indent=2)+'\n')
+    if args.get('experiment_path'):
+        copyfile(args.experiment_path, str(Path(args.backup_dir) / 'experiment.yaml'))
+    with (Path(args.backup_dir) / 'f1tenth.yaml').open('w') as stream:
+        YAML().dump(json.loads(json.dumps({key: args[key] for key in ('map', 'max_episode_steps', 'obs_dim',
+                    'action_dim', 'show_centerline', 'timestep', 'min_speed', 'max_speed',
+                    'max_steer', 'control_input', 'observation_config', 'reset_config',
+                    'num_agents', 'ego_idx')})), stream)
     random.seed(args.seed); np.random.seed(args.seed); torch.manual_seed(args.seed)
     if torch.cuda.is_available(): torch.cuda.manual_seed_all(args.seed)
     torch.set_num_threads(1)
@@ -141,6 +170,12 @@ def train(args):
     del data
     eval_args = deepcopy(args); eval_args.max_episode_steps = args.expert_max_steps
     best_key, best_update, best_summary = None, None, None
+    resumed = None
+    if args.resume_from:
+        resumed = restore_training(agent, args, metadata['signature'])
+        best_summary = resumed['selection']
+        best_key, best_update = selection_key(best_summary), 0
+        agent.save(log=False)
     losses = []
     start = time.monotonic()
     with (Path(args.save_dir) / 'training_metrics.jsonl').open('w') as stream:
@@ -192,9 +227,11 @@ def train(args):
                   best_update=best_update, selection=best_summary,
                   selection_rule='Completion rate, then lower completed-lap time, then progress.',
                   selection_seeds=[17, 19], selection_modes=['cl_grid_static', 'cl_random_static'],
-                  input='Single LiDAR scan only (1080 ranges).',
+                  input=f"LiDAR only: {args.get('lidar_frames', 1)} frames, {args.obs_dim} ranges.",
                   device=str(args.device), elapsed_s=time.monotonic()-start,
                   dataset_signature=metadata['signature'])
+    result.update(resumed_from=resumed, steering_loss_weight=args.steering_loss_weight,
+                  best_update_note='Update is relative to this run; zero retains the source selected model.')
     (Path(args.save_dir)/'training_summary.json').write_text(json.dumps(result,indent=2)+'\n')
     print('[Training finished]',json.dumps(result),flush=True)
     if args.wandb:
@@ -250,7 +287,9 @@ if __name__ == "__main__":
     args.update(task_args)
     args.update(dynamic_args)
     args.update(agent_args)
-    args.save_dir = f"results/{args.name}/{args.algo_idx}"
+    apply_experiment(args, args.experiment)
+    label = args.run_label or f"bc_mlp_{args.max_speed:g}mps_{'temporal' if args.get('lidar_frames', 1) > 1 else 'single_scan'}"
+    args.save_dir = str(experiment_path('results', args.name, args.algo_idx, label))
 
     # ==== processing args ==== #
     # directory

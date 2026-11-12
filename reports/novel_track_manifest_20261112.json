@@ -1,0 +1,49 @@
+{
+  "tracks": [
+    {
+      "name": "OfflineNovelThreeLobes",
+      "radius": 18.0,
+      "amplitude": 0.24,
+      "frequency": 3,
+      "asymmetry": 0.08,
+      "road_width_m": 2.5,
+      "resolution_m": 0.05,
+      "files": {
+        "OfflineNovelThreeLobes_map.png": "eee8ecf59d791109ba8d79613a877116bce4c29f41bda6e5e6c5ca4b1c23086e",
+        "OfflineNovelThreeLobes_map.yaml": "a71d281bb27954bd2afed86a5583fb761927ade011c7a79a0f2688ea14eb876f",
+        "OfflineNovelThreeLobes_centerline.csv": "34953977623a6e2c66297c5b648fc1fa3866136b7e8fa3e915f0f5b38c125e4a"
+      },
+      "role": "Evaluation only: never added to training, normalization or checkpoint selection"
+    },
+    {
+      "name": "OfflineNovelFourLobes",
+      "radius": 22.0,
+      "amplitude": 0.19,
+      "frequency": 4,
+      "asymmetry": 0.06,
+      "road_width_m": 3.0,
+      "resolution_m": 0.05,
+      "files": {
+        "OfflineNovelFourLobes_map.yaml": "ba44a58cef55e87d22a0f763ce612f4d53d81283ea430fbd7f37c3798e62927a",
+        "OfflineNovelFourLobes_map.png": "9d9d2470f8f2f4f7429292b0de2dd38a911e109ef7623f797e7fd5dbde456ffe",
+        "OfflineNovelFourLobes_centerline.csv": "1f0460e2a731a688b282a61ef65704f2dea1210cf82209929c757ff348e824c4"
+      },
+      "role": "Evaluation only: never added to training, normalization or checkpoint selection"
+    },
+    {
+      "name": "OfflineNovelFiveLobes",
+      "radius": 20.0,
+      "amplitude": 0.22,
+      "frequency": 5,
+      "asymmetry": 0.04,
+      "road_width_m": 2.2,
+      "resolution_m": 0.05,
+      "files": {
+        "OfflineNovelFiveLobes_map.yaml": "09a925d1871ad6d9199d45b9250908bd73533c4b889be78c8f067fad7d9e8bbd",
+        "OfflineNovelFiveLobes_map.png": "b8de25185c4ce41d095926675311db4d2096aad8de43c9eeb05aaf9987b5dcfa",
+        "OfflineNovelFiveLobes_centerline.csv": "6a75ecdcfebe3b72f2b554301f45cfbf0c4c8fc58b1d954dea9c462178af19f2"
+      },
+      "role": "Evaluation only: never added to training, normalization or checkpoint selection"
+    }
+  ]
+}
