@@ -12,3 +12,6 @@ venv/
 # 에디터
 .vscode/
 .idea/
+
+# Local project planning notes
+/plan.md
