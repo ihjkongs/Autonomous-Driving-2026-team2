@@ -122,18 +122,18 @@ class SquashedActor(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        raise NotImplementedError('Implement SquashedActor for the SAC exercise.')
-        self.fc1 = ...
-        self.fc2 = ...
-        
-        self.mean_layer = ...
-        self.log_std_layer = ...
+        self.fc1 = nn.Linear(self.obs_dim, self.hidden1_units)
+        self.fc2 = nn.Linear(self.hidden1_units, self.hidden2_units)
+
+        self.mean_layer = nn.Linear(self.hidden2_units, self.action_dim)
+        self.log_std_layer = nn.Linear(self.hidden2_units, self.action_dim)
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
-        
+
     def forward(self, x):
         # ======= implement here ======= #
-        raise NotImplementedError('Implement SquashedActor.forward for the SAC exercise.')
+        x = self.activ(self.fc1(x))
+        x = self.activ(self.fc2(x))
         # ============================== #
         mean = self.mean_layer(x)
         
@@ -160,18 +160,19 @@ class Critic(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        raise NotImplementedError('Implement Critic for the PPO exercise.')
-        self.fc1 = ...
-        self.fc2 = ...
-        self.fc3 = ...
+        self.fc1 = nn.Linear(self.obs_dim, self.hidden1_units)
+        self.fc2 = nn.Linear(self.hidden1_units, self.hidden2_units)
+        self.fc3 = nn.Linear(self.hidden2_units, 1)
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
 
     def forward(self, x):
         # ======= implement here ======= #
-        raise NotImplementedError('Implement Critic.forward for the PPO exercise.')
+        x = self.activ(self.fc1(x))
+        x = self.activ(self.fc2(x))
+        x = self.fc3(x)
         # ============================== #
-        assert x.dim == 2
+        assert x.dim() == 2
         return x
 
     def initialize(self):
@@ -188,18 +189,20 @@ class QCritic(nn.Module):
         self.activation = args.activation
 
         # ======= implement here ======= #
-        raise NotImplementedError('Implement QCritic for the SAC exercise.')
-        self.fc1 = ...
-        self.fc2 = ...
-        self.fc3 = ...
+        self.fc1 = nn.Linear(self.obs_dim + self.action_dim, self.hidden1_units)
+        self.fc2 = nn.Linear(self.hidden1_units, self.hidden2_units)
+        self.fc3 = nn.Linear(self.hidden2_units, 1)
         # ============================== #
         self.activ = eval(f'torch.nn.{self.activation}()')
 
     def forward(self, state, action):
         # ======= implement here ======= #
-        raise NotImplementedError('Implement QCritic.forward for the SAC exercise.')
+        x = torch.cat([state, action], dim=-1)
+        x = self.activ(self.fc1(x))
+        x = self.activ(self.fc2(x))
+        x = self.fc3(x)
         # ============================== #
-        assert x.dim == 2
+        assert x.dim() == 2
         return x
 
     def initialize(self):
