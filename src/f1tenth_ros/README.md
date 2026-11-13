@@ -2,6 +2,10 @@
 
 Drivers onboard f1tenth race cars. This branch is under development for migration to ROS2. See the [documentation of F1TENTH](https://f1tenth.readthedocs.io/en/foxy_test/getting_started/firmware/index.html) on how to get started.
 
+## 상황별 명령어
+
+[COMMANDS.md](COMMANDS.md)에 Jetson 환경 준비, 키보드 주행, 노드·LiDAR·VESC 확인, rosbag 수집과 설정 저장 순서를 정리했습니다.
+
 ## TODO list
 1. check if results folder placed in the right path (inside src/f1tenth folder)
 2. if results folder structure looks like 'results/imitation_test/1', write 'imitation_test' to 'name' and '1' to 'algo_idx' in f1tenth_stack/config/agent.yaml

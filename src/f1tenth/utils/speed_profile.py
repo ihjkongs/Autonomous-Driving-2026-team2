@@ -45,3 +45,35 @@ def preview_speed(arc, speed, index, distance):
     offsets = (arc[:-1] - arc[index]) % arc[-1]
     end = float(np.interp(stop, arc, np.r_[speed, speed[0]]))
     return min(float(np.min(speed[offsets <= distance])), end)
+
+
+def curvature_speed_profile(line, min_speed, max_speed, lateral_accel_limit,
+                            accel_limit, brake_limit):
+    """Adapt the shared closed-path envelope to a track line's waypoints."""
+    points = np.column_stack((line.xs, line.ys)).astype(np.float64)
+    if len(points) < 3 or min_speed <= 0 or max_speed < min_speed:
+        raise ValueError('Invalid trajectory or speed bounds')
+
+    keep = np.r_[True, np.linalg.norm(np.diff(points, axis=0), axis=1) > 1e-8]
+    if np.linalg.norm(points[-1] - points[0]) <= 1e-8:
+        keep[-1] = False
+    unique_points = points[keep]
+    if len(unique_points) < 3:
+        raise ValueError('Trajectory needs at least three unique waypoints')
+
+    work = {
+        'vgain': 1.0,
+        'speed_cap': max_speed,
+        'min_speed': min_speed,
+        'lateral_acceleration': lateral_accel_limit,
+        'braking_deceleration': brake_limit,
+        'planning_acceleration': accel_limit,
+    }
+    _, unique_speeds, _ = speed_profile(
+        unique_points, np.full(len(unique_points), max_speed), work
+    )
+    nearest = np.argmin(
+        np.sum((points[:, None, :] - unique_points[None, :, :]) ** 2, axis=2),
+        axis=1,
+    )
+    return unique_speeds[nearest].astype(np.float32)
