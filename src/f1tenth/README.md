@@ -174,7 +174,7 @@ MAPS = ['Sochi', 'Spa', 'Nuerburgring', 'Monza', 'Melbourne', 'Austin',
 | 2 | `2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110` | 검증한 전문가 데이터로 학습한 모델 **(2026년 11월 10일 실차 주행 테스트 사용)** |
 | 3 | `3_bc_mlp_6mps_temporal_1080pts_4frames` | 라이다 4프레임과 차량 응답 지연을 반영한 첫 6m/s 모델 — 실차 미사용 |
 | 4 | `4_bc_mlp_6mps_temporal_refined_1080pts_4frames` | 3번에서 조향 오차 가중치를 조정하고 추가 학습 — 실차 미사용 |
-| 5 | `5_bc_cnn_6mps_dagger_avgpool4_270pts` | CNN·복구 데이터 보강, 각 프레임의 이웃한 방향 4개씩 평균하여 270개 사용 — 실차 미사용 |
+| 5 | `5_bc_cnn_6mps_dagger_avgpool4_270pts` | CNN·복구 데이터 보강, 프레임별 270개 사용 — **2026-11-12 실차 시험 사용** ([작업 일지](../../reports/2026-11-12_sim2real_worklog.md)) |
 
 `realtest_20261110`은 **2026년 11월 10일 실차 주행 테스트에서 사용한 모델**이라는 뜻이다.
 학습 날짜나 모든 조건의 무충돌 검증 완료를 뜻하지 않는다.
