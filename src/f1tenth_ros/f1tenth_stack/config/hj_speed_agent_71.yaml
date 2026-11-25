@@ -1,0 +1,38 @@
+hj_speed_agent_node:
+  ros__parameters:
+    policy_file: ''            # required: pass policy_file:= at launch (68 driving_policy.ts, sha a856170d...)
+    scan_topic: /scan
+    odom_topic: /odom          # vesc_to_odom_node: twist.twist.linear.x [m/s]
+    drive_topic: /drive
+    prediction_topic: /agent/prediction
+    command_preview_topic: /agent/command_preview
+    dry_run: true              # launch arg dry_run:=false is the only way to drive
+    device: cpu
+    laser_yaw_offset: 0.0
+    speed_limit: 1.0           # system 71 deployment starts at 1; raise by launch arg speed_limit:=
+    max_acceleration: 2.0
+    max_deceleration: 3.0
+    scan_timeout: 0.2
+    odom_max_skew: 0.1
+    odom_timeout: 0.25
+    odom_reverse_tolerance: 0.1
+    odom_max_speed_input: 8.0
+    use_header_stamps: true
+    # Speed input source. 'odom' = /odom (default). If the stationary /odom twist.linear.x is
+    # about -0.13 (offset sign bug in vesc_to_odom, see calibration.md), switch with
+    # launch arg speed_source:=vesc_core (uses /sensors/core ERPM, v=erpm/gain).
+    # gain below is NOT linked to vesc.yaml: it must equal the value the running vesc nodes
+    # use (ros2 param get /ackermann_to_vesc_node speed_to_erpm_gain). Set core_speed_offset_erpm
+    # only if the calibration regression intercept (calibration.md 4-3) is not 0.
+    speed_source: odom
+    core_topic: /sensors/core
+    speed_to_erpm_gain: 2500.0
+    core_speed_offset_erpm: 0.0    # measured-ERPM intercept, 0 = standstill; NOT the command offset -325
+    core_deadband: 0.05
+    # System 71 = BC68 + LiDAR following guard V2f, files and SHA pinned explicitly.
+    guard_enabled: true
+    guard_variant: v2f
+    guard_file: ''             # packaged hj_lidar_following_guard_v2f.py
+    guard_sha256: '234aa1b8b982ebef6276c6d41b52353ea8955ffe4cfb26ba91fbe4d464fe4cf2'
+    guard_params_file: ''      # packaged config/hj_lidar_guard_v2f_params.yaml (JSON content)
+    guard_params_sha256: 'a44923a9164e7250e8a07c6715065c245c4a4b8170ffeb183f7afc1321a4acb4'
