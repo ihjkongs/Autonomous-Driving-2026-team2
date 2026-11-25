@@ -63,24 +63,27 @@ cd ~/vesc_logs
 
 ros2 bag record -a --include-hidden-topics
     
-# 자율주행 실행 명령어(젯슨 터미널에서 가상환경으로 실행)_2026.11.10_지원
-
-ros2 launch f1tenth_stack bringup_launch.py \
-  project_root:=/home/team2/Autonomous-Driving-2026-team2 \
-  agent_python:=/home/team2/venv/torch210/bin/python \
-  speed_limit:=4.0 \
-  max_acceleration:=2.0 \
-  max_deceleration:=3.0 \
-  dry_run:=false
-
-
-# rosbag 실행 명령어(별도의 젯슨 터미널에서 실행)_2026.11.10_지원
+# 자율주행 실행 명령어(젯슨 터미널에서 가상환경으로 실행)_2026.11.25_지원
 
 source ~/Autonomous-Driving-2026-team2/install/setup.bash
+source ~/venv/torch210/bin/activate
 
 ros2 bag record \
-  -o ~/drive_final2500_$(date +%Y%m%d_%H%M%S) \    #여기는 파일명 설정하는거
+  -o "$HOME/drive_model5_calibrated_limit6_$(date +%Y%m%d_%H%M%S)" \
   /scan /agent/prediction /agent/command_preview \
   /drive /teleop /ackermann_cmd \
-  /commands/motor/speed /sensors/core \
-  /odom /diagnostics /rosout
+  /commands/motor/speed /commands/servo/position \
+  /sensors/core /odom /diagnostics /rosout
+
+
+# rosbag 실행 명령어(별도의 젯슨 터미널에서 실행)_2026.11.25_지원
+
+source ~/Autonomous-Driving-2026-team2/install/setup.bash
+source ~/venv/torch210/bin/activate
+
+ros2 bag record \
+  -o "$HOME/drive_model5_calibrated_limit6_$(date +%Y%m%d_%H%M%S)" \
+  /scan /agent/prediction /agent/command_preview \
+  /drive /teleop /ackermann_cmd \
+  /commands/motor/speed /commands/servo/position \
+  /sensors/core /odom /diagnostics /rosout
