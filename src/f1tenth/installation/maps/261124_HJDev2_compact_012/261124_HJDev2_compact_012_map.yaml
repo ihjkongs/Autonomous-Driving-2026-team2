@@ -1,0 +1,10 @@
+image: 261124_HJDev2_compact_012_map.png
+resolution: 0.05
+origin:
+- -6.083156194731348
+- -12.50869559473662
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 1.4255161310123012

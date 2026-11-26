@@ -1,0 +1,247 @@
+{
+  "created_at": "2026-11-26T13:45:42.262008+09:00",
+  "purpose": "Evaluate lateral acceleration 5 m/s^2 as model 7 expert candidate; target speed ceiling remains 6 m/s.",
+  "scope": {
+    "maps": 580,
+    "train": 480,
+    "val": 100,
+    "modes": 2,
+    "seeds": [
+      124,
+      2026
+    ],
+    "continuous_laps": 3,
+    "episodes": 2320
+  },
+  "changes": {
+    "lateral_acceleration": [
+      4,
+      5
+    ],
+    "speed_envelopes_recalculated": true
+  },
+  "unchanged": [
+    "racing-line geometry",
+    "max speed 6 m/s",
+    "planning acceleration and braking",
+    "command acceleration and deceleration",
+    "vehicle response parameters and random draws",
+    "lookahead and steering",
+    "LiDAR input"
+  ],
+  "all_trials": {
+    "4": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 15.790398706896074,
+      "time_weighted_actual_speed_mps": 3.033792542408868,
+      "time_weighted_requested_speed_mps": 3.1144444679846752,
+      "max_actual_speed_mps": 5.972558237910157,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "5": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 14.678498563217934,
+      "time_weighted_actual_speed_mps": 3.2794129008684223,
+      "time_weighted_requested_speed_mps": 3.376309936364221,
+      "max_actual_speed_mps": 5.993288851573784,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "6": {
+      "episodes": 2320,
+      "completed": 2311,
+      "counts": {
+        "complete": 2311,
+        "collision": 9
+      },
+      "completed_laps": 6943,
+      "mean_lap_s_completed_only": 13.884252848694224,
+      "time_weighted_actual_speed_mps": 3.4845565148620907,
+      "time_weighted_requested_speed_mps": 3.59925681889151,
+      "max_actual_speed_mps": 5.998715952357127,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    }
+  },
+  "paired_4_vs_5": {
+    "completed_pairs": 2320,
+    "baseline": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 15.790398706896074,
+      "time_weighted_actual_speed_mps": 3.033792542408868,
+      "time_weighted_requested_speed_mps": 3.1144444679846752,
+      "max_actual_speed_mps": 5.972558237910157,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "candidate": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 14.678498563217934,
+      "time_weighted_actual_speed_mps": 3.2794129008684227,
+      "time_weighted_requested_speed_mps": 3.3763099363642204,
+      "max_actual_speed_mps": 5.993288851573784,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "lap_reduction_percent": 7.041621711505897,
+    "speed_gain_percent": 8.096148798115554
+  },
+  "common_complete_all_three": {
+    "episodes": 2311,
+    "statistics": {
+      "4": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 15.804994230491372,
+        "time_weighted_actual_speed_mps": 3.0319260863813855,
+        "time_weighted_requested_speed_mps": 3.11250799066594,
+        "max_actual_speed_mps": 5.972558237910157,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "5": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 14.692366219529326,
+        "time_weighted_actual_speed_mps": 3.2773445355615785,
+        "time_weighted_requested_speed_mps": 3.3741454246055094,
+        "max_actual_speed_mps": 5.993288851573784,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "6": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 13.884252848694222,
+        "time_weighted_actual_speed_mps": 3.4845565148620907,
+        "time_weighted_requested_speed_mps": 3.5992568188915115,
+        "max_actual_speed_mps": 5.998715952357127,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      }
+    }
+  },
+  "failed_episodes": [],
+  "failed_maps": [],
+  "previous_lat6_failures_at_lat5": [
+    {
+      "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 124,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_train_027",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_train_027",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_train_052",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    },
+    {
+      "map": "261124_HJDev2_sketch_016",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "lat5_outcome": "complete",
+      "lat5_completed_laps": 3
+    }
+  ],
+  "verification": {
+    "route_geometry_identical": 580,
+    "original_profiles_unchanged_sha256": 580,
+    "candidate_profiles_unchanged_sha256": 580,
+    "matched_vehicle_response_random_draws": 2320,
+    "model6_sha256": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+    "relevant_tests": "9 passed"
+  },
+  "training_started": false,
+  "physical_vehicle_test": false,
+  "details": "src/f1tenth/results/model7_expert_validation/20261126_lat5",
+  "interpretation": "Finite offline sample, not proof of universal collision freedom. Speed and lap statistics use completed trials; shared-completion cohort allows direct comparison.",
+  "configuration": "src/f1tenth/configs/experiment_small_maps_raceline_lat5_6mps.yaml",
+  "status": "expert_validation_complete",
+  "next_step": "Lateral-5 expert is a candidate for model 7 training; neural policy has not been trained."
+}

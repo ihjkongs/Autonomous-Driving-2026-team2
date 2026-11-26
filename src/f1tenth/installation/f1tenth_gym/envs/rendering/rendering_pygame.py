@@ -125,7 +125,8 @@ class PygameEnvRenderer(EnvRenderer):
             for k, map_r in self.map_renderers.items()
         }
         self.ppus = {
-            k: original_img.shape[0] / map_r.track_map.shape[0]
+            # track_map is transposed for pygame, so axis 0 is its width.
+            k: original_img.shape[1] / map_r.track_map.shape[0]
             for k, map_r in self.map_renderers.items()
         }
 

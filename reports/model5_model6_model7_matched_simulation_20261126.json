@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-11-26T15:07:16.968083+09:00",
+  "scope": {
+    "maps": 74,
+    "episodes_per_model": 148,
+    "continuous_laps": 2,
+    "seed": 401,
+    "reset_modes": [
+      "cl_grid_static",
+      "cl_random_static"
+    ],
+    "max_speed_mps": 6,
+    "command_acceleration_mps2": 2,
+    "command_deceleration_mps2": 3
+  },
+  "verified_identical_initial_poses_and_vehicle_responses": 148,
+  "models": {
+    "5": {
+      "episodes": 148,
+      "completed": 148,
+      "collisions": 0,
+      "mean_lap_s": 18.864527027026494,
+      "time_weighted_actual_speed_mps": 2.475808686079917,
+      "time_weighted_target_speed_mps": 2.6324905062617123,
+      "source": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/baseline_model5_development/episodes.jsonl"
+    },
+    "6": {
+      "episodes": 148,
+      "completed": 148,
+      "collisions": 0,
+      "mean_lap_s": 15.331756756756421,
+      "time_weighted_actual_speed_mps": 2.987653122906618,
+      "time_weighted_target_speed_mps": 3.134231492588224,
+      "source": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/stages/3/development/episodes.jsonl",
+      "lap_reduction_vs_model5_percent": 18.7270545675956
+    },
+    "7": {
+      "episodes": 148,
+      "completed": 148,
+      "collisions": 0,
+      "mean_lap_s": 14.114864864864595,
+      "time_weighted_actual_speed_mps": 3.2620824414790306,
+      "time_weighted_target_speed_mps": 3.453838216981841,
+      "source": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/stages/3/development/episodes.jsonl",
+      "lap_reduction_vs_model5_percent": 25.177743154425436
+    }
+  },
+  "limitations": [
+    "These 74 maps were used for model6/model7 checkpoint selection. This is not independent final generalization evaluation.",
+    "Model5 uses exported TorchScript; model6/model7 use selected-stage actors, with separate CPU-export equivalence checks.",
+    "Do not mix these lap times with the different 580-map, three-lap final suite."
+  ]
+}

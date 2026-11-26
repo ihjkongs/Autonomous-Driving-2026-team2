@@ -1,0 +1,10 @@
+image: 261123_HJGA75_train_058_map.png
+resolution: 0.05
+origin:
+- -22.311338498060707
+- -2.3309409863764956
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 2.02343097429084

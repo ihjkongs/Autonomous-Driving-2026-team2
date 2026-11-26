@@ -1,0 +1,615 @@
+{
+  "source_archive": "/home/jiwon/Downloads/TalkFile_maps_trainval_261124.zip.zip",
+  "archive_sha256": "c6cde1fd71b7b9b46c861b904a5aa1f63667b87e3c547a8d1b7b7dafc92f7c2b",
+  "import_date_kst": "2026-11-25",
+  "maps": 580,
+  "verified_files": 1740,
+  "split_counts": {
+    "train": 480,
+    "val": 100
+  },
+  "counts": {
+    "compact_train": 240,
+    "compact_val": 30,
+    "sketch_train": 120,
+    "sketch_val": 20,
+    "ga75_hard_train": 60,
+    "ga77_hard_train": 60,
+    "dev2_val": 50
+  },
+  "map_directory": "src/f1tenth/installation/maps",
+  "original_map_bytes_preserved": true,
+  "existing_maps_overwritten": false,
+  "layout_note": "Original train/val folders flattened into simulator maps directory; split membership preserved by original manifest and train_maps.txt/val_maps.txt.",
+  "geometry": {
+    "maps_checked": 580,
+    "centerline_length_min_m": 40.406757406761486,
+    "centerline_length_max_m": 67.01769367126079,
+    "minimum_centerline_reported_total_width_m": 1.0379581288847493
+  },
+  "baseline": {
+    "map": "261120_HJCompetition_train_001_grid3x9_corners12",
+    "expert": "Existing Pure Pursuit with experiment_6mps_randomized.yaml; no parameter changes",
+    "parameters": {
+      "reference": "centerline",
+      "tlad": 0.8,
+      "lookahead_time": 0.15,
+      "max_lookahead": 1.7,
+      "vgain": 1.0,
+      "speed_cap": 6.0,
+      "min_speed": 1.0,
+      "lateral_acceleration": 3.0,
+      "anticipatory_braking": true,
+      "braking_deceleration": 2.0,
+      "planning_acceleration": 1.5,
+      "reaction_time": 0.35,
+      "curvature_window": 0.75
+    },
+    "experiment": {
+      "description": "Simulation-only training with per-episode randomized longitudinal response; assumptions, not calibrated physical limits.",
+      "assumptions": {
+        "ground_speed_calibrated": false,
+        "electrical_faults_simulated": false,
+        "note": "ERPM response cannot identify tire slip, ground speed or battery charge limits."
+      },
+      "task": {
+        "max_speed": 6.0,
+        "lidar_frames": 4,
+        "obs_dim": 4320
+      },
+      "dynamics": {
+        "longitudinal_response": {
+          "acceleration": 2.0,
+          "deceleration": 3.0,
+          "time_constant": 0.25,
+          "delay": 0.1,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0,
+          "ranges": {
+            "acceleration": [
+              1.5,
+              2.5
+            ],
+            "deceleration": [
+              2.0,
+              3.5
+            ],
+            "time_constant": [
+              0.15,
+              0.4
+            ],
+            "delay": [
+              0.05,
+              0.2
+            ]
+          }
+        }
+      },
+      "expert": {
+        "speed_cap": 6.0,
+        "vgain": 1.0,
+        "tlad": 0.8,
+        "lookahead_time": 0.15,
+        "max_lookahead": 1.7,
+        "lateral_acceleration": 3.0,
+        "anticipatory_braking": true,
+        "braking_deceleration": 2.0,
+        "planning_acceleration": 1.5,
+        "reaction_time": 0.35,
+        "curvature_window": 0.75
+      }
+    },
+    "episodes": [
+      {
+        "map": "261120_HJCompetition_train_001_grid3x9_corners12",
+        "reset": "cl_grid_static",
+        "seed": 1,
+        "outcome": "complete",
+        "steps": 848,
+        "initial_pose": [
+          -2.6009409427642822,
+          -7.863724708557129,
+          5.291675988827841
+        ],
+        "longitudinal_response": {
+          "acceleration": 2.089913484956616,
+          "deceleration": 3.1257260835607026,
+          "time_constant": 0.27703414191637904,
+          "delay": 0.06961807764262376,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "initial_expert_distance_m": 0.0,
+        "track_length_m": 47.09767135091883,
+        "first_commands": [
+          {
+            "step": 1,
+            "requested_speed_mps": 1.785322201004366,
+            "requested_steer_rad": 0.316232023536145,
+            "action": [
+              0.6588167157003021,
+              -0.6858711195982536
+            ]
+          },
+          {
+            "step": 2,
+            "requested_speed_mps": 1.785322201004366,
+            "requested_steer_rad": 0.316232023536145,
+            "action": [
+              0.6588167157003021,
+              -0.6858711195982536
+            ]
+          },
+          {
+            "step": 3,
+            "requested_speed_mps": 1.785322201004366,
+            "requested_steer_rad": 0.316232023536145,
+            "action": [
+              0.6588167157003021,
+              -0.6858711195982536
+            ]
+          },
+          {
+            "step": 4,
+            "requested_speed_mps": 1.785322201004366,
+            "requested_steer_rad": 0.316232023536145,
+            "action": [
+              0.6588167157003021,
+              -0.6858711195982536
+            ]
+          },
+          {
+            "step": 5,
+            "requested_speed_mps": 1.733741217764921,
+            "requested_steer_rad": 0.31632160397099146,
+            "action": [
+              0.6590033416062322,
+              -0.7065035128940316
+            ]
+          },
+          {
+            "step": 6,
+            "requested_speed_mps": 1.7328024147289578,
+            "requested_steer_rad": 0.3165132988217087,
+            "action": [
+              0.6594027058785599,
+              -0.7068790341084169
+            ]
+          },
+          {
+            "step": 7,
+            "requested_speed_mps": 1.7314567486415313,
+            "requested_steer_rad": 0.3167643208152797,
+            "action": [
+              0.6599256683651661,
+              -0.7074173005433875
+            ]
+          },
+          {
+            "step": 8,
+            "requested_speed_mps": 1.7297409353920623,
+            "requested_steer_rad": 0.3169747154558811,
+            "action": [
+              0.6603639905330856,
+              -0.7081036258431751
+            ]
+          },
+          {
+            "step": 9,
+            "requested_speed_mps": 1.727688377810261,
+            "requested_steer_rad": 0.3172281144090563,
+            "action": [
+              0.6608919050188673,
+              -0.7089246488758956
+            ]
+          },
+          {
+            "step": 10,
+            "requested_speed_mps": 1.7253294642798334,
+            "requested_steer_rad": 0.31748558091137474,
+            "action": [
+              0.661428293565364,
+              -0.7098682142880667
+            ]
+          }
+        ],
+        "at_collection_horizon": null,
+        "elapsed_s": 21.224999999999863,
+        "forward_progress_m": 46.77372989840009,
+        "progress_fraction": 0.9931219220987575,
+        "steering_saturation_fraction": 0.0,
+        "legacy_collector_accepts_prefix": true,
+        "max_yaw_rate_radps": 2.005988183377805,
+        "max_slip_angle_rad": 0.14634149232124252,
+        "max_actual_speed_mps": 3.7649585486869106,
+        "max_requested_speed_mps": 4.020837520928483,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_001_grid3x9_corners12",
+        "reset": "cl_grid_static",
+        "seed": 124,
+        "outcome": "complete",
+        "steps": 850,
+        "initial_pose": [
+          -2.7238941192626953,
+          -7.486164093017578,
+          4.864214960728781
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "initial_expert_distance_m": 0.0,
+        "track_length_m": 47.09767135091883,
+        "first_commands": [
+          {
+            "step": 1,
+            "requested_speed_mps": 1.7784817451347568,
+            "requested_steer_rad": 0.3205172949686257,
+            "action": [
+              0.6677443645179703,
+              -0.6886073019460973
+            ]
+          },
+          {
+            "step": 2,
+            "requested_speed_mps": 1.7784817451347568,
+            "requested_steer_rad": 0.3205172949686257,
+            "action": [
+              0.6677443645179703,
+              -0.6886073019460973
+            ]
+          },
+          {
+            "step": 3,
+            "requested_speed_mps": 1.7784817451347568,
+            "requested_steer_rad": 0.3205172949686257,
+            "action": [
+              0.6677443645179703,
+              -0.6886073019460973
+            ]
+          },
+          {
+            "step": 4,
+            "requested_speed_mps": 1.7784817451347568,
+            "requested_steer_rad": 0.3205172949686257,
+            "action": [
+              0.6677443645179703,
+              -0.6886073019460973
+            ]
+          },
+          {
+            "step": 5,
+            "requested_speed_mps": 1.7784817451347568,
+            "requested_steer_rad": 0.3205172949686257,
+            "action": [
+              0.6677443645179703,
+              -0.6886073019460973
+            ]
+          },
+          {
+            "step": 6,
+            "requested_speed_mps": 1.7782317118762392,
+            "requested_steer_rad": 0.32060138551007666,
+            "action": [
+              0.667919553145993,
+              -0.6887073152495043
+            ]
+          },
+          {
+            "step": 7,
+            "requested_speed_mps": 1.7777532073484485,
+            "requested_steer_rad": 0.3207624007501761,
+            "action": [
+              0.6682550015628669,
+              -0.6888987170606206
+            ]
+          },
+          {
+            "step": 8,
+            "requested_speed_mps": 1.7772646090281359,
+            "requested_steer_rad": 0.32092692893908586,
+            "action": [
+              0.6685977686230956,
+              -0.6890941563887456
+            ]
+          },
+          {
+            "step": 9,
+            "requested_speed_mps": 1.7766319865855569,
+            "requested_steer_rad": 0.32114013001935693,
+            "action": [
+              0.6690419375403269,
+              -0.6893472053657772
+            ]
+          },
+          {
+            "step": 10,
+            "requested_speed_mps": 1.7759746736264843,
+            "requested_steer_rad": 0.32136186139570083,
+            "action": [
+              0.66950387790771,
+              -0.6896101305494062
+            ]
+          }
+        ],
+        "at_collection_horizon": null,
+        "elapsed_s": 21.27499999999986,
+        "forward_progress_m": 46.82733524028714,
+        "progress_fraction": 0.9942600960328283,
+        "steering_saturation_fraction": 0.0,
+        "legacy_collector_accepts_prefix": true,
+        "max_yaw_rate_radps": 2.0130031094421352,
+        "max_slip_angle_rad": 0.14634149232124252,
+        "max_actual_speed_mps": 3.8036609490008284,
+        "max_requested_speed_mps": 4.020837520928483,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_001_grid3x9_corners12",
+        "reset": "cl_random_static",
+        "seed": 1,
+        "outcome": "complete",
+        "steps": 859,
+        "initial_pose": [
+          0.42865702509880066,
+          -8.336332321166992,
+          0.0
+        ],
+        "longitudinal_response": {
+          "acceleration": 2.089913484956616,
+          "deceleration": 3.1257260835607026,
+          "time_constant": 0.27703414191637904,
+          "delay": 0.06961807764262376,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "initial_expert_distance_m": 0.0,
+        "track_length_m": 47.09767135091883,
+        "first_commands": [
+          {
+            "step": 1,
+            "requested_speed_mps": 3.269965313403784,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.09201387463848643
+            ]
+          },
+          {
+            "step": 2,
+            "requested_speed_mps": 3.269965313403784,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.09201387463848643
+            ]
+          },
+          {
+            "step": 3,
+            "requested_speed_mps": 3.269965313403784,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.09201387463848643
+            ]
+          },
+          {
+            "step": 4,
+            "requested_speed_mps": 3.269965313403784,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.09201387463848643
+            ]
+          },
+          {
+            "step": 5,
+            "requested_speed_mps": 3.3155200395989937,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.07379198416040256
+            ]
+          },
+          {
+            "step": 6,
+            "requested_speed_mps": 3.3155200395989937,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.07379198416040256
+            ]
+          },
+          {
+            "step": 7,
+            "requested_speed_mps": 3.3155200395989937,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.07379198416040256
+            ]
+          },
+          {
+            "step": 8,
+            "requested_speed_mps": 3.3155200395989937,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.07379198416040256
+            ]
+          },
+          {
+            "step": 9,
+            "requested_speed_mps": 3.3155200395989937,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.07379198416040256
+            ]
+          },
+          {
+            "step": 10,
+            "requested_speed_mps": 3.3155200395989937,
+            "requested_steer_rad": 0.0,
+            "action": [
+              0.0,
+              -0.07379198416040256
+            ]
+          }
+        ],
+        "at_collection_horizon": null,
+        "elapsed_s": 21.499999999999847,
+        "forward_progress_m": 46.84108318992716,
+        "progress_fraction": 0.994551998992055,
+        "steering_saturation_fraction": 0.0,
+        "legacy_collector_accepts_prefix": true,
+        "max_yaw_rate_radps": 2.008167070238094,
+        "max_slip_angle_rad": 0.12622738840657755,
+        "max_actual_speed_mps": 3.759446085149225,
+        "max_requested_speed_mps": 4.020837520928483,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_001_grid3x9_corners12",
+        "reset": "cl_random_static",
+        "seed": 124,
+        "outcome": "complete",
+        "steps": 855,
+        "initial_pose": [
+          -2.729602098464966,
+          -6.485759258270264,
+          4.712408010159628
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "initial_expert_distance_m": 0.0,
+        "track_length_m": 47.09767135091883,
+        "first_commands": [
+          {
+            "step": 1,
+            "requested_speed_mps": 2.9438851793044827,
+            "requested_steer_rad": -0.0008798489882123578,
+            "action": [
+              -0.0018330187254424121,
+              -0.22244592827820697
+            ]
+          },
+          {
+            "step": 2,
+            "requested_speed_mps": 2.9438851793044827,
+            "requested_steer_rad": -0.0008798489882123578,
+            "action": [
+              -0.0018330187254424121,
+              -0.22244592827820697
+            ]
+          },
+          {
+            "step": 3,
+            "requested_speed_mps": 2.9438851793044827,
+            "requested_steer_rad": -0.0008798489882123578,
+            "action": [
+              -0.0018330187254424121,
+              -0.22244592827820697
+            ]
+          },
+          {
+            "step": 4,
+            "requested_speed_mps": 2.9438851793044827,
+            "requested_steer_rad": -0.0008798489882123578,
+            "action": [
+              -0.0018330187254424121,
+              -0.22244592827820697
+            ]
+          },
+          {
+            "step": 5,
+            "requested_speed_mps": 2.9438851793044827,
+            "requested_steer_rad": -0.0008798489882123578,
+            "action": [
+              -0.0018330187254424121,
+              -0.22244592827820697
+            ]
+          },
+          {
+            "step": 6,
+            "requested_speed_mps": 2.8738280019099265,
+            "requested_steer_rad": -0.0008620144850172215,
+            "action": [
+              -0.0017958635104525448,
+              -0.2504687992360294
+            ]
+          },
+          {
+            "step": 7,
+            "requested_speed_mps": 2.87133425923622,
+            "requested_steer_rad": -0.000822476597084079,
+            "action": [
+              -0.0017134929105918312,
+              -0.251466296305512
+            ]
+          },
+          {
+            "step": 8,
+            "requested_speed_mps": 2.8677897898078633,
+            "requested_steer_rad": -0.0007338500636446068,
+            "action": [
+              -0.0015288542992595976,
+              -0.2528840840768547
+            ]
+          },
+          {
+            "step": 9,
+            "requested_speed_mps": 2.8633068997823328,
+            "requested_steer_rad": -0.000609853055075568,
+            "action": [
+              -0.0012705271980741,
+              -0.25467724008706694
+            ]
+          },
+          {
+            "step": 10,
+            "requested_speed_mps": 2.8579858921396433,
+            "requested_steer_rad": -0.00041376626090164055,
+            "action": [
+              -0.0008620130435450845,
+              -0.25680564314414267
+            ]
+          }
+        ],
+        "at_collection_horizon": null,
+        "elapsed_s": 21.399999999999853,
+        "forward_progress_m": 46.83211784416394,
+        "progress_fraction": 0.9943616425369254,
+        "steering_saturation_fraction": 0.0,
+        "legacy_collector_accepts_prefix": true,
+        "max_yaw_rate_radps": 2.0090305483230484,
+        "max_slip_angle_rad": 0.12731049874567413,
+        "max_actual_speed_mps": 3.8037114114450614,
+        "max_requested_speed_mps": 4.020837520928483,
+        "fraction_at_or_above_5_5mps": 0.0
+      }
+    ],
+    "completion_count": 4,
+    "mean_progress_speed_mps": 2.192907098041916,
+    "max_actual_speed_mps": 3.8037114114450614,
+    "scope": "Four one-lap trials on ONE training map only; not repeated continuous laps, full-dataset validation, expert optimization or BC training."
+  },
+  "source_sha256": {
+    "src/f1tenth/validate_expert.py": "91f54d5bdcbc5296ad78f865c2ffbec234eae03776fd20cc9d2f84d955cf16bb",
+    "src/f1tenth/utils/rule_based.py": "cdfe59eaca0afbbc221917cec2334845fc3b564b4b0980f7de6b1d658f24db7f",
+    "src/f1tenth/utils/speed_profile.py": "0c06db06958f8adbdbf085f90f2af15ac49a230760838b3a651e1e2dedc54cfb",
+    "src/f1tenth/configs/experiment_6mps_randomized.yaml": "da140aef3b3fc07ad7972a069f122e797fae0ddbe7d0e17672b72387f9323c4b"
+  }
+}

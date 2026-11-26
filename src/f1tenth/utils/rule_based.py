@@ -85,10 +85,10 @@ def get_actuation(pose_theta, lookahead_point, position, lookahead_distance, whe
     """
     Returns actuation
     """
-    waypoint_y = np.dot(
-        np.array([np.sin(-pose_theta), np.cos(-pose_theta)], dtype=np.float32),
-        lookahead_point[0:2] - position,
-    )
+    # Scalar local coordinates also support float64 optimized paths and poses.
+    dx = float(lookahead_point[0]) - float(position[0])
+    dy = float(lookahead_point[1]) - float(position[1])
+    waypoint_y = -np.sin(pose_theta)*dx + np.cos(pose_theta)*dy
     speed = lookahead_point[2]
     if np.abs(waypoint_y) < 1e-6:
         return speed, 0.0
@@ -103,6 +103,8 @@ class PurePursuitPlanner:
 
     def __init__(self, track, wb, reference='raceline'):
         self.wheelbase = wb
+        self.track_name = getattr(track, 'name', None)
+        self._racing_line_path = None
         if reference not in ('raceline', 'centerline'):
             raise ValueError('reference must be raceline or centerline')
         line = getattr(track, reference)
@@ -114,6 +116,7 @@ class PurePursuitPlanner:
         self.waypoints = self.waypoints[keep]
         if np.linalg.norm(self.waypoints[-1, :2] - self.waypoints[0, :2]) > 1e-8:
             self.waypoints = np.vstack([self.waypoints, self.waypoints[0]])
+        self._reference_waypoints = self.waypoints.copy()
         self.max_reacquire = 20.0
 
         self.drawn_waypoints = []
@@ -221,6 +224,25 @@ class PurePursuitPlanner:
         work["vgain"],
         )
         """
+        directory = work.get('raceline_directory')
+        if directory:
+            from pathlib import Path
+            from utils.expert_config import ROOT
+            from utils.racing_line import load_racing_waypoints
+            if not self.track_name:
+                raise ValueError('An external racing line requires a named track')
+            path = Path(directory)
+            if not path.is_absolute():
+                path = ROOT / path
+            path = path / (self.track_name + '.npz')
+            if path != self._racing_line_path:
+                self.waypoints = load_racing_waypoints(path)
+                self._racing_line_path = path
+                self._speed_profile_parameters = None
+        elif self._racing_line_path is not None:
+            self.waypoints = self._reference_waypoints.copy()
+            self._racing_line_path = None
+            self._speed_profile_parameters = None
         pose_x, pose_y, pose_theta = obs_dict['poses_x'][0], obs_dict['poses_y'][0], obs_dict['poses_theta'][0]
         lookahead_distance, vgain = work['tlad'], work['vgain']
         velocity = abs(float(obs_dict['linear_vels_x'][0]))

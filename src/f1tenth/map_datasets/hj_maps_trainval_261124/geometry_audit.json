@@ -1,0 +1,6385 @@
+{
+  "maps_checked": 580,
+  "maps": [
+    {
+      "name": "261120_HJCompetition_train_001_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.100581461008005,
+      "min_centerline_width_sum_m": 1.1125243298974525,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_002_grid3x10_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 64.65095133247918,
+      "min_centerline_width_sum_m": 1.108177545573753,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_003_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.100503271589616,
+      "min_centerline_width_sum_m": 1.1334040667454386,
+      "image_size_px": [
+        228,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_004_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46746176932893,
+      "min_centerline_width_sum_m": 1.113770191629484,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_005_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10059780999844,
+      "min_centerline_width_sum_m": 1.142238052584261,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_006_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91717813586761,
+      "min_centerline_width_sum_m": 1.1311005627855049,
+      "image_size_px": [
+        237,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_007_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.46748021526216,
+      "min_centerline_width_sum_m": 1.1136462031859145,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_008_grid3x10_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.01777463690273,
+      "min_centerline_width_sum_m": 1.10078327684046,
+      "image_size_px": [
+        521,
+        241
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_009_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10060100737091,
+      "min_centerline_width_sum_m": 1.1349119156264895,
+      "image_size_px": [
+        229,
+        493
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_010_grid3x10_corners26",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.384627009578516,
+      "min_centerline_width_sum_m": 1.1132141498123684,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_011_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83436098937271,
+      "min_centerline_width_sum_m": 1.1333896528877958,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_012_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 63.834356356914185,
+      "min_centerline_width_sum_m": 1.105339458308154,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_013_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.10057441006064,
+      "min_centerline_width_sum_m": 1.1124857165545672,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_014_grid3x9_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.017796048815875,
+      "min_centerline_width_sum_m": 1.104657622667521,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_015_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46743993006807,
+      "min_centerline_width_sum_m": 1.1417139536286482,
+      "image_size_px": [
+        229,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_016_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.46741362767243,
+      "min_centerline_width_sum_m": 1.1136462041767305,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_017_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28402224064572,
+      "min_centerline_width_sum_m": 1.1273339236838582,
+      "image_size_px": [
+        226,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_018_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.46745852557645,
+      "min_centerline_width_sum_m": 1.113647457393908,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_019_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.83431615852367,
+      "min_centerline_width_sum_m": 1.1070226483157546,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_020_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.284084477128,
+      "min_centerline_width_sum_m": 1.1298054876627464,
+      "image_size_px": [
+        228,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_021_grid3x10_corners24",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 62.20109086647885,
+      "min_centerline_width_sum_m": 1.1049137592634353,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_022_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.100522573674645,
+      "min_centerline_width_sum_m": 1.1337732563453575,
+      "image_size_px": [
+        236,
+        498
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_023_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.917154347024685,
+      "min_centerline_width_sum_m": 1.1379050236875672,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_024_grid3x10_corners30",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 63.75137536782851,
+      "min_centerline_width_sum_m": 1.1135640786372765,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_025_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10053053080035,
+      "min_centerline_width_sum_m": 1.1331421303542348,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_026_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10056896040993,
+      "min_centerline_width_sum_m": 1.10808256661621,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_027_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.100596907487706,
+      "min_centerline_width_sum_m": 1.142612123273798,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_028_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.83435495337847,
+      "min_centerline_width_sum_m": 1.1315170746407948,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_029_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.834370036314716,
+      "min_centerline_width_sum_m": 1.1116856376580748,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_030_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.91718464063145,
+      "min_centerline_width_sum_m": 1.1348091189858884,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_031_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28401026844066,
+      "min_centerline_width_sum_m": 1.142371385461106,
+      "image_size_px": [
+        225,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_032_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.10051962462185,
+      "min_centerline_width_sum_m": 1.1125860374627854,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_033_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.10058893900488,
+      "min_centerline_width_sum_m": 1.1233980180989498,
+      "image_size_px": [
+        233,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_034_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.10060563187666,
+      "min_centerline_width_sum_m": 1.107380863895083,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_035_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46753750758099,
+      "min_centerline_width_sum_m": 1.1140955345006875,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_036_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.100502292484734,
+      "min_centerline_width_sum_m": 1.134910750948361,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_037_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.46741873110754,
+      "min_centerline_width_sum_m": 1.1267756720508948,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_038_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.65087109405846,
+      "min_centerline_width_sum_m": 1.1153312544876328,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_039_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28407067081586,
+      "min_centerline_width_sum_m": 1.1312607601016176,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_040_grid3x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.73371603558521,
+      "min_centerline_width_sum_m": 1.1028516549828717,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_041_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91714082189071,
+      "min_centerline_width_sum_m": 1.1252532459619682,
+      "image_size_px": [
+        234,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_042_grid3x10_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.6508468313892,
+      "min_centerline_width_sum_m": 1.113431764647448,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_043_grid3x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.73371500493231,
+      "min_centerline_width_sum_m": 1.106642009633933,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_044_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.917150187891465,
+      "min_centerline_width_sum_m": 1.1252532346224573,
+      "image_size_px": [
+        213,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_045_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 63.834326736760836,
+      "min_centerline_width_sum_m": 1.1049110045415929,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_046_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10053772713163,
+      "min_centerline_width_sum_m": 1.107661984584463,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_047_grid3x10_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65092811676895,
+      "min_centerline_width_sum_m": 1.1025865178578322,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_048_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.650878143234266,
+      "min_centerline_width_sum_m": 1.1148876668051564,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_049_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83443517274611,
+      "min_centerline_width_sum_m": 1.1103374004295927,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_050_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65092716144913,
+      "min_centerline_width_sum_m": 1.1146795833483556,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_051_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.467466546397944,
+      "min_centerline_width_sum_m": 1.1047653715256822,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_052_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 50.28402974935759,
+      "min_centerline_width_sum_m": 1.1384934994670968,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_053_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.283957977359165,
+      "min_centerline_width_sum_m": 1.113107043446524,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_054_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10058954211637,
+      "min_centerline_width_sum_m": 1.119909037413832,
+      "image_size_px": [
+        229,
+        497
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_055_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28410008120977,
+      "min_centerline_width_sum_m": 1.1186189554702795,
+      "image_size_px": [
+        236,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_056_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28403040024019,
+      "min_centerline_width_sum_m": 1.1131408638708264,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_057_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.283957950935545,
+      "min_centerline_width_sum_m": 1.1305434307345545,
+      "image_size_px": [
+        225,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_058_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.9171310246533,
+      "min_centerline_width_sum_m": 1.1373818718211215,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_059_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 50.2840185778487,
+      "min_centerline_width_sum_m": 1.113230393602959,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_060_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.46751903040226,
+      "min_centerline_width_sum_m": 1.1136135557188864,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_061_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.91716384920316,
+      "min_centerline_width_sum_m": 1.138974296534559,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_062_grid3x9_corners6",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.5503070886975,
+      "min_centerline_width_sum_m": 1.1360758661004682,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_063_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.100534994717144,
+      "min_centerline_width_sum_m": 1.1134970667902615,
+      "image_size_px": [
+        228,
+        498
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_064_grid3x9_corners28",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 60.56801601981206,
+      "min_centerline_width_sum_m": 1.1136739110058085,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_065_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.283936440812695,
+      "min_centerline_width_sum_m": 1.1329462036129927,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_066_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.917170246676896,
+      "min_centerline_width_sum_m": 1.1162044124807882,
+      "image_size_px": [
+        227,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_067_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10058419020109,
+      "min_centerline_width_sum_m": 1.1288569003021092,
+      "image_size_px": [
+        227,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_068_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28404401031723,
+      "min_centerline_width_sum_m": 1.1216842218227696,
+      "image_size_px": [
+        236,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_069_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28397231131338,
+      "min_centerline_width_sum_m": 1.1423700338702347,
+      "image_size_px": [
+        229,
+        486
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_070_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.46740685344995,
+      "min_centerline_width_sum_m": 1.1127453574886013,
+      "image_size_px": [
+        233,
+        487
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_071_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83440901629661,
+      "min_centerline_width_sum_m": 1.1111816854565304,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_072_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28409180598233,
+      "min_centerline_width_sum_m": 1.113759210797011,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_073_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.4675034591466,
+      "min_centerline_width_sum_m": 1.1449984393172017,
+      "image_size_px": [
+        230,
+        484
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_074_grid3x9_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.01776269263996,
+      "min_centerline_width_sum_m": 1.112322205537497,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_075_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91716148463857,
+      "min_centerline_width_sum_m": 1.1457883416284753,
+      "image_size_px": [
+        233,
+        486
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_076_grid2x9_corners6",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 41.55029343059894,
+      "min_centerline_width_sum_m": 1.1275540499601817,
+      "image_size_px": [
+        237,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_077_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46754614245088,
+      "min_centerline_width_sum_m": 1.1139148982212577,
+      "image_size_px": [
+        236,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_078_grid3x10_corners28",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 64.568048297975,
+      "min_centerline_width_sum_m": 1.09859941315206,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_079_grid3x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 44.73375259657773,
+      "min_centerline_width_sum_m": 1.1343119713637713,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_080_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.91722671887129,
+      "min_centerline_width_sum_m": 1.1345399381088412,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_081_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.467386602593955,
+      "min_centerline_width_sum_m": 1.1204334670107468,
+      "image_size_px": [
+        227,
+        484
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_082_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.467445623412054,
+      "min_centerline_width_sum_m": 1.114095946815792,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_083_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46746700859518,
+      "min_centerline_width_sum_m": 1.1084478176675674,
+      "image_size_px": [
+        217,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_084_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10056065885895,
+      "min_centerline_width_sum_m": 1.1128258993957107,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_085_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28401568320485,
+      "min_centerline_width_sum_m": 1.1050576825439697,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_086_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10053220431712,
+      "min_centerline_width_sum_m": 1.133126509281288,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_087_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28405404456899,
+      "min_centerline_width_sum_m": 1.1133452983991077,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_088_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91721191105076,
+      "min_centerline_width_sum_m": 1.139116438625019,
+      "image_size_px": [
+        229,
+        489
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_089_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.8343969917071,
+      "min_centerline_width_sum_m": 1.112040162568117,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_090_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.284036942736904,
+      "min_centerline_width_sum_m": 1.1077360941539898,
+      "image_size_px": [
+        237,
+        482
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_091_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10051767636301,
+      "min_centerline_width_sum_m": 1.112825880403771,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_092_grid3x9_corners24",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 58.20112253632607,
+      "min_centerline_width_sum_m": 1.1049664058990647,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_093_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65092431195143,
+      "min_centerline_width_sum_m": 1.1115559792600513,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_094_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10051292744808,
+      "min_centerline_width_sum_m": 1.1213704319236917,
+      "image_size_px": [
+        224,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_095_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 50.28409518998976,
+      "min_centerline_width_sum_m": 1.113675217321691,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_096_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.1005733596472,
+      "min_centerline_width_sum_m": 1.1080454579902361,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_097_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 65.46750486232102,
+      "min_centerline_width_sum_m": 1.104904106996507,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_098_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28409632649972,
+      "min_centerline_width_sum_m": 1.1157517398906975,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_099_grid3x10_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 63.01771396192965,
+      "min_centerline_width_sum_m": 1.1040159967873204,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_100_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28396513149063,
+      "min_centerline_width_sum_m": 1.1217053606997944,
+      "image_size_px": [
+        228,
+        489
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_101_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 60.650868900821266,
+      "min_centerline_width_sum_m": 1.0967011650002165,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_102_grid3x10_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 60.65101582499451,
+      "min_centerline_width_sum_m": 1.1148888686050817,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_103_grid3x9_corners24",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.20115916990814,
+      "min_centerline_width_sum_m": 1.1126968695938166,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_104_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46748548944706,
+      "min_centerline_width_sum_m": 1.1415430635474113,
+      "image_size_px": [
+        229,
+        482
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_105_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.10051376331947,
+      "min_centerline_width_sum_m": 1.112652604008074,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_106_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10057524100431,
+      "min_centerline_width_sum_m": 1.1331264700062267,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_107_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.65094693977267,
+      "min_centerline_width_sum_m": 1.1148863578267147,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_108_grid2x9_corners6",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 41.5502936236506,
+      "min_centerline_width_sum_m": 1.1293109805302228,
+      "image_size_px": [
+        237,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_109_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28399768439543,
+      "min_centerline_width_sum_m": 1.1137602399890398,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_110_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 50.28393318779794,
+      "min_centerline_width_sum_m": 1.113230763368167,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_111_grid3x10_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.0177406714586,
+      "min_centerline_width_sum_m": 1.103043480756057,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_112_grid3x9_corners26",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.384570722818026,
+      "min_centerline_width_sum_m": 1.1132980622084905,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_113_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91723110748116,
+      "min_centerline_width_sum_m": 1.124880240163082,
+      "image_size_px": [
+        234,
+        487
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_114_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.2841133261946,
+      "min_centerline_width_sum_m": 1.1137586849783552,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_115_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.467522161682055,
+      "min_centerline_width_sum_m": 1.1434461054770393,
+      "image_size_px": [
+        211,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_116_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83436912200158,
+      "min_centerline_width_sum_m": 1.1067456812655414,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_117_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28404662411485,
+      "min_centerline_width_sum_m": 1.1231534694060565,
+      "image_size_px": [
+        236,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_118_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 44.73372362613181,
+      "min_centerline_width_sum_m": 1.1460759201391142,
+      "image_size_px": [
+        233,
+        487
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_119_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10054096716089,
+      "min_centerline_width_sum_m": 1.1309899283985456,
+      "image_size_px": [
+        237,
+        498
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_120_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.917214586806736,
+      "min_centerline_width_sum_m": 1.1354735084425083,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_121_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91719159258732,
+      "min_centerline_width_sum_m": 1.1262306264328878,
+      "image_size_px": [
+        238,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_122_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28410454283079,
+      "min_centerline_width_sum_m": 1.1269558322109083,
+      "image_size_px": [
+        229,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_123_grid3x10_corners24",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 62.20122642518896,
+      "min_centerline_width_sum_m": 1.108670648922679,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_124_grid3x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 48.733684714559104,
+      "min_centerline_width_sum_m": 1.1366638731859924,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_125_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.91717847635442,
+      "min_centerline_width_sum_m": 1.135473515600606,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_126_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46749401114229,
+      "min_centerline_width_sum_m": 1.1140955261959127,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_127_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.917201223916635,
+      "min_centerline_width_sum_m": 1.1389742998719234,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_128_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.91714658886289,
+      "min_centerline_width_sum_m": 1.1008709584192164,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_129_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.9171912084919,
+      "min_centerline_width_sum_m": 1.1415088014899002,
+      "image_size_px": [
+        225,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_130_grid2x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46743985430435,
+      "min_centerline_width_sum_m": 1.1271841839765102,
+      "image_size_px": [
+        237,
+        522
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_131_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 44.73371561497323,
+      "min_centerline_width_sum_m": 1.1359087728682562,
+      "image_size_px": [
+        226,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_132_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.467529850426914,
+      "min_centerline_width_sum_m": 1.1218653606409794,
+      "image_size_px": [
+        216,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_133_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28394439293519,
+      "min_centerline_width_sum_m": 1.1133457062354184,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_134_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.650951030313735,
+      "min_centerline_width_sum_m": 1.112809047412279,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_135_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91718097227641,
+      "min_centerline_width_sum_m": 1.1162588291828595,
+      "image_size_px": [
+        229,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_136_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28394956991488,
+      "min_centerline_width_sum_m": 1.1251300101059571,
+      "image_size_px": [
+        230,
+        486
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_137_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28407767578162,
+      "min_centerline_width_sum_m": 1.1449001972368145,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_138_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.917170344666275,
+      "min_centerline_width_sum_m": 1.1096982254420844,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_139_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 65.46741386113335,
+      "min_centerline_width_sum_m": 1.1049048917768878,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_140_grid3x10_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65098272738007,
+      "min_centerline_width_sum_m": 1.0966025717623735,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_141_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.100501648222746,
+      "min_centerline_width_sum_m": 1.1354471706845346,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_142_grid3x10_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.1005725905742,
+      "min_centerline_width_sum_m": 1.1048374337464981,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_143_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.46754587950586,
+      "min_centerline_width_sum_m": 1.1278618222229813,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_144_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.100592520126156,
+      "min_centerline_width_sum_m": 1.121072765823472,
+      "image_size_px": [
+        224,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_145_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28399222186793,
+      "min_centerline_width_sum_m": 1.1423718185566951,
+      "image_size_px": [
+        223,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_146_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.284080033543034,
+      "min_centerline_width_sum_m": 1.1157526846389858,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_147_grid3x9_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.01774108596571,
+      "min_centerline_width_sum_m": 1.1034462211962217,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_148_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46750344486507,
+      "min_centerline_width_sum_m": 1.0960819784623799,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_149_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.284087854528565,
+      "min_centerline_width_sum_m": 1.132882854661542,
+      "image_size_px": [
+        236,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_150_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 63.834284707691054,
+      "min_centerline_width_sum_m": 1.1154993782841411,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_151_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28395957476864,
+      "min_centerline_width_sum_m": 1.1393368826388401,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_152_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 65.4674188400775,
+      "min_centerline_width_sum_m": 1.1118455023979474,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_153_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.284042939892224,
+      "min_centerline_width_sum_m": 1.1330406504013313,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_154_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83448305712206,
+      "min_centerline_width_sum_m": 1.114359539994019,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_155_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46737019274119,
+      "min_centerline_width_sum_m": 1.1134455468848101,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_156_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.65098914787535,
+      "min_centerline_width_sum_m": 1.1139833725240509,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_157_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65090243320144,
+      "min_centerline_width_sum_m": 1.1142553947248843,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_158_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28393675833727,
+      "min_centerline_width_sum_m": 1.1310717161152826,
+      "image_size_px": [
+        235,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_159_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 40.7337320981568,
+      "min_centerline_width_sum_m": 1.147969143828059,
+      "image_size_px": [
+        237,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_160_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83439870171429,
+      "min_centerline_width_sum_m": 1.1138291384719703,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_161_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91718799031002,
+      "min_centerline_width_sum_m": 1.1367665365935047,
+      "image_size_px": [
+        237,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_162_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65085356702715,
+      "min_centerline_width_sum_m": 1.1142544103201708,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_163_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.65090084542048,
+      "min_centerline_width_sum_m": 1.1153648993211893,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_164_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.467528971949534,
+      "min_centerline_width_sum_m": 1.107344515686024,
+      "image_size_px": [
+        216,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_165_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.10055328414714,
+      "min_centerline_width_sum_m": 1.1328718853929003,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_166_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 44.73373167637373,
+      "min_centerline_width_sum_m": 1.1319031750113058,
+      "image_size_px": [
+        227,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_167_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.10059902323523,
+      "min_centerline_width_sum_m": 1.1310404997334047,
+      "image_size_px": [
+        219,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_168_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.284061012856654,
+      "min_centerline_width_sum_m": 1.112525824147583,
+      "image_size_px": [
+        229,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_169_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.91722310861782,
+      "min_centerline_width_sum_m": 1.1254301241081905,
+      "image_size_px": [
+        231,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_170_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10058407140209,
+      "min_centerline_width_sum_m": 1.121246594389787,
+      "image_size_px": [
+        236,
+        497
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_171_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.10049535115296,
+      "min_centerline_width_sum_m": 1.1127873900977778,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_172_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10053443223648,
+      "min_centerline_width_sum_m": 1.14201886180712,
+      "image_size_px": [
+        228,
+        485
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_173_grid3x10_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 48.73373088834956,
+      "min_centerline_width_sum_m": 1.1482522722507391,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_174_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.46756368592042,
+      "min_centerline_width_sum_m": 1.1408113563004374,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_175_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.10054788623472,
+      "min_centerline_width_sum_m": 1.1126526040120148,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_176_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.91716258306492,
+      "min_centerline_width_sum_m": 1.1336534229525044,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_177_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28404603161424,
+      "min_centerline_width_sum_m": 1.1208156127606297,
+      "image_size_px": [
+        237,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_178_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28410990091744,
+      "min_centerline_width_sum_m": 1.1230271951983686,
+      "image_size_px": [
+        227,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_179_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.467463509853154,
+      "min_centerline_width_sum_m": 1.1324263011799858,
+      "image_size_px": [
+        220,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_180_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.467406956995944,
+      "min_centerline_width_sum_m": 1.1344094074837638,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_181_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.100632728154636,
+      "min_centerline_width_sum_m": 1.1134383285311777,
+      "image_size_px": [
+        234,
+        484
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_182_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.46746445195292,
+      "min_centerline_width_sum_m": 1.1340534393176425,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_183_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.83429373269989,
+      "min_centerline_width_sum_m": 1.1091161264540885,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_184_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28408684796136,
+      "min_centerline_width_sum_m": 1.1379071478822746,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_185_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 57.46749733538701,
+      "min_centerline_width_sum_m": 1.1136132295991596,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_186_grid3x9_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.8343586305824,
+      "min_centerline_width_sum_m": 1.1147015935527063,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_187_grid3x10_corners26",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.38457727749481,
+      "min_centerline_width_sum_m": 1.1051810407766078,
+      "image_size_px": [
+        521,
+        241
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_188_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.284044321629466,
+      "min_centerline_width_sum_m": 1.1301727772804953,
+      "image_size_px": [
+        234,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_189_grid3x9_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.01770750278825,
+      "min_centerline_width_sum_m": 1.1123102243259053,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_190_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28406730446513,
+      "min_centerline_width_sum_m": 1.1234875393748596,
+      "image_size_px": [
+        235,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_191_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.917112705249195,
+      "min_centerline_width_sum_m": 1.1336490914958914,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_192_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.10057244250706,
+      "min_centerline_width_sum_m": 1.117473930667055,
+      "image_size_px": [
+        237,
+        489
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_193_grid3x10_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.01776416856114,
+      "min_centerline_width_sum_m": 1.1125651067688138,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_194_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28399455562415,
+      "min_centerline_width_sum_m": 1.1077366776010036,
+      "image_size_px": [
+        221,
+        483
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_195_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28411156666276,
+      "min_centerline_width_sum_m": 1.1322101657293389,
+      "image_size_px": [
+        237,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_196_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28394187376061,
+      "min_centerline_width_sum_m": 1.134604325198656,
+      "image_size_px": [
+        233,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_197_grid3x9_corners28",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.56811145210597,
+      "min_centerline_width_sum_m": 1.1133588815614066,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_198_grid3x10_corners22",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.017772225531914,
+      "min_centerline_width_sum_m": 1.1037458065011507,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_199_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 59.91712771548056,
+      "min_centerline_width_sum_m": 1.1092977790519496,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_200_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.917195752692315,
+      "min_centerline_width_sum_m": 1.1322520131861253,
+      "image_size_px": [
+        229,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_201_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 40.73370192172656,
+      "min_centerline_width_sum_m": 1.1255193091844478,
+      "image_size_px": [
+        230,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_202_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46747082330151,
+      "min_centerline_width_sum_m": 1.1146220580919413,
+      "image_size_px": [
+        221,
+        489
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_203_grid2x9_corners4",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 42.36690874133738,
+      "min_centerline_width_sum_m": 1.5000000000000002,
+      "image_size_px": [
+        237,
+        498
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_204_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46743454540757,
+      "min_centerline_width_sum_m": 1.111540997507134,
+      "image_size_px": [
+        234,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_205_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.46742616518662,
+      "min_centerline_width_sum_m": 1.1140959455975397,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_206_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.917185029192694,
+      "min_centerline_width_sum_m": 1.1379366919987919,
+      "image_size_px": [
+        223,
+        493
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_207_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28408955887895,
+      "min_centerline_width_sum_m": 1.1273217064399974,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_208_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28399545168034,
+      "min_centerline_width_sum_m": 1.1349351130345078,
+      "image_size_px": [
+        237,
+        484
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_209_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 58.28405545635652,
+      "min_centerline_width_sum_m": 1.1314715633433892,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_210_grid2x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 43.917173498027815,
+      "min_centerline_width_sum_m": 1.1340446721249666,
+      "image_size_px": [
+        233,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_211_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.46745847820934,
+      "min_centerline_width_sum_m": 1.112842314632331,
+      "image_size_px": [
+        236,
+        486
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_212_grid3x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 44.733779134291616,
+      "min_centerline_width_sum_m": 1.1387406958977364,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_213_grid3x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.10049108326332,
+      "min_centerline_width_sum_m": 1.1127341787151654,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_214_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28411094338946,
+      "min_centerline_width_sum_m": 1.1137586669583075,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_215_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 49.467470027317944,
+      "min_centerline_width_sum_m": 1.1118566954038047,
+      "image_size_px": [
+        236,
+        498
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_216_grid3x10_corners20",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 55.83438804871591,
+      "min_centerline_width_sum_m": 1.1138285265674965,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_217_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.46751130348248,
+      "min_centerline_width_sum_m": 1.111364710906016,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_218_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28406425135303,
+      "min_centerline_width_sum_m": 1.1032327929135843,
+      "image_size_px": [
+        222,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_219_grid2x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 46.28405186574449,
+      "min_centerline_width_sum_m": 1.1310730879149247,
+      "image_size_px": [
+        237,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_220_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 56.65092969045716,
+      "min_centerline_width_sum_m": 1.1142544103143253,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_221_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.91718120413981,
+      "min_centerline_width_sum_m": 1.1368581302773701,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_222_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 50.28400699760146,
+      "min_centerline_width_sum_m": 1.113231469601736,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_223_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 44.73372892391999,
+      "min_centerline_width_sum_m": 1.137260929190273,
+      "image_size_px": [
+        231,
+        492
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_224_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 58.283973060825225,
+      "min_centerline_width_sum_m": 1.113065658445303,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_225_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.65100712717079,
+      "min_centerline_width_sum_m": 1.13146994244984,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_226_grid2x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 45.46756202874141,
+      "min_centerline_width_sum_m": 1.1267756562320508,
+      "image_size_px": [
+        230,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_227_grid3x10_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 61.4675140524185,
+      "min_centerline_width_sum_m": 1.1340524493757835,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_228_grid3x10_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.917186948118115,
+      "min_centerline_width_sum_m": 1.133620090295556,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_229_grid2x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 50.28412573005887,
+      "min_centerline_width_sum_m": 1.1320533700213131,
+      "image_size_px": [
+        234,
+        522
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_230_grid3x9_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28393148245845,
+      "min_centerline_width_sum_m": 1.1135500875628035,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_231_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.91719815929075,
+      "min_centerline_width_sum_m": 1.0929211961664052,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_232_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 54.28396128667429,
+      "min_centerline_width_sum_m": 1.139340463087799,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_233_grid3x9_corners10",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 51.917168052648925,
+      "min_centerline_width_sum_m": 1.1027752481076285,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_234_grid3x10_corners14",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 62.28406271394192,
+      "min_centerline_width_sum_m": 1.0977123127569313,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_235_grid3x9_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.650872448328656,
+      "min_centerline_width_sum_m": 1.1018192322959819,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_236_grid2x10_corners18",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 52.65083316592798,
+      "min_centerline_width_sum_m": 1.1168338709609122,
+      "image_size_px": [
+        230,
+        522
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_237_grid2x9_corners8",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 40.73370647486031,
+      "min_centerline_width_sum_m": 1.1011166976932985,
+      "image_size_px": [
+        231,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_238_grid3x9_corners16",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 53.467446295438535,
+      "min_centerline_width_sum_m": 1.1137701985423345,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_239_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.10055283865216,
+      "min_centerline_width_sum_m": 1.1459483459412,
+      "image_size_px": [
+        231,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_train_240_grid2x9_corners12",
+      "split": "train",
+      "group": "compact_train",
+      "centerline_length_m": 47.100594663917896,
+      "min_centerline_width_sum_m": 1.1335917317451507,
+      "image_size_px": [
+        236,
+        490
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_241_grid3x10_corners26",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 61.384623678202416,
+      "min_centerline_width_sum_m": 1.0967416739082467,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_242_grid2x9_corners12",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 47.10059589171057,
+      "min_centerline_width_sum_m": 1.1292085458062813,
+      "image_size_px": [
+        233,
+        498
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_243_grid3x10_corners18",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 64.6509140018885,
+      "min_centerline_width_sum_m": 1.1021296870674502,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_244_grid3x10_corners20",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 55.83439548331875,
+      "min_centerline_width_sum_m": 1.1138281086159267,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_245_grid2x9_corners14",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 46.284092311742775,
+      "min_centerline_width_sum_m": 1.122820027287137,
+      "image_size_px": [
+        237,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_246_grid3x9_corners10",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 51.91717415070723,
+      "min_centerline_width_sum_m": 1.1364192471493482,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_247_grid3x10_corners14",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 54.2840387403994,
+      "min_centerline_width_sum_m": 1.1137597148074851,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_248_grid2x9_corners12",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 43.100499404680875,
+      "min_centerline_width_sum_m": 1.145450962839133,
+      "image_size_px": [
+        237,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_249_grid3x10_corners22",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 67.01769367126079,
+      "min_centerline_width_sum_m": 1.1024291215199626,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_250_grid2x9_corners10",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 43.91717841212182,
+      "min_centerline_width_sum_m": 1.125053874705221,
+      "image_size_px": [
+        233,
+        493
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_251_grid3x9_corners14",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 50.28406670822409,
+      "min_centerline_width_sum_m": 1.1134517906662498,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_252_grid3x9_corners20",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 55.8343982813306,
+      "min_centerline_width_sum_m": 1.1138291384768473,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_253_grid3x10_corners22",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 63.017755448683054,
+      "min_centerline_width_sum_m": 1.1034571213952342,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_254_grid3x10_corners12",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 55.100505903362944,
+      "min_centerline_width_sum_m": 1.1331265006648927,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_255_grid2x9_corners16",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 49.46750425953711,
+      "min_centerline_width_sum_m": 1.1248784960900309,
+      "image_size_px": [
+        234,
+        492
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_256_grid3x10_corners20",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 59.834426378897746,
+      "min_centerline_width_sum_m": 1.1152155093407015,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_257_grid3x9_corners16",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 53.46756606847637,
+      "min_centerline_width_sum_m": 1.114095534513742,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_258_grid3x9_corners18",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 52.65096835673597,
+      "min_centerline_width_sum_m": 1.1148859092629202,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_259_grid3x10_corners16",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 57.4674451950541,
+      "min_centerline_width_sum_m": 1.1136458864031946,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_260_grid2x9_corners16",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 45.467515319390344,
+      "min_centerline_width_sum_m": 1.1278561496867838,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_261_grid3x10_corners12",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 55.100529779220125,
+      "min_centerline_width_sum_m": 1.1127320173015374,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_262_grid3x10_corners16",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 53.46753751306764,
+      "min_centerline_width_sum_m": 1.1042556690212857,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_263_grid3x9_corners22",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 55.01776872450523,
+      "min_centerline_width_sum_m": 1.1123224062729333,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_264_grid3x10_corners12",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 51.10063948974804,
+      "min_centerline_width_sum_m": 1.1424745486839334,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_265_grid2x9_corners14",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 46.28399289115728,
+      "min_centerline_width_sum_m": 1.1423713763480647,
+      "image_size_px": [
+        237,
+        488
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_266_grid3x10_corners14",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 54.28409267670229,
+      "min_centerline_width_sum_m": 1.1312587944673367,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_267_grid3x9_corners10",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 47.917166563009076,
+      "min_centerline_width_sum_m": 1.1389726970288714,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_268_grid2x10_corners12",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 47.10061588258032,
+      "min_centerline_width_sum_m": 1.132484342020986,
+      "image_size_px": [
+        237,
+        522
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_269_grid2x9_corners10",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 43.91719947743454,
+      "min_centerline_width_sum_m": 1.119354981981537,
+      "image_size_px": [
+        234,
+        494
+      ]
+    },
+    {
+      "name": "261120_HJCompetition_val_270_grid3x9_corners20",
+      "split": "val",
+      "group": "compact_val",
+      "centerline_length_m": 51.8343741182631,
+      "min_centerline_width_sum_m": 1.1145464155608824,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_001",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.078173731789605,
+      "min_centerline_width_sum_m": 1.1870929123044511,
+      "image_size_px": [
+        481,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_002",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.896844814345954,
+      "min_centerline_width_sum_m": 1.185327672321005,
+      "image_size_px": [
+        498,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_003",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.28458303689217,
+      "min_centerline_width_sum_m": 1.3074606170978151,
+      "image_size_px": [
+        488,
+        234
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_004",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.07110657270048,
+      "min_centerline_width_sum_m": 1.1591307092486427,
+      "image_size_px": [
+        464,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_005",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.26560094363265,
+      "min_centerline_width_sum_m": 1.1000629716410133,
+      "image_size_px": [
+        499,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_006",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.453312010017214,
+      "min_centerline_width_sum_m": 1.1211644580416442,
+      "image_size_px": [
+        485,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_007",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.68453844109392,
+      "min_centerline_width_sum_m": 1.0836328765216736,
+      "image_size_px": [
+        499,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_008",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.08128786836875,
+      "min_centerline_width_sum_m": 1.042921580381037,
+      "image_size_px": [
+        476,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_009",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.507463851728346,
+      "min_centerline_width_sum_m": 1.5189611728050703,
+      "image_size_px": [
+        489,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_010",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.46665235507821,
+      "min_centerline_width_sum_m": 1.3639670598670972,
+      "image_size_px": [
+        477,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_011",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.71111751895271,
+      "min_centerline_width_sum_m": 1.1629169745487715,
+      "image_size_px": [
+        493,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_012",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.768565805109574,
+      "min_centerline_width_sum_m": 1.054537161642448,
+      "image_size_px": [
+        480,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_013",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.94152132240012,
+      "min_centerline_width_sum_m": 1.22029165405176,
+      "image_size_px": [
+        481,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_014",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 41.22125484541599,
+      "min_centerline_width_sum_m": 1.3337006266382998,
+      "image_size_px": [
+        467,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_015",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.66289559110251,
+      "min_centerline_width_sum_m": 1.1545891524185545,
+      "image_size_px": [
+        480,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_016",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.36326770563598,
+      "min_centerline_width_sum_m": 1.358557696541994,
+      "image_size_px": [
+        494,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_017",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.166420881538286,
+      "min_centerline_width_sum_m": 1.3969537143776485,
+      "image_size_px": [
+        487,
+        248
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_018",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.76474445839466,
+      "min_centerline_width_sum_m": 1.2027409547546624,
+      "image_size_px": [
+        476,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_019",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.88472697210458,
+      "min_centerline_width_sum_m": 1.4109368923437047,
+      "image_size_px": [
+        480,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_020",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.4386498298916,
+      "min_centerline_width_sum_m": 1.3500061728970012,
+      "image_size_px": [
+        486,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_021",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 40.66297006193764,
+      "min_centerline_width_sum_m": 1.2707807472092623,
+      "image_size_px": [
+        460,
+        232
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_022",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.13793615839379,
+      "min_centerline_width_sum_m": 1.3591522300489476,
+      "image_size_px": [
+        481,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_023",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.8232998645124,
+      "min_centerline_width_sum_m": 1.4505379677096348,
+      "image_size_px": [
+        492,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_024",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.04963792114204,
+      "min_centerline_width_sum_m": 1.1257298415651884,
+      "image_size_px": [
+        475,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_025",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.55014699373305,
+      "min_centerline_width_sum_m": 1.0701927734863848,
+      "image_size_px": [
+        467,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_026",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.98755997228479,
+      "min_centerline_width_sum_m": 1.0922296184673894,
+      "image_size_px": [
+        490,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_027",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.81877852568213,
+      "min_centerline_width_sum_m": 1.1702724565664102,
+      "image_size_px": [
+        467,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_028",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.11769249893685,
+      "min_centerline_width_sum_m": 1.1185131897407081,
+      "image_size_px": [
+        490,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_029",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.48617343367111,
+      "min_centerline_width_sum_m": 1.1907785764011054,
+      "image_size_px": [
+        483,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_030",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.97464485697539,
+      "min_centerline_width_sum_m": 1.3066476347417133,
+      "image_size_px": [
+        479,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_031",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.07429051758228,
+      "min_centerline_width_sum_m": 1.335243038650921,
+      "image_size_px": [
+        475,
+        235
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_032",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.64596598714149,
+      "min_centerline_width_sum_m": 1.1104142708303435,
+      "image_size_px": [
+        474,
+        234
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_033",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 47.0595945798211,
+      "min_centerline_width_sum_m": 1.1430488628674444,
+      "image_size_px": [
+        497,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_034",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.882106652772976,
+      "min_centerline_width_sum_m": 1.1144523171177079,
+      "image_size_px": [
+        483,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_035",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.149250739982904,
+      "min_centerline_width_sum_m": 1.059458861827719,
+      "image_size_px": [
+        489,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_036",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.214642018823014,
+      "min_centerline_width_sum_m": 1.0635885113906518,
+      "image_size_px": [
+        476,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_037",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.64438956556691,
+      "min_centerline_width_sum_m": 1.4688694402265605,
+      "image_size_px": [
+        502,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_038",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.593615461320596,
+      "min_centerline_width_sum_m": 1.107630257570475,
+      "image_size_px": [
+        475,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_039",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.42939516428386,
+      "min_centerline_width_sum_m": 1.3838826099146986,
+      "image_size_px": [
+        491,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_040",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.89801718565028,
+      "min_centerline_width_sum_m": 1.1596142373897451,
+      "image_size_px": [
+        482,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_041",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.05301207918431,
+      "min_centerline_width_sum_m": 1.2854617308857734,
+      "image_size_px": [
+        486,
+        248
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_042",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.69198789177975,
+      "min_centerline_width_sum_m": 1.1511262731415055,
+      "image_size_px": [
+        481,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_043",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.62497039585456,
+      "min_centerline_width_sum_m": 1.1996317494158588,
+      "image_size_px": [
+        485,
+        235
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_044",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.650634121741184,
+      "min_centerline_width_sum_m": 1.1732610582065552,
+      "image_size_px": [
+        490,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_045",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.82536556680263,
+      "min_centerline_width_sum_m": 1.3384477496863512,
+      "image_size_px": [
+        487,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_046",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.59617106299585,
+      "min_centerline_width_sum_m": 1.133656880665196,
+      "image_size_px": [
+        484,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_047",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.71480902807265,
+      "min_centerline_width_sum_m": 1.2751600341927247,
+      "image_size_px": [
+        481,
+        252
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_048",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.4995970825629,
+      "min_centerline_width_sum_m": 1.1414481316170129,
+      "image_size_px": [
+        476,
+        231
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_049",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.615741501606365,
+      "min_centerline_width_sum_m": 1.4173972903992968,
+      "image_size_px": [
+        485,
+        233
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_050",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.32480527766099,
+      "min_centerline_width_sum_m": 1.2933344499536914,
+      "image_size_px": [
+        485,
+        247
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_051",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.375127356656265,
+      "min_centerline_width_sum_m": 1.286756566157003,
+      "image_size_px": [
+        471,
+        230
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_052",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.23943565870461,
+      "min_centerline_width_sum_m": 1.0675702749016678,
+      "image_size_px": [
+        467,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_053",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.42827464380976,
+      "min_centerline_width_sum_m": 1.242695066184973,
+      "image_size_px": [
+        468,
+        232
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_054",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.52905292920235,
+      "min_centerline_width_sum_m": 1.0923672920799197,
+      "image_size_px": [
+        475,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_055",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.095266045879484,
+      "min_centerline_width_sum_m": 1.1308719032128747,
+      "image_size_px": [
+        492,
+        231
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_056",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.66363046339164,
+      "min_centerline_width_sum_m": 1.1124730159252505,
+      "image_size_px": [
+        480,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_057",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.79317471395687,
+      "min_centerline_width_sum_m": 1.1382486262762157,
+      "image_size_px": [
+        487,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_058",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.01740413983216,
+      "min_centerline_width_sum_m": 1.0486174826875532,
+      "image_size_px": [
+        477,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_059",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 41.16254454188576,
+      "min_centerline_width_sum_m": 1.0439007400047549,
+      "image_size_px": [
+        461,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_060",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.73734872202353,
+      "min_centerline_width_sum_m": 1.3523520386161088,
+      "image_size_px": [
+        469,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_061",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.75487318999099,
+      "min_centerline_width_sum_m": 1.139188103095157,
+      "image_size_px": [
+        480,
+        235
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_062",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.05660839130006,
+      "min_centerline_width_sum_m": 1.438900609319202,
+      "image_size_px": [
+        479,
+        233
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_063",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.500827803542535,
+      "min_centerline_width_sum_m": 1.4192296559203619,
+      "image_size_px": [
+        493,
+        249
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_064",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.90934656381836,
+      "min_centerline_width_sum_m": 1.213628995597633,
+      "image_size_px": [
+        470,
+        233
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_065",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.13861758254676,
+      "min_centerline_width_sum_m": 1.2418417236887334,
+      "image_size_px": [
+        492,
+        234
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_066",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.08485800544446,
+      "min_centerline_width_sum_m": 1.4598543175137944,
+      "image_size_px": [
+        484,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_067",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.369483916772126,
+      "min_centerline_width_sum_m": 1.1600677110203774,
+      "image_size_px": [
+        471,
+        250
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_068",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.469961792077854,
+      "min_centerline_width_sum_m": 1.288298582396008,
+      "image_size_px": [
+        499,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_069",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 41.89319908752985,
+      "min_centerline_width_sum_m": 1.043852064205969,
+      "image_size_px": [
+        483,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_070",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.118679220941054,
+      "min_centerline_width_sum_m": 1.1844157363301813,
+      "image_size_px": [
+        494,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_071",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.11603790723474,
+      "min_centerline_width_sum_m": 1.434779247184387,
+      "image_size_px": [
+        479,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_072",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 41.81746652821037,
+      "min_centerline_width_sum_m": 1.1609727742189477,
+      "image_size_px": [
+        469,
+        231
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_073",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.961622036588956,
+      "min_centerline_width_sum_m": 1.1162702897424355,
+      "image_size_px": [
+        491,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_074",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.075326480565614,
+      "min_centerline_width_sum_m": 1.073772347193898,
+      "image_size_px": [
+        481,
+        228
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_075",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 47.29190102272602,
+      "min_centerline_width_sum_m": 1.28261850882523,
+      "image_size_px": [
+        504,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_076",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.933339333457646,
+      "min_centerline_width_sum_m": 1.2685608941487196,
+      "image_size_px": [
+        483,
+        248
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_077",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.66667111097726,
+      "min_centerline_width_sum_m": 1.4779694950669162,
+      "image_size_px": [
+        492,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_078",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.88524859851211,
+      "min_centerline_width_sum_m": 1.0402064788564922,
+      "image_size_px": [
+        511,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_079",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.736493227243734,
+      "min_centerline_width_sum_m": 1.3183178826717654,
+      "image_size_px": [
+        492,
+        248
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_080",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.13029171354137,
+      "min_centerline_width_sum_m": 1.2679229125920526,
+      "image_size_px": [
+        497,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_081",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.80659942707304,
+      "min_centerline_width_sum_m": 1.074327161406648,
+      "image_size_px": [
+        487,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_082",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.39644986726117,
+      "min_centerline_width_sum_m": 1.1482979697462976,
+      "image_size_px": [
+        498,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_083",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.36340048982949,
+      "min_centerline_width_sum_m": 1.1599492480779845,
+      "image_size_px": [
+        490,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_084",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.64614711730431,
+      "min_centerline_width_sum_m": 1.2794374014108123,
+      "image_size_px": [
+        496,
+        233
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_085",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.37619180124171,
+      "min_centerline_width_sum_m": 1.1496361469152723,
+      "image_size_px": [
+        479,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_086",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.22320372458143,
+      "min_centerline_width_sum_m": 1.106749697886209,
+      "image_size_px": [
+        490,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_087",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.39951829825051,
+      "min_centerline_width_sum_m": 1.2519587471274405,
+      "image_size_px": [
+        477,
+        231
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_088",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 47.40885515472519,
+      "min_centerline_width_sum_m": 1.1892186312432873,
+      "image_size_px": [
+        499,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_089",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.579474438461105,
+      "min_centerline_width_sum_m": 1.2903568274741586,
+      "image_size_px": [
+        477,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_090",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.20803334801897,
+      "min_centerline_width_sum_m": 1.2272671538833961,
+      "image_size_px": [
+        477,
+        233
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_091",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.19775026534987,
+      "min_centerline_width_sum_m": 1.4392985639750826,
+      "image_size_px": [
+        475,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_092",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.006799256060134,
+      "min_centerline_width_sum_m": 1.2188647550300147,
+      "image_size_px": [
+        475,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_093",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.1680919155762,
+      "min_centerline_width_sum_m": 1.0643053661743216,
+      "image_size_px": [
+        473,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_094",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.47286594048158,
+      "min_centerline_width_sum_m": 1.1716864044424944,
+      "image_size_px": [
+        484,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_095",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.19911114434731,
+      "min_centerline_width_sum_m": 1.1130712927572533,
+      "image_size_px": [
+        480,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_096",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.22356414816234,
+      "min_centerline_width_sum_m": 1.2325046166408267,
+      "image_size_px": [
+        483,
+        232
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_097",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.383991809511436,
+      "min_centerline_width_sum_m": 1.0686663619918713,
+      "image_size_px": [
+        477,
+        235
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_098",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.491478014476556,
+      "min_centerline_width_sum_m": 1.4169821250703147,
+      "image_size_px": [
+        481,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_099",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 40.974836585215776,
+      "min_centerline_width_sum_m": 1.3804901242211054,
+      "image_size_px": [
+        460,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_100",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.13114519352326,
+      "min_centerline_width_sum_m": 1.2310106956107334,
+      "image_size_px": [
+        481,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_101",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.847704422571965,
+      "min_centerline_width_sum_m": 1.2136338964171491,
+      "image_size_px": [
+        479,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_102",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.47213661890514,
+      "min_centerline_width_sum_m": 1.4748540704076774,
+      "image_size_px": [
+        486,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_103",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.20048485377613,
+      "min_centerline_width_sum_m": 1.3521786670646798,
+      "image_size_px": [
+        487,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_104",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.33887205295202,
+      "min_centerline_width_sum_m": 1.4015965215533042,
+      "image_size_px": [
+        487,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_105",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.85810085083663,
+      "min_centerline_width_sum_m": 1.0495678298505915,
+      "image_size_px": [
+        494,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_106",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.012868236359125,
+      "min_centerline_width_sum_m": 1.4082058400623678,
+      "image_size_px": [
+        492,
+        248
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_107",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.35813921525626,
+      "min_centerline_width_sum_m": 1.0379581288847493,
+      "image_size_px": [
+        485,
+        231
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_108",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.128356575158286,
+      "min_centerline_width_sum_m": 1.4193974397151528,
+      "image_size_px": [
+        487,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_109",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.77956454887656,
+      "min_centerline_width_sum_m": 1.155139917354717,
+      "image_size_px": [
+        468,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_110",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.91332067491311,
+      "min_centerline_width_sum_m": 1.4139979981249522,
+      "image_size_px": [
+        487,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_111",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 40.406757406761486,
+      "min_centerline_width_sum_m": 1.2087411353534516,
+      "image_size_px": [
+        463,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_112",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 46.51882162858633,
+      "min_centerline_width_sum_m": 1.2873508313413777,
+      "image_size_px": [
+        502,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_113",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.65703093026582,
+      "min_centerline_width_sum_m": 1.1690251678748638,
+      "image_size_px": [
+        489,
+        232
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_114",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 42.06823808371949,
+      "min_centerline_width_sum_m": 1.1827241325053761,
+      "image_size_px": [
+        481,
+        226
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_115",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 44.774405604812095,
+      "min_centerline_width_sum_m": 1.250224746418585,
+      "image_size_px": [
+        487,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_116",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.03530906963676,
+      "min_centerline_width_sum_m": 1.1555931960727326,
+      "image_size_px": [
+        480,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_117",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 43.05203092168076,
+      "min_centerline_width_sum_m": 1.105788051859063,
+      "image_size_px": [
+        473,
+        234
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_118",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.75311080533582,
+      "min_centerline_width_sum_m": 1.1956778136408555,
+      "image_size_px": [
+        487,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_119",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.48960037718848,
+      "min_centerline_width_sum_m": 1.2888492612653,
+      "image_size_px": [
+        499,
+        249
+      ]
+    },
+    {
+      "name": "261123_HJSketch_train_120",
+      "split": "train",
+      "group": "sketch_train",
+      "centerline_length_m": 45.06017852327581,
+      "min_centerline_width_sum_m": 1.4248938449444788,
+      "image_size_px": [
+        497,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_001",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 45.85918205350551,
+      "min_centerline_width_sum_m": 1.2509958171185143,
+      "image_size_px": [
+        497,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_002",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 42.63850011812,
+      "min_centerline_width_sum_m": 1.2174394648570868,
+      "image_size_px": [
+        480,
+        235
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_003",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 45.399276341922665,
+      "min_centerline_width_sum_m": 1.262450602362808,
+      "image_size_px": [
+        488,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_004",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 44.8490871709828,
+      "min_centerline_width_sum_m": 1.1588314082506985,
+      "image_size_px": [
+        488,
+        233
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_005",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 43.66472931620862,
+      "min_centerline_width_sum_m": 1.237197783333921,
+      "image_size_px": [
+        489,
+        247
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_006",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 41.37509080713411,
+      "min_centerline_width_sum_m": 1.29941162310684,
+      "image_size_px": [
+        470,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_007",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 48.20709371928193,
+      "min_centerline_width_sum_m": 1.2438990432000399,
+      "image_size_px": [
+        509,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_008",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 43.505542387537176,
+      "min_centerline_width_sum_m": 1.3211589677699365,
+      "image_size_px": [
+        479,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_009",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 44.651244054884714,
+      "min_centerline_width_sum_m": 1.038158113657128,
+      "image_size_px": [
+        474,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_010",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 42.72736593715958,
+      "min_centerline_width_sum_m": 1.3730823336287594,
+      "image_size_px": [
+        482,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_011",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 41.19738386740559,
+      "min_centerline_width_sum_m": 1.0942829792788946,
+      "image_size_px": [
+        471,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_012",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 45.48394005348165,
+      "min_centerline_width_sum_m": 1.092188182579018,
+      "image_size_px": [
+        485,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_013",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 43.33439293463668,
+      "min_centerline_width_sum_m": 1.2603889673398239,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_014",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 44.59999596746598,
+      "min_centerline_width_sum_m": 1.2121099975964125,
+      "image_size_px": [
+        490,
+        256
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_015",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 46.15963190560731,
+      "min_centerline_width_sum_m": 1.1330465704554988,
+      "image_size_px": [
+        489,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_016",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 45.51232564940048,
+      "min_centerline_width_sum_m": 1.0688677546449452,
+      "image_size_px": [
+        490,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_017",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 42.709946461147325,
+      "min_centerline_width_sum_m": 1.4060404869935201,
+      "image_size_px": [
+        478,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_018",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 43.34332950805374,
+      "min_centerline_width_sum_m": 1.3175727290820525,
+      "image_size_px": [
+        477,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_019",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 46.08670606386966,
+      "min_centerline_width_sum_m": 1.264922436763761,
+      "image_size_px": [
+        492,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJSketch_dev_020",
+      "split": "val",
+      "group": "sketch_val",
+      "centerline_length_m": 45.83657018590649,
+      "min_centerline_width_sum_m": 1.2713354121683134,
+      "image_size_px": [
+        497,
+        253
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_001",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 41.55032358968098,
+      "min_centerline_width_sum_m": 1.1375035370603608,
+      "image_size_px": [
+        235,
+        486
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_002",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 41.55029343059894,
+      "min_centerline_width_sum_m": 1.1358597806072026,
+      "image_size_px": [
+        237,
+        485
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_003",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 41.55036980228664,
+      "min_centerline_width_sum_m": 1.1560915531262548,
+      "image_size_px": [
+        233,
+        486
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_004",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.91723110748116,
+      "min_centerline_width_sum_m": 1.1548329570901528,
+      "image_size_px": [
+        233,
+        494
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_005",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.91723297682604,
+      "min_centerline_width_sum_m": 1.1601313643461781,
+      "image_size_px": [
+        238,
+        493
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_006",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.917141127957194,
+      "min_centerline_width_sum_m": 1.16872309862119,
+      "image_size_px": [
+        238,
+        494
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_007",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.28410990091744,
+      "min_centerline_width_sum_m": 1.1562225654609901,
+      "image_size_px": [
+        224,
+        494
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_008",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 40.7337320981568,
+      "min_centerline_width_sum_m": 1.1261322184424807,
+      "image_size_px": [
+        237,
+        484
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_009",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 41.5502936236506,
+      "min_centerline_width_sum_m": 1.1693229068709479,
+      "image_size_px": [
+        237,
+        488
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_010",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.10060360120612,
+      "min_centerline_width_sum_m": 1.1408177467718243,
+      "image_size_px": [
+        238,
+        491
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_011",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.656308086204135,
+      "min_centerline_width_sum_m": 1.5603157618313293,
+      "image_size_px": [
+        495,
+        250
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_012",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.8102800493792,
+      "min_centerline_width_sum_m": 1.5281822677922183,
+      "image_size_px": [
+        500,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_013",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.283699556731236,
+      "min_centerline_width_sum_m": 1.5101009574323991,
+      "image_size_px": [
+        497,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_014",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.159278219371885,
+      "min_centerline_width_sum_m": 1.561415742238645,
+      "image_size_px": [
+        488,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_015",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.40402705383508,
+      "min_centerline_width_sum_m": 1.4794764363785697,
+      "image_size_px": [
+        495,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_016",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.06381022745904,
+      "min_centerline_width_sum_m": 1.5202520473469079,
+      "image_size_px": [
+        489,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_017",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.41661512364621,
+      "min_centerline_width_sum_m": 1.5149353953794877,
+      "image_size_px": [
+        492,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_018",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.73959804048313,
+      "min_centerline_width_sum_m": 1.522110592100526,
+      "image_size_px": [
+        488,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_019",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.80870848150727,
+      "min_centerline_width_sum_m": 1.5040841366309556,
+      "image_size_px": [
+        491,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_020",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.114912385591154,
+      "min_centerline_width_sum_m": 1.5414410213015537,
+      "image_size_px": [
+        493,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_021",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.73377496329839,
+      "min_centerline_width_sum_m": 1.1460759251466957,
+      "image_size_px": [
+        229,
+        487
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_022",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.733720219588605,
+      "min_centerline_width_sum_m": 1.1361917402723523,
+      "image_size_px": [
+        237,
+        489
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_023",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.10061425220668,
+      "min_centerline_width_sum_m": 1.1176166580235527,
+      "image_size_px": [
+        228,
+        487
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_024",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.91718959588101,
+      "min_centerline_width_sum_m": 1.1485300501623643,
+      "image_size_px": [
+        234,
+        491
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_025",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.28399455562415,
+      "min_centerline_width_sum_m": 1.1201882102773717,
+      "image_size_px": [
+        227,
+        491
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_026",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.28408554443804,
+      "min_centerline_width_sum_m": 1.126970253953214,
+      "image_size_px": [
+        229,
+        494
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_027",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.100618266584576,
+      "min_centerline_width_sum_m": 1.13013161240677,
+      "image_size_px": [
+        230,
+        489
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_028",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 40.73370647486031,
+      "min_centerline_width_sum_m": 1.1394930999833441,
+      "image_size_px": [
+        238,
+        489
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_029",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.483171983906765,
+      "min_centerline_width_sum_m": 1.4662740166637729,
+      "image_size_px": [
+        497,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_030",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.24410695952126,
+      "min_centerline_width_sum_m": 1.4470448165568994,
+      "image_size_px": [
+        485,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_031",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.29090481747768,
+      "min_centerline_width_sum_m": 1.3471980721517394,
+      "image_size_px": [
+        490,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_032",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.275959582667106,
+      "min_centerline_width_sum_m": 1.5413810641366386,
+      "image_size_px": [
+        494,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_033",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.411021845682136,
+      "min_centerline_width_sum_m": 1.3876960736689166,
+      "image_size_px": [
+        488,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_034",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.779849573104116,
+      "min_centerline_width_sum_m": 1.5295723605332867,
+      "image_size_px": [
+        497,
+        236
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_035",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.5442055796851,
+      "min_centerline_width_sum_m": 1.4221438836233304,
+      "image_size_px": [
+        488,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_036",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.44810117920006,
+      "min_centerline_width_sum_m": 1.4906896679696813,
+      "image_size_px": [
+        492,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_037",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 47.370727920749246,
+      "min_centerline_width_sum_m": 1.4507964105430728,
+      "image_size_px": [
+        507,
+        247
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_038",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.02816938516911,
+      "min_centerline_width_sum_m": 1.5444686745341705,
+      "image_size_px": [
+        482,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_039",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.787885781098204,
+      "min_centerline_width_sum_m": 1.3582418223937385,
+      "image_size_px": [
+        509,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_040",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.759690523624045,
+      "min_centerline_width_sum_m": 1.3050474807234367,
+      "image_size_px": [
+        491,
+        250
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_041",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.98332532436148,
+      "min_centerline_width_sum_m": 1.5509036198304798,
+      "image_size_px": [
+        493,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_042",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.94718958353638,
+      "min_centerline_width_sum_m": 1.4274319951905654,
+      "image_size_px": [
+        486,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_043",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.969585831526324,
+      "min_centerline_width_sum_m": 1.4517272677130326,
+      "image_size_px": [
+        489,
+        241
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_044",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 47.20887011618369,
+      "min_centerline_width_sum_m": 1.2999855222797547,
+      "image_size_px": [
+        509,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_045",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.120974377363936,
+      "min_centerline_width_sum_m": 1.3243665689921877,
+      "image_size_px": [
+        479,
+        238
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_046",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.79466467673266,
+      "min_centerline_width_sum_m": 1.4967775019855059,
+      "image_size_px": [
+        484,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_047",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.354950047546225,
+      "min_centerline_width_sum_m": 1.3468771195116451,
+      "image_size_px": [
+        488,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_048",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.050111838480085,
+      "min_centerline_width_sum_m": 1.4764545489410348,
+      "image_size_px": [
+        494,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_049",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.31100677510652,
+      "min_centerline_width_sum_m": 1.5334077651025884,
+      "image_size_px": [
+        490,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_050",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 43.822802855775194,
+      "min_centerline_width_sum_m": 1.292833938485746,
+      "image_size_px": [
+        467,
+        239
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_051",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 44.38826565787704,
+      "min_centerline_width_sum_m": 1.550587653380392,
+      "image_size_px": [
+        479,
+        246
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_052",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.34370609833586,
+      "min_centerline_width_sum_m": 1.3223172213596657,
+      "image_size_px": [
+        495,
+        244
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_053",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.570267397403654,
+      "min_centerline_width_sum_m": 1.211431832900102,
+      "image_size_px": [
+        477,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_054",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.33559494456192,
+      "min_centerline_width_sum_m": 1.25056022256307,
+      "image_size_px": [
+        488,
+        243
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_055",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.72786398532013,
+      "min_centerline_width_sum_m": 1.0540479660650677,
+      "image_size_px": [
+        493,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_056",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.54459103915775,
+      "min_centerline_width_sum_m": 1.1825203359350556,
+      "image_size_px": [
+        488,
+        237
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_057",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 46.34343527056808,
+      "min_centerline_width_sum_m": 1.3218357962950416,
+      "image_size_px": [
+        493,
+        242
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_058",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.62317340862385,
+      "min_centerline_width_sum_m": 1.4469143108105689,
+      "image_size_px": [
+        486,
+        240
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_059",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.33619745157229,
+      "min_centerline_width_sum_m": 1.329328710650826,
+      "image_size_px": [
+        494,
+        245
+      ]
+    },
+    {
+      "name": "261123_HJGA75_train_060",
+      "split": "train",
+      "group": "ga75_hard_train",
+      "centerline_length_m": 45.04765407694053,
+      "min_centerline_width_sum_m": 1.503004962974408,
+      "image_size_px": [
+        485,
+        243
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_001",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 51.83435629194281,
+      "min_centerline_width_sum_m": 1.4036063897569615,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_002",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.46741284122763,
+      "min_centerline_width_sum_m": 1.427786639002886,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_003",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 51.83432089850646,
+      "min_centerline_width_sum_m": 1.3109119263204143,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_004",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.100560967944375,
+      "min_centerline_width_sum_m": 1.314539802838106,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_005",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 41.55036980228664,
+      "min_centerline_width_sum_m": 1.1400854208344198,
+      "image_size_px": [
+        238,
+        490
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_006",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 41.5502936236506,
+      "min_centerline_width_sum_m": 1.1357303574145239,
+      "image_size_px": [
+        237,
+        484
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_007",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.733720219588605,
+      "min_centerline_width_sum_m": 1.1291238849559104,
+      "image_size_px": [
+        237,
+        484
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_008",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.10054286365326,
+      "min_centerline_width_sum_m": 1.1072562946264404,
+      "image_size_px": [
+        229,
+        482
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_009",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.917142238310646,
+      "min_centerline_width_sum_m": 1.1302631772649916,
+      "image_size_px": [
+        236,
+        484
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_010",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.917187920030614,
+      "min_centerline_width_sum_m": 1.145589229424277,
+      "image_size_px": [
+        237,
+        484
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_011",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.10050147404243,
+      "min_centerline_width_sum_m": 1.1132718669004136,
+      "image_size_px": [
+        233,
+        486
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_012",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.46749521329819,
+      "min_centerline_width_sum_m": 1.1193680264143326,
+      "image_size_px": [
+        225,
+        487
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_013",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 59.01770105050207,
+      "min_centerline_width_sum_m": 1.3611022557840693,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_014",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 52.65082818542344,
+      "min_centerline_width_sum_m": 1.2631802290742593,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_015",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 55.83437867292979,
+      "min_centerline_width_sum_m": 1.3935626848374172,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_016",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.46756220792598,
+      "min_centerline_width_sum_m": 1.417707037148966,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_017",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 50.2839892254449,
+      "min_centerline_width_sum_m": 1.4168382278247251,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_018",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.467488734226876,
+      "min_centerline_width_sum_m": 1.3400295836621723,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_019",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 50.284010252397636,
+      "min_centerline_width_sum_m": 1.308031728669334,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_020",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.100622973774016,
+      "min_centerline_width_sum_m": 1.414890942247518,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_021",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.10055414886349,
+      "min_centerline_width_sum_m": 1.3894743115088397,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_022",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 51.83440194931633,
+      "min_centerline_width_sum_m": 1.3951514064220816,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_023",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 51.834418753183236,
+      "min_centerline_width_sum_m": 1.410283709868047,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_024",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 50.28401889953668,
+      "min_centerline_width_sum_m": 1.3690285594487412,
+      "image_size_px": [
+        241,
+        480
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_025",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 59.0178112117747,
+      "min_centerline_width_sum_m": 1.3055107224159324,
+      "image_size_px": [
+        521,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_026",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 45.46741370893183,
+      "min_centerline_width_sum_m": 1.3910842148366611,
+      "image_size_px": [
+        241,
+        480
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_027",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.46749232495789,
+      "min_centerline_width_sum_m": 1.3515777005432354,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_028",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 51.83437434441447,
+      "min_centerline_width_sum_m": 1.2387486091458138,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_029",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 55.834395335699256,
+      "min_centerline_width_sum_m": 1.3205859401597468,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_030",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.46754380072461,
+      "min_centerline_width_sum_m": 1.3400331533794032,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_031",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 50.28400116268517,
+      "min_centerline_width_sum_m": 1.3517521989011074,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_032",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 59.01782254924049,
+      "min_centerline_width_sum_m": 1.3144506120169699,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_033",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 49.46746835742252,
+      "min_centerline_width_sum_m": 1.184818469681308,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_034",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.10064135317389,
+      "min_centerline_width_sum_m": 1.1836248649872512,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_035",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 47.100627483654215,
+      "min_centerline_width_sum_m": 1.1832502454364417,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_036",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 63.017714061140936,
+      "min_centerline_width_sum_m": 1.1658081027030969,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_037",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 41.9626571836539,
+      "min_centerline_width_sum_m": 1.5064727638442759,
+      "image_size_px": [
+        482,
+        242
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_038",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.453365942274374,
+      "min_centerline_width_sum_m": 1.4520416668361622,
+      "image_size_px": [
+        492,
+        238
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_039",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.021915023287974,
+      "min_centerline_width_sum_m": 1.4105130091023939,
+      "image_size_px": [
+        498,
+        244
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_040",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.173257602895504,
+      "min_centerline_width_sum_m": 1.4284559071253227,
+      "image_size_px": [
+        495,
+        240
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_041",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 42.18269277141039,
+      "min_centerline_width_sum_m": 1.4594673118557107,
+      "image_size_px": [
+        484,
+        239
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_042",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 41.8131971726027,
+      "min_centerline_width_sum_m": 1.3764168271208903,
+      "image_size_px": [
+        472,
+        234
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_043",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 42.639255585445426,
+      "min_centerline_width_sum_m": 1.4445944335780887,
+      "image_size_px": [
+        485,
+        242
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_044",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 42.3764090640723,
+      "min_centerline_width_sum_m": 1.4293958000880673,
+      "image_size_px": [
+        486,
+        237
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_045",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 45.05932227976129,
+      "min_centerline_width_sum_m": 1.304028438041156,
+      "image_size_px": [
+        502,
+        239
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_046",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 42.88476911594012,
+      "min_centerline_width_sum_m": 1.3076273297915413,
+      "image_size_px": [
+        487,
+        237
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_047",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.22777567528078,
+      "min_centerline_width_sum_m": 1.3454441558435248,
+      "image_size_px": [
+        497,
+        242
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_048",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 45.41862660661708,
+      "min_centerline_width_sum_m": 1.4181601838128906,
+      "image_size_px": [
+        504,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_049",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 42.93646111705895,
+      "min_centerline_width_sum_m": 1.3437912001001568,
+      "image_size_px": [
+        482,
+        238
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_050",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.21663354601622,
+      "min_centerline_width_sum_m": 1.3864469218637812,
+      "image_size_px": [
+        497,
+        236
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_051",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.6143337287883,
+      "min_centerline_width_sum_m": 1.4146076620826014,
+      "image_size_px": [
+        506,
+        235
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_052",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 41.89182254036625,
+      "min_centerline_width_sum_m": 1.4845920113313407,
+      "image_size_px": [
+        483,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_053",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 42.54941462283065,
+      "min_centerline_width_sum_m": 1.4160430586602122,
+      "image_size_px": [
+        491,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_054",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.39399801704121,
+      "min_centerline_width_sum_m": 1.435090619715205,
+      "image_size_px": [
+        491,
+        239
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_055",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.047857493851055,
+      "min_centerline_width_sum_m": 1.366392047198196,
+      "image_size_px": [
+        489,
+        244
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_056",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.53898829688089,
+      "min_centerline_width_sum_m": 1.1582508868666013,
+      "image_size_px": [
+        491,
+        236
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_057",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.96926169251236,
+      "min_centerline_width_sum_m": 1.4149528019918218,
+      "image_size_px": [
+        503,
+        239
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_058",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.25908187602111,
+      "min_centerline_width_sum_m": 1.4192972451976535,
+      "image_size_px": [
+        490,
+        244
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_059",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 43.043519251322614,
+      "min_centerline_width_sum_m": 1.4161847252980833,
+      "image_size_px": [
+        482,
+        249
+      ]
+    },
+    {
+      "name": "261124_HJGA77_train_060",
+      "split": "train",
+      "group": "ga77_hard_train",
+      "centerline_length_m": 44.718154612142605,
+      "min_centerline_width_sum_m": 1.4483234781261303,
+      "image_size_px": [
+        501,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_001",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 49.46750678352523,
+      "min_centerline_width_sum_m": 1.1319536129512064,
+      "image_size_px": [
+        228,
+        494
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_002",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 50.28410873398599,
+      "min_centerline_width_sum_m": 1.1195301888497449,
+      "image_size_px": [
+        238,
+        522
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_003",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 59.01770217659551,
+      "min_centerline_width_sum_m": 1.1058235076974725,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_004",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 60.65085251973486,
+      "min_centerline_width_sum_m": 1.1141060073028533,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_005",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 46.28409499155319,
+      "min_centerline_width_sum_m": 1.1259549932036115,
+      "image_size_px": [
+        234,
+        491
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_006",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 59.83431236471549,
+      "min_centerline_width_sum_m": 1.1106202043671862,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_007",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 58.20123330369305,
+      "min_centerline_width_sum_m": 1.110108418338359,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_008",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 43.100582276228835,
+      "min_centerline_width_sum_m": 1.1235665425447012,
+      "image_size_px": [
+        223,
+        489
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_009",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 51.834389383942316,
+      "min_centerline_width_sum_m": 1.1104830236486363,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_010",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 56.65084847691766,
+      "min_centerline_width_sum_m": 1.1332428362497742,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_011",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 46.28407693992179,
+      "min_centerline_width_sum_m": 1.113822008362224,
+      "image_size_px": [
+        234,
+        490
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_012",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 54.28404054055968,
+      "min_centerline_width_sum_m": 1.1054007878465315,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_013",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 57.467485445423996,
+      "min_centerline_width_sum_m": 1.1344093798503971,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_014",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 56.65099078113024,
+      "min_centerline_width_sum_m": 1.10043842094039,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_015",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 58.284013659631086,
+      "min_centerline_width_sum_m": 1.105436439328924,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_016",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 48.650906004285666,
+      "min_centerline_width_sum_m": 1.125886408854667,
+      "image_size_px": [
+        224,
+        491
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_017",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 51.017779268509685,
+      "min_centerline_width_sum_m": 1.1122230800928827,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_018",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 59.83439940989616,
+      "min_centerline_width_sum_m": 1.1147000123590922,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_019",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 43.10059798361159,
+      "min_centerline_width_sum_m": 1.1174752330729856,
+      "image_size_px": [
+        230,
+        491
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_020",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 55.01768858590864,
+      "min_centerline_width_sum_m": 1.1125619723811506,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_021",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 63.017724627530924,
+      "min_centerline_width_sum_m": 1.1124289753556562,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_022",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 49.46752394600236,
+      "min_centerline_width_sum_m": 1.1186406985475879,
+      "image_size_px": [
+        226,
+        494
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_023",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 55.017755593787705,
+      "min_centerline_width_sum_m": 1.1315808120681894,
+      "image_size_px": [
+        481,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_024",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 62.20117022157896,
+      "min_centerline_width_sum_m": 1.1127760916445626,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_025",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 48.65100739724491,
+      "min_centerline_width_sum_m": 1.1248214101799285,
+      "image_size_px": [
+        221,
+        491
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_026",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 50.2839784101951,
+      "min_centerline_width_sum_m": 1.139661307402661,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_027",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 59.834430750484735,
+      "min_centerline_width_sum_m": 1.133441891338184,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_028",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 43.91723126804456,
+      "min_centerline_width_sum_m": 1.1279344934494662,
+      "image_size_px": [
+        227,
+        494
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_029",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 50.28405875737795,
+      "min_centerline_width_sum_m": 1.131329186148152,
+      "image_size_px": [
+        241,
+        481
+      ]
+    },
+    {
+      "name": "261124_HJDev2_compact_030",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 55.100550125856444,
+      "min_centerline_width_sum_m": 1.108494202201052,
+      "image_size_px": [
+        241,
+        521
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_001",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 42.84099213843797,
+      "min_centerline_width_sum_m": 1.2409926865029788,
+      "image_size_px": [
+        474,
+        223
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_002",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 42.76369308434114,
+      "min_centerline_width_sum_m": 1.255231932326224,
+      "image_size_px": [
+        477,
+        243
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_003",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 42.96789129448143,
+      "min_centerline_width_sum_m": 1.0681771867368655,
+      "image_size_px": [
+        467,
+        236
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_004",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 44.90395738226758,
+      "min_centerline_width_sum_m": 1.114777870312161,
+      "image_size_px": [
+        475,
+        244
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_005",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 43.391012922188644,
+      "min_centerline_width_sum_m": 1.3771056789376512,
+      "image_size_px": [
+        475,
+        251
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_006",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 42.13151174076424,
+      "min_centerline_width_sum_m": 1.1422641043520936,
+      "image_size_px": [
+        465,
+        242
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_007",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 40.481714263854585,
+      "min_centerline_width_sum_m": 1.1500504638556999,
+      "image_size_px": [
+        458,
+        223
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_008",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 41.65556728444484,
+      "min_centerline_width_sum_m": 1.0528317241807115,
+      "image_size_px": [
+        459,
+        243
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_009",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 41.793210006146,
+      "min_centerline_width_sum_m": 1.219752216448762,
+      "image_size_px": [
+        469,
+        243
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_010",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 45.88531190682056,
+      "min_centerline_width_sum_m": 1.0651704338912553,
+      "image_size_px": [
+        487,
+        242
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_011",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 44.46372071485327,
+      "min_centerline_width_sum_m": 1.1353464752332099,
+      "image_size_px": [
+        483,
+        241
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_012",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 42.537474857147586,
+      "min_centerline_width_sum_m": 1.2550773766231642,
+      "image_size_px": [
+        476,
+        228
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_013",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 46.06605805059617,
+      "min_centerline_width_sum_m": 1.3062552789173445,
+      "image_size_px": [
+        494,
+        250
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_014",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 46.865428758461064,
+      "min_centerline_width_sum_m": 1.1272285894049998,
+      "image_size_px": [
+        504,
+        246
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_015",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 45.317087767376485,
+      "min_centerline_width_sum_m": 1.4336824737900058,
+      "image_size_px": [
+        499,
+        239
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_016",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 44.48440160853714,
+      "min_centerline_width_sum_m": 1.116025878194096,
+      "image_size_px": [
+        485,
+        237
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_017",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 44.98527740903498,
+      "min_centerline_width_sum_m": 1.139621106459482,
+      "image_size_px": [
+        490,
+        238
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_018",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 46.76090379843028,
+      "min_centerline_width_sum_m": 1.149771962382195,
+      "image_size_px": [
+        489,
+        245
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_019",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 44.03010654612806,
+      "min_centerline_width_sum_m": 1.210128727525781,
+      "image_size_px": [
+        483,
+        249
+      ]
+    },
+    {
+      "name": "261124_HJDev2_sketch_020",
+      "split": "val",
+      "group": "dev2_val",
+      "centerline_length_m": 44.478790579879345,
+      "min_centerline_width_sum_m": 1.069621366782342,
+      "image_size_px": [
+        495,
+        248
+      ]
+    }
+  ]
+}

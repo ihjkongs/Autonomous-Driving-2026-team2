@@ -37,6 +37,18 @@ def signature(args):
                    longitudinal_response=args.get('longitudinal_response'),
                    source_sha256={name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
                                   for name in sources})
+    directory = payload['parameters'].get('raceline_directory')
+    if directory:
+        directory = Path(directory)
+        if not directory.is_absolute():
+            directory = ROOT/directory
+        files = sorted(directory.glob('*.npz'))
+        if not files:
+            raise ValueError('Racing-line directory contains no reference files')
+        payload['racing_lines_sha256'] = {
+            path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in files}
+        payload['source_sha256']['utils/racing_line.py'] = hashlib.sha256(
+            (ROOT/'utils/racing_line.py').read_bytes()).hexdigest()
     return hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
 
 

@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-11-26T15:10:16.287141+09:00",
+  "model": 7,
+  "artifact": "driving_policy.ts",
+  "sha256": "06b348976d6b073951d172c031793035dc3ecf8ab36d82c88795ee138c25f849",
+  "bytes": 2517520,
+  "teacher_lateral_acceleration_mps2": 5.3,
+  "input": {
+    "raw_rays_per_frame": 1080,
+    "chronological_frames": 4,
+    "input_shape": [
+      1,
+      4320
+    ],
+    "frame_order": "oldest_to_newest",
+    "internal_average_pool": 4,
+    "pooled_rays_per_frame": 270,
+    "units": "metres"
+  },
+  "output": [
+    "steering_angle_rad",
+    "target_speed_mps"
+  ],
+  "max_target_speed_mps": 6.0,
+  "runtime_map_or_expert_required": false,
+  "physical_vehicle_validated": false,
+  "simulation": {
+    "episodes": 2320,
+    "continuous_laps": 3,
+    "completed": 2315,
+    "collisions": 5,
+    "neural_heldout_completed": 400,
+    "neural_heldout_episodes": 400
+  },
+  "suggested_initial_comparison": {
+    "speed_limit_mps": 3.0,
+    "command_acceleration_mps2": 2.0,
+    "command_deceleration_mps2": 3.0
+  },
+  "report": "reports/model7_raceline_lat5p3_training_20261126.json"
+}

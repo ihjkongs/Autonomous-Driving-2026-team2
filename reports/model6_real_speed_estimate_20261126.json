@@ -1,0 +1,98 @@
+{
+  "as_of": "2026-11-26",
+  "purpose": "Offline model6 real-vehicle speed estimate; not a physical measurement of model6.",
+  "simulation_comparison": {
+    "model5": {
+      "episodes": 148,
+      "maps": 74,
+      "laps_per_episode": 2,
+      "episode_mean_actual_mps": 2.53920592128809,
+      "episode_mean_target_mps": 2.704151842937743,
+      "time_weighted_actual_mps": 2.475808686079917,
+      "time_weighted_target_mps": 2.6324905062617123,
+      "maximum_actual_mps": 5.857749131158494
+    },
+    "model6": {
+      "episodes": 148,
+      "maps": 74,
+      "laps_per_episode": 2,
+      "episode_mean_actual_mps": 3.0431367982143263,
+      "episode_mean_target_mps": 3.196285573397644,
+      "time_weighted_actual_mps": 2.987653122906618,
+      "time_weighted_target_mps": 3.134231492588224,
+      "maximum_actual_mps": 5.546225286139389
+    }
+  },
+  "simulation_comparison_note": "Matched 74-map, 148-trial, seed401, 2 continuous laps development set. Model6 uses its selected stage3 actor evaluation; model5 uses exported policy. Differences from the 580-map final suite are intentional.",
+  "model5_real_recording": "/home/jiwon/projects/drive_model5_calibrated_limit6_20261125_204257",
+  "real_common_window_bag_seconds": [
+    28.931926606,
+    575.371921965
+  ],
+  "model5_real_common_window": {
+    "/drive": {
+      "time_weighted_mean": 2.1847685199407816,
+      "sample_mean": 2.1847975415176104,
+      "p95": 3.0772144198417664,
+      "maximum": 3.5082292556762695,
+      "samples": 21812
+    },
+    "/agent/prediction": {
+      "time_weighted_mean": 2.3921353313509917,
+      "sample_mean": 2.3922119451764963,
+      "p95": 4.088943910598756,
+      "maximum": 6.0,
+      "samples": 21812
+    },
+    "/sensors/core": {
+      "time_weighted_mean": 2.1405682789915232,
+      "sample_mean": 2.1392659531781377,
+      "p95": 2.9722388059701492,
+      "maximum": 3.275820895522388,
+      "samples": 22690
+    }
+  },
+  "real_speed_definition": "VESC reported electrical RPM / 3350.0, offset0.0. This is not independent ground speed and cannot detect tyre slip.",
+  "conditions": {
+    "speed_limit_mps": 6,
+    "command_acceleration_mps2": 2,
+    "command_deceleration_mps2": 3,
+    "erpm_gain": 3350,
+    "erpm_offset": 0
+  },
+  "ratios": {
+    "actual_time_weighted": 1.2067382830121387,
+    "raw_target_time_weighted": 1.1905955539566269,
+    "actual_equal_trial": 1.1984600274839472
+  },
+  "model6_prediction": {
+    "mean_rpm_derived_speed_mps": 2.5831056896604796,
+    "mean_raw_target_mps": 2.848065689969053,
+    "scenario_mps": [
+      2.3247951206944317,
+      2.841416258626528
+    ],
+    "scenario_definition": "Assumed +/-10% change in transfer factor; not an empirical confidence interval.",
+    "equal_trial_ratio_alternative_mps": 2.563824733041344,
+    "maximum_speed_prediction": null
+  },
+  "assumptions": [
+    "Same physical track and sensor setup as November25 model5 trial.",
+    "Same calibrated speed conversion, 6m/s cap and 2/3m/s2 command limits.",
+    "Relative model6/model5 speed gain across the small-map development set transfers to the real track.",
+    "No major change in battery, grip, drivetrain or tracking stability."
+  ],
+  "limitations": [
+    "Simulated maps are not a surveyed reconstruction of the physical track.",
+    "Only one comparable calibrated physical session; prediction uncertainty is not statistically identified.",
+    "Policy rollout speeds depend on its own trajectory, so replaying model5 scans is not a model6 closed-loop test.",
+    "Peak speeds depend on straight length and limiter history; no defensible model6 physical peak estimate here.",
+    "Model6 had two collisions in the final 2320-trial simulation suite; this speed estimate is not a safety conclusion."
+  ],
+  "paired_simulation_conditions_verified": {
+    "episodes": 148,
+    "identical_map_reset_seed": true,
+    "identical_initial_poses": true,
+    "identical_longitudinal_response_parameters": true
+  }
+}

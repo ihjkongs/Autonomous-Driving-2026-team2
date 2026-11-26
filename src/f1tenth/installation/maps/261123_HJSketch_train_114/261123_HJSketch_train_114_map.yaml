@@ -1,0 +1,10 @@
+image: 261123_HJSketch_train_114_map.png
+resolution: 0.05
+origin:
+- -2.175303026027503
+- -9.17013130213391
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 2.0624581752844806

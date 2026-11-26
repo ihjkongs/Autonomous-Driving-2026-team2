@@ -1,0 +1,424 @@
+{
+  "created_at": "2026-11-26T14:12:03.349405+09:00",
+  "purpose": "Evaluate expert lateral acceleration 5.3 m/s^2, preserving the 6 m/s target ceiling and all other model 6 conditions.",
+  "configuration": "src/f1tenth/configs/experiment_small_maps_raceline_lat5p3_6mps.yaml",
+  "scope": {
+    "maps": 580,
+    "training_maps": 480,
+    "validation_maps": 100,
+    "seeds": [
+      124,
+      2026
+    ],
+    "reset_modes": 2,
+    "continuous_laps": 3,
+    "episodes": 2320
+  },
+  "changes": {
+    "lateral_acceleration": [
+      4,
+      5.3
+    ],
+    "route_speed_envelopes_recomputed": true
+  },
+  "unchanged": [
+    "racing-line geometry",
+    "speed ceiling 6 m/s",
+    "lookahead and steering",
+    "planning acceleration and braking",
+    "command acceleration and deceleration",
+    "vehicle response distributions and random draws"
+  ],
+  "all_trials": {
+    "4": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 15.790398706896074,
+      "time_weighted_actual_speed_mps": 3.033792542408868,
+      "time_weighted_requested_speed_mps": 3.1144444679846752,
+      "max_actual_speed_mps": 5.972558237910157,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "5": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 14.678498563217934,
+      "time_weighted_actual_speed_mps": 3.2794129008684223,
+      "time_weighted_requested_speed_mps": 3.376309936364221,
+      "max_actual_speed_mps": 5.993288851573784,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "5.3": {
+      "episodes": 2320,
+      "completed": 2320,
+      "counts": {
+        "complete": 2320
+      },
+      "completed_laps": 6960,
+      "mean_lap_s_completed_only": 14.411242816091507,
+      "time_weighted_actual_speed_mps": 3.3449599407522417,
+      "time_weighted_requested_speed_mps": 3.4474148525981043,
+      "max_actual_speed_mps": 5.996993059084876,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "5.5": {
+      "episodes": 2320,
+      "completed": 2318,
+      "counts": {
+        "complete": 2318,
+        "collision": 2
+      },
+      "completed_laps": 6955,
+      "mean_lap_s_completed_only": 14.248396606269333,
+      "time_weighted_actual_speed_mps": 3.386600696049004,
+      "time_weighted_requested_speed_mps": 3.4922924605735504,
+      "max_actual_speed_mps": 5.997661482436845,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "6": {
+      "episodes": 2320,
+      "completed": 2311,
+      "counts": {
+        "complete": 2311,
+        "collision": 9
+      },
+      "completed_laps": 6943,
+      "mean_lap_s_completed_only": 13.884252848694224,
+      "time_weighted_actual_speed_mps": 3.4845565148620907,
+      "time_weighted_requested_speed_mps": 3.59925681889151,
+      "max_actual_speed_mps": 5.998715952357127,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    }
+  },
+  "paired_comparisons_vs_5p3": {
+    "4": {
+      "completed_pairs": 2320,
+      "control": {
+        "episodes": 2320,
+        "completed": 2320,
+        "counts": {
+          "complete": 2320
+        },
+        "completed_laps": 6960,
+        "mean_lap_s_completed_only": 15.790398706896074,
+        "time_weighted_actual_speed_mps": 3.033792542408868,
+        "time_weighted_requested_speed_mps": 3.1144444679846752,
+        "max_actual_speed_mps": 5.972558237910157,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "candidate": {
+        "episodes": 2320,
+        "completed": 2320,
+        "counts": {
+          "complete": 2320
+        },
+        "completed_laps": 6960,
+        "mean_lap_s_completed_only": 14.411242816091507,
+        "time_weighted_actual_speed_mps": 3.3449599407522417,
+        "time_weighted_requested_speed_mps": 3.4474148525981034,
+        "max_actual_speed_mps": 5.996993059084876,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "lap_reduction_percent": 8.7341422873778,
+      "actual_speed_gain_percent": 10.256713140190632
+    },
+    "5": {
+      "completed_pairs": 2320,
+      "control": {
+        "episodes": 2320,
+        "completed": 2320,
+        "counts": {
+          "complete": 2320
+        },
+        "completed_laps": 6960,
+        "mean_lap_s_completed_only": 14.678498563217934,
+        "time_weighted_actual_speed_mps": 3.2794129008684223,
+        "time_weighted_requested_speed_mps": 3.376309936364221,
+        "max_actual_speed_mps": 5.993288851573784,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "candidate": {
+        "episodes": 2320,
+        "completed": 2320,
+        "counts": {
+          "complete": 2320
+        },
+        "completed_laps": 6960,
+        "mean_lap_s_completed_only": 14.411242816091507,
+        "time_weighted_actual_speed_mps": 3.3449599407522417,
+        "time_weighted_requested_speed_mps": 3.4474148525981034,
+        "max_actual_speed_mps": 5.996993059084876,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "lap_reduction_percent": 1.8207294565953047,
+      "actual_speed_gain_percent": 1.9987431246142107
+    },
+    "5.5": {
+      "completed_pairs": 2318,
+      "control": {
+        "episodes": 2318,
+        "completed": 2318,
+        "counts": {
+          "complete": 2318
+        },
+        "completed_laps": 6954,
+        "mean_lap_s_completed_only": 14.248396606269333,
+        "time_weighted_actual_speed_mps": 3.386600696049004,
+        "time_weighted_requested_speed_mps": 3.4922924605735504,
+        "max_actual_speed_mps": 5.997661482436845,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "candidate": {
+        "episodes": 2318,
+        "completed": 2318,
+        "counts": {
+          "complete": 2318
+        },
+        "completed_laps": 6954,
+        "mean_lap_s_completed_only": 14.414265171124086,
+        "time_weighted_actual_speed_mps": 3.344461457121659,
+        "time_weighted_requested_speed_mps": 3.4469083403969916,
+        "max_actual_speed_mps": 5.996993059084876,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "lap_reduction_percent": -1.1641209143614883,
+      "actual_speed_gain_percent": -1.2442931041887095
+    },
+    "6": {
+      "completed_pairs": 2311,
+      "control": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 13.884252848694224,
+        "time_weighted_actual_speed_mps": 3.4845565148620907,
+        "time_weighted_requested_speed_mps": 3.59925681889151,
+        "max_actual_speed_mps": 5.998715952357127,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "candidate": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 14.424852156353221,
+        "time_weighted_actual_speed_mps": 3.3428544579391266,
+        "time_weighted_requested_speed_mps": 3.445201060517357,
+        "max_actual_speed_mps": 5.996993059084876,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "lap_reduction_percent": -3.8936146838455032,
+      "actual_speed_gain_percent": -4.066573646275684
+    }
+  },
+  "common_completed_all_five": {
+    "episodes": 2311,
+    "statistics": {
+      "4": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 15.804994230491372,
+        "time_weighted_actual_speed_mps": 3.0319260863813855,
+        "time_weighted_requested_speed_mps": 3.11250799066594,
+        "max_actual_speed_mps": 5.972558237910157,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "5": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 14.692366219529326,
+        "time_weighted_actual_speed_mps": 3.2773445355615785,
+        "time_weighted_requested_speed_mps": 3.3741454246055094,
+        "max_actual_speed_mps": 5.993288851573784,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "5.3": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 14.424852156353221,
+        "time_weighted_actual_speed_mps": 3.3428544579391226,
+        "time_weighted_requested_speed_mps": 3.445201060517354,
+        "max_actual_speed_mps": 5.996993059084876,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "5.5": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 14.258856195008931,
+        "time_weighted_actual_speed_mps": 3.384978347949029,
+        "time_weighted_requested_speed_mps": 3.490565361223467,
+        "max_actual_speed_mps": 5.997661482436845,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      },
+      "6": {
+        "episodes": 2311,
+        "completed": 2311,
+        "counts": {
+          "complete": 2311
+        },
+        "completed_laps": 6933,
+        "mean_lap_s_completed_only": 13.884252848694222,
+        "time_weighted_actual_speed_mps": 3.4845565148620907,
+        "time_weighted_requested_speed_mps": 3.5992568188915115,
+        "max_actual_speed_mps": 5.998715952357127,
+        "max_requested_speed_mps": 6.0,
+        "episodes_requested_above_6mps": 0,
+        "episodes_actual_above_6mps": 0
+      }
+    }
+  },
+  "failed_maps": [],
+  "failed_episodes": [],
+  "previous_lat6_failure_conditions": [
+    {
+      "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 124,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_train_027",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_train_027",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_train_052",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete"
+    },
+    {
+      "map": "261124_HJDev2_sketch_016",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete"
+    }
+  ],
+  "verification": {
+    "model6_sha256": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+    "original_profiles_unchanged": 580,
+    "route_geometry_identical": 580,
+    "matched_random_vehicle_response_draws": 2320,
+    "only_requested_configuration_fields_changed": true
+  },
+  "training_started": false,
+  "real_vehicle_test": false,
+  "status": "expert_validation_complete",
+  "details": "src/f1tenth/results/model7_expert_validation/20261126_lat5p3",
+  "limitations": [
+    "Finite offline evaluation, not proof of collision freedom on all tracks or on the real car.",
+    "Lap times exclude crashes; shared-completion cohorts used for comparisons.",
+    "These maps and seeds have informed expert parameter selection; they are not a fresh untouched final generalization test."
+  ],
+  "previous_lat5p5_failure_conditions": [
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete",
+      "lat5p3_completed_laps": 3
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "lat5p3_outcome": "complete",
+      "lat5p3_completed_laps": 3
+    }
+  ],
+  "recommendation": "Lateral 5.3 is the fastest tested candidate with no collision in these conditions. Before training, confirm with fresh seeds not used to select this parameter; keep vehicle response settings unchanged."
+}

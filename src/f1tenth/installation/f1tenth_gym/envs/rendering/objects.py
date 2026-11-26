@@ -150,7 +150,8 @@ class Map:
     """
 
     def __init__(self, map_img: np.ndarray, zoom_level: float):
-        orig_width, orig_height = map_img.shape
+        # Occupancy arrays are (height, width); OpenCV expects (width, height).
+        orig_height, orig_width = map_img.shape
         scaled_width = int(orig_width * zoom_level)
         scaled_height = int(orig_height * zoom_level)
         map_img = cv2.resize(

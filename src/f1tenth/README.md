@@ -1,5 +1,100 @@
 # The F1TENTH Gym environment
 
+## 현재 학습 모델 목록 — 2026-11-26
+
+`results/imitation/`의 번호가 붙은 학습 실험은 **총 7개**다.
+각 폴더의 중간 체크포인트와 `actor.pt`를 배포 형식으로 내보낸
+`driving_policy.ts`는 같은 실험의 저장본으로 구분한다.
+Pure Pursuit 전문가와 레이스라인 경로 파일은 이 신경망 모델 개수에 포함하지 않는다.
+
+| 번호 | 특징 | 최고 목표속도 | 라이다 처리 | 관리상 역할 / 실차 사용 |
+| --- | --- | --- | --- | --- |
+| 1 | 최초 BC, MLP | 4m/s | 1080개 × 1프레임 | 초기 실험 기록 |
+| 2 | 전문가 데이터 검증 후 BC, MLP | 4m/s | 1080개 × 1프레임 | 과거 실차 비교 자료; 2026-11-10 사용 |
+| 3 | 시간 이력을 추가한 BC, MLP | 6m/s | 1080개 × 4프레임 | 중간 실험 기록 |
+| 4 | 6m/s MLP 보강 실험 | 6m/s | 1080개 × 4프레임 | 중간 실험 기록 |
+| 5 | 넓은 맵 중심선 전문가, CNN + DAgger; 18개 학습·5개 별도 검증 | 6m/s | 프레임당 1080→270개, 4프레임 | 실차 비교 기준; 2026-11-12·11-25 사용 |
+| 6 | 좁은 맵 레이스라인 전문가(횡가속도 4), CNN + DAgger; 480개 학습·100개 별도 검증 | 6m/s | 프레임당 1080→270개, 4프레임 | 모델 7의 비교 기준; 실차 시험 전 |
+| 7 | 좁은 맵 레이스라인 전문가(횡가속도 5.3), CNN + DAgger; 480개 학습·100개 별도 검증 | 6m/s | 프레임당 1080→270개, 4프레임 | 최신 학습 후보; 실차 시험 전 |
+
+5·6·7번은 각 시점의 인접한 거리값 4개를 평균해 270개로 줄인다.
+서로 다른 시점의 4프레임은 시간 순서대로 유지한다. 최고 목표속도는
+학습 시 허용한 상한이며, 모든 코너에서 그 속도로 달린다는 뜻은 아니다.
+
+6번의 최종 시뮬레이션 평가에서는 전체 580개 맵의 2,320회 시험 중
+2,318회가 3바퀴 연속 완주했고 2회 충돌했다. 그중 학습과 모델 선택에서
+제외한 100개 맵의 400회 시험은 모두 완주했다. 실차 사용 날짜는
+사용자 확인 기록이며, 모든 조건의 주행 성능을 보장하는 표시는 아니다.
+
+1~4번은 과거 실험 참고 자료, 5번은 실차 비교 기준, 6번은 좁은 맵 비교 기준, 7번은 최신 학습 후보로
+관리한다. 기존 폴더명과 파일 위치는 유지한다.
+로컬 `agent.yaml`의 기본 선택은 여전히 `algo_idx: 2`다.
+5·6·7번은 `policy_file`로 배포 파일을 명시할 수 있으며, 최신 번호가 자동으로
+선택되는 구조는 아니다. 현재 Jetson에서 실행 중인 모델은 별도 확인이 필요하다.
+
+폴더명·배포 파일·해시·Git 포함 여부는 [모델 목록](../../reports/model_inventory_20261126.json),
+6번의 세부 결과는 [학습 보고서](../../reports/model6_raceline_training_20261125.json)에 기록했다.
+
+7번의 최종 시뮬레이션 평가는 2,320회 중 2,315회 완주, 5회 충돌이다.
+신경망 학습과 체크포인트 선택에는 검증용 100개 맵을 사용하지 않았다.
+단, 전문가 횡가속도 값을 고르는 과정에서는 전체 580개 맵의 결과를 확인했으므로
+이 100개 맵은 전문가 설정까지 포함한 완전히 미사용한 시험 집합은 아니다.
+[7번 학습 결과](../../reports/model7_raceline_lat5p3_training_20261126.json)에
+6번과의 동일 조건 비교 및 배포 파일 해시를 기록했다.
+
+### Jetson에서 모델 6·7 비교하기
+
+두 모델의 `sim2real/driving_policy.ts`와 `deployment.json`은 Git에 포함한다.
+Jetson에서 같은 커밋을 받으면 모델 파일을 따로 복사할 필요가 없다.
+학습 데이터, 중간 체크포인트, 영상과 생성된 전문가 경로는 계속 로컬 산출물로
+관리한다. 실차 추론에는 지도나 전문가 경로 파일이 필요하지 않다.
+`deployment.json`에는 파일 SHA256, 입력 형식과 시뮬레이션 실패 횟수가 있다.
+
+Jetson의 기존 프로젝트에서 먼저 변경 상태를 확인하고 동기화한다.
+로컬 변경이 있으면 해당 내용을 확인한 뒤 병합하며, 캘리브레이션 파일을
+강제로 초기화하지 않는다.
+
+```bash
+cd ~/Autonomous-Driving-2026-team2
+git status --short --branch
+git pull --ff-only origin main
+source install/setup.bash
+source ~/venv/torch210/bin/activate
+colcon build --symlink-install --packages-select f1tenth_stack
+source install/setup.bash
+```
+
+모델 6의 예측을 먼저 확인한다. `policy_file`을 명시하면 기본 `algo_idx`보다
+우선하며, 파일 안의 메타데이터에 따라 라이다 4프레임을 구성한다.
+
+```bash
+ros2 launch f1tenth_stack bringup_launch.py \
+  project_root:=/home/team2/Autonomous-Driving-2026-team2 \
+  agent_python:=/home/team2/venv/torch210/bin/python \
+  policy_file:=/home/team2/Autonomous-Driving-2026-team2/src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts \
+  vesc_config:=/home/team2/Autonomous-Driving-2026-team2/src/f1tenth_ros/f1tenth_stack/config/vesc.yaml \
+  speed_limit:=3.0 max_acceleration:=2.0 max_deceleration:=3.0 \
+  dry_run:=true
+```
+
+위 실행을 `Ctrl+C`로 종료하고 모델 7도 같은 조건으로 확인한다.
+
+```bash
+ros2 launch f1tenth_stack bringup_launch.py \
+  project_root:=/home/team2/Autonomous-Driving-2026-team2 \
+  agent_python:=/home/team2/venv/torch210/bin/python \
+  policy_file:=/home/team2/Autonomous-Driving-2026-team2/src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts \
+  vesc_config:=/home/team2/Autonomous-Driving-2026-team2/src/f1tenth_ros/f1tenth_stack/config/vesc.yaml \
+  speed_limit:=3.0 max_acceleration:=2.0 max_deceleration:=3.0 \
+  dry_run:=true
+```
+
+실제 주행 때는 사용할 모델의 명령에서 `dry_run:=false`로 바꾼다.
+두 모델을 같은 캘리브레이션, 속도 상한, 명령 가감속 제한으로 비교하고,
+모델을 바꿀 때는 이전 launch를 먼저 종료한다. 첫 비교의 속도 상한은
+3m/s이며, 이후 변경할 때도 두 모델에 같은 값을 적용한다.
+최고속도 6m/s는 학습 출력 상한이고, 위 `speed_limit`은 실차 실행 상한이다.
+
 This is the repository of the F1TENTH Gym environment.
 
 You can find the original [documentation](https://f1tenth-gym.readthedocs.io/en/latest/) of the environment here.

@@ -1,0 +1,99 @@
+{
+  "baseline": {},
+  "L0.4_lat3_react0.15": {
+    "tlad": 0.4,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 3.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  },
+  "L0.4_lat3_react0.3": {
+    "tlad": 0.4,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 3.0,
+    "reaction_time": 0.3,
+    "planning_acceleration": 2.0
+  },
+  "L0.4_lat4_react0.15": {
+    "tlad": 0.4,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  },
+  "L0.4_lat4_react0.3": {
+    "tlad": 0.4,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.3,
+    "planning_acceleration": 2.0
+  },
+  "L0.55_lat3_react0.15": {
+    "tlad": 0.55,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 3.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  },
+  "L0.55_lat3_react0.3": {
+    "tlad": 0.55,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 3.0,
+    "reaction_time": 0.3,
+    "planning_acceleration": 2.0
+  },
+  "L0.55_lat4_react0.15": {
+    "tlad": 0.55,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  },
+  "L0.55_lat4_react0.3": {
+    "tlad": 0.55,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.3,
+    "planning_acceleration": 2.0
+  },
+  "L0.7_lat3_react0.15": {
+    "tlad": 0.7,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 3.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  },
+  "L0.7_lat3_react0.3": {
+    "tlad": 0.7,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 3.0,
+    "reaction_time": 0.3,
+    "planning_acceleration": 2.0
+  },
+  "L0.7_lat4_react0.15": {
+    "tlad": 0.7,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  },
+  "L0.7_lat4_react0.3": {
+    "tlad": 0.7,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.3,
+    "planning_acceleration": 2.0
+  }
+}

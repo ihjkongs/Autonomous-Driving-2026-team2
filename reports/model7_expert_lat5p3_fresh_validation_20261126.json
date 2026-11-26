@@ -1,0 +1,154 @@
+{
+  "created_at": "2026-11-26T14:17:55.653759+09:00",
+  "purpose": "Fresh-seed confirmation after choosing lateral acceleration 5.3 m/s^2. No changes made using these outcomes.",
+  "status": "passed_evaluated_conditions",
+  "frozen_before_test": "2026-11-26T14:13:05.038648+09:00",
+  "config": "configs/experiment_small_maps_raceline_lat5p3_6mps.yaml",
+  "lateral_acceleration_mps2": 5.3,
+  "max_target_speed_mps": 6.0,
+  "scope": {
+    "maps": 580,
+    "training_maps": 480,
+    "validation_maps": 100,
+    "seeds": [
+      73421,
+      91837
+    ],
+    "reset_modes": [
+      "cl_grid_static",
+      "cl_random_static"
+    ],
+    "continuous_laps": 3,
+    "episodes": 2320,
+    "new_maps": false,
+    "new_reset_and_response_seeds": true
+  },
+  "statistics": {
+    "episodes": 2320,
+    "completed": 2320,
+    "counts": {
+      "complete": 2320
+    },
+    "completed_laps": 6960,
+    "mean_lap_s_completed_only": 14.441174568965065,
+    "time_weighted_actual_speed_mps": 3.3360033132865037,
+    "time_weighted_requested_speed_mps": 3.445301023263229,
+    "max_actual_speed_mps": 5.997695818886332,
+    "max_requested_speed_mps": 6.0,
+    "episodes_requested_above_6mps": 0,
+    "episodes_actual_above_6mps": 0
+  },
+  "by_split": {
+    "train": {
+      "episodes": 1920,
+      "completed": 1920,
+      "counts": {
+        "complete": 1920
+      },
+      "completed_laps": 5760,
+      "mean_lap_s_completed_only": 14.321892361110667,
+      "time_weighted_actual_speed_mps": 3.3516706357136465,
+      "time_weighted_requested_speed_mps": 3.46190387206426,
+      "max_actual_speed_mps": 5.997695818886332,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "val": {
+      "episodes": 400,
+      "completed": 400,
+      "counts": {
+        "complete": 400
+      },
+      "completed_laps": 1200,
+      "mean_lap_s_completed_only": 15.013729166666199,
+      "time_weighted_actual_speed_mps": 3.2642674720649576,
+      "time_weighted_requested_speed_mps": 3.369281695075186,
+      "max_actual_speed_mps": 5.996898799099104,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    }
+  },
+  "by_seed": {
+    "73421": {
+      "episodes": 1160,
+      "completed": 1160,
+      "counts": {
+        "complete": 1160
+      },
+      "completed_laps": 3480,
+      "mean_lap_s_completed_only": 14.404633620689207,
+      "time_weighted_actual_speed_mps": 3.3464017555970775,
+      "time_weighted_requested_speed_mps": 3.4495563579227158,
+      "max_actual_speed_mps": 5.997048787534927,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "91837": {
+      "episodes": 1160,
+      "completed": 1160,
+      "counts": {
+        "complete": 1160
+      },
+      "completed_laps": 3480,
+      "mean_lap_s_completed_only": 14.477715517240929,
+      "time_weighted_actual_speed_mps": 3.325657391385973,
+      "time_weighted_requested_speed_mps": 3.4410671814306872,
+      "max_actual_speed_mps": 5.997695818886332,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    }
+  },
+  "previous_selection_seed_statistics": {
+    "episodes": 2320,
+    "completed": 2320,
+    "counts": {
+      "complete": 2320
+    },
+    "completed_laps": 6960,
+    "mean_lap_s_completed_only": 14.411242816091507,
+    "time_weighted_actual_speed_mps": 3.3449599407522417,
+    "time_weighted_requested_speed_mps": 3.4474148525981043,
+    "max_actual_speed_mps": 5.996993059084876,
+    "max_requested_speed_mps": 6.0,
+    "episodes_requested_above_6mps": 0,
+    "episodes_actual_above_6mps": 0
+  },
+  "combined_observed_statistics": {
+    "episodes": 4640,
+    "completed": 4640,
+    "counts": {
+      "complete": 4640
+    },
+    "completed_laps": 13920,
+    "mean_lap_s_completed_only": 14.426208692528284,
+    "time_weighted_actual_speed_mps": 3.340476978491878,
+    "time_weighted_requested_speed_mps": 3.4463568408443117,
+    "max_actual_speed_mps": 5.997695818886332,
+    "max_requested_speed_mps": 6.0,
+    "episodes_requested_above_6mps": 0,
+    "episodes_actual_above_6mps": 0
+  },
+  "failed_maps": [],
+  "failed_episodes": [],
+  "verification": {
+    "configuration_sha256_unchanged": "8216652a98810eb40f87b051bd444b76e771096f461ef05236de082484299621",
+    "profile_files_sha256_unchanged": 580,
+    "episode_profile_hashes_match_frozen": 2320,
+    "evaluator_source_hashes_unchanged": true,
+    "model6_sha256_unchanged": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+    "seeds_disjoint_from_selection": true
+  },
+  "model7_trained": false,
+  "real_vehicle_test": false,
+  "details": "src/f1tenth/results/model7_expert_validation/20261126_lat5p3_fresh",
+  "limitations": [
+    "Fresh seeds on previously used maps, not unseen-map or real-vehicle validation.",
+    "Only two sampled vehicle-response seeds; no exhaustive coverage of response ranges.",
+    "Previous and fresh cohort speed/lap statistics use different conditions and should not be interpreted as causal speed changes.",
+    "Zero observed collisions, if achieved, do not establish universal collision freedom."
+  ]
+}

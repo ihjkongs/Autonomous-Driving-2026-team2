@@ -1,0 +1,10 @@
+image: 261120_HJCompetition_val_257_grid3x9_corners16_map.png
+resolution: 0.05
+origin:
+- -5.9946571076548505
+- -12.423795489872782
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 1.427809974589356

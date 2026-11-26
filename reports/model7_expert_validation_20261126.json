@@ -1,0 +1,1338 @@
+{
+  "created_at": "2026-11-26T13:34:23.214754+09:00",
+  "purpose": "Pre-training model 7 expert validation: only permitted lateral acceleration changes from 4 to 6, target speed ceiling stays 6m/s.",
+  "status": "collision_analysis_requested_training_not_started",
+  "changed": {
+    "lateral_acceleration": [
+      4,
+      6
+    ],
+    "route_speed_envelopes_recalculated": true
+  },
+  "unchanged": [
+    "path geometry",
+    "lookahead and steering",
+    "planning acceleration and braking",
+    "command acceleration and deceleration",
+    "physical response distributions",
+    "map split",
+    "neural input and architecture"
+  ],
+  "scope": {
+    "maps": 580,
+    "seeds": [
+      124,
+      2026
+    ],
+    "reset_modes": 2,
+    "continuous_laps": 3,
+    "episodes": 2320,
+    "simulated_lateral_acceleration_parameter_units": "m/s^2"
+  },
+  "summary": {
+    "elapsed_wall_s": 252.67172052399837,
+    "candidates": [
+      {
+        "candidate": "baseline",
+        "episodes": 2320,
+        "counts": {
+          "complete": 2311,
+          "collision": 9
+        },
+        "completed": 2311,
+        "mean_lap_s": 13.884252848694288,
+        "mean_actual_speed_mps": 3.4845565148620907,
+        "max_actual_speed_mps": 5.998715952357127
+      }
+    ]
+  },
+  "paired_completed": {
+    "count": 2311,
+    "baseline": {
+      "episodes": 2311,
+      "completed": 2311,
+      "counts": {
+        "complete": 2311
+      },
+      "completed_laps": 6933,
+      "mean_lap_s_completed_only": 15.804994230491372,
+      "time_weighted_actual_speed_mps": 3.0319260863813895,
+      "time_weighted_requested_speed_mps": 3.1125079906659425,
+      "max_actual_speed_mps": 5.972558237910157,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "candidate": {
+      "episodes": 2311,
+      "completed": 2311,
+      "counts": {
+        "complete": 2311
+      },
+      "completed_laps": 6933,
+      "mean_lap_s_completed_only": 13.884252848694224,
+      "time_weighted_actual_speed_mps": 3.4845565148620907,
+      "time_weighted_requested_speed_mps": 3.59925681889151,
+      "max_actual_speed_mps": 5.998715952357127,
+      "max_requested_speed_mps": 6.0,
+      "episodes_requested_above_6mps": 0,
+      "episodes_actual_above_6mps": 0
+    },
+    "lap_reduction_percent": 12.152749654862937
+  },
+  "failed_maps": [
+    "261120_HJCompetition_train_131_grid2x9_corners8",
+    "261123_HJSketch_dev_012",
+    "261123_HJSketch_train_004",
+    "261123_HJSketch_train_027",
+    "261123_HJSketch_train_052",
+    "261124_HJDev2_sketch_016"
+  ],
+  "failed_episodes": [
+    {
+      "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 669,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "07f8d52972756409020731db20c0fe4d969ab041a23d743bb72d44c1bd907bb6",
+      "longitudinal_response": {
+        "acceleration": 1.945316258952393,
+        "deceleration": 3.395149502318726,
+        "time_constant": 0.23389740154168506,
+        "delay": 0.08539260875089127,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 16.750000000000117,
+      "track_length_m": 44.73177259042211,
+      "forward_progress_m": 63.57300342535228,
+      "progress_fraction": 0.4737348849511382,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        12.175000000000106
+      ],
+      "mean_actual_speed_mps": 3.743937065739301,
+      "max_actual_speed_mps": 5.973995133901061,
+      "mean_requested_speed_mps": 3.9059846599510397,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.39757521625280257,
+      "max_unclipped_steering_rad": 0.5064074439262768,
+      "fraction_at_or_above_5_5mps": 0.06576980568011959
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 124,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 128,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "6d1e3db3fbede621c7f7bf9d720b2691005b226b0a4556ac83383fe92cdee433",
+      "longitudinal_response": {
+        "acceleration": 1.945316258952393,
+        "deceleration": 3.395149502318726,
+        "time_constant": 0.23389740154168506,
+        "delay": 0.08539260875089127,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 3.2249999999999925,
+      "track_length_m": 43.0705244859967,
+      "forward_progress_m": 7.492894321951887,
+      "progress_fraction": 0.05798934353498926,
+      "completed_laps": 0,
+      "crossing_times_s": [],
+      "mean_actual_speed_mps": 2.3588688644919995,
+      "max_actual_speed_mps": 4.232049175005154,
+      "mean_requested_speed_mps": 4.651073955825973,
+      "max_requested_speed_mps": 5.9519743191370145,
+      "max_centerline_error_m": 0.44154653992118925,
+      "max_unclipped_steering_rad": 0.18950165216140702,
+      "fraction_at_or_above_5_5mps": 0.0
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 806,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "6d1e3db3fbede621c7f7bf9d720b2691005b226b0a4556ac83383fe92cdee433",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 20.174999999999923,
+      "track_length_m": 43.0705244859967,
+      "forward_progress_m": 83.47680656228147,
+      "progress_fraction": 0.6460474424098076,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        11.150000000000091
+      ],
+      "mean_actual_speed_mps": 4.192932956648823,
+      "max_actual_speed_mps": 5.8497668970845265,
+      "mean_requested_speed_mps": 4.414090827803,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.4753904747734733,
+      "max_unclipped_steering_rad": 0.412090302807979,
+      "fraction_at_or_above_5_5mps": 0.13523573200992556
+    },
+    {
+      "map": "261123_HJSketch_train_027",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 1018,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "3c85cbab56194f939415fef82f8341f2806921d6aa2ddbda32db84408b41242d",
+      "longitudinal_response": {
+        "acceleration": 1.945316258952393,
+        "deceleration": 3.395149502318726,
+        "time_constant": 0.23389740154168506,
+        "delay": 0.08539260875089127,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 25.47499999999962,
+      "track_length_m": 42.81821389934204,
+      "forward_progress_m": 108.51522979087804,
+      "progress_fraction": 0.8447746874416412,
+      "completed_laps": 2,
+      "crossing_times_s": [
+        10.825000000000086,
+        20.499999999999904
+      ],
+      "mean_actual_speed_mps": 4.318434631387795,
+      "max_actual_speed_mps": 5.976889596823807,
+      "mean_requested_speed_mps": 4.517530463799764,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.39368580171616596,
+      "max_unclipped_steering_rad": 0.2234730536095784,
+      "fraction_at_or_above_5_5mps": 0.17092337917485265
+    },
+    {
+      "map": "261123_HJSketch_train_027",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 1025,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "3c85cbab56194f939415fef82f8341f2806921d6aa2ddbda32db84408b41242d",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 25.64999999999961,
+      "track_length_m": 42.81821389934204,
+      "forward_progress_m": 108.50114811071394,
+      "progress_fraction": 0.844665063686688,
+      "completed_laps": 2,
+      "crossing_times_s": [
+        11.02500000000009,
+        20.674999999999894
+      ],
+      "mean_actual_speed_mps": 4.296562259159864,
+      "max_actual_speed_mps": 5.968313750766286,
+      "mean_requested_speed_mps": 4.494403970728027,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.4246953326629968,
+      "max_unclipped_steering_rad": 0.2590897437078068,
+      "fraction_at_or_above_5_5mps": 0.17365853658536584
+    },
+    {
+      "map": "261123_HJSketch_train_052",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 413,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "b1a5ad34e18427fabd07714d79fc5354342b5b828afcc8193678ecb63af77016",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 10.35000000000008,
+      "track_length_m": 43.23887512727335,
+      "forward_progress_m": 40.60502023033569,
+      "progress_fraction": 0.3130286508056702,
+      "completed_laps": 0,
+      "crossing_times_s": [],
+      "mean_actual_speed_mps": 3.968814749363875,
+      "max_actual_speed_mps": 5.867925294997794,
+      "mean_requested_speed_mps": 4.4327920557167415,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.3311602467108548,
+      "max_unclipped_steering_rad": 0.2709919807130695,
+      "fraction_at_or_above_5_5mps": 0.14043583535108958
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 674,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "ce3042daa8ee388676c83e8738f702b890a5626be49234f791a27535607130e5",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 16.87500000000011,
+      "track_length_m": 45.48336042435448,
+      "forward_progress_m": 69.38314917032642,
+      "progress_fraction": 0.5084874154928285,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        11.7500000000001
+      ],
+      "mean_actual_speed_mps": 4.174096601286059,
+      "max_actual_speed_mps": 5.962665467950189,
+      "mean_requested_speed_mps": 4.53578959824931,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.4524974724834882,
+      "max_unclipped_steering_rad": 0.2134574577905219,
+      "fraction_at_or_above_5_5mps": 0.15875370919881307
+    },
+    {
+      "map": "261123_HJSketch_dev_012",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 853,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "ce3042daa8ee388676c83e8738f702b890a5626be49234f791a27535607130e5",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 21.349999999999856,
+      "track_length_m": 45.48336042435448,
+      "forward_progress_m": 89.65060795486126,
+      "progress_fraction": 0.657021286601162,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        11.550000000000097
+      ],
+      "mean_actual_speed_mps": 4.24307777541195,
+      "max_actual_speed_mps": 5.919036858904508,
+      "mean_requested_speed_mps": 4.444692958777005,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.41972427592602213,
+      "max_unclipped_steering_rad": 0.28443842334245556,
+      "fraction_at_or_above_5_5mps": 0.1477139507620164
+    },
+    {
+      "map": "261124_HJDev2_sketch_016",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 1073,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "761a7fa104a6ab2804c590fe595e99a30731fcf3b20e21e5024edccf39b102b9",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 26.849999999999543,
+      "track_length_m": 44.48381964826624,
+      "forward_progress_m": 112.4263015747734,
+      "progress_fraction": 0.8424508991039039,
+      "completed_laps": 2,
+      "crossing_times_s": [
+        11.500000000000096,
+        21.724999999999834
+      ],
+      "mean_actual_speed_mps": 4.250316903316876,
+      "max_actual_speed_mps": 5.967769300539031,
+      "mean_requested_speed_mps": 4.47083412143509,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.4939585155656651,
+      "max_unclipped_steering_rad": 0.21916632266627387,
+      "fraction_at_or_above_5_5mps": 0.1276794035414725
+    }
+  ],
+  "known_base_collection_conditions_failing_before_two_laps": [
+    {
+      "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 669,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "07f8d52972756409020731db20c0fe4d969ab041a23d743bb72d44c1bd907bb6",
+      "longitudinal_response": {
+        "acceleration": 1.945316258952393,
+        "deceleration": 3.395149502318726,
+        "time_constant": 0.23389740154168506,
+        "delay": 0.08539260875089127,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 16.750000000000117,
+      "track_length_m": 44.73177259042211,
+      "forward_progress_m": 63.57300342535228,
+      "progress_fraction": 0.4737348849511382,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        12.175000000000106
+      ],
+      "mean_actual_speed_mps": 3.743937065739301,
+      "max_actual_speed_mps": 5.973995133901061,
+      "mean_requested_speed_mps": 3.9059846599510397,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.39757521625280257,
+      "max_unclipped_steering_rad": 0.5064074439262768,
+      "fraction_at_or_above_5_5mps": 0.06576980568011959
+    },
+    {
+      "map": "261123_HJSketch_train_004",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 806,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "6d1e3db3fbede621c7f7bf9d720b2691005b226b0a4556ac83383fe92cdee433",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 20.174999999999923,
+      "track_length_m": 43.0705244859967,
+      "forward_progress_m": 83.47680656228147,
+      "progress_fraction": 0.6460474424098076,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        11.150000000000091
+      ],
+      "mean_actual_speed_mps": 4.192932956648823,
+      "max_actual_speed_mps": 5.8497668970845265,
+      "mean_requested_speed_mps": 4.414090827803,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.4753904747734733,
+      "max_unclipped_steering_rad": 0.412090302807979,
+      "fraction_at_or_above_5_5mps": 0.13523573200992556
+    },
+    {
+      "map": "261123_HJSketch_train_052",
+      "reset": "cl_random_static",
+      "seed": 2026,
+      "candidate": "baseline",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 413,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "b1a5ad34e18427fabd07714d79fc5354342b5b828afcc8193678ecb63af77016",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 10.35000000000008,
+      "track_length_m": 43.23887512727335,
+      "forward_progress_m": 40.60502023033569,
+      "progress_fraction": 0.3130286508056702,
+      "completed_laps": 0,
+      "crossing_times_s": [],
+      "mean_actual_speed_mps": 3.968814749363875,
+      "max_actual_speed_mps": 5.867925294997794,
+      "mean_requested_speed_mps": 4.4327920557167415,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.3311602467108548,
+      "max_unclipped_steering_rad": 0.2709919807130695,
+      "fraction_at_or_above_5_5mps": 0.14043583535108958
+    }
+  ],
+  "representative_trace": [
+    {
+      "lateral_acceleration": 4,
+      "outcome": "complete",
+      "steps": 1556,
+      "progress_laps": 3.001281515360218,
+      "last_second": {
+        "clipped_steps": 0,
+        "max_requested_steer_rad": 0.1843615116430196,
+        "max_path_error_m": 0.08662820152031214,
+        "mean_actual_speed_mps": 4.282699281023715
+      },
+      "last_row": {
+        "time_s": 38.92499999999886,
+        "progress_m": 134.25222097179184,
+        "x": -1.7604803674706102,
+        "y": -8.456041962818254,
+        "actual_speed_mps": 3.2760117724744475,
+        "target_speed_mps": 2.7114545014623928,
+        "requested_steer_rad": 0.1162167729873283,
+        "applied_steer_rad": 0.1162167729873283,
+        "steer_clipped": false,
+        "path_error_m": 0.016029029071901044,
+        "yaw_rate_rad_s": 0.9141850108437815,
+        "sideslip_rad": -0.024545874885215365,
+        "path_segment": 0,
+        "collision": false
+      }
+    },
+    {
+      "lateral_acceleration": 6,
+      "outcome": "collision",
+      "steps": 669,
+      "progress_laps": 1.4212065602004857,
+      "last_second": {
+        "clipped_steps": 0,
+        "max_requested_steer_rad": 0.26220984072364456,
+        "max_path_error_m": 0.0970077626514211,
+        "mean_actual_speed_mps": 3.821704307330138
+      },
+      "last_row": {
+        "time_s": 16.750000000000117,
+        "progress_m": 63.572889177540446,
+        "x": -0.13018662392563063,
+        "y": 4.360613785078586,
+        "actual_speed_mps": 0.0,
+        "target_speed_mps": 2.8744923664036133,
+        "requested_steer_rad": -0.24888448711643896,
+        "applied_steer_rad": -0.24888448711643896,
+        "steer_clipped": false,
+        "path_error_m": 0.09348791124028215,
+        "yaw_rate_rad_s": 0.0,
+        "sideslip_rad": 0.0,
+        "path_segment": 75,
+        "collision": true
+      }
+    }
+  ],
+  "verification": {
+    "matched_response_draws": 2320,
+    "identical_route_geometry": 580,
+    "model6_sha256": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+    "configuration_change_test": "8 relevant tests passed",
+    "all_failed_episodes_replayed_exactly": 9,
+    "matched_original_controls_completed": 9
+  },
+  "pending_decision": null,
+  "details": "src/f1tenth/results/model7_expert_validation/20261126_lat6",
+  "user_decision": "Preserve original lateral-6 condition, inspect collisions before proceeding; no local speed correction and no training.",
+  "all_failures_replayed": [
+    {
+      "index": 0,
+      "baseline": {
+        "index": 0,
+        "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+        "reset": "cl_grid_static",
+        "seed": 124,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1556,
+        "progress_laps": 3.001281515360218,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/00_lat4.csv",
+        "response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 0,
+        "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+        "reset": "cl_grid_static",
+        "seed": 124,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 669,
+        "progress_laps": 1.4212065602004857,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/00_lat6.csv",
+        "response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 16.72500000000012,
+        "progress_m": 63.490428423773665,
+        "x": -0.10680346958070827,
+        "y": 4.278273466062738,
+        "actual_speed_mps": 3.4539996632158143,
+        "target_speed_mps": 2.83343052365354,
+        "limited_command_mps": 2.83343052365354,
+        "requested_steer_rad": -0.2558415934652043,
+        "applied_steer_rad": -0.2558415934652043,
+        "steer_clipped": false,
+        "path_error_m": 0.0970077626514211,
+        "heading_error_rad": -0.07505940374484421,
+        "yaw_rate_rad_s": -2.3863214506338273,
+        "sideslip_rad": 0.0640622755746138,
+        "path_segment": 75,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 18.97499999999999,
+        "progress_m": 63.48446396687427,
+        "x": -0.028189818989016735,
+        "y": 4.272277642998787,
+        "actual_speed_mps": 2.9916706944814693,
+        "target_speed_mps": 2.4378574791329815,
+        "limited_command_mps": 2.4629297271076602,
+        "requested_steer_rad": -0.22446763499798672,
+        "applied_steer_rad": -0.22446763499798672,
+        "steer_clipped": false,
+        "path_error_m": 0.024205142455443987,
+        "heading_error_rad": -0.0074175565093179685,
+        "yaw_rate_rad_s": -1.435530288147492,
+        "sideslip_rad": 0.012330743297212857,
+        "path_segment": 75,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.5290954130281051,
+        "max_path_error_m": 0.0970077626514211
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 1,
+      "baseline": {
+        "index": 1,
+        "map": "261123_HJSketch_train_004",
+        "reset": "cl_random_static",
+        "seed": 124,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1434,
+        "progress_laps": 3.0012197034128087,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/01_lat4.csv",
+        "response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 1,
+        "map": "261123_HJSketch_train_004",
+        "reset": "cl_random_static",
+        "seed": 124,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 128,
+        "progress_laps": 0.1739682622898473,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/01_lat6.csv",
+        "response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 3.1999999999999926,
+        "progress_m": 7.399895668029785,
+        "x": -19.08204575809074,
+        "y": -3.5105032457946104,
+        "actual_speed_mps": 3.755023186036659,
+        "target_speed_mps": 3.308886180871623,
+        "limited_command_mps": 3.308886180871623,
+        "requested_steer_rad": 0.18950165216140702,
+        "applied_steer_rad": 0.18950165216140702,
+        "steer_clipped": false,
+        "path_error_m": 0.06836234773762213,
+        "heading_error_rad": 0.00501257920011966,
+        "yaw_rate_rad_s": 1.780709327402956,
+        "sideslip_rad": -0.050579786575196885,
+        "path_segment": 92,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 3.324999999999992,
+        "progress_m": 7.3899901351842345,
+        "x": -19.030544960478395,
+        "y": -3.4922100605309607,
+        "actual_speed_mps": 3.104984276267905,
+        "target_speed_mps": 3.0231003117087534,
+        "limited_command_mps": 3.0231003117087534,
+        "requested_steer_rad": 0.1520056989595381,
+        "applied_steer_rad": 0.1520056989595381,
+        "steer_clipped": false,
+        "path_error_m": 0.017865978098029398,
+        "heading_error_rad": -0.002626579061118406,
+        "yaw_rate_rad_s": 1.3923952787711098,
+        "sideslip_rad": -0.014239761800884338,
+        "path_segment": 92,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.2457782257191225,
+        "max_path_error_m": 0.07441743656957775
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 2,
+      "baseline": {
+        "index": 2,
+        "map": "261123_HJSketch_train_004",
+        "reset": "cl_random_static",
+        "seed": 2026,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1413,
+        "progress_laps": 3.00110109328672,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/02_lat4.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 2,
+        "map": "261123_HJSketch_train_004",
+        "reset": "cl_random_static",
+        "seed": 2026,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 806,
+        "progress_laps": 1.9381422519708718,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/02_lat6.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 20.149999999999924,
+        "progress_m": 83.38709787139854,
+        "x": -19.11723425734219,
+        "y": -3.447383172739931,
+        "actual_speed_mps": 4.003595526769194,
+        "target_speed_mps": 3.4568276209705053,
+        "limited_command_mps": 3.4453078557106434,
+        "requested_steer_rad": 0.1739609279498402,
+        "applied_steer_rad": 0.1739609279498402,
+        "steer_clipped": false,
+        "path_error_m": 0.10674159909747417,
+        "heading_error_rad": 0.04512337911613251,
+        "yaw_rate_rad_s": 1.9886138674218639,
+        "sideslip_rad": -0.0826703683947815,
+        "path_segment": 92,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 22.974999999999763,
+        "progress_m": 83.40932272147805,
+        "x": -19.027536892547403,
+        "y": -3.470456112422173,
+        "actual_speed_mps": 3.2814520890115166,
+        "target_speed_mps": 3.0515118165094517,
+        "limited_command_mps": 3.0515118165094517,
+        "requested_steer_rad": 0.140296341504998,
+        "applied_steer_rad": 0.140296341504998,
+        "steer_clipped": false,
+        "path_error_m": 0.015977619487882545,
+        "heading_error_rad": -0.014055423006613665,
+        "yaw_rate_rad_s": 0.8735056736357952,
+        "sideslip_rad": -0.017652439296834646,
+        "path_segment": 92,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.7548737984412911,
+        "max_path_error_m": 0.10674159909747417
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 3,
+      "baseline": {
+        "index": 3,
+        "map": "261123_HJSketch_train_027",
+        "reset": "cl_grid_static",
+        "seed": 124,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1401,
+        "progress_laps": 3.000161884981643,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/03_lat4.csv",
+        "response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 3,
+        "map": "261123_HJSketch_train_027",
+        "reset": "cl_grid_static",
+        "seed": 124,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 1018,
+        "progress_laps": 2.534325131529956,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/03_lat6.csv",
+        "response": {
+          "acceleration": 1.945316258952393,
+          "deceleration": 3.395149502318726,
+          "time_constant": 0.23389740154168506,
+          "delay": 0.08539260875089127,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 25.449999999999623,
+        "progress_m": 108.42640917478369,
+        "x": -18.999266367531575,
+        "y": -3.557110510020067,
+        "actual_speed_mps": 3.9162706218031555,
+        "target_speed_mps": 3.4767310698620624,
+        "limited_command_mps": 3.5580644521957034,
+        "requested_steer_rad": 0.172014023769039,
+        "applied_steer_rad": 0.172014023769039,
+        "steer_clipped": false,
+        "path_error_m": 0.05058526831398795,
+        "heading_error_rad": 0.06254030022850188,
+        "yaw_rate_rad_s": 1.4933873837569012,
+        "sideslip_rad": -0.0364268577624009,
+        "path_segment": 91,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 29.499999999999392,
+        "progress_m": 108.42849765390571,
+        "x": -18.978745599396227,
+        "y": -3.5584081853569858,
+        "actual_speed_mps": 3.0780746673402604,
+        "target_speed_mps": 2.961521182241512,
+        "limited_command_mps": 2.961521182241512,
+        "requested_steer_rad": 0.15828868322976544,
+        "applied_steer_rad": 0.15828868322976544,
+        "steer_clipped": false,
+        "path_error_m": 0.03003260133662562,
+        "heading_error_rad": 0.07780459469981338,
+        "yaw_rate_rad_s": 1.4503930168045054,
+        "sideslip_rad": -0.014819296018431658,
+        "path_segment": 91,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.4364137115934912,
+        "max_path_error_m": 0.09989938090397774
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 4,
+      "baseline": {
+        "index": 4,
+        "map": "261123_HJSketch_train_027",
+        "reset": "cl_grid_static",
+        "seed": 2026,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1393,
+        "progress_laps": 3.000928590479715,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/04_lat4.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 4,
+        "map": "261123_HJSketch_train_027",
+        "reset": "cl_grid_static",
+        "seed": 2026,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 1025,
+        "progress_laps": 2.5339962620714664,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/04_lat6.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 25.624999999999613,
+        "progress_m": 108.41165362043418,
+        "x": -19.048386779027986,
+        "y": -3.5442408244516406,
+        "actual_speed_mps": 3.977229727797395,
+        "target_speed_mps": 3.6147317005329276,
+        "limited_command_mps": 3.6147317005329276,
+        "requested_steer_rad": 0.13570855852030836,
+        "applied_steer_rad": 0.13570855852030836,
+        "steer_clipped": false,
+        "path_error_m": 0.10066774792265636,
+        "heading_error_rad": 0.18529888323510946,
+        "yaw_rate_rad_s": 1.96041565140113,
+        "sideslip_rad": -0.08961724005996798,
+        "path_segment": 91,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 29.299999999999404,
+        "progress_m": 108.44630639543897,
+        "x": -18.984619699669054,
+        "y": -3.5845504914921187,
+        "actual_speed_mps": 3.286452556003887,
+        "target_speed_mps": 2.9838659343427283,
+        "limited_command_mps": 2.9838659343427283,
+        "requested_steer_rad": 0.1480453397262923,
+        "applied_steer_rad": 0.1480453397262923,
+        "steer_clipped": false,
+        "path_error_m": 0.03505659234130428,
+        "heading_error_rad": -0.0037429541012592438,
+        "yaw_rate_rad_s": 1.554980539173672,
+        "sideslip_rad": -0.02575188236184269,
+        "path_segment": 92,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.8067021136656101,
+        "max_path_error_m": 0.11313475024941998
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 5,
+      "baseline": {
+        "index": 5,
+        "map": "261123_HJSketch_train_052",
+        "reset": "cl_random_static",
+        "seed": 2026,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1402,
+        "progress_laps": 3.0003552317279327,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/05_lat4.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 5,
+        "map": "261123_HJSketch_train_052",
+        "reset": "cl_random_static",
+        "seed": 2026,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 413,
+        "progress_laps": 0.9390859741816029,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/05_lat6.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 10.32500000000008,
+        "progress_m": 40.51024744238294,
+        "x": -19.068797144969178,
+        "y": -3.382482402719376,
+        "actual_speed_mps": 4.1484143469499495,
+        "target_speed_mps": 3.3872555342708246,
+        "limited_command_mps": 3.3872555342708246,
+        "requested_steer_rad": 0.1810267348208713,
+        "applied_steer_rad": 0.1810267348208713,
+        "steer_clipped": false,
+        "path_error_m": 0.0856871584752398,
+        "heading_error_rad": 0.09920539115413618,
+        "yaw_rate_rad_s": 1.943857368524099,
+        "sideslip_rad": -0.07657888717871475,
+        "path_segment": 91,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 11.525000000000096,
+        "progress_m": 40.49658824510061,
+        "x": -19.01059141937154,
+        "y": -3.3733568058724592,
+        "actual_speed_mps": 3.3474021856552563,
+        "target_speed_mps": 2.9825519790330657,
+        "limited_command_mps": 2.9825519790330657,
+        "requested_steer_rad": 0.15159947986665648,
+        "applied_steer_rad": 0.15159947986665648,
+        "steer_clipped": false,
+        "path_error_m": 0.030237824230372485,
+        "heading_error_rad": 0.08132078135635368,
+        "yaw_rate_rad_s": 1.5176507414448648,
+        "sideslip_rad": -0.028886987196473462,
+        "path_segment": 91,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.7697426916252018,
+        "max_path_error_m": 0.10749222638713106
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 6,
+      "baseline": {
+        "index": 6,
+        "map": "261123_HJSketch_dev_012",
+        "reset": "cl_grid_static",
+        "seed": 2026,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1474,
+        "progress_laps": 3.001398966721436,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/06_lat4.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 6,
+        "map": "261123_HJSketch_dev_012",
+        "reset": "cl_grid_static",
+        "seed": 2026,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 674,
+        "progress_laps": 1.525463463758122,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/06_lat6.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 16.85000000000011,
+        "progress_m": 69.28635875530969,
+        "x": -19.733547630005027,
+        "y": -3.317829096200967,
+        "actual_speed_mps": 4.119731308333589,
+        "target_speed_mps": 3.6515224264536434,
+        "limited_command_mps": 3.6515224264536434,
+        "requested_steer_rad": 0.141938544235752,
+        "applied_steer_rad": 0.141938544235752,
+        "steer_clipped": false,
+        "path_error_m": 0.1257046005918647,
+        "heading_error_rad": 0.18660042799616505,
+        "yaw_rate_rad_s": 2.092773342207944,
+        "sideslip_rad": -0.10078291750439357,
+        "path_segment": 95,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 19.099999999999984,
+        "progress_m": 69.30305172572173,
+        "x": -19.64851520825589,
+        "y": -3.3382097571167377,
+        "actual_speed_mps": 3.4220473338540764,
+        "target_speed_mps": 2.981455576380314,
+        "limited_command_mps": 2.981455576380314,
+        "requested_steer_rad": 0.12394174186909448,
+        "applied_steer_rad": 0.12394174186909448,
+        "steer_clipped": false,
+        "path_error_m": 0.038293006592284476,
+        "heading_error_rad": 0.11727567595312038,
+        "yaw_rate_rad_s": 1.655623108923424,
+        "sideslip_rad": -0.04024446758785667,
+        "path_segment": 95,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 1.0966486530147108,
+        "max_path_error_m": 0.14107631941748863
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 7,
+      "baseline": {
+        "index": 7,
+        "map": "261123_HJSketch_dev_012",
+        "reset": "cl_random_static",
+        "seed": 2026,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1474,
+        "progress_laps": 3.0001071545839437,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/07_lat4.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 7,
+        "map": "261123_HJSketch_dev_012",
+        "reset": "cl_random_static",
+        "seed": 2026,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 853,
+        "progress_laps": 1.9710639049123806,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/07_lat6.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 21.324999999999857,
+        "progress_m": 89.55807730404877,
+        "x": -19.70698445804378,
+        "y": -3.735079339900719,
+        "actual_speed_mps": 4.079552587055278,
+        "target_speed_mps": 3.651522397994995,
+        "limited_command_mps": 3.651522397994995,
+        "requested_steer_rad": 0.15420942024859507,
+        "applied_steer_rad": 0.15420942024859507,
+        "steer_clipped": false,
+        "path_error_m": 0.05939640944741355,
+        "heading_error_rad": 0.009235276449619079,
+        "yaw_rate_rad_s": 1.6013609399612683,
+        "sideslip_rad": -0.05291262502826185,
+        "path_segment": 97,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 24.44999999999968,
+        "progress_m": 89.57566620987032,
+        "x": -19.676079900002524,
+        "y": -3.7604034852541997,
+        "actual_speed_mps": 3.2429885740069033,
+        "target_speed_mps": 2.9814555644989014,
+        "limited_command_mps": 2.9814555644989014,
+        "requested_steer_rad": 0.15454419058585284,
+        "applied_steer_rad": 0.15454419058585284,
+        "steer_clipped": false,
+        "path_error_m": 0.02932254638653075,
+        "heading_error_rad": 0.00396051995424429,
+        "yaw_rate_rad_s": 1.4685612357280533,
+        "sideslip_rad": -0.02201297368989392,
+        "path_segment": 97,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.7819009220782751,
+        "max_path_error_m": 0.10169700759442356
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    },
+    {
+      "index": 8,
+      "baseline": {
+        "index": 8,
+        "map": "261124_HJDev2_sketch_016",
+        "reset": "cl_grid_static",
+        "seed": 2026,
+        "lateral_acceleration": 4,
+        "outcome": "complete",
+        "steps": 1450,
+        "progress_laps": 3.001354763144554,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/08_lat4.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "candidate": {
+        "index": 8,
+        "map": "261124_HJDev2_sketch_016",
+        "reset": "cl_grid_static",
+        "seed": 2026,
+        "lateral_acceleration": 6,
+        "outcome": "collision",
+        "steps": 1073,
+        "progress_laps": 2.5273539885946454,
+        "trace": "results/model7_expert_validation/20261126_lat6/traces_all_failures/08_lat6.csv",
+        "response": {
+          "acceleration": 1.9682103528985162,
+          "deceleration": 2.1763923729142323,
+          "time_constant": 0.31238982797638776,
+          "delay": 0.16719387202544528,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        }
+      },
+      "preimpact": {
+        "time_s": 26.824999999999545,
+        "progress_m": 112.33673876938789,
+        "x": -19.740048157001237,
+        "y": -3.401655446372377,
+        "actual_speed_mps": 4.001239175110483,
+        "target_speed_mps": 3.7051730165537657,
+        "limited_command_mps": 3.589650302306472,
+        "requested_steer_rad": 0.1503105135787084,
+        "applied_steer_rad": 0.1503105135787084,
+        "steer_clipped": false,
+        "path_error_m": 0.11955402274819521,
+        "heading_error_rad": 0.18497237568471903,
+        "yaw_rate_rad_s": 2.0273733654973087,
+        "sideslip_rad": -0.09035878241251274,
+        "path_segment": 93,
+        "collision": false
+      },
+      "baseline_nearest_progress": {
+        "time_s": 30.499999999999336,
+        "progress_m": 112.3141119397969,
+        "x": -19.647873665390787,
+        "y": -3.380052074958634,
+        "actual_speed_mps": 3.2990599025807943,
+        "target_speed_mps": 2.9906442875221524,
+        "limited_command_mps": 2.9906442875221524,
+        "requested_steer_rad": 0.15527038430369405,
+        "applied_steer_rad": 0.15527038430369405,
+        "steer_clipped": false,
+        "path_error_m": 0.031152042500592038,
+        "heading_error_rad": 0.0679546985942725,
+        "yaw_rate_rad_s": 1.4802397188682335,
+        "sideslip_rad": -0.02327022996089364,
+        "path_segment": 93,
+        "collision": false
+      },
+      "last_half_second": {
+        "clipped_steps": 0,
+        "mean_speed_minus_target_mps": 0.9525413622146537,
+        "max_path_error_m": 0.13026078045144968
+      },
+      "cause_note": "Observed pre-impact state only; speed/steering interact. Not a controlled isolation of every physical mechanism."
+    }
+  ],
+  "collision_findings": {
+    "exact_failure_step_and_outcome_reproductions": 9,
+    "matched_lateral4_controls_completed": 9,
+    "last_half_second_steering_clipped_steps": 0,
+    "all_preimpact_actual_speeds_above_target": true,
+    "preimpact_speed_minus_target_mps": {
+      "min": 0.2960661585567177,
+      "max": 0.7611588126791249,
+      "mean": 0.48544174132307005
+    },
+    "all_preimpact_path_errors_above_matched_lateral4": true,
+    "preimpact_path_error_ratio": {
+      "min": 1.6843452136228294,
+      "max": 6.680694779245881
+    },
+    "interpretation": "Raising lateral target raises corner entry speeds and reduces tracking margin under the same delayed longitudinal response. Every observed failure has residual speed above the target and more path error than its matched baseline. No last-half-second steering saturation. These traces do not uniquely isolate all causes or establish that the command limiter alone caused the crashes.",
+    "training_failures": 6,
+    "heldout_failures": 3
+  },
+  "next_step": "Review collision findings with user before dataset collection/training. Preserve exact lateral-6 candidate and do not apply local corrections."
+}

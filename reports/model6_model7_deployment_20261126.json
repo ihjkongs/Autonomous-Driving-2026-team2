@@ -1,0 +1,113 @@
+{
+  "prepared_at": "2026-11-26T15:12:21.972407+09:00",
+  "purpose": "Git delivery of standalone models 6 and 7 for matched Jetson trials.",
+  "models": [
+    {
+      "recorded_at": "2026-11-26T15:10:16.278309+09:00",
+      "model": 6,
+      "artifact": "driving_policy.ts",
+      "sha256": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+      "bytes": 2517520,
+      "teacher_lateral_acceleration_mps2": 4.0,
+      "input": {
+        "raw_rays_per_frame": 1080,
+        "chronological_frames": 4,
+        "input_shape": [
+          1,
+          4320
+        ],
+        "frame_order": "oldest_to_newest",
+        "internal_average_pool": 4,
+        "pooled_rays_per_frame": 270,
+        "units": "metres"
+      },
+      "output": [
+        "steering_angle_rad",
+        "target_speed_mps"
+      ],
+      "max_target_speed_mps": 6.0,
+      "runtime_map_or_expert_required": false,
+      "physical_vehicle_validated": false,
+      "simulation": {
+        "episodes": 2320,
+        "continuous_laps": 3,
+        "completed": 2318,
+        "collisions": 2,
+        "neural_heldout_completed": 400,
+        "neural_heldout_episodes": 400
+      },
+      "suggested_initial_comparison": {
+        "speed_limit_mps": 3.0,
+        "command_acceleration_mps2": 2.0,
+        "command_deceleration_mps2": 3.0
+      },
+      "report": "reports/model6_raceline_training_20261125.json"
+    },
+    {
+      "recorded_at": "2026-11-26T15:10:16.287141+09:00",
+      "model": 7,
+      "artifact": "driving_policy.ts",
+      "sha256": "06b348976d6b073951d172c031793035dc3ecf8ab36d82c88795ee138c25f849",
+      "bytes": 2517520,
+      "teacher_lateral_acceleration_mps2": 5.3,
+      "input": {
+        "raw_rays_per_frame": 1080,
+        "chronological_frames": 4,
+        "input_shape": [
+          1,
+          4320
+        ],
+        "frame_order": "oldest_to_newest",
+        "internal_average_pool": 4,
+        "pooled_rays_per_frame": 270,
+        "units": "metres"
+      },
+      "output": [
+        "steering_angle_rad",
+        "target_speed_mps"
+      ],
+      "max_target_speed_mps": 6.0,
+      "runtime_map_or_expert_required": false,
+      "physical_vehicle_validated": false,
+      "simulation": {
+        "episodes": 2320,
+        "continuous_laps": 3,
+        "completed": 2315,
+        "collisions": 5,
+        "neural_heldout_completed": 400,
+        "neural_heldout_episodes": 400
+      },
+      "suggested_initial_comparison": {
+        "speed_limit_mps": 3.0,
+        "command_acceleration_mps2": 2.0,
+        "command_deceleration_mps2": 3.0
+      },
+      "report": "reports/model7_raceline_lat5p3_training_20261126.json"
+    }
+  ],
+  "validation": {
+    "automated_tests_passed": 96,
+    "actual_ros_standalone_loader_cpu_models": [
+      6,
+      7
+    ],
+    "actual_ros_standalone_loader_gpu_models": [
+      6,
+      7
+    ],
+    "chronological_frames": 4,
+    "actual_scan_predictions_per_model_and_device": 8,
+    "jetson_tested": false
+  },
+  "runtime_code_changed": false,
+  "vehicle_calibration_changed": false,
+  "readme": "src/f1tenth/README.md",
+  "delivery": "Git-tracked TorchScript plus deployment.json; no map, expert, training dataset or actor pickle needed at runtime.",
+  "excluded_local_outputs": [
+    "raw training examples",
+    "intermediate checkpoints",
+    "generated expert racing lines",
+    "videos",
+    "rosbags"
+  ]
+}

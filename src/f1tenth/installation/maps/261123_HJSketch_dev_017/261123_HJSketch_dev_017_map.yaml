@@ -1,0 +1,10 @@
+image: 261123_HJSketch_dev_017_map.png
+resolution: 0.05
+origin:
+- -2.070774872343581
+- -2.35291770600849
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 2.120218225316668

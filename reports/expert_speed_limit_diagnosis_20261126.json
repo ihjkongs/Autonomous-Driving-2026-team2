@@ -1,0 +1,459 @@
+{
+  "created_at": "2026-11-26T11:24:47.354039+09:00",
+  "question_ko": "코너 속도 계획, 가감속 제한, 응답 지연 중 낮은 속도의 원인은 무엇인가?",
+  "scope": {
+    "static_profile_maps": 580,
+    "dynamic_maps": 60,
+    "train_maps": 48,
+    "val_maps": 12,
+    "reset_modes": 2,
+    "seeds": [
+      124,
+      2026
+    ],
+    "continuous_laps": 3,
+    "conditions": 14,
+    "episodes": 3360,
+    "real_measurement": false,
+    "student_policy_ablated": false,
+    "neural_training": false,
+    "route_geometry_fixed": true
+  },
+  "profile_audit": {
+    "maps": 580,
+    "distance_weighted_fraction_local_corner_limited": 0.6909777413206779,
+    "distance_weighted_fraction_further_limited_by_accel_braking_plan": 0.6114460855794066
+  },
+  "experiments": [
+    {
+      "case": "baseline",
+      "label": "Baseline",
+      "changes": {},
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.543090277777337,
+      "paired_actual_speed_mps": 3.1684667643784565,
+      "paired_target_speed_mps": 3.2593925097150978,
+      "lap_reduction_percent": 0.0,
+      "actual_speed_gain_percent": 0.0
+    },
+    {
+      "case": "corner_lat6",
+      "label": "Corner lateral: 4 -> 6",
+      "changes": {
+        "expert": {
+          "lateral_acceleration": 6.0
+        }
+      },
+      "completed": 239,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 239,
+        "collision": 1
+      },
+      "paired_completed": 239,
+      "paired_baseline_lap_s": 14.549651324964692,
+      "paired_case_lap_s": 12.770048814504522,
+      "paired_actual_speed_mps": 3.64093261622689,
+      "paired_target_speed_mps": 3.7739530063086795,
+      "lap_reduction_percent": 12.231238197486427,
+      "actual_speed_gain_percent": 14.940812252687529
+    },
+    {
+      "case": "plan_accel4",
+      "label": "Planning acceleration: 2 -> 4",
+      "changes": {
+        "expert": {
+          "planning_acceleration": 4.0
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.47954861111067,
+      "paired_actual_speed_mps": 3.182673768808708,
+      "paired_target_speed_mps": 3.344295647560662,
+      "lap_reduction_percent": 0.43691997679310424,
+      "actual_speed_gain_percent": 0.4483873585159337
+    },
+    {
+      "case": "plan_brake4",
+      "label": "Planning braking: 2 -> 4",
+      "changes": {
+        "expert": {
+          "braking_deceleration": 4.0
+        }
+      },
+      "completed": 239,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 239,
+        "collision": 1
+      },
+      "paired_completed": 239,
+      "paired_baseline_lap_s": 14.544700139469573,
+      "paired_case_lap_s": 14.072977684797346,
+      "paired_actual_speed_mps": 3.2886491725539555,
+      "paired_target_speed_mps": 3.323781545632475,
+      "lap_reduction_percent": 3.243260088890565,
+      "actual_speed_gain_percent": 3.7872693834164473
+    },
+    {
+      "case": "preview0",
+      "label": "Early-braking preview: .15 -> 0 s",
+      "changes": {
+        "expert": {
+          "reaction_time": 0.0
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.221423611110682,
+      "paired_actual_speed_mps": 3.247472969153821,
+      "paired_target_speed_mps": 3.316114617464394,
+      "lap_reduction_percent": 2.2118178497329444,
+      "actual_speed_gain_percent": 2.4935153388254916
+    },
+    {
+      "case": "command_accel4",
+      "label": "Command acceleration: 2 -> 4",
+      "changes": {
+        "response": {
+          "command_acceleration": 4.0
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.380312499999567,
+      "paired_actual_speed_mps": 3.204847641333818,
+      "paired_target_speed_mps": 3.2509210122976815,
+      "lap_reduction_percent": 1.1192791536644986,
+      "actual_speed_gain_percent": 1.1482170923922563
+    },
+    {
+      "case": "command_brake6",
+      "label": "Command deceleration: 3 -> 6",
+      "changes": {
+        "response": {
+          "command_deceleration": 6.0
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.66027777777733,
+      "paired_actual_speed_mps": 3.1418535513007897,
+      "paired_target_speed_mps": 3.263994165575946,
+      "lap_reduction_percent": -0.8057950391675783,
+      "actual_speed_gain_percent": -0.8399397897073224
+    },
+    {
+      "case": "vehicle_accel_x2",
+      "label": "Vehicle acceleration: x2",
+      "changes": {
+        "response": {
+          "acceleration": 4.0
+        },
+        "ranges": {
+          "acceleration": [
+            3.0,
+            5.0
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.538854166666225,
+      "paired_actual_speed_mps": 3.169395540453459,
+      "paired_target_speed_mps": 3.2601052692136356,
+      "lap_reduction_percent": 0.029127998452882498,
+      "actual_speed_gain_percent": 0.02931310769751505
+    },
+    {
+      "case": "vehicle_brake_x2",
+      "label": "Vehicle deceleration: x2",
+      "changes": {
+        "response": {
+          "deceleration": 6.0
+        },
+        "ranges": {
+          "deceleration": [
+            4.0,
+            7.0
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.546041666666223,
+      "paired_actual_speed_mps": 3.1677291354231123,
+      "paired_target_speed_mps": 3.2597950349895926,
+      "lap_reduction_percent": -0.0202940972827248,
+      "actual_speed_gain_percent": -0.023280312220319566
+    },
+    {
+      "case": "delay0",
+      "label": "Transport delay: -> 0 s",
+      "changes": {
+        "response": {
+          "delay": 0.0
+        },
+        "ranges": {
+          "delay": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.523819444444003,
+      "paired_actual_speed_mps": 3.1676713162890633,
+      "paired_target_speed_mps": 3.254693004972837,
+      "lap_reduction_percent": 0.1325085175520102,
+      "actual_speed_gain_percent": -0.025105142283199378
+    },
+    {
+      "case": "tau005",
+      "label": "Response time constant: -> .05 s",
+      "changes": {
+        "response": {
+          "time_constant": 0.05
+        },
+        "ranges": {
+          "time_constant": [
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.573923611110668,
+      "paired_actual_speed_mps": 3.1555196323217225,
+      "paired_target_speed_mps": 3.235141912449291,
+      "lap_reduction_percent": -0.21201362808320745,
+      "actual_speed_gain_percent": -0.4086245184040549
+    },
+    {
+      "case": "delay0_tau005",
+      "label": "Delay zero + time constant .05 s",
+      "changes": {
+        "response": {
+          "delay": 0.0,
+          "time_constant": 0.05
+        },
+        "ranges": {
+          "delay": [
+            0.0,
+            0.0
+          ],
+          "time_constant": [
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.51906249999956,
+      "paired_actual_speed_mps": 3.163641222667513,
+      "paired_target_speed_mps": 3.238492163353933,
+      "lap_reduction_percent": 0.16521782729006507,
+      "actual_speed_gain_percent": -0.15229895308338515
+    },
+    {
+      "case": "accel_stack_x2",
+      "label": "Planning + command + vehicle accel x2",
+      "changes": {
+        "expert": {
+          "planning_acceleration": 4.0
+        },
+        "response": {
+          "command_acceleration": 4.0,
+          "acceleration": 4.0
+        },
+        "ranges": {
+          "acceleration": [
+            3.0,
+            5.0
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.058680555555135,
+      "paired_actual_speed_mps": 3.2794738430971813,
+      "paired_target_speed_mps": 3.3089776733704186,
+      "lap_reduction_percent": 3.3308582493117522,
+      "actual_speed_gain_percent": 3.503495127887213
+    },
+    {
+      "case": "brake_stack_x2",
+      "label": "Planning + command + vehicle braking x2",
+      "changes": {
+        "expert": {
+          "braking_deceleration": 4.0
+        },
+        "response": {
+          "command_deceleration": 6.0,
+          "deceleration": 6.0
+        },
+        "ranges": {
+          "deceleration": [
+            4.0,
+            7.0
+          ]
+        }
+      },
+      "completed": 240,
+      "episodes": 240,
+      "outcomes": {
+        "complete": 240
+      },
+      "paired_completed": 240,
+      "paired_baseline_lap_s": 14.543090277777337,
+      "paired_case_lap_s": 14.449895833332892,
+      "paired_actual_speed_mps": 3.1917977565282247,
+      "paired_target_speed_mps": 3.3215272317320914,
+      "lap_reduction_percent": 0.6408159659632373,
+      "actual_speed_gain_percent": 0.7363495938182973
+    }
+  ],
+  "verification": {
+    "baseline_previous_run_exact_step_outcome_matches": 240,
+    "original_profiles_sha256_unchanged": 580,
+    "model6_sha256": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+    "unrelated_response_random_draws_matched": true
+  },
+  "limitations": [
+    "One-factor sensitivities at the current operating point, not additive causal shares.",
+    "Different perturbation magnitudes cannot be used for a causal percentage ranking.",
+    "Paired lap gains exclude any pair where one condition crashed; failure counts must be evaluated alongside gains.",
+    "60-map deterministic stratified sample; not a 580-map dynamic validation of altered conditions.",
+    "Expert simulation response assumptions, not measured real-car dynamics or model6 retraining results.",
+    "Curve-only static limits still include a 0.75m curvature window and both geometry curvature estimates. Fractions overlap."
+  ],
+  "details": "src/f1tenth/results/speed_limit_diagnosis/20261126",
+  "failed_episodes": [
+    {
+      "map": "261120_HJCompetition_train_131_grid2x9_corners8",
+      "reset": "cl_grid_static",
+      "seed": 124,
+      "candidate": "corner_lat6",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 669,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "07f8d52972756409020731db20c0fe4d969ab041a23d743bb72d44c1bd907bb6",
+      "longitudinal_response": {
+        "acceleration": 1.945316258952393,
+        "deceleration": 3.395149502318726,
+        "time_constant": 0.23389740154168506,
+        "delay": 0.08539260875089127,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 16.750000000000117,
+      "track_length_m": 44.73177259042211,
+      "forward_progress_m": 63.57300342535228,
+      "progress_fraction": 0.4737348849511382,
+      "completed_laps": 1,
+      "crossing_times_s": [
+        12.175000000000106
+      ],
+      "mean_actual_speed_mps": 3.743937065739301,
+      "max_actual_speed_mps": 5.973995133901061,
+      "mean_requested_speed_mps": 3.9059846599510397,
+      "max_requested_speed_mps": 6.0,
+      "max_centerline_error_m": 0.39757521625280257,
+      "max_unclipped_steering_rad": 0.5064074439262768,
+      "fraction_at_or_above_5_5mps": 0.06576980568011959
+    },
+    {
+      "map": "261123_HJGA75_train_022",
+      "reset": "cl_grid_static",
+      "seed": 2026,
+      "candidate": "plan_brake4",
+      "required_laps": 3,
+      "outcome": "collision",
+      "steps": 262,
+      "reference_kind": "external_racing_line",
+      "racing_line_sha256": "158e3db1996da152820f80ff311ac0c5e8b7b5d27a7b3abd0225ede2b0de0f90",
+      "longitudinal_response": {
+        "acceleration": 1.9682103528985162,
+        "deceleration": 2.1763923729142323,
+        "time_constant": 0.31238982797638776,
+        "delay": 0.16719387202544528,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 6.575000000000026,
+      "track_length_m": 44.73177648278327,
+      "forward_progress_m": 19.397927925048016,
+      "progress_fraction": 0.14454994823433143,
+      "completed_laps": 0,
+      "crossing_times_s": [],
+      "mean_actual_speed_mps": 2.971189327011608,
+      "max_actual_speed_mps": 5.6413144053544215,
+      "mean_requested_speed_mps": 3.130426111323366,
+      "max_requested_speed_mps": 5.999155949645199,
+      "max_centerline_error_m": 0.18108911159960814,
+      "max_unclipped_steering_rad": 0.6298946171316427,
+      "fraction_at_or_above_5_5mps": 0.05343511450381679
+    }
+  ]
+}

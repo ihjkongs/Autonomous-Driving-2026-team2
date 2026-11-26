@@ -1,0 +1,10 @@
+image: 261124_HJDev2_sketch_010_map.png
+resolution: 0.05
+origin:
+- -2.0549232090734924
+- -9.35219596424688
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 1.9979265365957093

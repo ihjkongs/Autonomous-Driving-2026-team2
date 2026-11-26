@@ -1,0 +1,10 @@
+image: 261123_HJSketch_train_088_map.png
+resolution: 0.05
+origin:
+- -22.4495014935203
+- -2.651357968485562
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 2.0088818359018172

@@ -1,0 +1,10 @@
+image: 261124_HJGA77_train_033_map.png
+resolution: 0.05
+origin:
+- -5.657449526361839
+- -11.205221825815324
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 1.4984312229290622

@@ -1,0 +1,1060 @@
+{
+  "created_at": "2026-11-26T15:00:01.412531+09:00",
+  "experiment": 7,
+  "run": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames",
+  "purpose": "Same CNN/BC/DAgger procedure as model6, fresh initialization, labels from lateral-5.3 expert instead of lateral-4 expert; speed ceiling remains 6 m/s.",
+  "timing": {
+    "started_at": "2026-11-26T14:26:32.644354+09:00",
+    "finished_training_and_final_evaluation_at": "2026-11-26T14:59:09.950085+09:00",
+    "elapsed_s": 1957.305731,
+    "optimizer_compute_s": 842.103822250996
+  },
+  "network_input": {
+    "frames": 4,
+    "rays_per_frame": 1080,
+    "chronological_order": "oldest first",
+    "internal_spatial_average_pool": 4,
+    "pooled_rays_per_frame": 270,
+    "history_span_s": 0.075
+  },
+  "network_output": [
+    "steering rad +/-0.48",
+    "target speed m/s 1..6"
+  ],
+  "no_runtime_map_or_pose_or_expert": true,
+  "expert": {
+    "lateral_acceleration_mps2": 5.3,
+    "speed_cap_mps": 6.0,
+    "selection_validation": "reports/model7_expert_lat5p3_validation_20261126.json",
+    "fresh_seed_confirmation": "reports/model7_expert_lat5p3_fresh_validation_20261126.json"
+  },
+  "base": {
+    "examples": 1111633,
+    "labels": 1111633,
+    "maps": 480,
+    "episodes": 960,
+    "outcomes": {
+      "complete": 960
+    },
+    "target_speed_quantiles_mps": {
+      "min": 1.696028232574463,
+      "p25": 2.6243209838867188,
+      "median": 3.2434229850769043,
+      "p75": 4.101470947265625,
+      "p95": 5.6618123054504395,
+      "max": 6.0
+    }
+  },
+  "recovery_datasets": [
+    {
+      "round": "recovery1",
+      "rows": 160057,
+      "labels": 111793,
+      "maps": 74,
+      "outcomes": {
+        "complete": 148
+      }
+    },
+    {
+      "round": "recovery2",
+      "rows": 168290,
+      "labels": 128636,
+      "maps": 74,
+      "outcomes": {
+        "complete": 147,
+        "collision": 1
+      }
+    },
+    {
+      "round": "recovery3",
+      "rows": 168474,
+      "labels": 125913,
+      "maps": 74,
+      "outcomes": {
+        "complete": 148
+      }
+    }
+  ],
+  "total_label_examples": 1477975,
+  "stages": [
+    {
+      "stage": 0,
+      "training": {
+        "updates": 20000,
+        "loss": 0.006644467439502478,
+        "elapsed_s": 254.3586889129947
+      },
+      "development": {
+        "episodes": 148,
+        "completed": 139,
+        "completion_rate": 0.9391891891891891,
+        "mean_episode_s": 26.887410071941986,
+        "mean_lap_s": 13.443705035970993,
+        "mean_progress": 0.9680207300294994,
+        "counts": {
+          "complete": 139,
+          "collision": 9,
+          "timeout": 0,
+          "early_checkpoint": 0,
+          "error": 0
+        }
+      },
+      "best_stage": 0,
+      "failed_maps": [
+        "261123_HJGA75_train_001",
+        "261123_HJGA75_train_022",
+        "261123_HJSketch_train_029",
+        "261123_HJSketch_train_078",
+        "261124_HJGA77_train_007",
+        "261124_HJGA77_train_034"
+      ]
+    },
+    {
+      "stage": 1,
+      "training": {
+        "updates": 8000,
+        "loss": 0.025428281225264072,
+        "elapsed_s": 112.82089113700204
+      },
+      "development": {
+        "episodes": 148,
+        "completed": 145,
+        "completion_rate": 0.9797297297297297,
+        "mean_episode_s": 28.356724137930485,
+        "mean_lap_s": 14.178362068965242,
+        "mean_progress": 0.9925106516340553,
+        "counts": {
+          "complete": 145,
+          "collision": 3,
+          "timeout": 0,
+          "early_checkpoint": 0,
+          "error": 0
+        }
+      },
+      "best_stage": 1,
+      "failed_maps": [
+        "261123_HJGA75_train_010",
+        "261123_HJSketch_train_029"
+      ]
+    },
+    {
+      "stage": 2,
+      "training": {
+        "updates": 8000,
+        "loss": 0.029694961346685887,
+        "elapsed_s": 237.57914667199657
+      },
+      "development": {
+        "episodes": 148,
+        "completed": 146,
+        "completion_rate": 0.9864864864864865,
+        "mean_episode_s": 28.574657534246025,
+        "mean_lap_s": 14.287328767123013,
+        "mean_progress": 0.990668509348786,
+        "counts": {
+          "complete": 146,
+          "collision": 2,
+          "timeout": 0,
+          "early_checkpoint": 0,
+          "error": 0
+        }
+      },
+      "best_stage": 2,
+      "failed_maps": [
+        "261123_HJGA75_train_004"
+      ]
+    },
+    {
+      "stage": 3,
+      "training": {
+        "updates": 8000,
+        "loss": 0.03160316011309624,
+        "elapsed_s": 237.34509552900272
+      },
+      "development": {
+        "episodes": 148,
+        "completed": 148,
+        "completion_rate": 1.0,
+        "mean_episode_s": 28.229729729729193,
+        "mean_lap_s": 14.114864864864597,
+        "mean_progress": 1.0,
+        "counts": {
+          "complete": 148,
+          "collision": 0,
+          "timeout": 0,
+          "early_checkpoint": 0,
+          "error": 0
+        }
+      },
+      "best_stage": 3,
+      "failed_maps": []
+    }
+  ],
+  "selected_stage": 3,
+  "selected_checkpoint_lineage_stages": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "total_optimizer_updates": 44000,
+  "selected_checkpoint_optimizer_updates": 44000,
+  "final_protocol": {
+    "maps": 580,
+    "training_maps": 480,
+    "validation_maps": 100,
+    "seeds": [
+      613,
+      22817
+    ],
+    "reset_modes": 2,
+    "continuous_laps": 3,
+    "episodes": 2320,
+    "full_progress_completion": true,
+    "frozen_torchscript_artifact_evaluated": true
+  },
+  "final": {
+    "episodes": 2320,
+    "completed": 2315,
+    "completion_rate": 0.9978448275862069,
+    "mean_episode_s": 45.28575593952336,
+    "mean_lap_s": 15.095251979841121,
+    "mean_progress": 0.9989597396912566,
+    "counts": {
+      "complete": 2315,
+      "collision": 5,
+      "timeout": 0,
+      "early_checkpoint": 0,
+      "error": 0
+    },
+    "mean_actual_speed_time_weighted_mps": 3.184494010272046,
+    "mean_target_speed_time_weighted_mps": 3.302130884306616,
+    "max_actual_speed_mps": 5.874616654665909,
+    "fully_completed_laps": 6945
+  },
+  "training": {
+    "episodes": 1920,
+    "completed": 1915,
+    "completion_rate": 0.9973958333333334,
+    "mean_episode_s": 44.957062663183926,
+    "mean_lap_s": 14.985687554394643,
+    "mean_progress": 0.9987430187936018,
+    "counts": {
+      "complete": 1915,
+      "collision": 5,
+      "timeout": 0,
+      "early_checkpoint": 0,
+      "error": 0
+    },
+    "mean_actual_speed_time_weighted_mps": 3.1963907261764177,
+    "mean_target_speed_time_weighted_mps": 3.3149899087343964,
+    "max_actual_speed_mps": 5.874616654665909,
+    "fully_completed_laps": 5745
+  },
+  "heldout": {
+    "episodes": 400,
+    "completed": 400,
+    "completion_rate": 1.0,
+    "mean_episode_s": 46.85937499999845,
+    "mean_lap_s": 15.619791666666153,
+    "mean_progress": 1.0,
+    "counts": {
+      "complete": 400,
+      "collision": 0,
+      "timeout": 0,
+      "early_checkpoint": 0,
+      "error": 0
+    },
+    "mean_actual_speed_time_weighted_mps": 3.129851894821584,
+    "mean_target_speed_time_weighted_mps": 3.2430688454203302,
+    "max_actual_speed_mps": 5.7634913760658515,
+    "fully_completed_laps": 1200
+  },
+  "paired_model6_comparison": {
+    "shared_complete_conditions": 2313,
+    "model6": {
+      "episodes": 2313,
+      "completed": 2313,
+      "completion_rate": 1.0,
+      "mean_episode_s": 49.35676610462446,
+      "mean_lap_s": 16.452255368208156,
+      "mean_progress": 1.0,
+      "counts": {
+        "complete": 2313,
+        "collision": 0,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      },
+      "mean_actual_speed_time_weighted_mps": 2.9077315449634513,
+      "mean_target_speed_time_weighted_mps": 2.994848586276482,
+      "max_actual_speed_mps": 5.78173597002729,
+      "fully_completed_laps": 6939
+    },
+    "model7": {
+      "episodes": 2313,
+      "completed": 2313,
+      "completion_rate": 1.0,
+      "mean_episode_s": 45.28304150453809,
+      "mean_lap_s": 15.094347168179365,
+      "mean_progress": 1.0,
+      "counts": {
+        "complete": 2313,
+        "collision": 0,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      },
+      "mean_actual_speed_time_weighted_mps": 3.1844661625227064,
+      "mean_target_speed_time_weighted_mps": 3.302101532131776,
+      "max_actual_speed_mps": 5.874616654665909,
+      "fully_completed_laps": 6939
+    },
+    "lap_reduction_percent": 8.25362948506606,
+    "speed_gain_percent": 9.517199689173284,
+    "initial_poses_and_vehicle_response_identical": 2320,
+    "all_model6": {
+      "episodes": 2320,
+      "completed": 2318,
+      "completion_rate": 0.9991379310344828,
+      "mean_episode_s": 49.35232959447644,
+      "mean_lap_s": 16.450776531492146,
+      "mean_progress": 0.9991501638679842,
+      "counts": {
+        "complete": 2318,
+        "collision": 2,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      },
+      "mean_actual_speed_time_weighted_mps": 2.90752136993472,
+      "mean_target_speed_time_weighted_mps": 2.9946209037981575,
+      "max_actual_speed_mps": 5.78173597002729,
+      "fully_completed_laps": 6954
+    },
+    "all_model7": {
+      "episodes": 2320,
+      "completed": 2315,
+      "completion_rate": 0.9978448275862069,
+      "mean_episode_s": 45.28575593952336,
+      "mean_lap_s": 15.095251979841121,
+      "mean_progress": 0.9989597396912566,
+      "counts": {
+        "complete": 2315,
+        "collision": 5,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      },
+      "mean_actual_speed_time_weighted_mps": 3.184494010272046,
+      "mean_target_speed_time_weighted_mps": 3.302130884306616,
+      "max_actual_speed_mps": 5.874616654665909,
+      "fully_completed_laps": 6945
+    }
+  },
+  "failed_episodes": [
+    {
+      "map": "261120_HJCompetition_train_065_grid2x9_corners14",
+      "reset": "cl_grid_static",
+      "seed": 22817,
+      "outcome": "collision",
+      "steps": 1593,
+      "required_laps": 3,
+      "initial_pose": [
+        -1.7801549434661865,
+        -7.879544258117676,
+        5.081265155469076
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.5623789466300528,
+        "deceleration": 2.3346368423553114,
+        "time_constant": 0.21966232382370388,
+        "delay": 0.18683036685158527,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 39.84999999999881,
+      "forward_progress_m": 116.80771510386961,
+      "track_length_m": 46.280536534116415,
+      "progress_fraction": 0.8413019370663734,
+      "completed_laps": 2,
+      "max_actual_speed_mps": 4.22898380583243,
+      "mean_actual_speed_mps": 2.884822365090117,
+      "mean_target_speed_mps": 2.9728555502714933,
+      "fraction_at_or_above_5_5mps": 0.0
+    },
+    {
+      "map": "261120_HJCompetition_train_122_grid2x9_corners14",
+      "reset": "cl_random_static",
+      "seed": 22817,
+      "outcome": "collision",
+      "steps": 106,
+      "required_laps": 3,
+      "initial_pose": [
+        0.3878690302371979,
+        -0.0649445429444313,
+        1.871434211730957
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.5623789466300528,
+        "deceleration": 2.3346368423553114,
+        "time_constant": 0.21966232382370388,
+        "delay": 0.18683036685158527,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 2.6749999999999945,
+      "forward_progress_m": 4.195176907947559,
+      "track_length_m": 46.28070465408694,
+      "progress_fraction": 0.030215449680403638,
+      "completed_laps": 0,
+      "max_actual_speed_mps": 3.320982974969258,
+      "mean_actual_speed_mps": 1.5848360564177262,
+      "mean_target_speed_mps": 3.034367302678666,
+      "fraction_at_or_above_5_5mps": 0.0
+    },
+    {
+      "map": "261120_HJCompetition_train_237_grid2x9_corners8",
+      "reset": "cl_random_static",
+      "seed": 22817,
+      "outcome": "collision",
+      "steps": 1065,
+      "required_laps": 3,
+      "initial_pose": [
+        2.295423746109009,
+        4.041304588317871,
+        1.590980052947998
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.5623789466300528,
+        "deceleration": 2.3346368423553114,
+        "time_constant": 0.21966232382370388,
+        "delay": 0.18683036685158527,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 26.649999999999554,
+      "forward_progress_m": 84.01240924244982,
+      "track_length_m": 40.73176254429884,
+      "progress_fraction": 0.6875257701822588,
+      "completed_laps": 2,
+      "max_actual_speed_mps": 5.359265816948098,
+      "mean_actual_speed_mps": 3.1754773923903796,
+      "mean_target_speed_mps": 3.3403368141729506,
+      "fraction_at_or_above_5_5mps": 0.0
+    },
+    {
+      "map": "261120_HJCompetition_train_240_grid2x9_corners12",
+      "reset": "cl_grid_static",
+      "seed": 613,
+      "outcome": "collision",
+      "steps": 1750,
+      "required_laps": 3,
+      "initial_pose": [
+        -1.8249996900558472,
+        -8.50007438659668,
+        4.977439347897665
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8652264286712346,
+        "deceleration": 2.102867546897207,
+        "time_constant": 0.26101421508507233,
+        "delay": 0.0765533417617574,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 43.774999999998585,
+      "forward_progress_m": 138.90586242854818,
+      "track_length_m": 47.09768577700732,
+      "progress_fraction": 0.9831046553343307,
+      "completed_laps": 2,
+      "max_actual_speed_mps": 5.487779572822856,
+      "mean_actual_speed_mps": 3.118979043509968,
+      "mean_target_speed_mps": 3.191498506069183,
+      "fraction_at_or_above_5_5mps": 0.0
+    },
+    {
+      "map": "261124_HJGA77_train_035",
+      "reset": "cl_random_static",
+      "seed": 613,
+      "outcome": "collision",
+      "steps": 120,
+      "required_laps": 3,
+      "initial_pose": [
+        -0.8648015260696411,
+        2.618011236190796,
+        4.712389532719747
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8652264286712346,
+        "deceleration": 2.102867546897207,
+        "time_constant": 0.26101421508507233,
+        "delay": 0.0765533417617574,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 3.0249999999999932,
+      "forward_progress_m": 6.28023665351067,
+      "track_length_m": 47.097719426595745,
+      "progress_fraction": 0.04444827145186047,
+      "completed_laps": 0,
+      "max_actual_speed_mps": 3.850393946223438,
+      "mean_actual_speed_mps": 2.0959139216267255,
+      "mean_target_speed_mps": 3.462828932205836,
+      "fraction_at_or_above_5_5mps": 0.0
+    }
+  ],
+  "export_verification": {
+    "verified_at": "2026-11-26T14:47:32.189581+09:00",
+    "metadata": {
+      "format": "f1tenth-physical-lidar-v1",
+      "lidar_frames": 4,
+      "obs_dim": 4320,
+      "rays_per_frame": 1080,
+      "fov_rad": 4.7,
+      "max_range_m": 30.0,
+      "timestep_s": 0.025,
+      "max_steer": 0.48,
+      "min_speed": 1.0,
+      "max_speed": 6.0,
+      "frame_order": "oldest_to_newest",
+      "initial_history": "repeat_first_scan",
+      "input": "raw_lidar_metres",
+      "output": [
+        "steering_angle_rad",
+        "target_speed_mps"
+      ],
+      "runtime_expert": false,
+      "runtime_track_configuration": false
+    },
+    "sha256": "06b348976d6b073951d172c031793035dc3ecf8ab36d82c88795ee138c25f849",
+    "actual_base_scan_history_samples": 128,
+    "input_shape": [
+      128,
+      4320
+    ],
+    "output_shape": [
+      128,
+      2
+    ],
+    "cpu_export_max_abs_error": 0.0,
+    "gpu_cpu_max_abs_error": 7.62939453125e-06,
+    "finite_and_bounded": true,
+    "jetson_tested": false
+  },
+  "artifacts": {
+    "policy": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts",
+    "sha256": "06b348976d6b073951d172c031793035dc3ecf8ab36d82c88795ee138c25f849",
+    "bytes": 2517520
+  },
+  "expert_counterfactual_failures": {
+    "student_failed_episodes": 5,
+    "teacher_episodes": [
+      {
+        "map": "261120_HJCompetition_train_065_grid2x9_corners14",
+        "reset": "cl_grid_static",
+        "seed": 22817,
+        "candidate": "lat5p3_expert",
+        "required_laps": 3,
+        "outcome": "complete",
+        "steps": 1841,
+        "reference_kind": "external_racing_line",
+        "racing_line_sha256": "429e2f35594fa44f9786786dce49e629d5000f2152141e7ac4b28c8ae17e5661",
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 46.049999999998455,
+        "track_length_m": 46.280536534116415,
+        "forward_progress_m": 138.86015695598113,
+        "progress_fraction": 1.0001335864204182,
+        "completed_laps": 3,
+        "crossing_times_s": [
+          16.225000000000147,
+          31.1249999999993,
+          46.049999999998455
+        ],
+        "mean_actual_speed_mps": 2.948779219757868,
+        "max_actual_speed_mps": 4.567290759880809,
+        "mean_requested_speed_mps": 3.0163092710062718,
+        "max_requested_speed_mps": 4.812642244373396,
+        "max_centerline_error_m": 0.24846036764622562,
+        "max_unclipped_steering_rad": 0.46810289342294276,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_122_grid2x9_corners14",
+        "reset": "cl_random_static",
+        "seed": 22817,
+        "candidate": "lat5p3_expert",
+        "required_laps": 3,
+        "outcome": "complete",
+        "steps": 1899,
+        "reference_kind": "external_racing_line",
+        "racing_line_sha256": "9702f1387f4120b0bbfe00c411895772cc8b93b93626d38f06ed92d846e10c14",
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 47.49999999999837,
+        "track_length_m": 46.28070465408694,
+        "forward_progress_m": 138.8651193364659,
+        "progress_fraction": 1.0001656944967818,
+        "completed_laps": 3,
+        "crossing_times_s": [
+          16.625000000000124,
+          32.07499999999925,
+          47.49999999999837
+        ],
+        "mean_actual_speed_mps": 2.8871928904567783,
+        "max_actual_speed_mps": 5.819718500376009,
+        "mean_requested_speed_mps": 2.966472860473204,
+        "max_requested_speed_mps": 6.0,
+        "max_centerline_error_m": 0.13674167719333935,
+        "max_unclipped_steering_rad": 0.45308683636620106,
+        "fraction_at_or_above_5_5mps": 0.036334913112164295
+      },
+      {
+        "map": "261120_HJCompetition_train_237_grid2x9_corners8",
+        "reset": "cl_random_static",
+        "seed": 22817,
+        "candidate": "lat5p3_expert",
+        "required_laps": 3,
+        "outcome": "complete",
+        "steps": 1351,
+        "reference_kind": "external_racing_line",
+        "racing_line_sha256": "82dc5f83ef938faa68dee74a6b3d260e55cdffb13a61a93757a5ce758535ea84",
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 33.79999999999915,
+        "track_length_m": 40.73176254429884,
+        "forward_progress_m": 122.22809489644419,
+        "progress_fraction": 1.0002684822318701,
+        "completed_laps": 3,
+        "crossing_times_s": [
+          12.200000000000106,
+          22.999999999999762,
+          33.79999999999915
+        ],
+        "mean_actual_speed_mps": 3.555832835181265,
+        "max_actual_speed_mps": 5.872002731112188,
+        "mean_requested_speed_mps": 3.698668511978052,
+        "max_requested_speed_mps": 6.0,
+        "max_centerline_error_m": 0.39678190296071536,
+        "max_unclipped_steering_rad": 0.5287696022094656,
+        "fraction_at_or_above_5_5mps": 0.0614359733530718
+      },
+      {
+        "map": "261120_HJCompetition_train_240_grid2x9_corners12",
+        "reset": "cl_grid_static",
+        "seed": 613,
+        "candidate": "lat5p3_expert",
+        "required_laps": 3,
+        "outcome": "complete",
+        "steps": 1744,
+        "reference_kind": "external_racing_line",
+        "racing_line_sha256": "7a1379fd2f217e2052bacff9e21505a131f03ea3b8a6477b1658d53e2dfa64a6",
+        "longitudinal_response": {
+          "acceleration": 1.8652264286712346,
+          "deceleration": 2.102867546897207,
+          "time_constant": 0.26101421508507233,
+          "delay": 0.0765533417617574,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 43.62499999999859,
+        "track_length_m": 47.09768577700732,
+        "forward_progress_m": 141.31778033319685,
+        "progress_fraction": 1.0001749767656096,
+        "completed_laps": 3,
+        "crossing_times_s": [
+          15.27500000000015,
+          29.474999999999394,
+          43.62499999999859
+        ],
+        "mean_actual_speed_mps": 3.181857502679843,
+        "max_actual_speed_mps": 5.838958703334333,
+        "mean_requested_speed_mps": 3.2390107607605723,
+        "max_requested_speed_mps": 6.0,
+        "max_centerline_error_m": 0.1977327013746401,
+        "max_unclipped_steering_rad": 0.44982060836077614,
+        "fraction_at_or_above_5_5mps": 0.047591743119266054
+      },
+      {
+        "map": "261124_HJGA77_train_035",
+        "reset": "cl_random_static",
+        "seed": 613,
+        "candidate": "lat5p3_expert",
+        "required_laps": 3,
+        "outcome": "complete",
+        "steps": 1512,
+        "reference_kind": "external_racing_line",
+        "racing_line_sha256": "c0bb8b16ce40a7bfb463748f40b36bd8aac2cc595ad80d7c3700fa834101a736",
+        "longitudinal_response": {
+          "acceleration": 1.8652264286712346,
+          "deceleration": 2.102867546897207,
+          "time_constant": 0.26101421508507233,
+          "delay": 0.0765533417617574,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 37.82499999999892,
+        "track_length_m": 47.097719426595745,
+        "forward_progress_m": 141.36544736879097,
+        "progress_fraction": 1.0005116248365018,
+        "completed_laps": 3,
+        "crossing_times_s": [
+          13.550000000000125,
+          25.64999999999961,
+          37.82499999999892
+        ],
+        "mean_actual_speed_mps": 3.60520831703598,
+        "max_actual_speed_mps": 4.645431796003953,
+        "mean_requested_speed_mps": 3.7922720011042963,
+        "max_requested_speed_mps": 5.394372935526377,
+        "max_centerline_error_m": 0.40659893372083805,
+        "max_unclipped_steering_rad": 0.2697967560143316,
+        "fraction_at_or_above_5_5mps": 0.0
+      }
+    ]
+  },
+  "preview_episodes": [
+    {
+      "map": "261120_HJCompetition_train_001_grid3x9_corners12",
+      "reset": "cl_grid_static",
+      "seed": 613,
+      "outcome": "complete",
+      "steps": 1831,
+      "required_laps": 3,
+      "initial_pose": [
+        -2.7087738513946533,
+        -7.584987163543701,
+        4.977431122456686
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8652264286712346,
+        "deceleration": 2.102867546897207,
+        "time_constant": 0.26101421508507233,
+        "delay": 0.0765533417617574,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 45.79999999999847,
+      "forward_progress_m": 141.33571082312267,
+      "track_length_m": 47.09767135091883,
+      "progress_fraction": 1.000302185997322,
+      "completed_laps": 3,
+      "max_actual_speed_mps": 4.356554357663232,
+      "mean_actual_speed_mps": 3.0029499517384823,
+      "mean_target_speed_mps": 3.0940666687677365,
+      "fraction_at_or_above_5_5mps": 0.0,
+      "video": "/home/jiwon/projects/Autonomous-Driving-2026-team2/src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/previews/video/261120_HJCompetition_train_001_grid3x9_corners12.mp4",
+      "video_frames": 229
+    },
+    {
+      "map": "261123_HJSketch_train_001",
+      "reset": "cl_grid_static",
+      "seed": 613,
+      "outcome": "complete",
+      "steps": 1477,
+      "required_laps": 3,
+      "initial_pose": [
+        2.1014175415039062,
+        -6.300414562225342,
+        5.614206377659933
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8652264286712346,
+        "deceleration": 2.102867546897207,
+        "time_constant": 0.26101421508507233,
+        "delay": 0.0765533417617574,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 36.94999999999897,
+      "forward_progress_m": 132.32163798005888,
+      "track_length_m": 44.07762435984628,
+      "progress_fraction": 1.0006712771072186,
+      "completed_laps": 3,
+      "max_actual_speed_mps": 5.160469860233871,
+      "mean_actual_speed_mps": 3.6080924757186206,
+      "mean_target_speed_mps": 3.739506458057773,
+      "fraction_at_or_above_5_5mps": 0.0,
+      "video": "/home/jiwon/projects/Autonomous-Driving-2026-team2/src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/previews/video/261123_HJSketch_train_001.mp4",
+      "video_frames": 185
+    },
+    {
+      "map": "261124_HJDev2_compact_001",
+      "reset": "cl_grid_static",
+      "seed": 613,
+      "outcome": "complete",
+      "steps": 1998,
+      "required_laps": 3,
+      "initial_pose": [
+        -1.8802570104599,
+        -8.248655319213867,
+        4.977442804967062
+      ],
+      "longitudinal_response": {
+        "acceleration": 1.8652264286712346,
+        "deceleration": 2.102867546897207,
+        "time_constant": 0.26101421508507233,
+        "delay": 0.0765533417617574,
+        "command_acceleration": 2.0,
+        "command_deceleration": 3.0
+      },
+      "elapsed_s": 49.97499999999823,
+      "forward_progress_m": 148.40277052239946,
+      "track_length_m": 49.46361576605263,
+      "progress_fraction": 1.0000803501324957,
+      "completed_laps": 3,
+      "max_actual_speed_mps": 5.646196923714638,
+      "mean_actual_speed_mps": 2.903377139433893,
+      "mean_target_speed_mps": 2.975721349646976,
+      "fraction_at_or_above_5_5mps": 0.015515515515515516,
+      "video": "/home/jiwon/projects/Autonomous-Driving-2026-team2/src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/previews/video/261124_HJDev2_compact_001.mp4",
+      "video_frames": 250
+    }
+  ],
+  "physical_vehicle_validated": false,
+  "validation_used_for_neural_training_or_checkpoint_selection": false,
+  "expert_parameter_selection_used_all580_maps": true,
+  "limitations": [
+    "Simulation results do not establish real-vehicle performance or universal collision freedom.",
+    "The 100 validation maps were excluded from student labels and checkpoint selection, but expert parameter tuning previously inspected all 580 maps.",
+    "Final seeds match model6 for comparison and have been inspected for that prior model; not a fully untouched benchmark.",
+    "Paired speed improvements exclude any condition where either model failed; compare failure counts alongside speed."
+  ],
+  "failure_comparison": {
+    "new_failures_where_model6_completed": [
+      {
+        "map": "261120_HJCompetition_train_065_grid2x9_corners14",
+        "reset": "cl_grid_static",
+        "seed": 22817,
+        "outcome": "collision",
+        "steps": 1593,
+        "required_laps": 3,
+        "initial_pose": [
+          -1.7801549434661865,
+          -7.879544258117676,
+          5.081265155469076
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 39.84999999999881,
+        "forward_progress_m": 116.80771510386961,
+        "track_length_m": 46.280536534116415,
+        "progress_fraction": 0.8413019370663734,
+        "completed_laps": 2,
+        "max_actual_speed_mps": 4.22898380583243,
+        "mean_actual_speed_mps": 2.884822365090117,
+        "mean_target_speed_mps": 2.9728555502714933,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_122_grid2x9_corners14",
+        "reset": "cl_random_static",
+        "seed": 22817,
+        "outcome": "collision",
+        "steps": 106,
+        "required_laps": 3,
+        "initial_pose": [
+          0.3878690302371979,
+          -0.0649445429444313,
+          1.871434211730957
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 2.6749999999999945,
+        "forward_progress_m": 4.195176907947559,
+        "track_length_m": 46.28070465408694,
+        "progress_fraction": 0.030215449680403638,
+        "completed_laps": 0,
+        "max_actual_speed_mps": 3.320982974969258,
+        "mean_actual_speed_mps": 1.5848360564177262,
+        "mean_target_speed_mps": 3.034367302678666,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_237_grid2x9_corners8",
+        "reset": "cl_random_static",
+        "seed": 22817,
+        "outcome": "collision",
+        "steps": 1065,
+        "required_laps": 3,
+        "initial_pose": [
+          2.295423746109009,
+          4.041304588317871,
+          1.590980052947998
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 26.649999999999554,
+        "forward_progress_m": 84.01240924244982,
+        "track_length_m": 40.73176254429884,
+        "progress_fraction": 0.6875257701822588,
+        "completed_laps": 2,
+        "max_actual_speed_mps": 5.359265816948098,
+        "mean_actual_speed_mps": 3.1754773923903796,
+        "mean_target_speed_mps": 3.3403368141729506,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_240_grid2x9_corners12",
+        "reset": "cl_grid_static",
+        "seed": 613,
+        "outcome": "collision",
+        "steps": 1750,
+        "required_laps": 3,
+        "initial_pose": [
+          -1.8249996900558472,
+          -8.50007438659668,
+          4.977439347897665
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.8652264286712346,
+          "deceleration": 2.102867546897207,
+          "time_constant": 0.26101421508507233,
+          "delay": 0.0765533417617574,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 43.774999999998585,
+        "forward_progress_m": 138.90586242854818,
+        "track_length_m": 47.09768577700732,
+        "progress_fraction": 0.9831046553343307,
+        "completed_laps": 2,
+        "max_actual_speed_mps": 5.487779572822856,
+        "mean_actual_speed_mps": 3.118979043509968,
+        "mean_target_speed_mps": 3.191498506069183,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261124_HJGA77_train_035",
+        "reset": "cl_random_static",
+        "seed": 613,
+        "outcome": "collision",
+        "steps": 120,
+        "required_laps": 3,
+        "initial_pose": [
+          -0.8648015260696411,
+          2.618011236190796,
+          4.712389532719747
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.8652264286712346,
+          "deceleration": 2.102867546897207,
+          "time_constant": 0.26101421508507233,
+          "delay": 0.0765533417617574,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 3.0249999999999932,
+        "forward_progress_m": 6.28023665351067,
+        "track_length_m": 47.097719426595745,
+        "progress_fraction": 0.04444827145186047,
+        "completed_laps": 0,
+        "max_actual_speed_mps": 3.850393946223438,
+        "mean_actual_speed_mps": 2.0959139216267255,
+        "mean_target_speed_mps": 3.462828932205836,
+        "fraction_at_or_above_5_5mps": 0.0
+      }
+    ],
+    "old_failures_fixed_by_model7": [
+      {
+        "map": "261120_HJCompetition_train_040_grid3x9_corners8",
+        "reset": "cl_random_static",
+        "seed": 22817,
+        "outcome": "collision",
+        "steps": 81,
+        "required_laps": 3,
+        "initial_pose": [
+          2.446507453918457,
+          0.6852324604988098,
+          2.798290491104126
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 2.0499999999999967,
+        "forward_progress_m": 2.2273416615342754,
+        "track_length_m": 52.73177754504941,
+        "progress_fraction": 0.014079692645997817,
+        "completed_laps": 0,
+        "max_actual_speed_mps": 2.4742903473996973,
+        "mean_actual_speed_mps": 1.1189544569485235,
+        "mean_target_speed_mps": 2.65855375337012,
+        "fraction_at_or_above_5_5mps": 0.0
+      },
+      {
+        "map": "261120_HJCompetition_train_231_grid3x9_corners10",
+        "reset": "cl_random_static",
+        "seed": 22817,
+        "outcome": "collision",
+        "steps": 81,
+        "required_laps": 3,
+        "initial_pose": [
+          2.5397207736968994,
+          0.8684358596801758,
+          2.7982912063598633
+        ],
+        "longitudinal_response": {
+          "acceleration": 1.5623789466300528,
+          "deceleration": 2.3346368423553114,
+          "time_constant": 0.21966232382370388,
+          "delay": 0.18683036685158527,
+          "command_acceleration": 2.0,
+          "command_deceleration": 3.0
+        },
+        "elapsed_s": 2.0499999999999967,
+        "forward_progress_m": 2.2272185860515847,
+        "track_length_m": 51.914770652403426,
+        "progress_fraction": 0.01430048107736672,
+        "completed_laps": 0,
+        "max_actual_speed_mps": 2.4731490774822067,
+        "mean_actual_speed_mps": 1.1188790439603933,
+        "mean_target_speed_mps": 2.6587689364397966,
+        "fraction_at_or_above_5_5mps": 0.0
+      }
+    ],
+    "both_failed": []
+  },
+  "interpretation": "Model7 is faster on matched completed trials but has 5 observed collisions vs model6 2. All five matched lateral-5.3 expert controls completed. It is an experimental candidate with remaining student-control errors, not a demonstrated reliability improvement."
+}

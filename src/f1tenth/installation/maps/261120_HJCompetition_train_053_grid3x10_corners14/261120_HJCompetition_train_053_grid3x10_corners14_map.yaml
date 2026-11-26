@@ -1,0 +1,10 @@
+image: 261120_HJCompetition_train_053_grid3x10_corners14_map.png
+resolution: 0.05
+origin:
+- -5.9658408607999815
+- -13.567352099350831
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+width: 1.4368910017878613

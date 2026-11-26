@@ -1,0 +1,411 @@
+{
+  "as_of": "2026-11-26",
+  "scope": "Local src/f1tenth/results/imitation numbered experiments",
+  "experiment_count": 7,
+  "count_excludes": [
+    "Intermediate checkpoints as separate experiments",
+    "Imitation smoke-test outputs",
+    "Pure Pursuit controller",
+    "Racing-line path files"
+  ],
+  "management_groups": {
+    "historical_references": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "real_vehicle_comparison_baseline": [
+      5
+    ],
+    "latest_small_map_candidate": [
+      7
+    ],
+    "small_map_comparison_baseline": [
+      6
+    ]
+  },
+  "runtime_selection": {
+    "local_agent_yaml_default_algo_idx": 2,
+    "policy_file_overrides_number": true,
+    "latest_model_is_not_automatically_selected": true,
+    "source": "src/f1tenth_ros/f1tenth_stack/config/agent.yaml",
+    "jetson_current_runtime_not_queried": true
+  },
+  "experiment_6_final": {
+    "all": {
+      "episodes": 2320,
+      "completed": 2318,
+      "completion_rate": 0.9991379310344828,
+      "mean_episode_s": 49.35232959447644,
+      "mean_lap_s": 16.450776531492146,
+      "mean_progress": 0.9991501638679842,
+      "counts": {
+        "complete": 2318,
+        "collision": 2,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      }
+    },
+    "heldout": {
+      "episodes": 400,
+      "completed": 400,
+      "completion_rate": 1.0,
+      "mean_episode_s": 51.18049999999842,
+      "mean_lap_s": 17.06016666666614,
+      "mean_progress": 1.0,
+      "counts": {
+        "complete": 400,
+        "collision": 0,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      }
+    },
+    "real_vehicle_tested": false
+  },
+  "experiments": [
+    {
+      "number": 1,
+      "name": "최초 4m/s BC",
+      "directory": "src/f1tenth/results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame",
+      "role": "historical_reference",
+      "network": "MLP",
+      "method": "BC",
+      "speed_cap_mps": 4,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 1,
+      "spatial_average_pool": 1,
+      "features_per_frame": 1080,
+      "training_track_count": 23,
+      "heldout_track_count": 0,
+      "real_vehicle_usage_dates": [],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame/sim2real/actor.pt",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame/sim2real/actor.pt",
+          "bytes": 1376558,
+          "sha256": "c82af4e6318c83efeb0349c9391235c8af82cc711c96e2543f7f85452773903e",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame/sim2real/actor_before_refinement.pt",
+          "bytes": 1376558,
+          "sha256": "e07b365cf0545ffa2a5d6ddd3ca813ae5a273025ba8e80b4ff74328cb4231485",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame/sim2real/agent_obs_scale.pkl",
+          "bytes": 17478,
+          "sha256": "47129dd72c9269a81dc179276adb4fffbcda663b4b57d78523018573e2d69541",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/1_bc_mlp_4mps_initial_1080pts_1frame/sim2real/agent_reward_scale.pkl",
+          "bytes": 198,
+          "sha256": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+          "git_tracked": false
+        }
+      ],
+      "weight_file_count_including_checkpoints": 55
+    },
+    {
+      "number": 2,
+      "name": "전문가 데이터 검증 후 4m/s BC",
+      "directory": "src/f1tenth/results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110",
+      "role": "historical_real_vehicle_reference",
+      "network": "MLP",
+      "method": "BC",
+      "speed_cap_mps": 4,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 1,
+      "spatial_average_pool": 1,
+      "features_per_frame": 1080,
+      "training_track_count": 23,
+      "heldout_track_count": 0,
+      "real_vehicle_usage_dates": [
+        "2026-11-10"
+      ],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/sim2real/actor.pt",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/sim2real/actor.pt",
+          "bytes": 1376913,
+          "sha256": "170c875081da4384f8a3df31895bd9a36e8e0aa21e83437520df4832837e5700",
+          "git_tracked": true
+        },
+        {
+          "path": "src/f1tenth/results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/sim2real/agent_obs_scale.pkl",
+          "bytes": 17478,
+          "sha256": "a8a3a676bddcd8ce0e760e9a3614937c81600bf3d8ceee602d684c0a65bff3ca",
+          "git_tracked": true
+        },
+        {
+          "path": "src/f1tenth/results/imitation/2_bc_mlp_4mps_verified_1080pts_1frame_realtest_20261110/sim2real/agent_reward_scale.pkl",
+          "bytes": 198,
+          "sha256": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+          "git_tracked": true
+        }
+      ],
+      "weight_file_count_including_checkpoints": 10
+    },
+    {
+      "number": 3,
+      "name": "4프레임 입력을 도입한 6m/s MLP",
+      "directory": "src/f1tenth/results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames",
+      "role": "historical_reference",
+      "network": "MLP",
+      "method": "BC",
+      "speed_cap_mps": 6,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_average_pool": 1,
+      "features_per_frame": 1080,
+      "training_track_count": 23,
+      "heldout_track_count": 0,
+      "real_vehicle_usage_dates": [],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames/sim2real/actor.pt",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames/sim2real/actor.pt",
+          "bytes": 4694318,
+          "sha256": "502e4eea3ae18230198d2b0c5384c4bb5d35ec8a4f1313e58e4c9d157423ff1d",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames/sim2real/agent_obs_scale.pkl",
+          "bytes": 69327,
+          "sha256": "5d86f463a68e50deb2f07592b9bc56511dc950cfb526a7dd06062ca002bf631c",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/3_bc_mlp_6mps_temporal_1080pts_4frames/sim2real/agent_reward_scale.pkl",
+          "bytes": 198,
+          "sha256": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+          "git_tracked": false
+        }
+      ],
+      "weight_file_count_including_checkpoints": 7
+    },
+    {
+      "number": 4,
+      "name": "6m/s MLP 보강 실험",
+      "directory": "src/f1tenth/results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames",
+      "role": "historical_reference",
+      "network": "MLP",
+      "method": "BC",
+      "speed_cap_mps": 6,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_average_pool": 1,
+      "features_per_frame": 1080,
+      "training_track_count": 23,
+      "heldout_track_count": 0,
+      "real_vehicle_usage_dates": [],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames/sim2real/actor.pt",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames/sim2real/actor.pt",
+          "bytes": 4694318,
+          "sha256": "bb4dc4a6b5309a413e77e67fa8102fa5e0eb3cec3eb2f67a06a5706fada2be21",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames/sim2real/agent_obs_scale.pkl",
+          "bytes": 69327,
+          "sha256": "5d86f463a68e50deb2f07592b9bc56511dc950cfb526a7dd06062ca002bf631c",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/4_bc_mlp_6mps_temporal_refined_1080pts_4frames/sim2real/agent_reward_scale.pkl",
+          "bytes": 198,
+          "sha256": "215800aa1f2fc05fa95d5175311007c6d9d8cc48fbf9e796402929425a64bf7c",
+          "git_tracked": false
+        }
+      ],
+      "weight_file_count_including_checkpoints": 7
+    },
+    {
+      "number": 5,
+      "name": "넓은 맵 중심선 전문가 기반 CNN + DAgger",
+      "directory": "src/f1tenth/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts",
+      "role": "real_vehicle_comparison_baseline",
+      "network": "CNN",
+      "method": "BC + recovery-oracle DAgger",
+      "speed_cap_mps": 6,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_average_pool": 4,
+      "features_per_frame": 270,
+      "training_track_count": 18,
+      "heldout_track_count": 5,
+      "real_vehicle_usage_dates": [
+        "2026-11-12",
+        "2026-11-25"
+      ],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/driving_policy.ts",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/actor.pt",
+          "bytes": 2497170,
+          "sha256": "65d06b639b377048b4617a7ddca60877b23534b17fd2aeac44cfe52b82f92bfb",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/agent_obs_scale.pkl",
+          "bytes": 34758,
+          "sha256": "b2d5571a6e894b2d8a50f2b3cfb30842ddf3563e5920e33e09e7630529f9ab4e",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/driving_policy.ts",
+          "bytes": 2517328,
+          "sha256": "7e3d2eef75cc1a651cc7baa0f8e0c330f75e3e83517409cfced0733482ca7417",
+          "git_tracked": true
+        }
+      ],
+      "weight_file_count_including_checkpoints": 7
+    },
+    {
+      "number": 6,
+      "name": "좁은 맵 레이스라인 전문가 기반 CNN + DAgger",
+      "directory": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames",
+      "role": "small_map_model7_comparison_baseline",
+      "network": "CNN",
+      "method": "BC + recovery-oracle DAgger",
+      "speed_cap_mps": 6,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_average_pool": 4,
+      "features_per_frame": 270,
+      "training_track_count": 480,
+      "heldout_track_count": 100,
+      "real_vehicle_usage_dates": [],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/actor.pt",
+          "bytes": 2497170,
+          "sha256": "1b743588aa3e84e3d2628bcc30e86837ad31c36e05cac485ae51ef5837056c81",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/agent_obs_scale.pkl",
+          "bytes": 34758,
+          "sha256": "b2d5571a6e894b2d8a50f2b3cfb30842ddf3563e5920e33e09e7630529f9ab4e",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts",
+          "bytes": 2517520,
+          "sha256": "56de4baca9d44bd5606cab5c5d3221b2cfc7924c0cbd5ece817b9fde83c87303",
+          "git_tracked": true
+        },
+        {
+          "path": "src/f1tenth/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/deployment.json",
+          "bytes": 1079,
+          "sha256": "2aa0f7f00e0210388b9cbe7fe261b1d0e01f1077838e6dedf976cdefecae9b41",
+          "git_tracked": true
+        }
+      ],
+      "weight_file_count_including_checkpoints": 7,
+      "expert_lateral_acceleration_mps2": 4.0
+    },
+    {
+      "number": 7,
+      "name": "좁은 맵 레이스라인, 허용 횡가속도 5.3 전문가 기반 CNN + DAgger",
+      "directory": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames",
+      "role": "latest_small_map_simulation_candidate",
+      "network": "CNN",
+      "method": "BC + recovery-oracle DAgger",
+      "speed_cap_mps": 6,
+      "raw_rays_per_frame": 1080,
+      "temporal_frames": 4,
+      "spatial_average_pool": 4,
+      "features_per_frame": 270,
+      "training_track_count": 480,
+      "heldout_track_count": 100,
+      "real_vehicle_usage_dates": [],
+      "real_vehicle_usage_source": "Conversation/user reports; dates are observations, not a safety certification",
+      "selected_artifact": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts",
+      "sim2real_files": [
+        {
+          "path": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/actor.pt",
+          "bytes": 2497170,
+          "sha256": "26862c49994ddc5396762c9e6b1c662c5e6da4ecfbe033ee9961c9b747564a02",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/agent_obs_scale.pkl",
+          "bytes": 34758,
+          "sha256": "b2d5571a6e894b2d8a50f2b3cfb30842ddf3563e5920e33e09e7630529f9ab4e",
+          "git_tracked": false
+        },
+        {
+          "path": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts",
+          "bytes": 2517520,
+          "sha256": "06b348976d6b073951d172c031793035dc3ecf8ab36d82c88795ee138c25f849",
+          "git_tracked": true
+        },
+        {
+          "path": "src/f1tenth/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/deployment.json",
+          "bytes": 1086,
+          "sha256": "bb90a4e59e7217dbaf86c6fca0727bc46cac46e9811e6c3901fc20d965d27f2c",
+          "git_tracked": true
+        }
+      ],
+      "weight_file_count_including_checkpoints": 7,
+      "expert_lateral_acceleration_mps2": 5.3
+    }
+  ],
+  "files_moved_deleted_or_weights_modified": false,
+  "experiment_7_final": {
+    "all": {
+      "episodes": 2320,
+      "completed": 2315,
+      "completion_rate": 0.9978448275862069,
+      "mean_episode_s": 45.28575593952336,
+      "mean_lap_s": 15.095251979841121,
+      "mean_progress": 0.9989597396912566,
+      "counts": {
+        "complete": 2315,
+        "collision": 5,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      },
+      "mean_actual_speed_time_weighted_mps": 3.184494010272046,
+      "mean_target_speed_time_weighted_mps": 3.302130884306616,
+      "max_actual_speed_mps": 5.874616654665909,
+      "fully_completed_laps": 6945
+    },
+    "heldout": {
+      "episodes": 400,
+      "completed": 400,
+      "completion_rate": 1.0,
+      "mean_episode_s": 46.85937499999845,
+      "mean_lap_s": 15.619791666666153,
+      "mean_progress": 1.0,
+      "counts": {
+        "complete": 400,
+        "collision": 0,
+        "timeout": 0,
+        "early_checkpoint": 0,
+        "error": 0
+      },
+      "mean_actual_speed_time_weighted_mps": 3.129851894821584,
+      "mean_target_speed_time_weighted_mps": 3.2430688454203302,
+      "max_actual_speed_mps": 5.7634913760658515,
+      "fully_completed_laps": 1200
+    },
+    "real_vehicle_tested": false,
+    "report": "reports/model7_raceline_lat5p3_training_20261126.json"
+  }
+}

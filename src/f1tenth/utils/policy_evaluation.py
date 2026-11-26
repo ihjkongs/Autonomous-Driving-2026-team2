@@ -56,6 +56,7 @@ def episode(job):
     args, name, mode, seed, video_path = job
     config = deepcopy(args)
     required_laps = int(config.get('evaluation_laps', 1))
+    strict_progress = bool(config.get('full_progress_completion', False))
     if required_laps < 1:
         raise ValueError('evaluation_laps must be positive')
     config.seed, config.reset_config = seed, {'type': mode}
@@ -69,6 +70,7 @@ def episode(job):
         result['initial_pose'] = env.unwrapped.sim.agent_poses[0].tolist()
         result['longitudinal_response'] = env.unwrapped.sim.agents[0].response_parameters
         max_actual_speed, fast_steps = 0., 0
+        sum_actual_speed, sum_target_speed = 0., 0.
         center = np.column_stack([env.unwrapped.track.centerline.xs,
                                   env.unwrapped.track.centerline.ys]).astype(np.float64)
         center = np.vstack([center, center[0]])
@@ -89,6 +91,8 @@ def episode(job):
             observation = env.getObs(raw)
             actual_speed = float(env.unwrapped.sim.agents[0].state[3])
             max_actual_speed = max(max_actual_speed, actual_speed)
+            sum_actual_speed += actual_speed
+            sum_target_speed += float(physical[1])
             fast_steps += int(actual_speed >= 5.5)
             if not np.isfinite(observation).all() or not np.isfinite(env.unwrapped.sim.agents[0].state).all():
                 raise ValueError('Non-finite scan or physics state')
@@ -96,7 +100,8 @@ def episode(job):
             delta = (current - previous + length/2.) % length - length/2.
             progress += delta; previous = current
             result['steps'] = step
-            if video_path and (step % 8 == 1 or terminated or truncated):
+            if video_path and (step % 8 == 1 or truncated or env.unwrapped.collisions[0]
+                    or (terminated and required_laps == 1 and not strict_progress)):
                 import imageio_ffmpeg
                 frame = np.ascontiguousarray(env.render())
                 if writer is None:
@@ -110,8 +115,9 @@ def episode(job):
             collision = bool(env.unwrapped.collisions[0])
             # Keep state and scan history across finish crossings for repeated laps.
             # The simulator's normal checkpoint termination is for one lap only.
-            reached_laps = required_laps > 1 and progress >= required_laps*length-.5
-            if collision or truncated or reached_laps or (terminated and required_laps == 1):
+            reached_laps = (strict_progress and progress >= required_laps*length) or (
+                not strict_progress and required_laps > 1 and progress >= required_laps*length-.5)
+            if collision or truncated or reached_laps or (terminated and required_laps == 1 and not strict_progress):
                 checkpoint = bool(np.asarray(info['checkpoint_done']).all())
                 result['outcome'] = ('collision' if collision else 'complete'
                     if reached_laps or (required_laps == 1 and checkpoint and progress >= .9*length)
@@ -121,8 +127,10 @@ def episode(job):
             result['outcome'] = 'timeout'
         result.update(elapsed_s=float(env.unwrapped.current_time), forward_progress_m=progress,
                       track_length_m=length, progress_fraction=progress/(required_laps*length),
-                      completed_laps=max(0, int((progress+.5)/length)),
+                      completed_laps=max(0, int((progress+(0. if strict_progress else .5))/length)),
                       max_actual_speed_mps=max_actual_speed,
+                      mean_actual_speed_mps=sum_actual_speed/max(1, result['steps']),
+                      mean_target_speed_mps=sum_target_speed/max(1, result['steps']),
                       fraction_at_or_above_5_5mps=fast_steps/max(1, result['steps']))
     except Exception:
         result['error'] = traceback.format_exc()

@@ -35,3 +35,17 @@ __pycache__
 !/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/
 /results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/*
 !/results/imitation/5_bc_cnn_6mps_dagger_avgpool4_270pts/sim2real/driving_policy.ts
+
+# Experiments 6 and 7: only frozen deployment policies and their manifests.
+!/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/
+/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/*
+!/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/
+/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/*
+!/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts
+!/results/imitation/6_bc_cnn_raceline_6mps_dagger_avgpool4_270pts_4frames/sim2real/deployment.json
+!/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/
+/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/*
+!/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/
+/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/*
+!/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/driving_policy.ts
+!/results/imitation/7_bc_cnn_raceline_lat5p3_6mps_dagger_avgpool4_270pts_4frames/sim2real/deployment.json

@@ -1,0 +1,10 @@
+{
+  "L0.7_lat4_react0.15": {
+    "tlad": 0.7,
+    "lookahead_time": 0.05,
+    "max_lookahead": 1.0,
+    "lateral_acceleration": 4.0,
+    "reaction_time": 0.15,
+    "planning_acceleration": 2.0
+  }
+}
