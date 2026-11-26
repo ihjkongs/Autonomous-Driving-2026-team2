@@ -29,6 +29,11 @@ def _launch_agent(context):
     policy_file = LaunchConfiguration('policy_file').perform(context).strip()
     if policy_file:
         parameters['policy_file'] = policy_file
+    limiter = LaunchConfiguration('enable_speed_limiter').perform(context).strip().lower()
+    if limiter:
+        if limiter not in ('true', 'false'):
+            raise ValueError('enable_speed_limiter must be true or false')
+        parameters['enable_speed_limiter'] = limiter == 'true'
     for key in ('speed_limit', 'max_acceleration', 'max_deceleration'):
         override = LaunchConfiguration(key).perform(context).strip()
         if override:
@@ -98,10 +103,13 @@ def generate_launch_description():
         'max_acceleration', default_value='', description='Override command acceleration in m/s^2')
     deceleration_la = DeclareLaunchArgument(
         'max_deceleration', default_value='', description='Override normal command deceleration in m/s^2')
+    limiter_la = DeclareLaunchArgument(
+        'enable_speed_limiter', default_value='',
+        description='Override command slew limiting: true or false')
     ld = LaunchDescription([
         vesc_la, sensors_la, mux_la, agent_la, enable_agent_la,
         dry_run_la, project_root_la, agent_python_la,
-        speed_limit_la, acceleration_la, deceleration_la, policy_file_la])
+        speed_limit_la, acceleration_la, deceleration_la, policy_file_la, limiter_la])
 
     agent_node = OpaqueFunction(
         function=_launch_agent,

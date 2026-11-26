@@ -41,6 +41,7 @@ class AgentNode(Node):
             'dry_run': True, 'device': 'auto', 'laser_yaw_offset': 0.0,
             'speed_limit': 1.0, 'scan_timeout': 0.2,
             'max_acceleration': 2.0, 'max_deceleration': 3.0,
+            'enable_speed_limiter': True,
             'policy_file': '',
         }
         for key, value in defaults.items():
@@ -110,10 +111,12 @@ class AgentNode(Node):
         self.create_timer(0.05, self.watchdog)
         self.get_logger().info(
             'Model loaded on %s; dry_run=%s; waiting for %s. Predictions: %s; '
-            'speed_limit=%.2f m/s, acceleration=%.2f, deceleration=%.2f m/s^2' % (
+            'speed_limit=%.2f m/s, acceleration=%.2f, deceleration=%.2f m/s^2, '
+            'enable_speed_limiter=%s' % (
                 self.device, self.dry_run, self.params['scan_topic'],
                 self.params['prediction_topic'], self.params['speed_limit'],
-                self.params['max_acceleration'], self.params['max_deceleration']))
+                self.params['max_acceleration'], self.params['max_deceleration'],
+                self.params['enable_speed_limiter']))
 
     def stop(self):
         # Stops bypass ordinary deceleration limiting, including in dry-run.
@@ -157,7 +160,8 @@ class AgentNode(Node):
                 raise ValueError('Policy inference exceeded scan_timeout')
             now = time.monotonic()
             target_speed = min(speed, self.params['speed_limit'])
-            command_speed = self.speed_limiter.update(target_speed, now)
+            command_speed = (self.speed_limiter.update(target_speed, now)
+                             if self.params['enable_speed_limiter'] else target_speed)
             self.last_valid_scan = now
             self.scan_count += 1
             msg = AckermannDriveStamped()

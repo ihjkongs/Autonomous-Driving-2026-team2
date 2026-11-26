@@ -12,4 +12,5 @@ agent_node:
     speed_limit: 4.0
     max_acceleration: 2.0
     max_deceleration: 3.0
+    enable_speed_limiter: true
     scan_timeout: 0.2

@@ -164,6 +164,44 @@ def test_dry_run_produces_preview_but_no_vehicle_publisher(runner):
     assert node.preview_pub.messages[-1].drive.speed == 0
 
 
+@pytest.mark.parametrize('dry_run_enabled', [False, True])
+def test_disabled_slew_follows_target_directly_but_preserves_cap_and_stops(
+        runner, monkeypatch, dry_run_enabled):
+    AgentNode, clock, dry_run, scan = runner
+    dry_run[0] = dry_run_enabled
+    base = AgentNode.__bases__[0]
+    original = base.get_parameter
+    monkeypatch.setattr(base, 'get_parameter', lambda self, key:
+                        NS(value=False) if key == 'enable_speed_limiter'
+                        else original(self, key))
+    node = AgentNode()
+    node.params['speed_limit'] = 3.
+    node.scan_callback(scan)
+    assert node.pred_pub.messages[-1].drive.speed == 4.
+    # No startup ramp, but the independent speed cap remains effective.
+    assert node.preview_pub.messages[-1].drive.speed == 3.
+    if dry_run_enabled:
+        assert node.drive_pub is None
+    else:
+        assert node.drive_pub.messages[-1].drive.speed == 3.
+    node.actor = lambda observation: NS(loc=torch.tensor([[.5, -1.]]))
+    clock[0] += .025
+    node.scan_callback(scan)
+    # A sudden target reduction bypasses the normal deceleration limit too.
+    assert node.preview_pub.messages[-1].drive.speed == 1.
+    clock[0] += .3
+    node.watchdog()
+    assert node.preview_pub.messages[-1].drive.speed == 0.
+    if not dry_run_enabled:
+        assert node.drive_pub.messages[-1].drive.speed == 0.
+    node.scan_callback(scan)
+    assert node.preview_pub.messages[-1].drive.speed == 1.
+    scan.ranges[0] = float('nan')
+    clock[0] += .025
+    node.scan_callback(scan)
+    assert node.preview_pub.messages[-1].drive.speed == 0.
+
+
 def test_standalone_policy_needs_no_training_directory_and_preserves_physical_units(runner, monkeypatch):
     AgentNode, clock, _, scan = runner
     module = sys.modules[AgentNode.__module__]

@@ -10,7 +10,9 @@ ROOT = Path(__file__).parents[1]
 
 @pytest.mark.parametrize('flag, expected', [('false', False), ('true', True)])
 @pytest.mark.parametrize('overrides', [{}, {'speed_limit': '1.0', 'max_acceleration': '1.5',
-                                           'max_deceleration': '2.0'}])
+                                           'max_deceleration': '2.0',
+                                           'enable_speed_limiter': 'false'},
+                                     {'enable_speed_limiter': 'true'}])
 def test_launch_flag_overrides_yaml_default(flag, expected, overrides, tmp_path):
     source = ast.parse((ROOT / 'launch/bringup_launch.py').read_text())
     function = next(n for n in source.body
@@ -31,7 +33,8 @@ def test_launch_flag_overrides_yaml_default(flag, expected, overrides, tmp_path)
     config = tmp_path / 'agent.yaml'
     config.write_text(yaml.safe_dump({'agent_node': {'ros__parameters': {
         'name': 'imitation', 'algo_idx': 2, 'dry_run': True,
-        'speed_limit': 1.7, 'max_acceleration': 2.0, 'max_deceleration': 3.0}}}))
+        'speed_limit': 1.7, 'max_acceleration': 2.0, 'max_deceleration': 3.0,
+        'enable_speed_limiter': True}}}))
     context = {'agent_config': str(config),
                'dry_run': flag, 'project_root': '/home/team2/project'}
     context.update(overrides)
@@ -45,3 +48,4 @@ def test_launch_flag_overrides_yaml_default(flag, expected, overrides, tmp_path)
     assert parameters['speed_limit'] == float(overrides.get('speed_limit', 1.7))
     assert parameters['max_acceleration'] == float(overrides.get('max_acceleration', 2.0))
     assert parameters['max_deceleration'] == float(overrides.get('max_deceleration', 3.0))
+    assert parameters['enable_speed_limiter'] is (overrides.get('enable_speed_limiter', 'true') == 'true')
